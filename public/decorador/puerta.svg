@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_2" data-name="Capa 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <metadata><c2pa:manifest xmlns:c2pa="http://c2pa.org/manifest"></c2pa:manifest></metadata>
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-1" points="0 714.2 487.06 714.2 509.01 695.08 509.01 682.95 938 683.01 938 692.02 970.9 692.02 970.9 668.03 972.01 668.03 972.01 231.04 1188.12 231.04 1188.12 667.84 1193.17 667.84 1197.84 672.52 1197.84 692.98 1227.02 692.98 1227.02 683.13 1401.21 683.13 1401.21 89 759.31 89 752.96 33.2 752.96 0 0 0 0 714.2"/>
+  <rect class="cls-1" x="1543.32" width="56.68" height="714.2"/>
+</svg>

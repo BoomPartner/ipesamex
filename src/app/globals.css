@@ -1,0 +1,1574 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  font-family: 'Arial', sans-serif;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.sombra-arriba {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3) !important;
+
+}
+
+.sinpadin {
+  padding: 0px !important;
+}
+
+.placement{
+  z-index: 10000;
+}
+.navbarResponsive {
+  background-color: white;
+  z-index: 10000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  position: sticky !important;
+  top: 0px !important;
+}
+
+.texto {
+  font-size: 12px !important;
+}
+
+
+.swiperInicio {
+  width: 100%;
+  height: auto;
+}
+
+.swiperDecorador {
+  width: 100%;
+}
+
+@media (max-width: 842px) {
+  .texto {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 505px) {
+
+  .parrafo {
+    display: none !important;
+  }
+}
+
+
+
+.producto-ajuste {
+  height: 100vh;
+}
+
+@media (max-width: 1640px) {
+  .ocultar {
+    display: none !important;
+  }
+}
+
+@media(max-width: 1000px) {
+  .producto-ajuste {
+    height: auto;
+  }
+}
+
+.responsiveLineas {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.responsiveLinksCategories {
+  width: 100%;
+}
+
+
+
+.producto-animate {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* animation-timeline: view(); */
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.producto-animate2 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.producto-animate3 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.producto-animate4 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.card-animate {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  /* animation-timeline: view(); */
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.card-animate2 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.card-animate3 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.card-animate4 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.card-animate5 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.card-animate6 {
+  opacity: 0;
+  animation-name: slideUp;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.categoria-animate {
+
+  animation-name: slidePush;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.categoria-animate2 {
+
+  animation-name: slidePush;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.categoria-animate3 {
+
+  animation-name: slidePush;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.categoria-animate4 {
+
+  animation-name: slidePush;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.categoria-animate5 {
+
+  animation-name: slidePush;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+  /* animation-range: entry 50% cover 50%; */
+}
+
+.sala-principal {
+  width: 100%;
+  /* height: 100vh; */
+  background: url("/principal/sala_principal.webp") no-repeat;
+  background-size: 100% auto;
+  padding-bottom: 10%;
+}
+
+@media (max-width: 810px) {
+  .sala-principal {
+    width: 100%;
+    /* height: 40vh; */
+  }
+}
+
+.sala-principal svg {
+  mix-blend-mode: multiply;
+  width: 86.5%;
+}
+
+.sala-principal svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.sala-principal svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+.zoom-on {
+  transition: all 0.5s ease-in-out;
+}
+
+.zoom-on:hover {
+  transform: scale(1.1);
+  /* Aumenta el tamaño en un 10% */
+  transition: transform 0.5s ease-in-out;
+}
+
+.zoom-producto {
+  transition: all 0.3s ease-in-out;
+}
+
+.zoom-producto:hover {
+  transform: scale(1.06);
+  /* Aumenta el tamaño en un 10% */
+  transition: transform 0.3s ease-in-out;
+}
+
+.zoom-enlace {
+  transition: all 0.5s ease-in-out;
+}
+
+.zoom-enlace:hover {
+  transform: scale(1.3);
+  /* Aumenta el tamaño en un 10% */
+  transition: transform 0.5s ease-in-out;
+}
+
+.sinradius {
+  border-radius: 0px !important;
+}
+
+.redondo {
+  border-radius: 50%;
+}
+
+
+
+.push-colors {
+  animation: slidePush 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+
+
+
+
+
+/************  Decorador ***********/
+
+.fachada {
+  background-image: url('/decorador/fachada.jpg');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.fachada svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.fachada svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.fachada svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+
+.puerta {
+  background-image: url('/decorador/puerta.jpg');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.puerta svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.puerta svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.puerta svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+
+.sala2 {
+  background-image: url('/decorador/sala2.jpg');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.sala2 svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.sala2 svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.sala2 svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+
+.comedor2 {
+  background-image: url('/decorador/comedor2.jpg');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.comedor2 svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.comedor2 svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.comedor2 svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+.comedor2 svg rect {
+  transition: fill 0.5 ease-in-out;
+}
+
+
+.dormitorio2 {
+  background-image: url('/decorador/dormitorio2.jpg');
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.dormitorio2 svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.dormitorio2 svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.dormitorio2 svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+.dormitorio2 svg rect {
+  transition: fill 0.5 ease-in-out;
+}
+
+.sala {
+  background: url("/decorador/sala.jpg") no-repeat;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.sala svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.sala svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.sala svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+.comedor {
+  background: url("/decorador/comedor.jpg") no-repeat;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.comedor svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.comedor svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.comedor svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+
+.dormitorio {
+  background: url("/decorador/dormitorio.jpg") no-repeat;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.dormitorio svg {
+  mix-blend-mode: multiply;
+  width: 100%;
+}
+
+.dormitorio svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.dormitorio svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+.cuarto {
+  background: url("/decorador/cuarto.jpg") no-repeat;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.cuarto svg {
+  mix-blend-mode: multiply;
+  width: 100%
+}
+
+.cuarto svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.cuarto svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+
+.carro {
+  background: url("/decorador/carro.jpg") no-repeat;
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  background-size: 100% auto;
+  width: 100%;
+}
+
+.carro svg {
+  mix-blend-mode: multiply;
+  width: 100%
+}
+
+.carro svg path {
+  transition: fill 0.5s ease-in-out;
+}
+
+.carro svg polygon {
+  transition: fill 0.5s ease-in-out;
+}
+
+/*************** Fin decorador  ******************/
+
+
+.color-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: red;
+  animation: expandTrack 1s linear forwards;
+}
+
+.rodilloanimate {
+  position: absolute;
+  z-index: 2;
+  animation: movesvg 2s linear forwards;
+  border: 1px solid blue
+}
+
+.menu {
+  position: absolute;
+  z-index: 1;
+  /* Menor que la imagen */
+  bottom: 0;
+  /* Ajustar según la posición deseada */
+  left: 0;
+}
+
+@keyframes deslizarEntrada {
+  from {
+    transform: translateX(-100%);
+    /* Inicia fuera de la pantalla a la izquierda */
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    /* Termina en la posición original */
+    opacity: 1;
+  }
+}
+@keyframes deslizarEntrada2 {
+  from {
+    transform: translateX(100%);
+    /* Inicia fuera de la pantalla a la izquierda */
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    /* Termina en la posición original */
+    opacity: 1;
+  }
+}
+
+.izquierda {
+  animation: deslizarEntrada 1s ease-out forwards;
+}
+.derecha {
+  animation: deslizarEntrada2 1s ease-out forwards;
+}
+@keyframes changecolor {
+  from {
+    background-color: initial;
+  }
+
+  to {
+    background-color: #cb2741;
+  }
+}
+
+@keyframes movesvg {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(400%);
+    opacity: 0;
+  }
+}
+
+#circle1 {
+  animation: rotatederecha 1s linear forwards;
+}
+
+#circle2 {
+  animation: rotateizquierda 1s ease forwards;
+}
+
+#circle3 {
+  animation: rotatederecha 1s linear forwards;
+}
+
+#circle4 {
+  animation: rotateamarillo 1s linear forwards;
+}
+
+#circle5 {
+  animation: rotateizquierda 1s linear forwards;
+}
+
+#circle6 {
+  animation: ajustederecha 1s ease forwards;
+}
+
+#circle7 {
+  animation: ajusteizquierda 1s ease forwards;
+}
+
+#circle8 {
+  animation: ajustederecha 1s ease forwards;
+}
+
+#circulo_grande {
+  animation: bounce 1s ease;
+  transform-origin: center center;
+  animation-delay: 1.2s;
+}
+
+#circulo_negro {
+  animation: clickpush .8s ease;
+  transform-origin: center center;
+  animation-delay: .8s;
+}
+
+#rosa {
+  animation: rotateizquierda 1s ease forwards;
+}
+
+#morado {
+  animation: rotateizquierda 1s ease forwards;
+}
+
+#punto_morado {
+  animation: rotateizquierda 1s ease forwards;
+}
+
+#rojo {
+  animation: rotateizquierda 1s ease forwards;
+}
+
+#punto_rojo {
+  animation: rotateizquierda 1s ease forwards;
+}
+
+#amarillo_azul {
+  animation: rotatederecha 1s ease forwards;
+}
+
+#azul_punto {
+  animation: rotatederecha 1s ease forwards;
+}
+
+#amarillo_verde {
+  animation: rotatederecha 1s ease forwards;
+}
+
+#punto_verde {
+  animation: rotatederecha 1s linear forwards;
+}
+
+#punto_verde_2 {
+  animation: rotatederecha 1s linear forwards;
+}
+
+.primera {
+  animation: push 2s ease;
+}
+
+@keyframes push {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes clickpush {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2)
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-10px);
+    /* Sube el elemento */
+  }
+
+  50% {
+    transform: translateY(0px);
+    /* Baja el elemento un poco más allá de su posición inicial */
+  }
+}
+
+
+@keyframes rotatederecha {
+  from {
+    transform-origin: center center;
+    transform: rotate(200deg);
+  }
+
+  to {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateizquierda {
+  from {
+    transform-origin: center;
+    transform: rotate(-200deg);
+  }
+
+  to {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rotateamarillo {
+  from {
+    transform-origin: center;
+    transform: rotate(-100deg);
+  }
+
+  to {
+    transform-origin: center;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ajustederecha {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform-origin: center center;
+    transform: rotate(100deg);
+  }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes ajusteizquierda {
+  0% {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform-origin: center center;
+    transform: rotate(-100deg);
+  }
+
+  100% {
+    transform-origin: center center;
+    transform: rotate(0deg);
+  }
+}
+
+/* efecto rebote  */
+/* @keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-20px);  Sube el elemento 
+  }
+  50% {
+    transform: translateY(10px);  Baja el elemento un poco más allá de su posición inicial 
+  }
+  75% {
+    transform: translateY(-10px);  Sube el elemento nuevamente, pero no tanto como en el 25% 
+  }
+} */
+
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.circulo {
+  position: absolute;
+  height: 600px;
+  width: 600px;
+  border-radius: 50%;
+  background: #ffdde1;
+  right: -10%;
+  top: -20%;
+  animation: expandcircle 1s linear both;
+}
+
+/* .circulo2 {
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background: #ffedef;
+  right: -10%;
+  top: -20%;
+  animation: expandcircle2 1s linear both;
+  animation-delay: .3s;
+} */
+
+
+@keyframes expandcircle {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@keyframes expandcircle2 {
+  from {
+    width: 0;
+    height: 0;
+  }
+
+  to {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+.porarriba {
+  z-index: 9000000 !important;
+}
+
+.pdf-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+  background: #efefef !important;
+}
+
+.pdf-container object {
+  width: 100%;
+  height: 90vh;
+  overflow-y: auto !important;
+  overflow-x: auto !important;
+  background: #efefef !important;
+}
+
+@media (max-width: 810px) {
+  .pdf-container object {
+    width: 100%;
+    height: 60vh;
+    background: #efefef !important;
+  }
+}
+
+.arribadefi {
+  opacity: 0;
+  animation: slideUpManos 1.5s ease forwards;
+}
+
+.arriba {
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+}
+
+
+.arriba2 {
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: .3s;
+}
+
+.arriba3 {
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: .6s;
+}
+
+.arriba4 {
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+  animation-delay: .9s;
+}
+
+.push {
+  animation: slidePush 1s ease forwards;
+  animation-delay: .9s;
+  opacity: 0;
+}
+
+@keyframes slideUpManos {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidePush {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation chat  */
+.typing-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.typing-indicator span {
+  background-color: #9b9b9b;
+  border-radius: 50%;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 0 2px;
+  /* Animate */
+  animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+@keyframes typing {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.mapaindex {
+  z-index: 10 !important;
+  position: relative !important;
+}
+
+.pre-class {
+  white-space: pre-wrap;
+  /* Permite saltos de línea naturales y espacios */
+  word-wrap: break-word;
+  /* Asegura que las palabras largas se rompan para ajustarse */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.posicionar {
+  z-index: 10000 !important;
+}
+
+.background-carrusel1 {
+  background-image: url('/home/nuevo.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: 'absolute';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+.background-carrusel2 {
+  background-image: url('/home/ban_vinilicas.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-carrusel3 {
+  background-image: url('/home/decorador.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-carrusel4 {
+  background-image: url('/home/ban_automotriz.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sinbordenifocus {
+  border: none !important;
+  outline: none !important;
+}
+
+.backgroundPromociones {
+  background-image: url('/principal/novedades.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 50vh;
+}
+
+.background-novedad-1 {
+  background-image: url('/principal/carpintero.webp');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.background-novedad-2 {
+  background-image: url('/principal/nuevo_producto.webp');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.fluidAnimation {
+  animation: fluid 4s cubic-bezier(0.42, 0, 0.58, 1) 0.5s forwards infinite;
+}
+
+@keyframes fluid {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: translateY(-30px) rotate(0deg) scale(1);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+
+.agrande {
+  transition: all .5s ease !important;
+}
+
+.agrande:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Estilos base para la imagen */
+.efectoimagen {
+  width: 100px;
+  /* Ancho de la imagen */
+  height: 100px;
+  /* Alto de la imagen */
+  margin: 0 auto;
+  /* Centrar horizontalmente */
+  transform: translateY(100%);
+  /* Iniciar la imagen fuera de la pantalla */
+  animation: aparecer 1s ease-in-out forwards;
+  /* Animación de aparición */
+}
+
+.efectotexto {
+  transform: translateY(100%);
+  /* Iniciar la imagen fuera de la pantalla */
+  animation: aparecer 0.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+  /* Animación de aparición */
+  opacity: 0;
+}
+
+.efectotexto2 {
+  transform: translateY(100%);
+  /* Iniciar la imagen fuera de la pantalla */
+  animation: aparecer 0.5s ease-in-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+/* Animación de aparición desde abajo */
+@keyframes aparecer {
+  from {
+    transform: translateY(100%);
+    /* Posición inicial fuera de la pantalla */
+    opacity: 0;
+    /* Opacidad cero */
+  }
+
+  to {
+    transform: translateY(0);
+    /* Posición final en la pantalla */
+    opacity: 1;
+  }
+}
+
+/* Animación de rebote */
+@keyframes rebote {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    /* Posición inicial y final */
+  }
+
+  50% {
+    transform: translateY(-10px);
+    /* Punto más alto del rebote */
+  }
+}
+
+.backgroundtintometrico {
+  background-image: url('/tintometrico/01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: 'absolute';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.backgroundTips {
+  background-image: url('/principal/waves.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.bote-vintek,
+.bote-realtek,
+.bote-automotriz {
+  opacity: 0;
+}
+
+.vintek-text-1,
+.vintek-text-2,
+.text-realtek-1,
+.vintek-text-3,
+.text-realtek-2,
+.text-realtek-3,
+.text-automotriz-1,
+.text-automotriz-2,
+.text-automotriz-3 {
+  color: white !important;
+  opacity: 0;
+}
+
+.hover-parent:hover .font-awesome-icon {
+  color: black;
+}
+
+
+
+/* Gallery3D  */
+:root {
+  --index: calc(1vw + 1vh);
+  --gutter: 30px;
+  --side-small: 26;
+  --side-big: 36;
+  --depth: 4000px;
+  --transition: .75s cubic-bezier(.075, .5, 0, 1)
+}
+
+/* .mega {
+  background: url("/principal/red.webp") no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  font-size: calc(var(--index) * .8);
+  font-family: raleway_c, sans-serif;
+  line-height: 1.75;
+  height: var(--depth);
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  position: relative;
+} */
+
+.container {
+  width: 100%;
+  height: 80%;
+  position: fixed;
+  perspective: 1500px;
+  /* border: 5px solid white; */
+}
+
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition), opacity .75s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.frame-media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
+}
+
+.text-right-3d {
+  position: relative;
+  left: 50vw;
+}
+
+.text-left-3d {
+  position: relative;
+  right: 18vw;
+}
+
+
+.section-dist {
+  background-image: url('/principal/distribuidor.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50%;
+}
+
+
+
+.backSucursales {
+  background-image: url('/sucursales/sucursales.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  object-fit: cover;
+  width: 100%;
+  height: 50vh;
+  /* padding-bottom: 20%; */
+}
+
+
+.sinfocus {
+  border: none !important;
+  outline: none !important;
+
+}
+
+.color-sucursales {
+  background-color: #dfe3e6 !important;
+}
+
+/* Pagina Pricnipal  */
+
+.bannerCril {
+  background-image: url('/principal/color_cril.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  /* height: 100vh; */
+  position: absolute;
+}
+
+.banenrDecorativa {
+  background-image: url('/principal/fondo01.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* height: 100vh; */
+  /* position: absolute; */
+}
+
+.banenrContacto {
+  background-image: url('/principal/fondo_general.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* height: 100vh; */
+  /* position: absolute; */
+}
+
+.background-swiper1 {
+  background-image: url('/principal/salacolor.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-swiper2 {
+  background-image: url('/principal/swiper2.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-swiper3 {
+  background-image: url('/principal/swiper3.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.background-swiper4 {
+  background-image: url('/principal/swiper4.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.background-tips {
+  background-image: url('/principal/tips.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 35%;
+}
+
+.background-discover {
+  background-image: url('/principal/04.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 45%;
+}
+
+.tinto {
+  border-radius: 100% !important;
+}
+
+.scale-110-active {
+  transform: scale(1.20);
+}
+
+.macflurri{
+  width: 50% !important;
+}
+@media (max-width: 990px) {
+  .macflurri{
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .macflurri{
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 370px) {
+  .macflurri{
+    width: 80% !important;
+  }
+}
+
+.background-promocion{
+  background-image: url('/consumidores/ban_promocion.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: 'absolute';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.fondoPromociones {
+  background-image: url('/promociones/caida_cielo/base.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  position: 'absolute';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh;
+  padding-bottom: 43%;
+}
+
