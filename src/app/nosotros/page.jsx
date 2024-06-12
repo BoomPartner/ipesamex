@@ -2,7 +2,6 @@ import React from 'react'
 import About from '@/components/Nosotros'
 import { Suspense } from 'react'
 import Isotipo from '@/components/Isotipo'
-import Gallery3D from '@/components/Prueba'
 
 export const metadata = {
   title: "Nosotros",
