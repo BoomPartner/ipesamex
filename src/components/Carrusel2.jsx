@@ -92,7 +92,7 @@ const CarruselSecundario = ({ width, element }) => {
                 className="swiperInicio"
             >
 
-                <SwiperSlide className='swiper2-slide-1' style={{
+                {/* <SwiperSlide className='swiper2-slide-1' style={{
                     position: 'relative',
                     width: '100%',
                     height: '0',
@@ -118,7 +118,7 @@ const CarruselSecundario = ({ width, element }) => {
 
 
                     </div>
-                </SwiperSlide>
+                </SwiperSlide> */}
 
 
 

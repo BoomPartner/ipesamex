@@ -850,8 +850,8 @@ export const articulos = [
         id_number: 40,
         name: "Color Para Cemento",
         categorie: "decorativa",
-        subcategorie: "impermeabilizantes",
-        microcategorie: "impermeabilizantes",
+        subcategorie: "",
+        microcategorie: "",
         presentation: ["1 kg"],
         tiempo: "",
         color: "",
@@ -4448,7 +4448,7 @@ export const novedades = [
     {
         id: 1,
         name: "Promocion caída del cielo, 20% de descuento en impermeabilizantes",
-        description: `Promoción válida hasta el 1 de julio del 2024 o hasta agotar existencias. 
+        description: `Promoción válida hasta el 31 de julio del 2024 o hasta agotar existencias. 
         Aplica solo en tiendas participantes. 
         Consulta productos, términos y condiciones,
         No aplica con otras promociones. Aplica restricciones. Productos participantes: 
