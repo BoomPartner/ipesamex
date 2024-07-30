@@ -222,6 +222,7 @@ export const articulos = [
         acabados: "Incoloro-transparente",
         dirigido: "Particular, oficios y profesional",
         ficha: ["/fichas/selladores/SELLATEK_5X1.pdf"],
+        seguridad: ["/seguridad/decorativa/SELLATEK_5X1.pdf"],
     },
     
     {
@@ -4448,13 +4449,13 @@ export const novedades = [
     {
         id: 1,
         name: "Promocion caída del cielo, 20% de descuento en impermeabilizantes",
-        description: `Promoción válida hasta el 31 de julio del 2024 o hasta agotar existencias. 
+        description: `Promoción válida hasta el 30 de septiembre del 2024 o hasta agotar existencias. 
         Aplica solo en tiendas participantes. 
         Consulta productos, términos y condiciones,
         No aplica con otras promociones. Aplica restricciones. Productos participantes: 
         Imper Ruf® 3 años. Imper Lux® 5 años, Imper Lux Fibratado 5 años, Imper Cril® 7 años, impermeabilizantes de muro, Wall Cover Eco® 3 años y Wall Cover Plus® 5 años en presentaciones 18 y 19L.
         Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA.`,
-        imagen: "/promociones/caida_cielo/promo.webp",
+        imagen: "/promociones/caida_cielo/promo.jpg",
         enlace: "/productos",
         categoria: "decorativa",
         microcategoria: "impermeabilizantes"
