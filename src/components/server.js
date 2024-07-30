@@ -221,7 +221,7 @@ export const articulos = [
         promedio: 40,
         acabados: "Incoloro-transparente",
         dirigido: "Particular, oficios y profesional",
-        ficha: ["/fichas/selladores/SELLATEK_5X1.pdf"],
+        ficha: ["/fichas/selladores/SELLATEK_5X1_.pdf"],
         seguridad: ["/seguridad/decorativa/SELLATEK_5X1.pdf"],
     },
     
