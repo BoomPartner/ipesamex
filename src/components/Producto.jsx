@@ -331,6 +331,26 @@ const ProductoSelected = ({ valor }) => {
                       </div>
                   }
                   {
+                    windowWidth < 800 || browser == "Mac" ?
+                      <div className="w-full -ml-2 rounded-lg text-gray-600 flex items-center uppercase zoom-producto"
+                        style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
+                        <a href={articulo.ficha2} download className='font-bold'>
+                          <FontAwesomeIcon icon={faFilePdf} size='3x' className='mr-4'></FontAwesomeIcon>
+                          {browser == "Mac" ? "Ficha Técnica 100% Acrílico" : windowWidth < 800 ? "Ficha Técnica 100% Acrílico" : "Ficha Técnica 100% Acrílico"}
+                        </a>
+                      </div> : <div className="w-full flex items-center cursor-pointer zoom-producto" 
+                      onClick={() => handleModalFicha(articulo.ficha2)}>
+                        <div className="">
+                          <FontAwesomeIcon icon={faFilePdf} size='3x'
+                            className='cursor-pointer'
+                            color='gray'
+                          ></FontAwesomeIcon>
+                        </div>
+                        <div className="ml-4"><Typography as={'h5'} variant='h5' color='gray'>Ficha Técnica 100% Acrílico</Typography></div>
+
+                      </div>
+                  }
+                  {
                     articulo.seguridad && (
 
                       windowWidth < 800 || browser == "Mac" ?
