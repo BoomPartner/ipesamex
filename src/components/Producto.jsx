@@ -378,6 +378,34 @@ const ProductoSelected = ({ valor }) => {
                     )
                   }
                   {
+                    articulo.seguridad2 && (
+
+                      windowWidth < 800 || browser == "Mac" ?
+                        <div className="w-full rounded-lg -ml-2 text-gray-600 flex items-center uppercase zoom-producto"
+                          style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
+                          <a href={articulo.seguridad2} download className='font-bold'> 
+                          <FontAwesomeIcon icon={faFileShield} size='3x' 
+                          className='mr-4'></FontAwesomeIcon> 
+                          {browser == "Mac" ? "Hoja de seguridad 100% Acrilica" : windowWidth < 800 ? "Hoja de seguridad 100% Acrilica" : "Hoja de seguridad 100% Acrilica"}</a>
+                        </div> : <div className="w-full flex items-center cursor-pointer zoom-producto" 
+                        onClick={() => handleModalFicha(articulo.seguridad2)}>
+
+                          <div className="">
+                            <FontAwesomeIcon icon={faFileShield}
+                              size='3x'
+                              color='gray'
+                              className='cursor-pointer'
+                            ></FontAwesomeIcon>
+                          </div>
+                          <div className="ml-4">
+                            <Typography as={'h5'} className='text-gray-600' variant='h5'>Hoja de seguridad 100% Acrilica</Typography>
+                          </div>
+                        </div>
+
+                    )
+                  }
+
+                  {
                     articulo.color ? <div className="w-full flex items-center cursor-pointer zoom-producto" onClick={handleModalColores}>
                       <div className="" >
                         <FontAwesomeIcon

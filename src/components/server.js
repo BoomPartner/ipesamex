@@ -223,7 +223,8 @@ export const articulos = [
         dirigido: "Particular, oficios y profesional",
         ficha: ["/fichas/selladores/SELLATEK_5x1.pdf"],
         ficha2: ["/fichas/selladores/SELLATEK_5x1_acr.pdf"],
-        seguridad: ["/seguridad/decorativa/SELLATEK_5X1.pdf"],
+        seguridad: ["/seguridad/decorativa/SELLATEK_5010.pdf"],
+        seguridad2: ["/seguridad/decorativa/SELLATEK_5X1.pdf"],
     },
     
     {
@@ -1707,7 +1708,7 @@ export const articulos = [
         microcategorie: "reductores",
         presentation: ["1 L", "4 L"],
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
-        description: ["Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una de solventes aromáticos y oxigenados, libres de metanol."],
+        description: ["Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una mezcla de solventes aromáticos y oxigenados, libres de metanol."],
         ficha: ["/fichas/automotriz/ACRILICO_ALTO_BRILLO_REDUCTOR_ALTA_TEMPERATURA.pdf"],
         seguridad: ["/seguridad/automotriz/REDUCTOR-ACRILICO-ALTA-TEMPERATURA.pdf"]
     },
@@ -1720,7 +1721,7 @@ export const articulos = [
         microcategorie: "reductores",
         presentation: ["1 L", "4 L"],
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
-        description: ["Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una de solventes aromáticos y oxigenados, libres de metanol."],
+        description: ["Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una mezcla de solventes aromáticos y oxigenados, libres de metanol."],
         ficha: ["/fichas/automotriz/ACRILICO_ALTO_BRILLO_REDUCTOR_ALTA_TEMPERATURA.pdf"],
         seguridad: ["/seguridad/automotriz/COLORCRIL-REDUCTOR-ACRILICO-ALTO-BRILLO.pdf"]
     },
