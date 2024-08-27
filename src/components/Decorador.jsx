@@ -5,7 +5,9 @@ import { Collapse, Card } from '@material-tailwind/react';
 import Image from 'next/image';
 import Link from "next/link";
 import { colores} from './server';
-import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { Swiper, SwiperSlide } from "swiper/react";
+// swiper/modules
 import { decorador } from './server';
 
 const Decorador = () => {
@@ -310,6 +312,8 @@ const Decorador = () => {
                             </div>
                         </div>
                     </div>
+
+
 
                     <div className={`${windowWidth < 1170 ? "block" : "flex"}`}>
 
