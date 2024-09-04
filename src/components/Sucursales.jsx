@@ -8,7 +8,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 
 
-
+var postalCode=''; //SGGC PINCHE LUIS PENDEJIN
 const Sucursales = () => {
     
     const [windowWidth, setWindowWidth] = useState(0);
@@ -30,10 +30,10 @@ const Sucursales = () => {
 
     }, []);
 
-
+    // var postalCode='';
     const handleCode = (value) => {
         if (value) {
-            postalCode = value;
+           postalCode = value;
         } else {
             setPositions(locations)
             setMensaje(false)
