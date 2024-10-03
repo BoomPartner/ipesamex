@@ -1,6 +1,7 @@
 "use client";
 import React, {useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -34,73 +35,73 @@ const Carrusel = ({ width }) => {
             switch (prueba) {
 
 
-                case "swiper-slide-promo":
-                    gsap.fromTo('.swiper-slide-promo .promo1', {
-                        y: '100%',
-                        opacity: 0,
-                    }, {
-                        y: '0%',
-                        opacity: 1,
-                        ease: 'back.out(2.7)',
-                        duration: 1,
+                // case "swiper-slide-promo":
+                //     gsap.fromTo('.swiper-slide-promo .promo1', {
+                //         y: '100%',
+                //         opacity: 0,
+                //     }, {
+                //         y: '0%',
+                //         opacity: 1,
+                //         ease: 'back.out(2.7)',
+                //         duration: 1,
 
-                    });
-                    gsap.fromTo('.promo2', {
-                        x: '50%',
-                        opacity: 0,
-                    }, {
-                        x: '0%',
-                        opacity: 1,
-                        ease: 'power3.out',
-                        duration: 1,
-                        delay: 0.5,
-                    });
+                //     });
+                //     gsap.fromTo('.promo2', {
+                //         x: '50%',
+                //         opacity: 0,
+                //     }, {
+                //         x: '0%',
+                //         opacity: 1,
+                //         ease: 'power3.out',
+                //         duration: 1,
+                //         delay: 0.5,
+                //     });
 
-                    gsap.fromTo('.promo3', {
-                        scale: 0,
-                        opacity: 0,
-                    }, {
-                        scale: 1,
-                        opacity: 1,
-                        ease: 'power3.out',
-                        duration: 1,
-                        delay: 1
-                    });
+                //     gsap.fromTo('.promo3', {
+                //         scale: 0,
+                //         opacity: 0,
+                //     }, {
+                //         scale: 1,
+                //         opacity: 1,
+                //         ease: 'power3.out',
+                //         duration: 1,
+                //         delay: 1
+                //     });
 
-                    gsap.fromTo('.promo4', {
-                        x: '100%',
-                        opacity: 0,
-                    }, {
-                        x: '0%',
-                        opacity: 1,
-                        ease: 'power3.out',
-                        duration: 1,
-                        delay: 1
-                    });
-                    gsap.fromTo('.promo5', {
-                        scale: 0,
-                        opacity: 0,
-                    }, {
-                        scale: 1,
-                        opacity: 1,
-                        ease: 'power3.out',
-                        duration: 1,
-                        delay: 1
-                    });
-                    gsap.fromTo('.promo6', {
-                        x: '-100%',
-                        opacity: 0,
-                    }, {
-                        x: '0%',
-                        opacity: 1,
-                        ease: 'power3.out',
-                        duration: 1,
-                        delay: 1
-                    });
+                //     gsap.fromTo('.promo4', {
+                //         x: '100%',
+                //         opacity: 0,
+                //     }, {
+                //         x: '0%',
+                //         opacity: 1,
+                //         ease: 'power3.out',
+                //         duration: 1,
+                //         delay: 1
+                //     });
+                //     gsap.fromTo('.promo5', {
+                //         scale: 0,
+                //         opacity: 0,
+                //     }, {
+                //         scale: 1,
+                //         opacity: 1,
+                //         ease: 'power3.out',
+                //         duration: 1,
+                //         delay: 1
+                //     });
+                //     gsap.fromTo('.promo6', {
+                //         x: '-100%',
+                //         opacity: 0,
+                //     }, {
+                //         x: '0%',
+                //         opacity: 1,
+                //         ease: 'power3.out',
+                //         duration: 1,
+                //         delay: 1
+                //     });
 
 
 
-                    break;
+                //     break;
 
                 case "swiper-slide-2":
                     gsap.fromTo('.swiper-slide-2 .bote-vintek', {
@@ -272,141 +273,141 @@ const Carrusel = ({ width }) => {
         }
     };
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        gsap.fromTo('.swiper-slide-promo .promo1', {
-            scale: 0,
-            opacity: 0,
-        }, {
-            scale: 1,
-            opacity: 1,
-            ease: 'elastic.out(1, 0.6)', 
-            duration: 3,
-            onComplete: function () {
+    //     gsap.fromTo('.swiper-slide-promo .promo1', {
+    //         scale: 0,
+    //         opacity: 0,
+    //     }, {
+    //         scale: 1,
+    //         opacity: 1,
+    //         ease: 'elastic.out(1, 0.6)', 
+    //         duration: 3,
+    //         onComplete: function () {
                 
-                gsap.to('.swiper-slide-promo .promo1', {
-                    y: '+=10', 
-                    x: 'random(-10, 10)', 
-                    rotation: 'random(-5, 5)', 
-                    repeat: -1,
-                    yoyo: true, 
-                    ease: 'power1.inOut',
-                    duration: 4, 
-                });
-            }
-        });
+    //             gsap.to('.swiper-slide-promo .promo1', {
+    //                 y: '+=10', 
+    //                 x: 'random(-10, 10)', 
+    //                 rotation: 'random(-5, 5)', 
+    //                 repeat: -1,
+    //                 yoyo: true, 
+    //                 ease: 'power1.inOut',
+    //                 duration: 4, 
+    //             });
+    //         }
+    //     });
 
-        gsap.fromTo('.promo2', {
-            scale: 0,
-            opacity: 0,
-        }, {
-            scale: 1,
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 1,
-            delay: 0.5,
-            onComplete: function () {
+    //     gsap.fromTo('.promo2', {
+    //         scale: 0,
+    //         opacity: 0,
+    //     }, {
+    //         scale: 1,
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 1,
+    //         delay: 0.5,
+    //         onComplete: function () {
                 
-                gsap.to('.swiper-slide-promo .promo2', {
-                    y: '+=10', 
-                    x: gsap.utils.random(-10,10,true), // Moverse aleatoriamente en el eje X
-                    rotation: gsap.utils.random(-5, 5,true), // Rotación aleatoria
-                    repeat: -1, // Animación infinita
-                    yoyo: true, // Reversa de la animación
-                    ease: 'power1.inOut', // Suavizado
-                    duration: 3, // Duración aleatoria
-                });
-            }
-        });
+    //             gsap.to('.swiper-slide-promo .promo2', {
+    //                 y: '+=10', 
+    //                 x: gsap.utils.random(-10,10,true), // Moverse aleatoriamente en el eje X
+    //                 rotation: gsap.utils.random(-5, 5,true), // Rotación aleatoria
+    //                 repeat: -1, // Animación infinita
+    //                 yoyo: true, // Reversa de la animación
+    //                 ease: 'power1.inOut', // Suavizado
+    //                 duration: 3, // Duración aleatoria
+    //             });
+    //         }
+    //     });
 
-        gsap.fromTo('.promo3', {
-            scale: 0,
-            opacity: 0,
-        }, {
-            scale: 1,
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 1,
-            delay: 1,
-            onComplete: function () {
+    //     gsap.fromTo('.promo3', {
+    //         scale: 0,
+    //         opacity: 0,
+    //     }, {
+    //         scale: 1,
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 1,
+    //         delay: 1,
+    //         onComplete: function () {
                
-                gsap.to('.swiper-slide-promo .promo3', {
-                    y: '+=10', 
-                    x: gsap.utils.random(-10,10,true), 
-                    rotation: gsap.utils.random(-5, 5,true), 
-                    repeat: -1,
-                    yoyo: true, 
-                    ease: 'power1.inOut', 
-                    duration: 4, 
-                });
-            }
-        });
+    //             gsap.to('.swiper-slide-promo .promo3', {
+    //                 y: '+=10', 
+    //                 x: gsap.utils.random(-10,10,true), 
+    //                 rotation: gsap.utils.random(-5, 5,true), 
+    //                 repeat: -1,
+    //                 yoyo: true, 
+    //                 ease: 'power1.inOut', 
+    //                 duration: 4, 
+    //             });
+    //         }
+    //     });
 
 
-        gsap.fromTo('.promo4', {
-            x: '100%',
-            opacity: 0,
-        }, {
-            x: '0%',
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 1,
-            delay: 1,
-            onComplete: function() {
+    //     gsap.fromTo('.promo4', {
+    //         x: '100%',
+    //         opacity: 0,
+    //     }, {
+    //         x: '0%',
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 1,
+    //         delay: 1,
+    //         onComplete: function() {
                
-                const tl = gsap.timeline({ repeat: -1, yoyo: true, ease: 'power1.inOut' });
+    //             const tl = gsap.timeline({ repeat: -1, yoyo: true, ease: 'power1.inOut' });
         
-                tl.to('.swiper-slide-promo .promo4', {
-                    scale: 1.0, 
-                    duration: 2,
-                }).to('.swiper-slide-promo .promo4', {
-                    scale: 1.02, 
-                    duration: 0.8, 
-                })
-            }
-        });
-        gsap.fromTo('.promo5', {
-            scale: 0,
-            opacity: 0,
-        }, {
-            scale: 1,
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 1,
-            delay: 1
-        });
-        gsap.fromTo('.promo6', {
-            x: '-100%',
-            opacity: 0,
-        }, {
-            x: '0%',
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 1,
-            delay: 1
-        });
-        gsap.fromTo('.promo7', {
-            scale: 0,
-            opacity: 0,
-        }, {
-            scale: 1,
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 2,
-            delay: 1 
-        });
-        gsap.fromTo('.promo8', {
-            scale: 0,
-            opacity: 0,
-        }, {
-            scale: 1,
-            opacity: 1,
-            ease: 'power3.out',
-            duration: 1,
-            delay: 1 
-        });
+    //             tl.to('.swiper-slide-promo .promo4', {
+    //                 scale: 1.0, 
+    //                 duration: 2,
+    //             }).to('.swiper-slide-promo .promo4', {
+    //                 scale: 1.02, 
+    //                 duration: 0.8, 
+    //             })
+    //         }
+    //     });
+    //     gsap.fromTo('.promo5', {
+    //         scale: 0,
+    //         opacity: 0,
+    //     }, {
+    //         scale: 1,
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 1,
+    //         delay: 1
+    //     });
+    //     gsap.fromTo('.promo6', {
+    //         x: '-100%',
+    //         opacity: 0,
+    //     }, {
+    //         x: '0%',
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 1,
+    //         delay: 1
+    //     });
+    //     gsap.fromTo('.promo7', {
+    //         scale: 0,
+    //         opacity: 0,
+    //     }, {
+    //         scale: 1,
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 2,
+    //         delay: 1 
+    //     });
+    //     gsap.fromTo('.promo8', {
+    //         scale: 0,
+    //         opacity: 0,
+    //     }, {
+    //         scale: 1,
+    //         opacity: 1,
+    //         ease: 'power3.out',
+    //         duration: 1,
+    //         delay: 1 
+    //     });
 
-    }, [])
+    // }, [])
 
 
 
@@ -419,7 +420,7 @@ const Carrusel = ({ width }) => {
                 className="swiperInicio"
             >
 
-                <SwiperSlide className='swiper-slide-promo' style={{
+                {/* <SwiperSlide className='swiper-slide-promo' style={{
                     position: 'relative',
                     width: '100%',
                     height: '0',
@@ -463,9 +464,9 @@ const Carrusel = ({ width }) => {
 
 
                     </div>
-                </SwiperSlide>
+                </SwiperSlide> */}
 
-                <SwiperSlide className='swiper-slide-1' style={{
+                {/* <SwiperSlide className='swiper-slide-1' style={{
                     position: 'relative',
                     width: '100%',
                     height: '0',
@@ -476,7 +477,7 @@ const Carrusel = ({ width }) => {
 
                     </div>
 
-                </SwiperSlide>
+                </SwiperSlide> */}
 
                 <SwiperSlide className='swiper-slide-2' style={{
                     position: 'relative',
