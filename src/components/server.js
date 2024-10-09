@@ -4450,6 +4450,14 @@ export const colores = [
 export const novedades = [
     {
         id: 1,
+        name: "Nueva Visión es de colores",
+        description: `Promoción valida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA®`,
+        imagen: "/promociones/1a1.png",
+        enlace: "/productos",
+        categoria: "decorativa",
+        microcategoria: "impermeabilizantes"
+    },{
+        id: 2,
         name: "Promocion caída del cielo, 20% de descuento en impermeabilizantes",
         description: `Promoción válida hasta el 30 de septiembre del 2024 o hasta agotar existencias. 
         Aplica solo en tiendas participantes. 
@@ -4463,7 +4471,7 @@ export const novedades = [
         microcategoria: "impermeabilizantes"
     },
     {
-        id: 2,
+        id: 3,
         name: "20% de descuento ",
         description: "Promoción válida hasta el 28 de abril del 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones, No aplica con otras promociones. Aplica restricciones. Productos participantes: Pintura vinil acrilica VINIPESA® acabo mate o satín y esmalte Tropimar®, en presentaciones  1, 4 y 19 L. Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA.",
         imagen: "/consumidores/promocion.webp",
@@ -4472,8 +4480,8 @@ export const novedades = [
         microcategoria: "vinilicas"
     },
     {
-        id: 3,
-        name: "Nuevo Relledanor Premium Hyper Light",
+        id: 4,
+        name: "Nuevo Rellenador Premium Hyper Light",
         description: "Es un rellenador premium, al ser más ligero es mucho más fácil de lijar, reduce por mucho la porosidad y tiene excelente adherencia.",
         imagen: "/principal/nuevo_producto.webp",
         enlace: "/productos",
