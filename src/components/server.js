@@ -4450,7 +4450,7 @@ export const colores = [
 export const novedades = [
     {
         id: 1,
-        name: "Nueva Visión es de colores",
+        name: "Nuestra Visión es de colores",
         description: `Promoción valida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA®`,
         imagen: "/promociones/1a1.png",
         enlace: "/productos",
