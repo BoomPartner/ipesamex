@@ -291,7 +291,7 @@ export function NavbarResponsive({ handleNosotros }) {
                         </div>
 
                         <div className="mt-5">
-                            <Link href={"http://ipesaclientes.dnsalias.net/clientesipesaweb/auth/auth.aspx"} onClick={() => { itemNavbar("clientes"); setOpenNav(!openNav) }} className={
+                            <Link href={"https://clientes.ipesamex.com"} onClick={() => { itemNavbar("clientes"); setOpenNav(!openNav) }} className={
                                 `mt-4 cursor-pointer hover:text-[#c50411] sm:mx-6 uppercase ${activeLink === "clientes" ? "text-[#c50411]" : ""
                                 }`
                             }

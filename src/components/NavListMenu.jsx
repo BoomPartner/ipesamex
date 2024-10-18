@@ -12,7 +12,7 @@ import Link from "next/link";
 const menuItems = [
     {
         title: "Portal de Clientes",
-        enlace: `http://ipesaclientes.dnsalias.net/clientesipesaweb/auth/auth.aspx`,
+        enlace: `https://clientes.ipesamex.com`,
     },
     {
         title: "Laboratorio Color Cril",
