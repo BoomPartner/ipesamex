@@ -129,7 +129,7 @@ const SistemaTintometrico = () => {
                     <div className={`${windowWidth < 460 ? "w-[70%]" : "w-[60%]"}`}>
                         <Typography as={"p"} variant={"paragraph"} style={{ fontSize: windowWidth < 1050 ? "15px" : "24px" }} className='mb-10'>Bienvenido al
                             <span className='font-bold uppercase' style={{ fontSize: windowWidth < 1050 ? "18px" : "24px" }}> Sistema Tintométrico</span>, una avanzada tecnología en el universo de
-                            la pintura que ofrece una infinidad de colores con la máxima calidad de todos nuestrso productos.</Typography>
+                            la pintura que ofrece una infinidad de colores con la máxima calidad de todos nuestros productos.</Typography>
                         <Button
                             href="#"
                             className='text-gray-700 bg-[#fefefe] p-3 rounded-lg texto uppercase'
@@ -164,7 +164,7 @@ const SistemaTintometrico = () => {
                     </div>
 
                     <div className="w-full flex justify-center">
-                        <Image src={"/tintometrico/maquina.webp"} width={1000} height={1000} alt='sitema-tintometrico' className='paleta w-[50%] mx-auto'></Image>
+                        <Image src={"/tintometrico/maquinaIP.png"} width={1000} height={1000} alt='sitema-tintometrico' className='paleta w-[50%] mx-auto'></Image>
                     </div>
 
                 </div>
@@ -174,7 +174,7 @@ const SistemaTintometrico = () => {
                 <div id='automatico' className={`w-full ${windowWidth < 1090 ? "" : "flex"} overflow-hidden`}>
 
                     <div className="w-full flex justify-center">
-                        <Image src={"/tintometrico/equipo_automatico.webp"} width={1000} height={1000} alt='sitema-tintometrico' className={`w-[50%] mx-auto ${isElementVisible2 ? "izquierda" : ""}`}></Image>
+                        <Image src={"/tintometrico/tintoArmado.png"} width={1000} height={1000} alt='sitema-tintometrico' className={`w-[50%] mx-auto ${isElementVisible2 ? "izquierda" : ""}`}></Image>
                     </div>
 
                     <div className="w-full p-10 flex flex-col items-center justify-center">
@@ -186,7 +186,7 @@ const SistemaTintometrico = () => {
                         </div>
                         <div className="">
                             <Typography as={"h4"} variant={windowWidth < 900 ? "h5" : "h4"} className='efectotexto1 mt-24'>
-                               Dosificadoar por computadora de fácil operación, su diseño permite que la recarga de colorante se realice de manera cómoda, ademas tiene el tamaño ideal para adaptarse en cualquier espacio.
+                               Dosificador por computadora de fácil operación, su diseño permite que la recarga de colorante se realice de manera cómoda, además tiene el tamaño ideal para adaptarse en cualquier espacio.
                             </Typography>
                         </div>
 

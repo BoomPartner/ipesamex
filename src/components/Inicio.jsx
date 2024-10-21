@@ -732,7 +732,7 @@ const Inicio = () => {
                                 <Typography as={'h1'} variant={`${windowWidth < 1280 ? "h3" : 'h1'}`}
                                     className={`uppercase ${isElementVisible3 ? "arriba" : ""}`}>Experimenta el color en tu vida</Typography>
                             </div>
-                            <Typography as={'h3'} variant='h3' className={`${isElementVisible3 ? "arriba2" : ""}`}><strong>IPESA</strong> transforma tu próximo proyecto en una realidad vibrante, ofreciéndote
+                            <Typography as={'h3'} variant='h3' className={`${isElementVisible3 ? "arriba2" : ""}`}><strong>IPESA®</strong> transforma tu próximo proyecto en una realidad vibrante, ofreciéndote
                                 herramientas de color avanzadas para elegir los tonos exactos que materializarán tu visión creativa.</Typography>
                             <div className={`w-full grid  ${windowWidth < 500 ? "" : "grid-cols-2"}  gap-5`}>
                                 <Link href={"/colores"} className={`mt-10 bg-[#c50411] text-center p-2 rounded-lg text-white font-semibold uppercase ${isElementVisible3 ? "arriba4" : ""}`}>Gama de colores</Link>
@@ -764,7 +764,7 @@ const Inicio = () => {
                     <div className="w-full p-10">
                         <div className="w-full mb-10">
                             <Typography as={'h3'} variant={`${windowWidth < 1280 ? "h3" : 'h2'}`}
-                                className={`uppercase `}>¿No sabes cuantos litros necesitas?</Typography>
+                                className={`uppercase `}>¿No sabes cuántos litros necesitas?</Typography>
                         </div>
                         <Typography as={'h5'} variant='h5' className={``}>Puedes ocupar nuestro calculador con cualquiera de nuestros productos.</Typography>
 
@@ -785,12 +785,12 @@ const Inicio = () => {
                         <div className={windowWidth < 1212 ? "w-[100%] p-5" : "w-[50%] p-10 transition-all duration-500"}>
 
                             <Typography variant={windowWidth < 950 ? `h3` : "h1"} color='black'
-                                className=''>DISTRIBUIDOR IPESA</Typography>
+                                className=''>DISTRIBUIDOR IPESA®</Typography>
                             <Typography as={"p"} variant={"small"} color='black' className={`mt-10 text-left ${isElementVisible5 ? "arriba" : ""}`} style={{ fontSize: "16px" }}>
-                                Únete a nuestra red de distribuidores, en IPESA valoramos la calidad, la confianza y colaboración mutua, como distribuidor de nuestra marca tendrás acceso a una amplia gama de productos de alta calidad, así como a nuestro respaldo y apoyo continuo para alcanzar tus metas comerciales. Además, ofrecemos condiciones comerciales competitivas, financiamientos y herramientas de venta.
+                                Únete a nuestra red de distribuidores, en IPESA® valoramos la calidad, la confianza y colaboración mutua, como distribuidor de nuestra marca tendrás acceso a una amplia gama de productos de alta calidad, así como a nuestro respaldo y apoyo continuo para alcanzar tus metas comerciales. Además, ofrecemos condiciones comerciales competitivas, financiamientos y herramientas de venta.
                             </Typography>
                             <Typography variant={"small"} color='black' className={`mt-10 text-left ${isElementVisible5 ? "arriba2" : ""}`} style={{ fontSize: "16px" }}>
-                                Si estás interesado en formar parte de nuestra familia de distribuidores IPESA no dudes en ponerte en contacto con nosotros para obtener más información.
+                                Si estás interesado en formar parte de nuestra familia de distribuidores IPESA® no dudes en ponerte en contacto con nosotros para obtener más información.
                             </Typography>
                             <Typography as={'h5'} variant={"h5"} color='black' style={{ fontSize: "16px" }} className={`mt-5 text-left ${isElementVisible5 ? "arriba2" : ""}`}>
                                 ¡Conviértete en un socio exitoso con una gran compañía en expansión!

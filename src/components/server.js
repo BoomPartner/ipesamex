@@ -43,7 +43,7 @@ export const articulos = [
         color: "vintek",
         imagen: "/articulos/vinilicas/vintek.png",
         subtitle: ["La pintura de los profesionales"],
-        description: ["Pintura vinil acrílica super brillante de extraordinario desempeño y lavabilidad, ideal para espacios interiores y exteriores."],
+        description: ["Pintura vinil acrílica súper brillante de extraordinario desempeño y lavabilidad, ideal para espacios interiores y exteriores."],
         atributos: ["Máximo poder cubriente y durabilidad.","Resistente a la intemperie, los rayos UV e ideal para ambientes húmedos.","Excelente nivelación que brinda un acabado uniforme."],
         rendimiento: "10 a 12 m2 / L",
         promedio: 13,
@@ -4451,7 +4451,7 @@ export const novedades = [
     {
         id: 1,
         name: "Nuestra Visión es de colores",
-        description: `Promoción valida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA®`,
+        description: `Promoción válida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción, consulta con tu distribuidor autorizado IPESA®`,
         imagen: "/promociones/1a1.png",
         enlace: "/productos",
         categoria: "decorativa",
@@ -4481,7 +4481,7 @@ export const novedades = [
     },
     {
         id: 4,
-        name: "Nuevo Rellenador Premium Hyper Light",
+        name: "Nuestro Rellenador Premium Hyper Light",
         description: "Es un rellenador premium, al ser más ligero es mucho más fácil de lijar, reduce por mucho la porosidad y tiene excelente adherencia.",
         imagen: "/principal/nuevo_producto.webp",
         enlace: "/productos",
@@ -4495,7 +4495,7 @@ export const consumidores = [
     {
         name: "Particulares",
         imagen: "/consumidores/particulares.webp",
-        description: "Transforma tu hogar en un oasis de color y estilo con nuestra pintura IPESA® de la más alta calidad. Nuestros productos están diseñados para brindarte durabilidad, fácilidad de aplicación y una amplia gama de colores para que puedas expresar tu creatividad en cada espacio de tu hogar.",
+        description: "Transforma tu hogar en un oasis de color y estilo con nuestra pintura IPESA® de la más alta calidad. Nuestros productos están diseñados para brindarte durabilidad, facilidad de aplicación y una amplia gama de colores para que puedas expresar tu creatividad en cada espacio de tu hogar.",
         clase: "card-animate"
     },
     {
@@ -4507,7 +4507,7 @@ export const consumidores = [
     {
         name: "Profesional",
         imagen: "/consumidores/profesional.webp",
-        description: "Eleva la calidad de tus proyectos con nuestro portafolio de recubrimientos, diseñados para satisfacer la demanda de los proyectos mas exigentes, nuestras pinturas ofrecen: durabilidad, resistencia y una amplia variedad de colores para que puedas ofrecer a tus clientes resultados excepcionales en cada trabajo.",
+        description: "Eleva la calidad de tus proyectos con nuestro portafolio de recubrimientos, diseñados para satisfacer la demanda de los proyectos más exigentes, nuestras pinturas ofrecen: durabilidad, resistencia y una amplia variedad de colores para que puedas ofrecer a tus clientes resultados excepcionales en cada trabajo.",
         clase: "card-animate3"
     }
 ]
@@ -4998,21 +4998,21 @@ export const tintometricos = [
         id: 1,
         title: "Equipo",
         description: " PC con software pre cargado para igualación de color.",
-        imagen: "/tintometrico/pintura_base.webp",
+        imagen: "/tintometrico/maquinaFTA.png",
         clase: "card-animate"
     },
     {
         id: 2,
         title: "Dosificador",
         description: "Dosificador automático secuencial con ajuste para adaptar el tamaño de cada uno de los envases.",
-        imagen: "/tintometrico/dosificador.webp",
+        imagen: "/tintometrico/maquinaFTB.png",
         clase: "card-animate2"
     },
     {
         id: 3,
         title: "Mezclador",
         description: "Mezclador giroscópico de alto rendimiento y temporizador mecánico, apto para envases de 1 a 19 L.",
-        imagen: "/tintometrico/mezclador.webp",
+        imagen: "/tintometrico/mezcaldor_FT.png",
         clase: "card-animate3"
     },
     
