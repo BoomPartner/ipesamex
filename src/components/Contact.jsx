@@ -5,12 +5,12 @@ const Contenedor = styled.iframe`
   width:100%;
 
       @media (min-width: 300px) {
-    height: 2000px;
+    height: 2150px;
   }
 
 
       @media (min-width: 800px) {
-    height: 1200px;
+    height: 1300px;
   }
 
     @media (min-width: 1300px) {
