@@ -3,48 +3,18 @@ import styled from "styled-components";
 
 const Contenedor = styled.iframe`
   width:100%;
-  
-  @media (min-width: 300px) {
-    height: 380vw;
-  }
 
-   @media (min-width: 400px) {
-    height: 380vw;
+      @media (min-width: 300px) {
+    height: 2000px;
   }
 
 
-   @media (min-width: 500px) {
-    height: 370vw;
-  }
-
-
-     @media (min-width: 600px) {
-    height: 320vw;
-  }
-
-
-     @media (min-width: 650px) {
-    height: 290vw;
-  }
-
-
-     @media (min-width: 700px) {
-    height: 270vw;
-  }
-
-    @media (min-width: 768px) {
-    height: 250vw;
-  }
- 
-
-
-
-  @media (min-width: 1024px) {
-    height: 100vw;
+      @media (min-width: 800px) {
+    height: 1200px;
   }
 
     @media (min-width: 1300px) {
-    height: 85vw;
+    height: 1200px;
   }
 `;
 
