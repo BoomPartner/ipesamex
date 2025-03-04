@@ -2066,8 +2066,251 @@ export const articulos = [
         promedio: "13",
         ficha: [""],
         seguridad: [""],
+    },
+    
+    // PULIMIENTOS===============================================================================
+    {
+        id: "heavy-cut-compound",
+        id_number: 111,
+        name: "Heavy Cut Compound",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 9/10", "Brillo 3/10"],
+        imagen: "/articulos/automotriz/HEAVY_CUT_COMPOUND.png",
+        description: ["Suave pero muy efectivo contra arañazos y marcas de uso severas. Este compuesto esta optimizado para ser utilizado con borla de lana."],
+        ficha: ["/fichas/automotriz/1 HCC _ 300,400, One Step Polish Gelcoat.pdf"],
+        seguridad: ""
+    },{
+        id: "medium-cut-polish",
+        id_number: 112,
+        name: "MEDIUM CUT POLISH",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 5/10", "Brillo 5/10"],
+        imagen: "/articulos/automotriz/MEDIUM_CUT_POLISH.png",
+        description: ["Medio corte de Brillo Profundo, potencializa los colores y reflejo."],
+        ficha: ["/fichas/automotriz/MEDIUM_CUT_POLISH_2000.pdf"],
+        seguridad: ""
+    },{
+        id: "final-finish",
+        id_number: 113,
+        name: "FINAL FINISH",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 3/10", "Brillo 9/10"],
+        imagen: "/articulos/automotriz/FINAL_FINISH.png",
+        description: ["Eliminador clásico de marcas de pulido y óptimo brillo. Absolutamente eficaz en la eliminación de marcas de pulido dando paso, al mismo tiempo a un brillo perfecto."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "super-finish_plus",
+        id_number: 114,
+        name: "SUPER FINISH PLUS",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 2/10", "Brillo 10/10"],
+        imagen: "/articulos/automotriz/SUPER_FINISH_PLUS.png",
+        description: ["Eliminador de marcas de pulido, micro-rayas y hologramas, asegurando un brillo más profundo tipo \"Showroom\"."],
+        ficha: ["/fichas/automotriz/SUPER_FINISH_PLUS_3800.pdf"],
+        seguridad: ""
+    },{
+        id: "sealing-wax_protection",
+        id_number: 115,
+        name: "SEALING WAX PROTECTION",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: "",
+        imagen: "/articulos/automotriz/Sealing_Wax_Protection.png",
+        description: ["Sellador de alto brillo con capa antiestática, sella la pintura con acabado acrílico impecable y ofrece alta durabilidad y seguridad."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "one-step-polish",
+        id_number: 116,
+        name: "ONE - STEP POLISH",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 5/10", "Brillo 9/10"],
+        imagen: "/articulos/automotriz/ONE_STEP_POLISH.png",
+        description: ["Elimina rayas de grano P3000, borra rayones, remolinos y hologramas, aparte de ofrecer larga duración en el brillo. Ideal para el principiante por su fácil uso y optimo resultado."],
+        ficha: ["/fichas/automotriz/One_Step_Polish_3in1.pdf"],
+        seguridad: ""
+    },{
+        id: "cut-force-pro",
+        id_number: 117,
+        name: "CUT FORCE PRO",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 9/10", "Brillo 9/10"],
+        imagen: "/articulos/automotriz/CUT_FORCE_PRO.png",
+        description: ["Alto corte, mas rápido y con mayor potencia, tiene un mejor abrillantado para segunda etapa."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "heavy-cut-compound-100",
+        id_number: 118,
+        name: "HEAVY CUT COMPOUND",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["250 ml", "1 L"],
+        attr2: ["Corte 8/10", "Brillo 8/10"],
+        imagen: "/articulos/automotriz/HEAVY_CUT_COPOUND_400.png",
+        description: ["Producto muy vérsatil que permite cortar lija de hasta P1200 en tiempo record y a la vez completa el acabado gracias a la última tecnología de grano divisible."],
+        ficha: ["/fichas/automotriz/HEAVY CUT COMPOUND .pdf"],
+        seguridad: ""
+    },{
+        id: "endless-shine",
+        id_number: 119,
+        name: "ENDLESS SHINE",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["500 ml"],
+        attr2: "",
+        imagen: "/articulos/automotriz/Menzerna_EndlessShine_500ml.png",
+        description: ["Mejora y restaura todo tipo de superficie como laca, cristal, plástico o metal. Aplica protector al acabado con un brillo profundo."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "ceramic-spray-sealant",
+        id_number: 120,
+        name: "CERAMIC SPRAY SEALANT",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["500 ml"],
+        attr2: "",
+        imagen: "/articulos/automotriz/CERAMIC_SPRAY_SEALANT.png",
+        description: ["Sellador en spray universal, fácil de aplicar, hidrofugo y antimanchas."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "as-30",
+        id_number: 121,
+        name: "AS 30",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: ["1 kg"],
+        attr2: "",
+        imagen: "/articulos/automotriz/AS30.png",
+        description: ["Pasta de pulimento de alto corte, para barnices de poliuretano y poliéster."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "esponja-premium-roja",
+        id_number: 122,
+        name: "ESPONJA PREMIUM ROJA",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["6\"", "7\""],
+        imagen: "/articulos/automotriz/menzerna_HeavyCut.png",
+        description: ["• Esponja para pulimento de alto corte."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "esponja-premium-roja",
+        id_number: 123,
+        name: "ESPONJA PREMIUM ROJA",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["6\"", "7\""],
+        imagen: "/articulos/automotriz/menzerna_HeavyCut.png",
+        description: ["Esponja para pulimento de alto corte."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "esponja-premium-amarilla",
+        id_number: 124,
+        name: "ESPONJA PREMIUM AMARILLA",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["6\"", "7\""],
+        imagen: "/articulos/automotriz/menzerna_MediumCut.png",
+        description: ["Esponja para pulimento de medio corte."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "esponja-premium-verde",
+        id_number: 125,
+        name: "ESPONJA PREMIUM VERDE",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["6\"", "7\""],
+        imagen: "/articulos/automotriz/menzerna_SoftCut.png",
+        description: ["Esponja para pulimento abrillantador."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "esponja-premium-azul",
+        id_number: 126,
+        name: "ESPONJA PREMIUM AZUL",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["6\"", "7\""],
+        imagen: "/articulos/automotriz/menzerna_Wax.png",
+        description: ["Esponja para abrillantador y selladores."],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "borla-de-lana-premium-orbital",
+        id_number: 127,
+        name: "BORLA DE LANA PREMIUM ORBITAL",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["6.5\""],
+        imagen: "/articulos/automotriz/BORLA_DE_LANA_PREMIUM_ORBITAL.png",
+        description: ["Borla de cordero de alto corte"],
+        ficha: "",
+        seguridad: ""
+    },{
+        id: "borla-de-lana",
+        id_number: 128,
+        name: "BORLA DE LANA",
+        categorie: "Pulimentos y abrillantadores",
+        subcategorie: "automotriz",
+        microcategorie: "pulimentos",
+        presentation: [""],
+        medidas: ["9\""],
+        imagen: "/articulos/automotriz/BORLA_DE_LANA.png",
+        description: ["Borla de cordero de alto corte"],
+        ficha: "",
+        seguridad: ""
     }
     
+    
+   
+
+ 
+
+
     
 
     

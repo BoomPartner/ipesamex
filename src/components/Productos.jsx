@@ -15,7 +15,7 @@ const Productos = () => {
     const [fondos, setFondos] = useState()
     const [microcategorie, setMicroCategorie] = useState(null);
     const [displayData, setDisplayData] = useState([]);
-    const itemsPerPage = 12;
+    const itemsPerPage = 18;
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0)
     const [openMain, setOpenMain] = useState(0);
@@ -156,7 +156,13 @@ const Productos = () => {
             micro: null,
             checked: false,
             label: "Reductores"
-        },
+        },{
+            id: "pulimentos",
+            micro: null,
+            checked: false,
+            label: "Pulimentos/Abrillantadores"
+
+        }
     ])
 
     const [subFerretera, setSubFerretera] = useState([

@@ -265,6 +265,37 @@ const ProductoSelected = ({ valor }) => {
                       </ul>
                     </div>
 
+
+{/* ATRIBUTOS 2 */}
+{
+                      articulo.attr2 ? <div className="w-full md:w-[30%]">
+                      <Typography as={'h6'} variant='h6' className='uppercase' color='gray'>Atributos</Typography>
+                      <ul className='text-md text-gray'>
+                        {
+                          articulo.attr2?.map((target, index) => (
+                            <li key={index}><Typography as={"p"} key={index} variant='small' color='gray' className=''>{target}</Typography></li>
+                          ))
+                        }
+
+                      </ul>
+                    </div> : null
+                    }
+
+{/* MEDIDAS                     */}
+{
+                      articulo.medidas ? <div className="w-full md:w-[30%]">
+                      <Typography as={'h6'} variant='h6' className='uppercase' color='gray'>Medidas</Typography>
+                      <ul className='text-md text-gray'>
+                        {
+                          articulo.medidas?.map((target, index) => (
+                            <li key={index}><Typography as={"p"} key={index} variant='small' color='gray' className=''>{target}</Typography></li>
+                          ))
+                        }
+
+                      </ul>
+                    </div> : null
+                    }
+
                     {
                       articulo.rendimiento ? <div className="w-full md:w-[50%]">
                         <Typography as={'h6'} variant='h6' className='uppercase' color='gray'>Rendimiento Teórico</Typography>
@@ -281,6 +312,7 @@ const ProductoSelected = ({ valor }) => {
 
                       </div> : null
                     }
+                    
                   </div>
 
                   <div className="w-full mt-4 block md:flex">
@@ -311,6 +343,7 @@ const ProductoSelected = ({ valor }) => {
 
                 <div className="w-full md:w-[80%] mt-8 md:grid-cols-2 grid grid-cols-1 gap-3 card-animate4">
                   {
+                    articulo.ficha && ( 
                     windowWidth < 800 || browser == "Mac" ?
                       <div className="w-full -ml-2 rounded-lg text-gray-600 flex items-center uppercase zoom-producto"
                         style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
@@ -329,8 +362,10 @@ const ProductoSelected = ({ valor }) => {
                         <div className="ml-4"><Typography as={'h5'} variant='h5' color='gray'>Ficha Técnica</Typography></div>
 
                       </div>
+                    )
                   }
                   {
+                    articulo.ficha2 && (
                     windowWidth < 800 || browser == "Mac" ?
                       <div className="w-full -ml-2 rounded-lg text-gray-600 flex items-center uppercase zoom-producto"
                         style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
@@ -349,6 +384,7 @@ const ProductoSelected = ({ valor }) => {
                         <div className="ml-4"><Typography as={'h5'} variant='h5' color='gray'>Ficha Técnica 100% Acrílico</Typography></div>
 
                       </div>
+                    )
                   }
                   {
                     articulo.seguridad && (
