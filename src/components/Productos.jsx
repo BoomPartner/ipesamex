@@ -150,8 +150,7 @@ const Productos = () => {
             micro: null,
             checked: false,
             label: "Endurecedores y Aditivos"
-        },
-        {
+        },{
             id: "reductores",
             micro: null,
             checked: false,
@@ -393,7 +392,7 @@ const Productos = () => {
         if (categorie == "primers" || categorie == "rellenadores" ||
             categorie == "perlas" || categorie == "transparentes" ||
             categorie == "hd" || categorie == "reductores" ||
-            categorie == "esmaltes_auto" || categorie == "basecolor" || categorie == "laca_acrilica") {
+            categorie == "esmaltes_auto" || categorie == "basecolor" || categorie == "laca_acrilica" || categorie == "pulimentos") {
 
             switch (categorie) {
 
@@ -435,6 +434,11 @@ const Productos = () => {
                     setFondos("laca_acrilica")
                     localStorage.setItem("microcategoria", "laca_acrilica");
                     break;
+
+                    case "pulimentos":
+                        setFondos("pulidores")
+                        localStorage.setItem("microcategoria", "pulimentos");
+                        break;    
 
                 default:
                     break;
