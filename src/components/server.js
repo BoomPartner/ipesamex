@@ -250,28 +250,28 @@ export const articulos = [
     },
 
     // +++++++++++++++++++++++++++++++++++++++ Esmaltes +++++++++++++++++++++++++++++++++++++++++++++++++
-    {
-        id: "clasico",
-        id_number: 9,
-        name: "Clásico",
-        registro: "®",
-        categorie: "decorativa",
-        subcategorie: "esmaltes",
-        microcategorie: "esmaltes",
-        presentation: ["1 L","4 L","19 L"],
-        color: "clasico",
-        imagen: "/articulos/esmaltes/clasico.png",
-        subtitle: ["Esmalte de maxima protección."],
-        description: ["Esmalte Alquidálico base solvente de excelente calidad y alto rendimiento para interior y exterior."],
-        atributos: ["Mayor duración, rendimiento y adherencia.","Por sus excelentes propiedades anticorrosivas es recomendado para todo tipo de climas.","Ideal para estructuras metálicas, madera, yeso y concreto."],
-        rendimiento: " 12 a 14 m2 / L",
-        promedio: 13,
-        acabados: "Acabado brillante (colores metalizados)",
-        gama: "5 colores de línea metalizados.",
-        dirigido: "Oficio, profesional y particular",
-        ficha: ["/fichas/esmaltes/CLASICO.pdf"],
-        seguridad: ["/seguridad/decorativa/CLASICO.pdf"],
-    },
+    // {
+    //     id: "clasico",
+    //     id_number: 9,
+    //     name: "Clásico",
+    //     registro: "®",
+    //     categorie: "decorativa",
+    //     subcategorie: "esmaltes",
+    //     microcategorie: "esmaltes",
+    //     presentation: ["1 L","4 L","19 L"],
+    //     color: "clasico",
+    //     imagen: "/articulos/esmaltes/clasico.png",
+    //     subtitle: ["Esmalte de maxima protección."],
+    //     description: ["Esmalte Alquidálico base solvente de excelente calidad y alto rendimiento para interior y exterior."],
+    //     atributos: ["Mayor duración, rendimiento y adherencia.","Por sus excelentes propiedades anticorrosivas es recomendado para todo tipo de climas.","Ideal para estructuras metálicas, madera, yeso y concreto."],
+    //     rendimiento: " 12 a 14 m2 / L",
+    //     promedio: 13,
+    //     acabados: "Acabado brillante (colores metalizados)",
+    //     gama: "5 colores de línea metalizados.",
+    //     dirigido: "Oficio, profesional y particular",
+    //     ficha: ["/fichas/esmaltes/CLASICO.pdf"],
+    //     seguridad: ["/seguridad/decorativa/CLASICO.pdf"],
+    // },
 
     {
         id: "tropimar-sur",
@@ -1169,6 +1169,7 @@ export const articulos = [
         presentation: ["1 L","4 L"],
         tiempo: "",
         color: "",
+        ficha_color:["/fichas/automotriz/base_color_rgb.pdf"],
         imagen: "/articulos/automotriz/base_color.png",
         description: ["Base Color de COLOR CRIL® es un producto desarrollado para el repintado total o parcial de vehículos automotrices; su variedad de colores y limpieza de tintes permiten la igualación de infinidad de colores. "],
         rendimiento: " 7 a 8 m2 / L",
@@ -2303,6 +2304,23 @@ export const articulos = [
         description: ["Borla de cordero de alto corte"],
         ficha: "",
         seguridad: ""
+    },
+
+    {
+        id: "esmalte-alquidalico",
+        id_number: 129,
+        name: "Esmalte Alquidálico",
+        categorie: "ferretera",
+        subcategorie: "ferretera",
+        microcategorie: "primarios_ferre",
+        presentation: ["500 ml","1 L","4 L","19 L"],
+        tiempo: "",
+        color: "",
+        imagen: "/articulos/ferreadvance/esmalte_alquidalico.png",
+        description: ["Protege y decora todo tipo de superficies ferrosas."],
+        rendimiento: "De 10 a 12 m2 / L",
+        promedio: 11,
+        ficha: [""]
     }
     
     
