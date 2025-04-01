@@ -518,7 +518,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "14 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf"]
     },
     {
         id: "22",
@@ -536,7 +537,8 @@ export const articulos = [
         rendimiento: "De 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "2 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf"]
     },
     {
         id: "23",
@@ -554,7 +556,8 @@ export const articulos = [
         rendimiento: "De 1 a 2 m2 por bote",
         promedio: 1.5,
         gama: "5 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol metalico.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL-METALICO.pdf"]
     },
 
     {
@@ -573,7 +576,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "3 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol mate y satinado.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL MATE Y SATINADO.pdf"]
     },
    
     {
@@ -592,7 +596,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "2 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol anticorrosivo.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL- ANTICORROSIVOS.pdf"]
     },
     {
         id: "26",
@@ -610,7 +615,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "2 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol alta temperatura.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL-ALTA TEMPERATURA.pdf"]
     },
     {
         id: "107",
@@ -628,7 +634,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "1 color",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol mate y satinado.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL MATE Y SATINADO.pdf"]
     },
     {
         id: "27",
@@ -646,7 +653,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote.",
         promedio: 1.5,
         gama: "5 colores",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"],
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol niquelado.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL-NIQUELADOS.pdf"]
     },
     {
         id: "28",
@@ -664,7 +672,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote.",
         promedio: 1.5,
         gama: "4 colores",
-        ficha: ["/fichas/aerosoles/Aerosol_fluorescente.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol fluorescente.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL FLUORESCENTE.pdf"]
     },
     {
         id: "29",
@@ -682,7 +691,8 @@ export const articulos = [
         rendimiento: " 1 a 2 m2 por bote ",
         promedio: 1.5,
         gama: "4 colores.",
-        ficha: ["/fichas/aerosoles/aerosoles.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf"]
     },
 
      // +++++++++++++++++++ Impermeabilizantes +++++++++++++++++++++++
@@ -879,8 +889,8 @@ export const articulos = [
         description: ["Sellador de nitrocelulosa listo para aplicar, proporciona rápido sellado de la madera con pocas manos, secado rápido, con buena lijabilidad y polveo. No requiere dilución"],
         rendimiento: "Rendimiento de 8.2 m2 / L",
         promedio: 8.2,
-        ficha: ["/fichas/maderas/SELLADOR_DIRECTO_NITRO.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY-SELLADORES.pdf"]
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3001 SELLADOR DIRECTO.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3001-3002_2025.pdf"]
     },
     {
         id: "sellador-profesional-altos-solidos",
@@ -896,8 +906,8 @@ export const articulos = [
         description: ["Producto de alta viscosidad con gran capacidad de disolución, para su uso en interiores.","Presenta buena adherencia, facilidad de lijado y polveo con buena nivelación, lo que permite dejar un acabado de apariencia fina y tersa."],
         rendimiento: "Rendimiento de 11 m2 por / L",
         promedio: 11,
-        ficha: ["/fichas/maderas/SELLADOR_PROFESIONAL.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY-SELLADORES.pdf"]
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3002 SELLADOR ALTOS SOLIDOS.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3001-3002_2025.pdf"]
     },
 
     {
@@ -915,8 +925,8 @@ export const articulos = [
         rendimiento: " 8.3 m2 / L",
         promedio: 8.3,
         acabados:  ["Brillante ,","semimate ","y mate."],
-        ficha: ["/fichas/maderas/LACA_PROFESIONAL_NITRO_BRILLANTE.pdf"],
-        seguridad: ["/seguridad/maderas/LACA_profesional.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3004 LACA BRILLANTE.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3004,3005,3006,3007_2025.pdf"]
     },
    
     {
@@ -933,7 +943,8 @@ export const articulos = [
         description: ["Laca de alta calidad, lista para usar en todo tipo de muebles y/o maderas que se encuentren en el interior.","Proporciona un rápido secado, un extraordinario brillo y una excelente nivelación.","Importante: Está laca al estar lista para usarse. presenta baja viscosidad."],
         rendimiento: " 7.5 m2 / L ",
         promedio: 7.5,
-        ficha: ["/fichas/maderas/LACA_DIRECTA_NITRO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3007_Laca Directa de Nitro Brillante.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3004,3005,3006,3007_2025.pdf"]
     },
     {
         id: "laca-industrial-de-nitro",
@@ -950,8 +961,8 @@ export const articulos = [
         rendimiento: " 8 a 9.7 m2 / L",
         promedio: 8.85,
         gama: " 11 colores de línea.",
-        ficha: ["/fichas/maderas/LACA_INDUSTRIAL_NITRO.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY_LACA_INDUSTRIAL_NITRO.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3080-3090_Laca Industrial de Nitro.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3080-3090_LACA INDUSTRIAL DE NITRO-2025.pdf"]
     },
 
     {
@@ -971,8 +982,8 @@ export const articulos = [
         rendimiento: " 10 a 12 m2 / L",
         promedio: 11,
         gama: "4 colores de línea",
-        ficha: ["/fichas/maderas/PRIMER_NITROCELULOSA.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY-PRIMER-DE-NITROCELULOSA.pdf"]
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3070,3071,3072,3073_Primer.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3070,3071,3072,3073-2025.pdf"]
     },
 
     {
@@ -989,8 +1000,8 @@ export const articulos = [
         imagen: "/articulos/maderas/tinta_alcohol.png",
         description: ["Diseñado especialmente para entintar trabajos de madera, donde se requiere una alta transparencia y color uniforme, resaltando las veta de la madera."],
         gama: " 11 colores de línea.",
-        ficha: ["/fichas/maderas/TINTA_ALCOHOL.pdf"],
-        seguridad: ["/seguridad/maderas/TINTA_ALCOHOL.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3010 al 3020 ALCOHOL.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3010 al 3020-2025-TINTA ALCOHOL.pdf"]
     },
     {
         id: "tinta-al-aceite",
@@ -1006,8 +1017,8 @@ export const articulos = [
         imagen: "/articulos/maderas/tinta_aceite.png",
         description: ["Diseñado para entintar muebles de madera que se encuentran en el interior, proporciona transparencia, color uniforme y buena penetración, realzando la veta de la madera. "],
         gama:"11 colores de línea.",
-        ficha: ["/fichas/maderas/TINTA_ACEITE.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY_TINTA_ACEITE.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3030 al 3040 TINTA AL ACEITE.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3030 al 3040-2025.pdf"]
     },
    
     {
@@ -1024,8 +1035,8 @@ export const articulos = [
         description: ["Especialmente diseñado para lograr óptima adherencia, nivelación y secado. Puede aplicarse sobre superficies de madera, revestimientos y otros objetos."," Decora y protege la madera, resiste a la intemperie y mantiene su brillo original. "],
         rendimiento: " 13.9 m2 / L",
         promedio: 13.9,
-        ficha: ["/fichas/maderas/BARNIZ_TRANSPARENTE.pdf"],
-        seguridad: ["/seguridad/maderas/CANTURY_BARNIZ_TRANSPARENTE.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3202_Barniz transparente.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3202_BARNIZ TRANSPARENTE-2025.pdf"]
     },
 
     {
@@ -1043,8 +1054,8 @@ export const articulos = [
         " Para aplicarse sobre superficies tanto en el interior como en el exterior. Aporta un excelente acabado brillante y por su composición fenólica tiene una excelente resistencia a los químicos, intemperie, rayado y al agua."],
         rendimiento: "De 10 a 12 m2 / L",
         promedio: 11,
-        ficha: ["/fichas/maderas/BARNIZ_MARINO.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY-BARNIZ-MARINO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3203_Barniz Marino.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3203-BARNIZ MARINO-2025.pdf"]
     },
 
     {
@@ -1062,8 +1073,8 @@ export const articulos = [
     "Se utiliza para dar un acabado brillante y brindar color, al mismo tiempo en un solo paso, proporcionando tersura, buen brillo, excelente nivelación y tiempo de secado rápido. "],
          rendimiento: " 11.8 m2 / L",
          promedio: 11.8,
-        ficha: ["/fichas/maderas/BARNIZ_ENTINTADO.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY-BARNIZ-ENTINTADO.pdf"],
+         ficha: ["/FICHAS_TECNICAS/MADERAS/3206-3213_Barniz Entintado.pdf"],
+         seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3206-3213-BARNIZ ENTINTADO-2025.pdf"]
     },
     {
         id: "barniz-de-poliuretano",
@@ -1081,8 +1092,8 @@ export const articulos = [
         promedio: 10.5,
         acabados_madera: ["Brillante"," Semimate"," Mate"," Catalizador Brillante"," Catalizador Matizado"],
         dirigido: " 11.9 m2 / L",
-        ficha: ["/fichas/maderas/BARNIZ_POLIURETANO_BRILLANTE.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY_BARNIZ_POLIURETANO.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3060-3063_Barniz de PU brillante-Catalizador.CENTURY.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3060-3061-3062-2025.pdf"]
         // "/fichas/maderas/BARNIZ_POLIURETANO_MATE.pdf",
         //     "/fichas/maderas/BARNIZ_POLIURETANO_SEMIMATE.pdf"
     },
@@ -1099,8 +1110,8 @@ export const articulos = [
         color: "",
         imagen: "/articulos/maderas/solvente_poliuretano.png",
         description: ["Solvente diseñado para diluir los sistemas de poliuretano.","Presenta excelente poder de disolución, ayudando a optimizar la aplicación de los barnices de poliuretano, sin perder brillo."],
-        ficha: ["/fichas/maderas/SOLVENTE_PARA_POLIURETANO.pdf"],
-        seguridad: ["/seguridad/maderas/CENTURY_SOLVENTE_POLIURETANO.pdf"],
+        ficha: ["/FICHAS_TECNICAS/MADERAS/3069 SOLVENTE PARA POLIURETANO.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/MADERAS/HDS-3069 -SOLVENTE PU-2025.pdf"]
     },
 
     {
@@ -1153,8 +1164,8 @@ export const articulos = [
         rendimiento: " 7 a 8 m2 / L",
         // promedio: 7.5,
         gama: "31 colores sólidos, 9 aluminios y 1 transparente (vehículo de ajuste)",
-        ficha: ["/fichas/automotriz/LACA_ACRILICA_COLOR_CRIL.pdf"],
-        seguridad: ["/seguridad/automotriz/LACA-ACRILICA.pdf"]
+        ficha: ["/fichas/automotriz/TDS_LINEA_2300_LACA_ACRILICA.pdf"],
+        seguridad: ["/seguridad/automotriz/HDS_LINEA_2300_LACA_ACRILICA.pdf"]
     },
 
 
@@ -1175,7 +1186,8 @@ export const articulos = [
         rendimiento: " 7 a 8 m2 / L",
         // promedio: 7.5,
         gama: "33 colores sólidos, 10 aluminios, 2 paliocrom y 1 transparente (vehículo de ajuste)",
-        ficha: ["/fichas/automotriz/COLORCRIL_Base_Color.pdf"]
+        ficha: ["/fichas/automotriz/TDS_LINEA_2400_BASE_COLOR.pdf"],
+        seguridad: ["/seguridad/automotriz/HDS_LINEA_2400__BASE_COLOR.pdf"]
     },
 
      // ++++++++++++++++ Esmaltes Automotriz ++++++++++++++++
@@ -1196,8 +1208,8 @@ export const articulos = [
         rendimiento: " 10 a 17 m2 / L",
         // promedio: 13.5,
         gama: "32 colores sólidos, 9 aluminios y 1 transparente (vehículo de ajuste).",
-        ficha: ["/fichas/automotriz/ESMALTE_ACRÍLICO_COLOR_CRIL.pdf"],
-        seguridad: ["/seguridad/automotriz/ESMALTE-ACRILICO.pdf"]
+        ficha: ["/fichas/automotriz/TDS_LINEA_2100_ESMALTE_ACRILICO.pdf"],
+        seguridad: ["/seguridad/automotriz/HDS_LINEA_2100_ESMALTE_ACRILICO.pdf"]
     },
    
     {
@@ -1216,8 +1228,8 @@ export const articulos = [
         rendimiento: " 13 a 16 m2 / L",
         // promedio: 14.5,
         gama: "14 colores de línea",
-        ficha: ["/fichas/automotriz/COLORCRIL_Esmalte_Poliuretano.pdf"],
-        seguridad: ["/seguridad/automotriz/ESMALTE-DE-POLIURETANO-AUTOMOTRIZ.pdf"]
+        ficha: ["/fichas/automotriz/TDS_LINEA_2600_ESMALTE_POLIURETANO.pdf"],
+        seguridad: ["/seguridad/automotriz/HDS_LINEA_2600ESMALTE_POLIURETANO_PARA_USO_AUTOMOTRIZ.pdf"]
     },
     {
         id: "negro-chasis",
@@ -1234,7 +1246,8 @@ export const articulos = [
         "Esmalte de secado rápido de extraordinaria calidad, diseñado para ser utilizado en el chasis de los autos, parachoques, muelles, etc."],
         rendimiento: "De 8 a 9 m2 / L",
         // promedio: 8.5,
-        ficha: ["/fichas/automotriz/9020_NEGRO CHASIS.pdf"]
+        ficha: ["/fichas/automotriz/TDS_NEGRO_CHASIS_9020_Y_2181(AEROSOL).pdf"],
+        seguridad: ["/seguridad/automotriz/HDS_9020_NEGRO_CHASIS_(AEROSOL).pdf"]  
     },
     {
         id: "negro-chasis-aerosol",
@@ -1252,7 +1265,8 @@ export const articulos = [
         "Esmalte de secado rápido de extraordinaria calidad, diseñado para ser utilizado en el chasis de los autos, parachoques, muelles, etc."],
         rendimiento: "De 1 a 2 m2 por bote.",
         // promedio: 1.5,
-        ficha: ["/fichas/automotriz/COLORCRIL_Aerosol_NegroChasis.pdf"]
+        ficha: ["/fichas/automotriz/TDS_NEGRO_CHASIS_9020_Y_2181(AEROSOL).pdf"],
+        seguridad: ["/seguridad/automotriz/HDS_9020_NEGRO_CHASIS_(AEROSOL).pdf"]  
     },
     
 
@@ -1273,8 +1287,8 @@ export const articulos = [
         description: ["Crylbaryprimer es un primario acondicionador fosfatizante de dos componentes, de secado rápido, excelente adherencia y gran poder anticorrosivo, recomendado para superficies de acero, aluminio y acero galvanizado.","Sus propiedades permiten utilizarlo como primario de anclaje al metal desnudo en repintado automotriz así como en la industria metal mecánica."],
         rendimiento: "De 5.1 a 5.5 m2 / L",
         // promedio: 5.3,
-        ficha: ["/fichas/automotriz/COLORCRIL_Crilbaryprimer.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-CRILBARYPRIMER.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2218.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2218_CRIL_BARYPRIMER.pdf"]
     },
     {
         id: "activador-crilbaryprimer",
@@ -1289,8 +1303,8 @@ export const articulos = [
         color: "",
         imagen: "/articulos/automotriz/activador.png",
         description: ["Activador Crilbaryprimer está diseñado para uso exclusivo de Crilbaryprimer, para garantizar el debido funcionamiento, no debe ser sustituido por ningún otro diluyente."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Activador_Crilbaryprimer.pdf"],
-        seguridad: ["/seguridad/automotriz/ACTIVADOR_CRILBARYPRIMER.pdf"],
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2214 Activador CRILBARYPRIMER.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2214  ACTIVADOR PARA CRILBARYPRIMER.pdf"]
     },
 
     {
@@ -1305,7 +1319,8 @@ export const articulos = [
         color: "",
         imagen: "/articulos/automotriz/automotivo.png",
         description: ["Primer de buena calidad, tiene una gran resistencia al impacto y flexibilidad, así como buena adherencia sobre diversas capas de pintura."," Recomendado para trabajos rápidos, en especial resanes pequeños y fondeos."],
-        ficha: ["/fichas/automotriz/Primer_Automotivo.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS PRIMER AUTOMOTIVO (2220,2222,2282).pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_PRIMER_AUTOMOTIVO_(2220,2222,2282).pdf"]
     },
     {
         id: "econoprimer-universal",
@@ -1319,8 +1334,8 @@ export const articulos = [
         color: "",
         imagen: "/articulos/automotriz/universal.png",
         description: ["Primer diseñado para proporcionar extraordinario relleno en la superficie a aplicar, excelente adherencia, secado rápido, además de un gran rendimiento y resistencia al impacto."," Posee propiedades anticorrosivas y no sangra.","Ideal para el repintado parcial o total de vehículos automotrices."],
-        ficha: ["/fichas/automotriz/Econoprimer.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-ECONOPRIMER-UNIVERSAL.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2240 ECONO PRIMER.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2240_ECONO_PRIMER.pdf"]
     },
     {
         id: "primer-universal",
@@ -1335,8 +1350,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/primer_universal.png",
         description: ["Primer Universal COLOR CRIL® diseñado para el repintado parcial o total de vehículos automotrices.",
         " Presenta buena resistencia al impacto y flexibilidad, así como buena adherencia sobre diversos sustratos como lámina desnuda, lámina galvanizada, aluminio y fibra de vidrio. Proporciona poder de relleno, posee propiedades anticorrosivas, no sangra."],
-        ficha: ["/fichas/automotriz/Primer_Universal.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-PRIMER-UNIVERSAL.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS PRIMER UNIVERSAL (2223,2224,2225,2281).pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2223,2224,2225,2281_PRIMER_UNIV.pdf"]
     },
     {
         id: "primer-epoxico",
@@ -1349,8 +1364,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/kit_epoxico.png",
         description: ["Recubrimiento de secado rápido, diseñado para sistemas de repintado automotriz."," Excelente resistencia a la corrosión, resistencia química y mecánica.","Recomendado también para la protección de tanques, techos, maquinaria, industria química, refinerías, estructuras metálicas, plantas eléctricas, etc. "],
         rendimiento: "18.5 m2 / L",
-        ficha: ["/fichas/automotriz/COLORCRIL_Primer_Epóxico.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-PRIMER-EPOXICO-2235.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2235 PRIMER EPOXICO.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2235_PRIMER_EPOXICO.pdf"]
     },
      {
         id: "rellenador-hyper-light",
@@ -1365,7 +1380,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/rellenador_hyper_light.png",
         description: ["Es un rellenador hiper ligero diseñado para realizar reparaciones de hojalatería, como golpes y reparaciones mayores, donde se requiera nivelar imperfecciones."],
         atributos: ["Más ligero y fácil de lijar","Reduce la porosidad","Excelente adherencia sobre metales, fibra de vidrio, madera y plásticos","Vida útil de la mezcla (7 min máximo)","Tiempo de secado (20 a 30 min)"],
-        ficha: ["/fichas/automotriz/Hyper_Light_2279.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2279 HYPER LIGTH.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/RELLENADORES/HDS 2279 HYPER LIGHT.pdf"]
     },
      {
         id: "body-filler-2203",
@@ -1377,8 +1393,8 @@ export const articulos = [
         presentation: ["450 g","900 g","3.6 kg"],
         imagen: "/articulos/automotriz/rellenador_ultraligero.png",
         description: ["Pasta masilla color crema de alta calidad, diseñada para ser empleada en golpes o reparaciones mayores, en donde se requiera aplicar un mayor espesor de pasta debido a la profundidad de la superficie a reparar."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Rellenador_Ultraligero.pdf"],
-        seguridad: ["/seguridad/automotriz/BODY-FILLER-RELLENADOR-AUTO-ULTRA-LIGERO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2203 ULTRA LIGERO.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/RELLENADORES/HDS 2203_BODY FILLER RELLENADOR_2025.pdf"]
     },
      {
         id: "body-filler-2202",
@@ -1392,8 +1408,8 @@ export const articulos = [
         description: ["Pasta masilla de alta calidad, diseñada para usarse en el repintado automotriz cuando se requieren realizar reparaciones de hojalatería.",
         "Por su formulación especial presenta un secado rápido, buena facilidad de aplicación, extraordinario poder de relleno, excelente adherencia sobre lámina de fierro.",
     "Es ligero y de fácil lijado, no sangra ni amarillea."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Rellenador_Ligero.pdf"],
-        seguridad: ["/seguridad/automotriz/BODY-FILLER-RELLENADOR-AUTO-LIGERO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2202 LIGERO.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/RELLENADORES/HDS 2202 LIGERO.pdf"]
     },
    
 
@@ -1408,8 +1424,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/plaste.png",
         description: ["Masilla de alta calidad, diseñada para usarse en el repintado automotriz cuando se requiere rellenar pequeñas imperfecciones y/o rayas de lija.",
         "Presentan secado rápido, buena facilidad de aplicación y de lijado (buen polveo) y excelente adherencia sobre nuestros primers."],
-        ficha: ["/fichas/automotriz/Plaste_Automotivo.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL_PLASTE.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PLASTES 2204,2207,2211,2280/TDS PLASTE AUTOMOTIVO.pdf"],
+        seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PLASTES_2204,2207.2211,2280/HDS PLASTE AUTOMOTIVO.pdf"]
     },
     {
         id: "filler-rellenador-1k",
@@ -1422,8 +1438,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/primer_1k.png",
         description: ["Primario rellenador 1 K, es un producto de la más alta calidad, especialmente diseñado para repintado automotriz.",
     "Presenta características que proporciona un gran poder de relleno, fácil de lijar, tiempo de secado rápido, excelente adherencia sobre lámina negra, fibra de vidrio, aluminio y lámina galvanizada. Puede ser recubierto con nuestros productos de la línea COLOR CRIL®"],
-        ficha: ["/fichas/automotriz/Filler_Rellenador_1K.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-Filler-RELLENADOR-1k.pdf"]
+    ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2221 1K.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2221_PRIMER_1K.pdf"]
     },
     {
         id: "primario-rellenador-2k-gp",
@@ -1437,8 +1453,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/kit_primario.png",
         description: ["Primario Rellenador GP-2K diseñado para sistemas de repintado automotriz donde se requiera un secado exprés, alta retención de brillo, máxima durabilidad y excelente poder de relleno.","Su gran facilidad de lijado, flexibilidad y excelente resistencia a solventes hacen de este primario una excelente opción para el repintado automotriz."],
         rendimiento: "De 13 a 14 m2 / L",
-        ficha: ["/fichas/automotriz/primario_RELLENADOR_2K.pdf"],
-        seguridad: ["/seguridad/automotriz/KIT-PRIMARIO-RELLENADOR-2K-GP.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2270 2K GP.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2270_PRIMER_2K_GP.pdf"]
     },
     
     {
@@ -1452,8 +1468,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/primer_2k.png",
         description: ["Primario de poliuretano diseñado para sistemas de repintado automotriz donde se requiera una alta retención de brillo, máxima durabilidad, excelente poder de relleno y tiempos de secado cortos."],
         rendimiento: "De 13 a 14 m2 / L",
-        ficha: ["/fichas/automotriz/COLORCRIL_Filler_Rellenador_2k.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-Filler-RELLENADOR-2K.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2219  2K.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2219_PRIMER_2K.pdf"]
     },
 
     {
@@ -1470,8 +1486,8 @@ export const articulos = [
         "Su efecto principal es la reflexión de la luz en varias direcciones.","Diseñadas para utilizarse en sistemas de repintado automotriz COLOR CRIL® Esmalte Acrílico, Laca Acrllica, Poliuretano y Base Color"
         ],
         
-        ficha: ["/fichas/automotriz/Perlas_Universales.pdf"],
-        seguridad: ["/seguridad/automotriz/PERLAS-UNIVERSALES.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/COMPLEMENTOS DE IGUALACION/TDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/COMPLEMENTOS_DE_IGUALACION/HDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf"]
     },
     {
         id: "perlas-xiralicas",
@@ -1484,8 +1500,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/perlas_2.png",
         description: ["Las perlas han sido concebidas para la igualación de colores automotrices donde se requiere dar efectos de profundidad y cambio de tonalidad cuando se observan a diferentes ángulos.","Su efecto principal es la reflexión de la luz en varias direcciones.","Diseñadas para utilizarse en sistemas de repintado automotriz COLOR CRIL® Esmalte Acrílico, Laca Acrílica, Poliuretano y Base Color"],
 
-        ficha: ["/fichas/automotriz/Perlas_Xiralicas.pdf"],
-        seguridad: ["/seguridad/automotriz/PERLAS_XIRALICAS.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/COMPLEMENTOS DE IGUALACION/TDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/COMPLEMENTOS_DE_IGUALACION/HDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf"]
     },
 
      // ++++++++++++++++ Transparentes ++++++++++++++++
@@ -1504,7 +1520,8 @@ export const articulos = [
         description: ["Es un transparente de poliuretano de alta dilución y excelente rendimiento, recomendado para aplicarse sobre esmaltes catalizados, laca acrílica y base color, proporciona buena nivelación, brillo y distinción de imagen. Diseñado para todo tipo de reparaciones automotrices. Posee un gran rendimiento"],
         rendimiento: "De 11 a 15 m2 / L",
         // promedio: 13,
-        ficha: ["/fichas/automotriz/HD.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2276 HD.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2276 HD.pdf"]
     },
     {
         id: "glass-finish",
@@ -1518,8 +1535,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/glass_finish.png",
         description: ["Transparente de poliuretano de la más alta calidad, permite obtener un acabado espejo. Gran rendimiento, alta resistencia y excelente nivelación."],
         rendimiento: "De 11 a 15 m2 / L",
-        ficha: ["/fichas/automotriz/Glass_Finish.pdf"],
-        seguridad: ["/seguridad/automotriz/Glass-Finish.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2274 GLASS FINISH.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2274 GLASS FINISH.pdf"]
     },
     {
         id: "transparente-top-gloss",
@@ -1537,8 +1554,8 @@ export const articulos = [
         "El transparente de 788 ml contiene un Endurecedor de 158 ml.", 
         "El transparente de 4 L contiene un endurecedor de 800 ml."],
         rendimiento: "De 14.9 a 16.9 m2 / L",
-        ficha: ["/fichas/automotriz/COLORCRIL_TopGloss.pdf"],
-        seguridad: ["/seguridad/automotriz/TOP-GLOSS.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2157 TOP GLOSS.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2457 TOP GLOSS.pdf"]
     },
 
     {
@@ -1556,8 +1573,8 @@ export const articulos = [
         description: ["Transparente de poliuretano de la más alta calidad y rendimiento que permite obtener acabados de gran durabilidad y resistencia a la intemperie.","Excelente nivelación, gran brillo y secado ultra rápido","Ideal para usarse en reparaciones express y está diseñado para aplicarse sobre Esmalte Acrílico (catalizado), Laca Acrílica y Base Color de la línea COLOR CRIL® en sistemas bicapa o tricapa."],
         rendimiento: "De 10 a 11 m2 / L",
         // promedio: 10.5,
-        ficha: ["/fichas/automotriz/HYPER_FINISH.pdf"],
-        seguridad: ["/seguridad/automotriz/TRANSPARENTE-HYPER-FINISH.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2272 HYPER FINISH.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2272 HYPER FINISH.pdf"]
     },
 
     {
@@ -1575,25 +1592,25 @@ export const articulos = [
         "Se recomienda para repintados totales o de secciones de vehículos automotrices.",
         ,"El transparente de 788 ml contiene un Endurecedor de 158 ml.", "El transparente de 4 L contiene un endurecedor de 800 ml."],
         rendimiento: "De 10.2 a 11.2 m2 / L",
-        ficha: ["/fichas/automotriz/COLORCRIL_Trasparente.pdf"],
-        seguridad: ["/seguridad/automotriz/ESMALTE-TRANSPARENTE-LPA-AP.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2156 LPA.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS  2156 LPA AP.pdf"]
     },
 
-    {
-        id: "endurecedor-automotivo-docapa",
-        id_number: 81,
-        tipo:"aerosol",
-        name: "Endurecedor Do Capa",
-        categorie: "automotriz",
-        subcategorie: "automotriz",
-        microcategorie: "hd",
-        presentation: ["250 ml","500 ml","1 L"],
-        imagen: "/articulos/automotriz/endurecedor_automotivo.png",
-        description: ["Diseñado para mezclarse con productos de los sistemas de repintado automotriz COLOR CRIL®.",
-    "Su función es endurecer los recubrimientos para obtener una película de gran durabílidad, alta resistencia química y mecánica, favoreciendo el brillo y la nivelación en los acabados."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Endurecedor_automotivo_DoCapa.pdf"],
-        seguridad: ["/seguridad/automotriz/ENDURECEDOR-AUTOMOTIVO-DOCAPA.pdf"]
-    },
+    // {
+    //     id: "endurecedor-automotivo-docapa",
+    //     id_number: 81,
+    //     tipo:"aerosol",
+    //     name: "Endurecedor Do Capa",
+    //     categorie: "automotriz",
+    //     subcategorie: "automotriz",
+    //     microcategorie: "hd",
+    //     presentation: ["250 ml","500 ml","1 L"],
+    //     imagen: "/articulos/automotriz/endurecedor_automotivo.png",
+    //     description: ["Diseñado para mezclarse con productos de los sistemas de repintado automotriz COLOR CRIL®.",
+    // "Su función es endurecer los recubrimientos para obtener una película de gran durabílidad, alta resistencia química y mecánica, favoreciendo el brillo y la nivelación en los acabados."],
+    //     ficha: ["/fichas/automotriz/COLORCRIL_Endurecedor_automotivo_DoCapa.pdf"],
+    //     seguridad: ["/seguridad/automotriz/ENDURECEDOR-AUTOMOTIVO-DOCAPA.pdf"]
+    // },
     {
         id: "desengrasante",
         id_number: 82,
@@ -1604,8 +1621,8 @@ export const articulos = [
         presentation: ["4 L"],
         imagen: "/articulos/automotriz/desengrasante.png",
         description: ["Creado para la limpieza de superficies, elimina contaminantes como silicones, ceras y grasas que pueden ocasionar defectos en el acabado y fallas de adherencia durante el proceso de repintado."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Desengrasante.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-DESENGRASANTE-PREPARADOR-DE-SUPERFICIES.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2210 Desengrasante.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2210  DESENGRASANTE PREPARADOR DE SUPERFICIES.pdf"]
     },
 
     {
@@ -1620,8 +1637,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/fosfatizante.png",
         description: ["Remueve fácilmente el óxido de superficies ferrosas y por su lenta evaporación permite la acción efectiva de sus componentes.",
     "Previene la corrosión inmediata de las áreas en preparación. Promueve también la adherencia del recubrimiento sobre el metal."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Fosfatizante.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-FOSFATIZANTE-ACONDICIONADOR.pdf"]
+    ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2216 FOSF ACOND METALES.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2216 FOSFATIZANTE ACONDICIONADOR DE METALES.pdf"]
     },
 
 
@@ -1635,8 +1652,8 @@ export const articulos = [
         presentation: ["1 L","4 L"],
         imagen: "/articulos/automotriz/flotador_aluminio.png",
         description: ["Mejora la igualación de colores metálicos, controlando el efecto flop (eliminando el destello de aluminio visto de lado), obteniéndose así una óptima igualación de color al adicionarlo a los colores metálicos de los sistemas de repintado automotriz COLOR CRIL®."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Flotador_Aluminios.pdf"],
-        seguridad: ["/seguridad/automotriz/FLOTADOR-DE-ALUMINIO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2227 FLOTADOR ALUM. NF.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2227 FLOTADOR DE ALUMINIO.pdf"]
     },
 
     {
@@ -1651,8 +1668,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/promotor.png",
         description: ["Promueve la adherencia entre sustratos o partes plásticas automotrices, sin necesidad de utilizar previamente ningún otro producto."],
 
-        ficha: ["/fichas/automotriz/PROMOTOR_ADHERENCIA.pdf"],
-        seguridad: ["/seguridad/automotriz/PROMOTOR-ADHERENCIA.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2228 Y 2233 PROM. ADHERENCIA.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2228 Y 2233 PROM. ADHERENCIA.pdf"]
     },
     {
         id: "matizante",
@@ -1665,7 +1682,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/matizante.png",
         description: ["Diseñado para reducir el brillo de diversas pinturas base solvente, incluyendo acabados automotrices como el esmalte acrílico, laca acrílica o base color.","No contiene plomo ni metanol."],
 
-        ficha: ["/fichas/automotriz/COLORCRIL_Matizante.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2232 MATIZANTE UNIVERSAL.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2232 MATIZANTE UNIVERSAL.pdf"]
     },
 
    
@@ -1697,8 +1715,8 @@ export const articulos = [
         presentation: ["1 L", "4 L", "19 L"],
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
         description: ["Es un diluyente o adelgazador de pinturas compuesto por una mezcla de solventes orgánicos perfectamente balanceada, diseñado para la dilución de esmalte acrílico, laca acrílica, primarios de piroxilina y universales.","Su gran poder de dilución, su evaporación rápida y controlada facilita la aplicación y permiten una adecuada formación de película con alto brillo y muy buena nivelación. Producto libre de metanol."],
-        ficha: ["/fichas/automotriz/THINNER_ACRILICO.pdf"],
-        seguridad: ["/seguridad/automotriz/THINNER-ACRILICO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2205 THINNER ACRILICO.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2205 THINER ACRILICO.pdf"]
     },
     {
         id: "reductor-acrilico-alta-temperatura",
@@ -1710,8 +1728,8 @@ export const articulos = [
         presentation: ["1 L", "4 L"],
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
         description: ["Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una mezcla de solventes aromáticos y oxigenados, libres de metanol."],
-        ficha: ["/fichas/automotriz/ACRILICO_ALTO_BRILLO_REDUCTOR_ALTA_TEMPERATURA.pdf"],
-        seguridad: ["/seguridad/automotriz/REDUCTOR-ACRILICO-ALTA-TEMPERATURA.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2206 Reductor alta temperatura.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2206   REDUCTOR ACRILICO PARA ALTA TEMPERATURA.pdf"]
     },
     {
         id: "reductor-acrilico-alto-brillo",
@@ -1723,8 +1741,8 @@ export const articulos = [
         presentation: ["1 L", "4 L"],
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
         description: ["Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una mezcla de solventes aromáticos y oxigenados, libres de metanol."],
-        ficha: ["/fichas/automotriz/ACRILICO_ALTO_BRILLO_REDUCTOR_ALTA_TEMPERATURA.pdf"],
-        seguridad: ["/seguridad/automotriz/COLORCRIL-REDUCTOR-ACRILICO-ALTO-BRILLO.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2212 REDUCTOR ACRILICO ALTO BRILLO.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2212  REDUCTOR ACRILICO ALTO BRILLO.pdf"]
     },
     {
         id: "reductor-primer-rellenador",
@@ -1738,8 +1756,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/activador.png",
         description: ["El reductor para primer acrílico es una mezcla de ácido y solventes de excelente calidad, diseñado para la dilución del primer acrílico y primario rellenador.",
         " El uso de este reductor asegura una funcionalidad óptima del primer. El ácido que contiene ayuda a sensibilizar substratos de fierro para un mejor anclaje. Es una mezcla de solventes aromáticos y oxigenados no contiene metanol."],
-        ficha: ["/fichas/automotriz/Reductor_Primer_Rellenador.pdf"],
-        seguridad: ["/seguridad/automotriz/REDUCTOR-PRIMER-RELLENADOR.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2229 REDUCTOR ACRILICO PRIMARIO.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2229  REDUCTOR PARA PRIMARIO ACRILICO.pdf"]
     },
     {
         id: "reductor-base-color",
@@ -1752,8 +1770,8 @@ export const articulos = [
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
         description: ["El reductor para base color 2230 es una mezcla de solventes de excelente calidad diseñado exclusivamente para la dilución de base color.",
     "El uso de este reductor asegura una funcionalidad óptima de la base color. Es una mezcla de solventes aromáticos y oxigenados no contiene metanol."],
-        ficha: ["/fichas/automotriz/Reductor_Base_Color.pdf"],
-        seguridad: ["/seguridad/automotriz/REDUCTOR-BASE-COLOR.pdf"]
+    ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2230 REDUCTOR BASE COLOR.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2230  REDUCTOR ACRILICO PARA BASE COLOR.pdf"]
     },
     {
         id: "89",
@@ -1765,8 +1783,8 @@ export const articulos = [
         presentation: ["1 L", "4 L", "19 L"],
         imagen: "/articulos/automotriz/REDUCTORES_SOLVENTES.png",
         description: ["Es una mezcla balanceada de solventes orgánicos diseñada para la dilución de acabados de poliuretano, su formulación permite obtener acabados con excelente nivelación y muy buena distinción de imagen. No contiene metanol."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Reductor_ClearCoat.pdf"],
-        seguridad: ["/seguridad/automotriz/REDUCTOR-CLEAR-COAT.pdf"]
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2231 REDUCTOR TRANSPARENTES P.U.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2231  REDUCTOR PARA  CLEAR COAT.pdf"]
     },
     {
         id: "blender",
@@ -1778,8 +1796,8 @@ export const articulos = [
         presentation: ["1 L", "4 L"],
         imagen: "/articulos/automotriz/blender.png",
         description: ["Producto concebido para esfumar o difuminar la brisa y los bordes de acabados transparentes durante la aplicación, lo que permite obtener un acabado uniforme, terso y brillante."],
-        ficha: ["/fichas/automotriz/COLORCRIL_Blender.pdf"],
-        seguridad: ["/seguridad/automotriz/BLENDER.pdf"],
+        ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2234 BLENDER.pdf"],
+    seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2234 BLENDER PARA ESFUMADO.pdf"]
     },
     {
         id: "91",
@@ -2312,7 +2330,7 @@ export const articulos = [
         name: "Esmalte Alquidálico",
         categorie: "ferretera",
         subcategorie: "ferretera",
-        microcategorie: "primarios_ferre",
+        microcategorie: "esmaltes_ferre",
         presentation: ["500 ml","1 L","4 L","19 L"],
         tiempo: "",
         color: "",
