@@ -1,30 +1,37 @@
 "use client";
-import React, { useState, useRef } from 'react';
+import styled from "styled-components";
+
+const Contenedor = styled.iframe`
+  width:100%;
+
+      @media (min-width: 300px) {
+    height: 270px;
+  }
+
+
+      @media (min-width: 800px) {
+    height: 450px;
+  }
+
+    @media (min-width: 1300px) {
+    height: 500px;
+  }
+`;
 
 const Carrusel = () => {
-  const videoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
 
-  const handleClick = () => {
-    if (isMuted && videoRef.current) {
-      videoRef.current.muted = false;
-      setIsMuted(false);
-    }
-  };
 
-  return (
-    <video
-      ref={videoRef}
-      autoPlay
-      loop
-      muted={isMuted}
-      onClick={handleClick}
-      style={{ width: '100%', height: 'auto' }}
-    >
-      <source src="/promociones/copy_E3240593-C51A-4155-BD7E-5DFF0B7ED2AF.mp4" type="video/mp4" />
-      Tu navegador no soporta la etiqueta de video.
-    </video>
-  );
-};
+    return (
+        // <div className="flex justify-center items-center p-4">
+          <Contenedor 
+            // src="http://localhost/slider_ipesa/index_01.php" 
+            src="https://tecknum.com/slider_ipesa/index_01.php" 
+            title="Mi Iframe"
+            frameborder="0" rameborder="0" scrolling="no"
+            
+          />
+        // </div>
+      );
+    };
 
-export default Carrusel;
+export default Carrusel

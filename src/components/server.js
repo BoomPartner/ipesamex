@@ -4729,6 +4729,41 @@ export const colores = [
 export const novedades = [
     {
         id: 1,
+        name: "Nueva línea de Pulimentos MENZERNA",
+        description: `¡La perfección del pulido automotriz ha llegado a México! Presentamos la nueva línea de pulimentos MENZERNA, ahora disponible con tu distribuidor IPESA Pinturas. Esta tecnología de precisión alemana complementa a la perfección nuestra línea de repintado automotriz Color Cril, ofreciendo una solución completa: desde el color hasta el brillo final.
+Con más de 50 años de experiencia, en IPESA Pinturas unimos innovación y calidad para brindarte acabados duraderos y profesionales. Menzerna e IPESA Pinturas, una alianza para lograr pintura impecable y protección superior. ¡Descúbrela hoy!
+.
+`,
+        imagen: "/promociones/menzerna_2025.webp",
+        enlace: "/productos",
+        categoria: "automotriz",
+        microcategoria: "pulimentos"
+        
+    },{
+        id: 1,
+        name: "\"Promoción como caída del cielo\"",
+        description: `Prepárate para la temporada de lluvias con un 20% de descuento en impermeabilizantes seleccionados, vigente del 1 de marzo al 29 de agosto de 2025. Protege tu hogar con soluciones confiables como IMPER RUF®, IMPER LUX®, IMPER CRIL®, y nuestros impermeabilizantes de muro WALL COVER ECO® y WALL COVER PLUS®, en presentaciones de 18 y 19 litros.
+Aprovecha esta oportunidad en tiendas participantes. Consulta productos participantes, restricciones y condiciones con tu distribuidor autorizado IPESA®.
+.
+`,
+        imagen: "/promociones/imperm_2025.webp",
+        enlace: "/productos",
+        categoria: "decorativa",
+        microcategoria: "impermeabilizantes"
+        
+    },{
+        id: 1,
+        name: "Pinta la primavera con IPESA Pinturas",
+        description: `Dale color a la primavera con un 20% de descuento en nuestras pinturas vinílicas y selladores seleccionados. Del 24 de marzo al 30 de abril de 2025, aprovecha esta promoción exclusiva y renueva tus espacios con productos de alta calidad como VINTEKO, VINIPESA® Mate y Satín, REALTEK®, y selladores SELLATEK® 2 en 1 y SELLATEK® 5x1 en sus presentaciones de 1, 4 y 19 litros.
+Aplica solo en tiendas participantes y hasta agotar existencias. Consulta productos participantes, términos y condiciones con tu distribuidor autorizado IPESA®.
+`,
+        imagen: "/promociones/primavera_2025.webp",
+        enlace: "/productos",
+        categoria: "decorativa",
+        microcategoria: "vinilicas"
+        
+    },{
+        id: 1,
         name: "Nuestra Visión es de colores",
         description: `Promoción válida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción, consulta con tu distribuidor autorizado IPESA®`,
         imagen: "/promociones/1a1.png",
