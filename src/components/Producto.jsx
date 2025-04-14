@@ -461,8 +461,8 @@ const ProductoSelected = ({ valor }) => {
                       <div className="w-full -ml-2 rounded-lg text-gray-600 flex items-center uppercase zoom-producto"
                         style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
                         <a href={articulo.ficha_color} download className='font-bold'>
-                          <FontAwesomeIcon icon={faFilePdf} size='3x' className='mr-4'></FontAwesomeIcon>
-                          {browser == "Mac" ? "Ficha Técnica 100% Acrílico" : windowWidth < 800 ? "Ficha Técnica 100% Acrílico" : "Ficha Técnica 100% Acrílico"}
+                          <FontAwesomeIcon icon={faSwatchbook} size='3x' className='mr-4'></FontAwesomeIcon>
+                          {browser == "Mac" ? "Colores" : windowWidth < 800 ? "Colores" : "Colores"}
                         </a>
                       </div> : <div className="w-full flex items-center cursor-pointer zoom-producto" 
                       onClick={() => handleModalFicha(articulo.ficha_color)}>

@@ -4762,46 +4762,47 @@ Aplica solo en tiendas participantes y hasta agotar existencias. Consulta produc
         categoria: "decorativa",
         microcategoria: "vinilicas"
         
-    },{
-        id: 1,
-        name: "Nuestra Visión es de colores",
-        description: `Promoción válida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción, consulta con tu distribuidor autorizado IPESA®`,
-        imagen: "/promociones/1a1.png",
-        enlace: "/productos",
-        categoria: "decorativa",
-        microcategoria: "impermeabilizantes"
-    },{
-        id: 2,
-        name: "Promocion caída del cielo, 20% de descuento en impermeabilizantes",
-        description: `Promoción válida hasta el 30 de septiembre del 2024 o hasta agotar existencias. 
-        Aplica solo en tiendas participantes. 
-        Consulta productos, términos y condiciones,
-        No aplica con otras promociones. Aplica restricciones. Productos participantes: 
-        Imper Ruf® 3 años. Imper Lux® 5 años, Imper Lux Fibratado 5 años, Imper Cril® 7 años, impermeabilizantes de muro, Wall Cover Eco® 3 años y Wall Cover Plus® 5 años en presentaciones 18 y 19L.
-        Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA.`,
-        imagen: "/promociones/caida_cielo/promo.jpg",
-        enlace: "/productos",
-        categoria: "decorativa",
-        microcategoria: "impermeabilizantes"
-    },
-    {
-        id: 3,
-        name: "20% de descuento ",
-        description: "Promoción válida hasta el 28 de abril del 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones, No aplica con otras promociones. Aplica restricciones. Productos participantes: Pintura vinil acrilica VINIPESA® acabo mate o satín y esmalte Tropimar®, en presentaciones  1, 4 y 19 L. Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA.",
-        imagen: "/consumidores/promocion.webp",
-        enlace: "/productos",
-        categoria: "decorativa",
-        microcategoria: "vinilicas"
-    },
-    {
-        id: 4,
-        name: "Nuestro Rellenador Premium Hyper Light",
-        description: "Es un rellenador premium, al ser más ligero es mucho más fácil de lijar, reduce por mucho la porosidad y tiene excelente adherencia.",
-        imagen: "/principal/nuevo_producto.webp",
-        enlace: "/productos",
-        categoria: "automotriz",
-        microcategoria: "rellenadores"
-    },
+    }
+    // ,{
+    //     id: 1,
+    //     name: "Nuestra Visión es de colores",
+    //     description: `Promoción válida del 10 de septiembre al 19 de octubre de 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones. No aplica con otras promociones. Aplican restricciones. Productos participantes VINITEK®, REALTEK®, VINIPESA® MATE Y SATÍN, VINI+, SELLALTEK® 5X1	Y 2 en 1. Cualquier duda acerca de la promoción, consulta con tu distribuidor autorizado IPESA®`,
+    //     imagen: "/promociones/1a1.png",
+    //     enlace: "/productos",
+    //     categoria: "decorativa",
+    //     microcategoria: "impermeabilizantes"
+    // },{
+    //     id: 2,
+    //     name: "Promocion caída del cielo, 20% de descuento en impermeabilizantes",
+    //     description: `Promoción válida hasta el 30 de septiembre del 2024 o hasta agotar existencias. 
+    //     Aplica solo en tiendas participantes. 
+    //     Consulta productos, términos y condiciones,
+    //     No aplica con otras promociones. Aplica restricciones. Productos participantes: 
+    //     Imper Ruf® 3 años. Imper Lux® 5 años, Imper Lux Fibratado 5 años, Imper Cril® 7 años, impermeabilizantes de muro, Wall Cover Eco® 3 años y Wall Cover Plus® 5 años en presentaciones 18 y 19L.
+    //     Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA.`,
+    //     imagen: "/promociones/caida_cielo/promo.jpg",
+    //     enlace: "/productos",
+    //     categoria: "decorativa",
+    //     microcategoria: "impermeabilizantes"
+    // },
+    // {
+    //     id: 3,
+    //     name: "20% de descuento ",
+    //     description: "Promoción válida hasta el 28 de abril del 2024 o hasta agotar existencias. Aplica solo en tiendas participantes. Consulta productos, términos y condiciones, No aplica con otras promociones. Aplica restricciones. Productos participantes: Pintura vinil acrilica VINIPESA® acabo mate o satín y esmalte Tropimar®, en presentaciones  1, 4 y 19 L. Cualquier duda acerca de la promoción consulta con tu distribuidor autorizado IPESA.",
+    //     imagen: "/consumidores/promocion.webp",
+    //     enlace: "/productos",
+    //     categoria: "decorativa",
+    //     microcategoria: "vinilicas"
+    // },
+    // {
+    //     id: 4,
+    //     name: "Nuestro Rellenador Premium Hyper Light",
+    //     description: "Es un rellenador premium, al ser más ligero es mucho más fácil de lijar, reduce por mucho la porosidad y tiene excelente adherencia.",
+    //     imagen: "/principal/nuevo_producto.webp",
+    //     enlace: "/productos",
+    //     categoria: "automotriz",
+    //     microcategoria: "rellenadores"
+    // },
     
 ]
 
