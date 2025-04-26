@@ -387,6 +387,28 @@ const ProductoSelected = ({ valor }) => {
                     )
                   }
                   {
+                    articulo.ficha3 && (
+                    windowWidth < 800 || browser == "Mac" ?
+                      <div className="w-full -ml-2 rounded-lg text-gray-600 flex items-center uppercase zoom-producto"
+                        style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
+                        <a href={articulo.ficha3} download className='font-bold'>
+                          <FontAwesomeIcon icon={faFilePdf} size='3x' className='mr-4'></FontAwesomeIcon>
+                          {browser == "Mac" ? "Ficha Técnica Tropimar Metalicos" : windowWidth < 800 ? "Ficha Técnica Tropimar Metalicos" : "Ficha Técnica Tropimar Metalicos"}
+                        </a>
+                      </div> : <div className="w-full flex items-center cursor-pointer zoom-producto" 
+                      onClick={() => handleModalFicha(articulo.ficha3)}>
+                        <div className="">
+                          <FontAwesomeIcon icon={faFilePdf} size='3x'
+                            className='cursor-pointer'
+                            color='gray'
+                          ></FontAwesomeIcon>
+                        </div>
+                        <div className="ml-4"><Typography as={'h5'} variant='h5' color='gray'>Ficha Tropimar Metalicos</Typography></div>
+
+                      </div>
+                    )
+                  }
+                  {
                     articulo.seguridad && (
 
                       windowWidth < 800 || browser == "Mac" ?
@@ -440,7 +462,33 @@ const ProductoSelected = ({ valor }) => {
 
                     )
                   }
+{
+                    articulo.seguridad3 && (
 
+                      windowWidth < 800 || browser == "Mac" ?
+                        <div className="w-full rounded-lg -ml-2 text-gray-600 flex items-center uppercase zoom-producto"
+                          style={{ fontSize: "14px", fontWeight: "normal", padding: "9px" }}>
+                          <a href={articulo.seguridad3} download className='font-bold'> 
+                          <FontAwesomeIcon icon={faFileShield} size='3x' 
+                          className='mr-4'></FontAwesomeIcon> 
+                          {browser == "Mac" ? "Hoja de seguridad Tropimar Metalicos" : windowWidth < 800 ? "Hoja de seguridad Tropimar Metalicos" : "Hoja de seguridad Tropimar Metalicos"}</a>
+                        </div> : <div className="w-full flex items-center cursor-pointer zoom-producto" 
+                        onClick={() => handleModalFicha(articulo.seguridad3)}>
+
+                          <div className="">
+                            <FontAwesomeIcon icon={faFileShield}
+                              size='3x'
+                              color='gray'
+                              className='cursor-pointer'
+                            ></FontAwesomeIcon>
+                          </div>
+                          <div className="ml-4">
+                            <Typography as={'h5'} className='text-gray-600' variant='h5'>Hoja de Tropimar Metalicos</Typography>
+                          </div>
+                        </div>
+
+                    )
+                  }
                   {
                     articulo.color ? <div className="w-full flex items-center cursor-pointer zoom-producto" onClick={handleModalColores}>
                       <div className="" >

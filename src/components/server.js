@@ -221,9 +221,9 @@ export const articulos = [
         promedio: 40,
         acabados: "Incoloro-transparente",
         dirigido: "Particular, oficios y profesional",
-        ficha: ["/fichas/selladores/SELLATEK_5x1.pdf"],
+        ficha: ["/fichas/selladores/5010-Sellatek-5-1.pdf"],
         ficha2: ["/fichas/selladores/SELLATEK_5x1_acr.pdf"],
-        seguridad: ["/seguridad/decorativa/SELLATEK_5010.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5010-2025.pdf"],
         seguridad2: ["/seguridad/decorativa/SELLATEK_5X1.pdf"],
     },
     
@@ -245,8 +245,8 @@ export const articulos = [
         promedio: 40,
         acabados: "Blanco",
         dirigido: "Particular, oficios y profesional",
-        ficha: ["/fichas/selladores/SELLATEK.pdf"],
-        seguridad: ["/seguridad/decorativa/SELLATEK-2X1.pdf"],
+        ficha: ["/fichas/selladores/5020-Sellatek_2en1.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5020-2025.pdf"],
     },
 
     // +++++++++++++++++++++++++++++++++++++++ Esmaltes +++++++++++++++++++++++++++++++++++++++++++++++++
@@ -283,7 +283,8 @@ export const articulos = [
         subcategorie: "esmaltes",
         microcategorie: "esmaltes",
         presentation: ["1 L","4 L","19 L"],
-        color: "tropimarsur",
+        // color: "tropimarsur",
+        ficha_color:["/fichas/esmaltes/MUESTRARIO-TROPIMAR-SUR.pdf"],
         imagen : "/articulos/esmaltes/tropimar_sur.png",
         subtitle: "Esmalte de secado ultra rápido",
         description: ["Esmalte alquidálico que brinda embellecimiento y protección para interior y exterior."],
@@ -295,8 +296,8 @@ export const articulos = [
         acabados: "Acabados mate y brillante",
         gama: "18 colores de línea.",
         dirigido: "Oficio, particular y profesional",
-        ficha: ["/fichas/esmaltes/Tropimar_SUR.pdf"],
-        seguridad: ["/seguridad/decorativa/TROPIMAR-SUR.pdf"],
+        ficha: ["/fichas/esmaltes/200-TropimarSur.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-200-2025.pdf"],
         videos: [
             {name: "Atributos", url: "https://www.youtube.com/watch?v=yiK1tH6Sd_0"},
             {name: "Tutorial paso a paso", url: "https://www.youtube.com/watch?v=UzDi2_ZJXwo"},
@@ -325,8 +326,10 @@ export const articulos = [
         acabados: "Acabado brillante.",
         gama: " 23 colores de línea.",
         dirigido: "Oficio, particular y profesional",
-        ficha: ["/fichas/esmaltes/TROPIMAR.pdf"],
-        seguridad: ["/seguridad/decorativa/TROPIMAR.pdf"],
+        ficha: ["/fichas/esmaltes/1000-Tropimar.pdf"],
+        ficha3: ["/fichas/esmaltes/1040-1041-1042-Tropimar-Metálicos.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1000-2025.pdf"],
+        seguridad3: ["/seguridad/decorativa/HDS-1040-1041-1042-TROPIMAR-METALICO.pdf"],
         videos: [
             {name: "Atributos", url: "https://www.youtube.com/watch?v=yTuBaOlXHME"},
             {name: "Tutorial paso a paso", url: "https://www.youtube.com/watch?v=ujiKUFdQd4s"},
@@ -355,8 +358,8 @@ export const articulos = [
         acabados: "Acabados mate y brillante",
         gama: " 21 colores de línea.",
         dirigido: "Particular y oficio",
-        ficha: ["/fichas/esmaltes/Brigadier.pdf"],
-        seguridad: ["/seguridad/decorativa/Brigadier.pdf"],
+        ficha: ["/fichas/esmaltes/1700-Brigadier.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1700-2025.pdf"],
     },
     {
         id: "canada",
@@ -400,8 +403,8 @@ export const articulos = [
         rendimiento: " 10 a 12 m2 / L",
         promedio: 11,
         dirigido: "Particular, profesional y oficio",
-        ficha: ["/fichas/esmaltes/MINIO_GENUINO.pdf"],
-        seguridad: ["/seguridad/decorativa/VULCAN_5004-MINIO-GENUINO.pdf"],
+        ficha: ["/fichas/esmaltes/5004-Primario-Minio.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5004-2025.pdf"],
     },
     {
         id: "16",
@@ -420,8 +423,8 @@ export const articulos = [
         rendimiento: " 8 a 10 m2 / L",
         promedio: 11,
         dirigido: "Particular, profesional y oficio",
-        ficha: ["/fichas/esmaltes/MINIO_ECONOMICO.pdf"],
-        seguridad: ["/seguridad/decorativa/VULCAN_5005-MINIO-ECONOMICO.pdf"],
+        ficha: ["/fichas/esmaltes/5005-PrimarioMinio-ECO.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5005-2025.pdf"],
     },
     {
         id: "17",
@@ -440,8 +443,8 @@ export const articulos = [
         rendimiento: " 8 a 10 m2 / L",
         promedio: 11,
         dirigido: "Particular, profesional y oficio",
-        ficha: ["/fichas/esmaltes/CROMATO_ZINC.pdf"],
-        seguridad: ["/seguridad/decorativa/VULCAN_5006-CROMATO-DE-ZINC.pdf"],
+        ficha: ["/fichas/esmaltes/5007-Primario-Universal.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5007-2025.pdf"],
     },
     {
         id: "18",
@@ -460,8 +463,8 @@ export const articulos = [
         rendimiento: " 10 a 12 m2 / L",
         promedio: 11,
         dirigido: "Particular, profesional y oficio",
-        ficha: ["/fichas/esmaltes/secado_rapido.pdf"],
-        seguridad: ["/seguridad/decorativa/VULCAN_SECADORAPIDO.pdf"],
+        ficha: ["/fichas/esmaltes/5007-Primario-Universal.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5007-2025.pdf"],
     },
     {
         id: "19",
@@ -480,7 +483,8 @@ export const articulos = [
         rendimiento: " 10 a 12 m2 / L",
         promedio: 11,
         dirigido: "Particular, profesional y oficio",
-        ficha: ["/fichas/esmaltes/secado_express.pdf"]
+        ficha: ["/fichas/esmaltes/5040-5041-5042-Primario-Secado-Express.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5040-5041-5042-2025.pdf"],
     },
 
     {
@@ -499,8 +503,9 @@ export const articulos = [
         description: ["Primario 100% alquidálico diseñado con la más alta calidad de materiales que darán protección a superficies metálicas ferrosas como tanques, tubería y herrería en general. Mejora la adherencia del acabado a la superficie metálica y por su acción anticorrosiva prolonga la vida útil de los metales. "],
         rendimiento: " 10 a 12 m2 / L",
         promedio: 11,
-        dirigido: "Particular, porfesional y oficio",
-        ficha: ["/fichas/esmaltes/PRIMARIO_HERREROS_VULCAN.pdf"]
+        dirigido: "Particular, porfesional y oficio", 
+        ficha: ["/fichas/esmaltes/5050-5051-Primario Herreros.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5050-2025.pdf"],
     },
     {
         id: "aerosol-color-cril",
@@ -712,8 +717,8 @@ export const articulos = [
     "Por su formulación es fácil de usar y en color blanco favorece la reducción de la temperatura interior. Se recomienda para proteger y decorar superficies expuestas a la lluvia como losas de concreto, láminas de asbesto, lámina galvanizada, paredes, muros de ladrillo, etc."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/IMPER_CRILL.pdf"],
-        seguridad: ["/seguridad/decorativa/IMPER_CRIL.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9040-9041-ImperCril-7anios.pdf"],
+        seguridad: ["/seguridad/decorativa/9040-9041-2025.pdf"],
     },
     {
         id: "imper-lux",
@@ -730,8 +735,8 @@ export const articulos = [
         description: ["Impermeabilizante elastomérico hecho a base de resinas acrílicas, por sus características, formulación y materias primas presenta un grado alto de elongación en impermeabilidad, lo cual provoca una resistencia importante a movimientos térmicos estructurales de losas y/o de la superficie impermeabilizada sin sufrir agrietamientos, previniendo filtraciones de agua."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/IMPER_LUX.pdf"],
-        seguridad: ["/seguridad/decorativa/IMPER_LUX.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9050-9051-ImperLux-5anios.pdf"],
+        seguridad: ["/seguridad/decorativa/9050-9051-2025.pdf"],
     },
     {
         id: "imper-lux-fibratado",
@@ -749,8 +754,8 @@ export const articulos = [
     "Dadas sus características de elasticidad, elongación e impermeabilidad, evita los agrietamientos y la necesidad de repasar la zona impermeabilizada en forma periódica. No requiere de malla de refuerzo en su aplicación."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/IMPER_LUX_FIBRATADO.pdf"],
-        seguridad: ["/seguridad/decorativa/IMPER-LUX-FIBRATADO.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9052-9053-ImperLuxFibratado.pdf"],
+        seguridad: ["/seguridad/decorativa/9052-9053.pdf"],
     },
     {
         id: "imper-ruf",
@@ -767,8 +772,8 @@ export const articulos = [
         description: ["Impermeabilizante elastomérico hecho a base de resinas acrílicas, su formulación es altamente elástica y flexible, lo cual proporciona alta resistencia e impermeabilidad de la superficie."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/IMPER_RUF.pdf"],
-        seguridad: ["/seguridad/decorativa/IMPER_RUF.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9060-9061-ImperRuf-3anios.pdf"],
+        seguridad: ["/seguridad/decorativa/9060-9061-2025.pdf"],
     },
     // {
     //     id: "imper-micro",
@@ -803,8 +808,8 @@ export const articulos = [
         description: ["Impermeabilizante asfáltico base solvente que por su composición es ideal para proteger aislamientos térmicos.","Además de ser un excelente revestimiento impermeable, elástico y duradero en áreas de contacto continuo con la humedad, se adhiere sobre cualquier tipo de superficie como: cimentaciones, muros de contención, charolas de baños, jardineras, depósitos de agua no aptos para consumo humano, etc."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/IMPER_ROK.pdf"],
-        seguridad: ["/seguridad/decorativa/IMPER_ROK.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9000-ImperRock-BS.pdf"],
+        seguridad: ["/seguridad/decorativa/9000-2025.pdf"],
     },
     {
         id: "wall-cover-eco",
@@ -821,8 +826,8 @@ export const articulos = [
         description: ["Impermeabilizante elastomérico creado especialmente para la impermeabilización de muros y paredes exteriores, por su alto nivel de elasticidad no sufre agrietamientos, evita la humedad y filtraciones hacia el interior."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/WALL_COVER_ECO.pdf"],
-        seguridad: ["/seguridad/decorativa/WALL_COVER_ECO.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9063-WallCover-3anios.pdf"],
+        seguridad: ["/seguridad/decorativa/9063-2025.pdf"],
     },
     {
         id: "wal-cover-plus",
@@ -839,8 +844,8 @@ export const articulos = [
         description: ["Impermeabilizante de excelente calidad, diseñado para proteger e impermeabilizar muros y paredes exteriores.","Su formulación le brinda propiedades de altísima elasticidad y flexibilidad, evitando que se generen filtraciones e impidiendo el paso de humedad."],
         rendimiento: "De 1 a 1.5 m2 / L",
         promedio: 1.25,
-        ficha: ["/fichas/impermeabilizantes/WALL_COVER_PLUS.pdf"],
-        seguridad: ["/seguridad/decorativa/WALL_COVER-PLUS.pdf"],
+        ficha: ["/fichas/impermeabilizantes/9054-WallCover-5anios.pdf"],
+        seguridad: ["/seguridad/decorativa/9054-2025.pdf"],
     },
     
     {
@@ -1867,7 +1872,8 @@ export const articulos = [
         description: ["Especialmente diseñado para utilizarse como base antes de la aplicación de esmaltes base solvente o base agua, su fórmula amigable con el medio ambiente ayuda a la protección anticorrosiva y promueve la adherencia del acabado."],
         rendimiento: "De 10 a 12 m2 / L",
         promedio: 11,
-        ficha: ["/fichas/ferreteras/PRIMARIO_HERREROS.pdf"]
+        ficha: ["/fichas/ferreteras/5030-5031-PrimarioHerreros.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-5030-2025.pdf"],
     },
 
     {
@@ -1978,8 +1984,8 @@ export const articulos = [
         description: ["Recubrimiento especial para señalización vial, de secado rápido, excelente retención del color, resistente a la abrasión y a la gasolina, con gran flexibilidad y estabilidad de almacenamiento."],
         rendimiento: "32.8 m2 / L,  línea de 10 cm de ancho y 6 milésimas de espesor.",
         promedio: 32.8,
-        ficha: ["/fichas/industriales/INDEX.pdf"],
-        seguridad: ["/seguridad/decorativa/INDEX.pdf"],
+        ficha: ["/fichas/industriales/6001-6002-IndexTrafico.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-6001-6002-2025.pdf"],
     },
 
     {
@@ -1999,8 +2005,8 @@ export const articulos = [
         presentation2: ["4 L","19 L"],
         leyenda: "Este producto se vende por separado.",
         rendimiento: "1 a 2 m2 a una milesima.",
-        ficha: ["/fichas/industriales/Aqua_Alberka.pdf"],
-        seguridad: ["/seguridad/decorativa/AQUA_ALBERKA.pdf"],
+        ficha: ["/fichas/industriales/1900-AquaAlberka.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1900-2025.pdf"],
     },
     {
         id: "pegaso-tirol",
@@ -2020,8 +2026,8 @@ export const articulos = [
         rendimiento: "12 a 14 m2 / L",
         promedio: 13,
         promedio: "13",
-        ficha: [""],
-        seguridad: [""],
+        ficha: ["/fichas/industriales/1600-PegaTirol.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1600-2025.pdf"],
     },
     {
         id: "pegaso-yeso",
@@ -2041,8 +2047,8 @@ export const articulos = [
         rendimiento: "12 a 14 m2 / L",
         promedio: 13,
         promedio: "13",
-        ficha: [""],
-        seguridad: [""],
+        ficha: ["/fichas/industriales/1602-PegaYeso.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1602-2025.pdf"],
     },
     {
         id: "pegaso-acribond",
@@ -2062,8 +2068,8 @@ export const articulos = [
         rendimiento: "12 a 14 m2 / L",
         promedio: 13,
         promedio: "13",
-        ficha: [""],
-        seguridad: [""],
+        ficha: ["/fichas/industriales/1603-Acribond.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1603-2025.pdf"],
     },
     {
         id: "pegaso-bond",
@@ -2083,8 +2089,8 @@ export const articulos = [
         rendimiento: "12 a 14 m2 / L",
         promedio: 13,
         promedio: "13",
-        ficha: [""],
-        seguridad: [""],
+        ficha: ["/fichas/industriales/1604-PegaBond.pdf"],
+        seguridad: ["/seguridad/decorativa/HDS-1604-2025.pdf"],
     },
     
     // PULIMIENTOS===============================================================================
@@ -4857,6 +4863,9 @@ export const nosotros = [
 
 export const tipsparapintar = [
     {
+        name: "IPESA, PRUEBA SUPERADA",
+        target: "superada",
+    },{
         name: "Sistema de aplicación Vinílicas",
         target: "vinilicas",
     },
@@ -4960,6 +4969,34 @@ export const contenidoTips = [
         name: "Tropimar", 
         video: "https://www.youtube.com/watch?v=ujiKUFdQd4s",
         enlace: "/producto/tropimar",
+        categoria: "decorativa",
+        microcategoria: "esmaltes",
+    },{
+        id: "superada",
+        name: "Restauración con VULCAN y TROPIMAR metálicos", 
+        video: "https://www.youtube.com/watch?v=d_iVRaVRDfA",
+        enlace: "/producto/tropimar",
+        categoria: "decorativa",
+        microcategoria: "esmaltes",
+    },{
+        id: "superada",
+        name: "Pulimos un auto con productos MENZERNA y el resultado es brutal", 
+        video: "https://www.youtube.com/watch?v=cRtafg659gg&t=53s",
+        enlace: "/producto/cut-force-pro",
+        categoria: "decorativa",
+        microcategoria: "esmaltes",
+    },{
+        id: "superada",
+        name: "Transformamos esta pared en minutos con REALTEK", 
+        video: "https://www.youtube.com/watch?v=WBEe17d_Kxw",
+        enlace: "/producto/realtek",
+        categoria: "decorativa",
+        microcategoria: "esmaltes",
+    },{
+        id: "superada",
+        name: "Pintado Automotriz Paso a Paso con Productos COLOR CRIL de Pinturas IPESA", 
+        video: "https://www.youtube.com/watch?v=AQ97OqmCFoo&t=17s",
+        enlace: "/producto/body-filler-2203",
         categoria: "decorativa",
         microcategoria: "esmaltes",
     },
