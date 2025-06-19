@@ -698,6 +698,29 @@ export const articulos = [
         gama: "4 colores.",
         ficha: ["/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf"],
         seguridad: ["/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf"]
+    },{
+        id: "vulcan-5011",
+        id_number: 18,
+        codigo: 700,
+        registro: "®",
+        name: "VULCAN",
+        name2: " PRIMARIO ALTA ADHERENCIA",
+        categorie: "decorativa",
+        subcategorie: "esmaltes",
+        microcategorie: "primarios",
+        presentation: ["1 L","4 L"],
+        color: "",
+        imagen: "/articulos/esmaltes/vulcan_5011.png",
+        description: ["El primario Vulcan Alta Adherencia es un producto de la más alta calidad, elaborado con resinas acrílicas, especialmente diseñado para aplicarse sobre lámina galvanizada previamente acondicionada. Cuenta con excelentes propiedades como son: secado rápido, gran poder de relleno y gran adherencia. Para utilizarse como recubrimiento anticorrosivo sobre estructuras metálicas como son tanques, tuberías, maquinaria, puertas, etc. El primario puede ser recubierto con cualquier acabado IPESA Pinturas.", 
+            "1.	Excelente adherencia sobre lámina galvanizada.",
+            "2.	Buena protección anticorrosiva.",
+            "3.	Secado rápido."
+        ],
+        rendimiento: " 10 a 11m² / L",
+        promedio: 11,
+        dirigido: "Particular, profesional y oficio",
+        ficha: ["/fichas/esmaltes/VULCAN_5011_FICHA_TECNICA_PRIMER_ALTA_ADHERENCIA.pdf"],
+        seguridad: ["/seguridad/decorativa/VULCAN_5011_HOJA_DE_SEGURIDAD.pdf"],
     },
 
      // +++++++++++++++++++ Impermeabilizantes +++++++++++++++++++++++
@@ -4735,6 +4758,32 @@ export const colores = [
 export const novedades = [
     {
         id: 1,
+        name: "¡Llegaron los nuevos colores metálicos TROPIMAR!",
+        description: `Transforma cualquier superficie con el acabado espectacular de nuestros nuevos tonos: Oro, Aluminio y Cobre.
+Perfectos para darle un toque sofisticado y artístico a tus proyectos.
+Descubre cómo un color puede hacer que todo resalte.
+
+.
+`,
+        imagen: "/promociones/tropimar.jpg",
+        enlace: "/productos",
+        categoria: "decorativa",
+        microcategoria: "esmaltes"
+        
+    },{
+        id: 2,
+        name: "¡Ya está aquí el nuevo VULCAN® PRIMARIO ALTA ADHERENCIA de IPESA Pinturas!",
+        description: `Un primario de calidad superior, formulado con resinas acrílicas para ofrecer una adherencia excepcional sobre lámina galvanizada previamente acondicionada.
+Ideal para estructuras metálicas como tanques, puertas, maquinaria y más.
+
+`,
+        imagen: "/promociones/vulvan_511.jpg",
+        enlace: "/productos",
+        categoria: "decorativa",
+        microcategoria: "primarios"
+        
+    },{
+        id: 3,
         name: "Nueva línea de Pulimentos MENZERNA",
         description: `¡La perfección del pulido automotriz ha llegado a México! Presentamos la nueva línea de pulimentos MENZERNA, ahora disponible con tu distribuidor IPESA Pinturas. Esta tecnología de precisión alemana complementa a la perfección nuestra línea de repintado automotriz Color Cril, ofreciendo una solución completa: desde el color hasta el brillo final.
 Con más de 50 años de experiencia, en IPESA Pinturas unimos innovación y calidad para brindarte acabados duraderos y profesionales. Menzerna e IPESA Pinturas, una alianza para lograr pintura impecable y protección superior. ¡Descúbrela hoy!
@@ -4746,7 +4795,7 @@ Con más de 50 años de experiencia, en IPESA Pinturas unimos innovación y cali
         microcategoria: "pulimentos"
         
     },{
-        id: 1,
+        id: 4,
         name: "\"Promoción como caída del cielo\"",
         description: `Prepárate para la temporada de lluvias con un 20% de descuento en impermeabilizantes seleccionados, vigente del 1 de marzo al 29 de agosto de 2025. Protege tu hogar con soluciones confiables como IMPER RUF®, IMPER LUX®, IMPER CRIL®, y nuestros impermeabilizantes de muro WALL COVER ECO® y WALL COVER PLUS®, en presentaciones de 18 y 19 litros.
 Aprovecha esta oportunidad en tiendas participantes. Consulta productos participantes, restricciones y condiciones con tu distribuidor autorizado IPESA®.
@@ -4757,18 +4806,19 @@ Aprovecha esta oportunidad en tiendas participantes. Consulta productos particip
         categoria: "decorativa",
         microcategoria: "impermeabilizantes"
         
-    },{
-        id: 1,
-        name: "Pinta la primavera con IPESA Pinturas",
-        description: `Dale color a la primavera con un 20% de descuento en nuestras pinturas vinílicas y selladores seleccionados. Del 24 de marzo al 30 de abril de 2025, aprovecha esta promoción exclusiva y renueva tus espacios con productos de alta calidad como VINTEKO, VINIPESA® Mate y Satín, REALTEK®, y selladores SELLATEK® 2 en 1 y SELLATEK® 5x1 en sus presentaciones de 1, 4 y 19 litros.
-Aplica solo en tiendas participantes y hasta agotar existencias. Consulta productos participantes, términos y condiciones con tu distribuidor autorizado IPESA®.
-`,
-        imagen: "/promociones/primavera_2025.webp",
-        enlace: "/productos",
-        categoria: "decorativa",
-        microcategoria: "vinilicas"
-        
     }
+//     ,{
+//         id: 5,
+//         name: "Pinta la primavera con IPESA Pinturas",
+//         description: `Dale color a la primavera con un 20% de descuento en nuestras pinturas vinílicas y selladores seleccionados. Del 24 de marzo al 30 de abril de 2025, aprovecha esta promoción exclusiva y renueva tus espacios con productos de alta calidad como VINTEKO, VINIPESA® Mate y Satín, REALTEK®, y selladores SELLATEK® 2 en 1 y SELLATEK® 5x1 en sus presentaciones de 1, 4 y 19 litros.
+// Aplica solo en tiendas participantes y hasta agotar existencias. Consulta productos participantes, términos y condiciones con tu distribuidor autorizado IPESA®.
+// `,
+//         imagen: "/promociones/primavera_2025.webp",
+//         enlace: "/productos",
+//         categoria: "decorativa",
+//         microcategoria: "vinilicas"
+        
+//     }
     // ,{
     //     id: 1,
     //     name: "Nuestra Visión es de colores",
