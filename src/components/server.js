@@ -72,7 +72,7 @@ export const articulos = [
         color: "realtek",
         imagen: "/articulos/vinilicas/realtek.png",
         subtitle: "La pintura de los conocedores",
-        description: ["Pintura vinil acrílica semi mate de excelente calidad y durabilidad, ideal para espacios interiores y exteriores"],
+        description: ["Pintura vinil acrílica mate de excelente calidad y durabilidad, ideal para espacios interiores y exteriores"],
         atributos: ["Alto poder cubriente y durabilidad.",
         "Repele el agua y evita manchas en los muros.",
         "Mantiene estables  los colores por mayor tiempo."],
