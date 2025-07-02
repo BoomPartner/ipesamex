@@ -29,7 +29,7 @@ const Productos = () => {
             micro: "Selladores",
             microStatus: true,
             checked: false,
-            label: "Vinílicas"
+            label: "Acrílicas / Vinílicas"
         },
         {
             id: "esmaltes",

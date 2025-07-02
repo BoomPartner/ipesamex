@@ -180,9 +180,16 @@ const ProductoSelected = ({ valor }) => {
                     articulo.tipo ?
                       <div className="imagen-producto"><Image src={articulo.imagen} width={180} height={180} alt='imagen' 
                       className='producto-selected'></Image> </div>
+                      : articulo.imagen_prd ?
+                      <div className="imagen-producto"><Image src={articulo.imagen_prd} width={400} height={500} alt='imagen' 
+                      className='producto-selected'></Image></div>
                       : <div className="imagen-producto"><Image src={articulo.imagen} width={400} height={500} alt='imagen' 
                       className='producto-selected'></Image></div>
+          
+                    
                   }
+
+
                 </div>
 
               </div>
