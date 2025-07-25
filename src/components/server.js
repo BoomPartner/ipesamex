@@ -81,7 +81,7 @@ export const articulos = [
         gama: "23 colores de línea.",
         rendimiento: "10 a 12 m2 / L",
         promedio: 11,
-        acabados: "Acabado semi mate",
+        acabados: "Acabado mate",
         dirigido: "Particular, oficios y profesional",
         ficha: ["/fichas/vinilicas/TDS-400-Realtek.pdf"],
         seguridad: ["/seguridad/decorativa/HDS-REALTEK-400-2025.pdf"],
