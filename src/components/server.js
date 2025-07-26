@@ -383,7 +383,7 @@ export const articulos = [
         // acabados: "Acabado brillante.",
         // gama: " 23 colores de línea.",
         // dirigido: "Oficio, particular y profesional",
-        ficha: ["/fichas/esmaltes/Tropimar_BA.pdf"],
+        ficha: ["/fichas/esmaltes/Tropimar_Aqua.pdf"],
         // seguridad: ["/seguridad/decorativa/HDS-1000-2025.pdf"],
 
        
@@ -2449,15 +2449,15 @@ export const articulos = [
         microcategorie: "selladores",
         presentation: ["1 L","4 L", "19 L"],
         color: "",
-        imagen: "/articulos/vinilicas/SELLATEK-PRIME.png",
-        imagen_prd: "/articulos/vinilicas/SELLATEK-RRIME_img.png",
+        imagen: "/articulos/vinilicas/Sellatek_Prime_Portada.png",
+        imagen_prd: "/articulos/vinilicas/Sellatek_Prime_Producto.png",
         description: ["Sellador 100% acrílico estrictamente diseñado para proteger superficies con problemas de alcalinidad, humedad y salitre previniendo el daño a la pintura en interiores y exteriores.","Proporciona un extraordinario sellado de porosidad, excelente durabilidad y adherencia en el área aplicada. Diseñado especialmente para sellar la porosidad de superficies nuevas y repintadas de concreto, yeso, panel de yeso, panel de concreto y mampostería con excelentes resultados."],
          atributos: ["Libre de plomo y metales pesados. Bajo en VOC.","No se recomienda como acabado final.","Recomendado para el uso de interiores y exteriores; libre de plomo o metales pesados."],
         rendimiento: " 18 m2 / L",
         promedio: 18,
         // acabados: "Blanco",
         dirigido: "Particular, oficios y profesional",
-        ficha: ["/fichas/selladores/TDS-7010-Sellatek Prime.pdf"],
+        ficha: ["/fichas/selladores/TDS-7010-Sellatek-Prime.pdf"],
         // seguridad: ["/seguridad/decorativa/HDS-5020-2025.pdf"],
     }
     
