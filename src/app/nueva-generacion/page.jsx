@@ -1,9 +1,9 @@
 import React from 'react';
-import Contacto2 from '@/components/Contact2';
+import NuevaGeneracion from '@/components/NuevaGeneracion';
 const pageContact = () => {
   return (
     <div>
-      <Contacto2></Contacto2>
+      <NuevaGeneracion></NuevaGeneracion>
     </div>
   );
 };
