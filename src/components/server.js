@@ -130,7 +130,7 @@ export const articulos = [
     acabados: '31 colores brillantes.',
     acabados2: 'Mate solo blanco',
     dirigido: 'Particulares, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-7000- Acritek 360_OK.pdf'],
+    ficha: ['/fichas/vinilicas/TDS-7000- Acritek 360_OK_15102025.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-ACRITEK-7000-2025.pdf'],
     fichas_colores: ['/fichas_colores/acritek.pdf'],
   },

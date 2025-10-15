@@ -250,7 +250,7 @@ const Footer = () => {
             {/* 🔹 Bloque Hecho en México */}
             <div className="flex flex-col items-center justify-center mb-4">
               <img
-                src="/logos/Hecho_En_Mexico_logo_bco.png"
+                src="/logos/MADE_MEX_NGO.png"
                 alt="Hecho en México"
                 className="w-20 h-auto"
               />

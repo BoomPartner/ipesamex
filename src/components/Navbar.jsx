@@ -25,6 +25,7 @@ import {
   faInstagram,
   faLinkedin,
   faTiktok,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
 export function NavbarResponsive({ handleNosotros }) {
@@ -386,6 +387,44 @@ export function NavbarResponsive({ handleNosotros }) {
                     icon={faLinkedin}
                     size={'xl'}
                     color="#0077B5"
+                  ></FontAwesomeIcon>
+                </Link>
+              </Tooltip>
+            </div>
+
+            <div className="rounded-full cursor-pointer">
+              <Tooltip
+                placement={'bottom'}
+                className={'bg-white shadow-xl placement'}
+                content={
+                  <div>
+                    <Image
+                      src={'/social/youtube.png'}
+                      width={150}
+                      height={150}
+                      alt="QR Linkedin"
+                    ></Image>
+                    <Typography
+                      as={'p'}
+                      variant="paragraph"
+                      className="text-center"
+                      color="black"
+                    >
+                      Siguenos en Youtube
+                    </Typography>
+                  </div>
+                }
+              >
+                <Link
+                  href={
+                    'https://www.youtube.com/c/IPESAPINTURAS?sub_confirmation=1'
+                  }
+                  target="_blank"
+                >
+                  <FontAwesomeIcon
+                    icon={faYoutube}
+                    size={'xl'}
+                    color="#fc0231"
                   ></FontAwesomeIcon>
                 </Link>
               </Tooltip>
