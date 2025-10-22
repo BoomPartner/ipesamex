@@ -455,7 +455,7 @@ export const articulos = [
     subcategorie: 'esmaltes',
     microcategorie: 'esmaltes',
     presentation: ['1 L', '4 L', '19 L'],
-    color: 'tropimar',
+    color: 'tropimar_aqua',
     imagen: '/articulos/esmaltes/TROPIMAR-AQUA.png',
     imagen_prd: '/articulos/esmaltes/TROPIMAR-AQUA_IMG.png',
     subtitle: 'El esmalte que lo resiste todo.',
@@ -469,7 +469,7 @@ export const articulos = [
     rendimiento: '10 - 12 m2 / L',
     promedio: 9,
     ficha: ['/fichas/esmaltes/Tropimar_Aqua.pdf'],
-    fichas_colores: ['/fichas_colores/tropimar-aqua.pdf'],
+    fichas_colores: ['/fichas_colores/Tropimar_Aqua_Ficha_de_color_NW.pdf'],
   },
   {
     id: 'brigadier',
@@ -2447,7 +2447,7 @@ export const articulos = [
     rendimiento:
       '26 metro lineales / L (Línea de 10 cm de ancho y 6 milésimas de Espesor Húmedo)',
     promedio: 26,
-    ficha: ['/fichas/industriales/Index_Trafico_Base_Agua.pdf'],
+    ficha: ['/fichas/industriales/Index_Trafico_Base_Agua_NW.pdf'],
   },
   {
     id: 'aqua-alberka',
@@ -3859,6 +3859,34 @@ export const colores = [
     name: 'Negro',
     color: '#000000',
     product: 'tropimar',
+    cat: 'esmaltes',
+  },
+  {
+    codigo: '1000',
+    name: 'Blanco',
+    color: '#ffffff',
+    product: 'tropimar_aqua',
+    cat: 'esmaltes',
+  },
+  {
+    codigo: '4001',
+    name: 'Amarillo',
+    color: '#f7ad02',
+    product: 'tropimar_aqua',
+    cat: 'esmaltes',
+  },
+  {
+    codigo: '4002',
+    name: 'Azul',
+    color: '#17378a',
+    product: 'tropimar_aqua',
+    cat: 'esmaltes',
+  },
+  {
+    codigo: '3003',
+    name: 'Rojo',
+    color: '#e20620',
+    product: 'tropimar_aqua',
     cat: 'esmaltes',
   },
   {
