@@ -2447,7 +2447,7 @@ export const articulos = [
     rendimiento:
       '26 metro lineales / L (Línea de 10 cm de ancho y 6 milésimas de Espesor Húmedo)',
     promedio: 26,
-    ficha: ['/fichas/industriales/Index_Trafico_Base_Agua_NW.pdf'],
+    ficha: ['/fichas/industriales/Index_Trafico_Base_Agua_NW_2.pdf'],
   },
   {
     id: 'aqua-alberka',
