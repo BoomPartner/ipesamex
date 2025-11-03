@@ -105,15 +105,17 @@ const TipsParaPintar = () => {
                       >
                         {item.name}
                       </Typography>
-                      <Link
-                        href={item.enlace}
-                        className="ml-2 hover:border-b border-[#c50411]"
-                        onClick={() =>
-                          handleLocal(item.categoria, item.microcategoria)
-                        }
-                      >
-                        Ver Producto
-                      </Link>
+                      {item.enlace == null ? null : (
+                        <Link
+                          href={item.enlace}
+                          className="ml-2 hover:border-b border-[#c50411]"
+                          onClick={() =>
+                            handleLocal(item.categoria, item.microcategoria)
+                          }
+                        >
+                          Ver Producto
+                        </Link>
+                      )}
                     </div>
                   </div>
 

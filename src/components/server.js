@@ -27,6 +27,37 @@ export const categorias = [
 
 export const articulos = [
   {
+    id: 'acritek',
+    id_number: 130,
+    registro: '®',
+    name: 'Acritek 360',
+    categorie: 'decorativa',
+    subcategorie: 'vinilicas',
+    microcategorie: 'vinilicas',
+    presentation: ['1 L', '4 L', '19 L'],
+    color: 'vintek',
+    imagen: '/articulos/vinilicas/ACRITEK.png',
+    imagen_prd: '/articulos/vinilicas/ACRITEK_img.png',
+    subtitle: ['La pintura de los profesionales'],
+    description: [
+      'Pintura 100% acrílica base agua, estrictamente desarrollada para obtener una excelente resistencia a climas tropicales en interiores y exteriores.',
+    ],
+    atributos: [
+      'Alta resistencia a condiciones extremas: Soporta rayos UV, calor intenso, humedad, salitre, alcalinidad y mantiene su adherencia.',
+      'Protección higiénica y antimicrobiana: Evita la formación de bacterias, hongos y algas.',
+      'Composición segura y durable: Libre de plomo y metales pesados, con alta durabilidad.',
+    ],
+    rendimiento: '10 a 12 m2 / L',
+    promedio: 13,
+    gama: ' 32 colores de línea y 3,454 colores en sistema Infinite Color',
+    acabados: '31 colores brillantes.',
+    acabados2: 'Mate solo blanco',
+    dirigido: 'Particulares, oficios y profesional',
+    ficha: ['/fichas/vinilicas/TDS-7000- Acritek 360_OK_15102025.pdf'],
+    seguridad: ['/seguridad/decorativa/HDS-ACRITEK-7000-2025.pdf'],
+    fichas_colores: ['/fichas_colores/acritek.pdf'],
+  },
+  {
     id: 'vintek',
     id_number: 1,
     codigo: 700,
@@ -5427,6 +5458,10 @@ export const tipsparapintar = [
     target: 'superada',
   },
   {
+    name: 'Línea de accesorios BROTIMEX',
+    target: 'brotimex',
+  },
+  {
     name: 'Sistema de aplicación Vinílicas',
     target: 'vinilicas',
   },
@@ -5438,6 +5473,11 @@ export const tipsparapintar = [
   //     name: "Problemas y Soluciones Repintado Automotriz",
   //     target: "automotriz",
   // },
+  {
+    name: 'Capacitaciones Técnicas',
+    target: 'capacitaciones',
+  },
+
   {
     name: 'Tutoriales',
     target: 'tutoriales',
@@ -5566,6 +5606,80 @@ export const contenidoTips = [
     enlace: '/producto/body-filler-2203',
     categoria: 'decorativa',
     microcategoria: 'esmaltes',
+  },
+
+  {
+    id: 'superada',
+    name: 'Sistema SELLATEK + REALTEK',
+    video: 'https://youtu.be/-iplU_d2gGA?si=iSpGSf8_67l_zE9u',
+    enlace: '/producto/realtek',
+    categoria: 'decorativa',
+    microcategoria: 'esmaltes',
+  },
+  {
+    id: 'superada',
+    name: 'CENTURY MADERAS: Sistema de Nitrocelulosa',
+    video: 'https://youtu.be/iTgG_OW9yFY?si=_ye1GN40iJyDShPV',
+    enlace: '/producto/sellador-directo-de-nitro',
+    categoria: 'maderas',
+    microcategoria: 'maderas',
+  },
+  {
+    id: 'superada',
+    name: 'CENTURY MADERAS: Tinta al Alcohol, Fondo y Barniz de Poliuretano',
+    video: 'https://youtu.be/6qcU5nE5g9w?si=B4Vu2XBvh-wsobHl',
+    enlace: '/producto/tinta-al-alcohol',
+    categoria: 'maderas',
+    microcategoria: 'maderas',
+  },
+  {
+    id: 'capacitaciones',
+    name: 'TEKLINE: VINTEK',
+    video: 'https://youtu.be/dAg02GU72Dc?si=2dc_w2S-18DPzKHV',
+    enlace: '/producto/vintek',
+    categoria: 'decorativa',
+    microcategoria: 'esmaltes',
+  },
+  {
+    id: 'vinilicas',
+    name: 'TEKLINE (Sistema de aplicación Vinílicas)',
+    video: 'https://youtu.be/70wK2KiX0XE?si=FZ0pjVK7JkuuDAQS',
+    enlace: '/producto/vintek',
+    categoria: 'decorativa',
+    microcategoria: 'esmaltes',
+  },
+  {
+    id: 'tutoriales',
+    name: 'CENTURY MADERAS: Sistema de Nitrocelulosa',
+    video: 'https://youtu.be/iTgG_OW9yFY?si=_ye1GN40iJyDShPV',
+    enlace: '/producto/sellador-directo-de-nitro',
+    categoria: 'maderas',
+    microcategoria: 'maderas',
+  },
+  {
+    id: 'tutoriales',
+    name: 'CENTURY MADERAS: Tinta al Alcohol, Fondo y Barniz de Poliuretano',
+    video: 'https://youtu.be/6qcU5nE5g9w?si=B4Vu2XBvh-wsobHl',
+    enlace: '/producto/tinta-al-alcohol',
+    categoria: 'maderas',
+    microcategoria: 'maderas',
+  },
+
+  {
+    id: 'brotimex',
+    name: 'Descubre BROTIMEX',
+    video: 'https://youtu.be/2rMqIUkFTjA?si=IU8ywlKUh5PnVBZq',
+    enlace: null,
+    categoria: 'maderas',
+    microcategoria: 'maderas',
+  },
+  {
+    id: 'brotimex',
+    name: '¡Brochas BROTIMEX!',
+    video: 'https://youtu.be/P2s9mihyX90?si=26sZC3wAT7S5omr3',
+    enlace: null,
+    categoria: 'maderas',
+    microcategoria: 'maderas',
   },
 ];
 
