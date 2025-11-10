@@ -594,8 +594,8 @@ export const articulos = [
     rendimiento: ' 8 a 10 m2 / L',
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
-    ficha: ['/fichas/esmaltes/5007-Primario-Universal.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5007-2025.pdf'],
+    ficha: ['/fichas/esmaltes/5006-Primario-CromatoZinc_2025.pdf'],
+    seguridad: ['/seguridad/decorativa/5006_HDS_2025.pdf'],
     fichas_colores: ['/fichas_colores/17.pdf'],
   },
   {
