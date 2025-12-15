@@ -146,7 +146,7 @@ export const articulos = [
     microcategorie: 'vinilicas',
     presentation: ['1 L', '4 L', '19 L'],
     color: 'vinipesa_satin',
-    imagen: '/articulos/vinilicas/vinipesa_satin.png',
+    imagen: '/articulos/vinilicas/vinipesa_satin_2.png',
     description: [
       'Pintura vinil acrílica satinada de excelente calidad resistencia, ideal para espacios interiores y exteriores.',
     ],
@@ -190,7 +190,7 @@ export const articulos = [
     microcategorie: 'vinilicas',
     presentation: ['1 L', '4 L', '19 L'],
     color: 'vinipesa_mate',
-    imagen: '/articulos/vinilicas/vinipesa.png',
+    imagen: '/articulos/vinilicas/vinipesa_2.png',
     description: [
       'Pintura vinil acrílica mate de excelente calidad resistencia, ideal para espacios interiores y exteriores',
     ],
@@ -2876,7 +2876,7 @@ export const articulos = [
     rendimiento: ' 18 m2 / L',
     promedio: 18,
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/selladores/TDS-7010-Sellatek-Prime.pdf'],
+    ficha: ['/fichas/selladores/7020-Sellatek-Prime.pdf'],
   },
 ];
 
