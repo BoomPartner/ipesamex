@@ -166,48 +166,6 @@ const About = () => {
                       distribución de pinturas y recubrimientos de la más alta
                       calidad.
                     </Typography>
-
-                    <Typography
-                      as={'p1'}
-                      variant="small"
-                      className="arriba3"
-                      style={{ fontSize: '20px' }}
-                    >
-                      <p>
-                        Gracias al alto desempeño,{' '}
-                        <strong
-                          style={{ fontSize: '24px', fontWeight: 'bold' }}
-                        >
-                          IPESA
-                        </strong>{' '}
-                        ha sido reconocida en el
-                        <strong
-                          style={{ fontSize: '24px', fontWeight: 'bold' }}
-                          className="uppercase"
-                        >
-                          {' '}
-                          Sistema de Gestión de Calidad
-                        </strong>{' '}
-                        con la certificación{' '}
-                        <strong
-                          style={{ fontSize: '24px', fontWeight: 'bold' }}
-                          className="uppercase"
-                        >
-                          ISO 9001
-                        </strong>
-                        .
-                      </p>
-                    </Typography>
-
-                    <div className="w-full flex justify-center">
-                      <Image
-                        src={'/logos/certificado.webp'}
-                        width={200}
-                        height={200}
-                        alt="certificado"
-                        className="mt-10 push"
-                      ></Image>
-                    </div>
                   </div>
 
                   <div className="w-full flex justify-center">
@@ -227,11 +185,91 @@ const About = () => {
           </div>
 
           <div
+            className={
+              windowWidth < 950
+                ? 'block'
+                : 'w-full flex justify-center items-center gap-5 pb-10'
+            }
+          >
+            <div className="w-full flex items-center">
+              <div
+                className={`${windowWidth < 950 ? 'w-full p-5' : 'p-10 w-[100%]'}`}
+              >
+                <div
+                  className={`w-full ${
+                    windowWidth < 1076 ? '' : 'flex justify-center items-center'
+                  }`}
+                >
+                  <div className="w-full px-5">
+                    <Typography
+                      as={'p1'}
+                      variant="small"
+                      className="mb-5 arriba2"
+                      style={{ fontSize: '20px' }}
+                    >
+                      Gracias al alto desempeño,{' '}
+                      <strong style={{ fontSize: '24px', fontWeight: 'bold' }}>
+                        IPESA
+                      </strong>{' '}
+                      ha sido reconocida en el
+                      <strong style={{ fontSize: '24px', fontWeight: 'bold' }}>
+                        Sistema de Gestión de Calidad
+                      </strong>{' '}
+                      con la certificación{' '}
+                      <strong style={{ fontSize: '24px', fontWeight: 'bold' }}>
+                        ISO 9001
+                      </strong>
+                      .
+                    </Typography>
+
+                    <div className="w-full flex justify-center pb-5">
+                      <Image
+                        src={'/logos/certificado.webp'}
+                        width={200}
+                        height={200}
+                        alt="certificado"
+                        className="mt-10 push"
+                      ></Image>
+                    </div>
+                  </div>
+
+                  <div className="w-full px-5">
+                    <Typography
+                      as={'p1'}
+                      variant="small"
+                      className="mb-5 arriba2"
+                      style={{ fontSize: '20px' }}
+                    >
+                      Somos empresa afiliada a{' '}
+                      <strong style={{ fontSize: '24px', fontWeight: 'bold' }}>
+                        ANAFAPYT
+                      </strong>{' '}
+                      (Asociación Nacional de Fabricantes de Pinturas y Tintas),
+                      lo que respalda nuestro compromiso con las mejores
+                      prácticas del sector.
+                    </Typography>
+
+                    <div className="w-full flex justify-center">
+                      <Image
+                        src={'/principal/ANAFAPYT.jpg'}
+                        width={200}
+                        height={200}
+                        alt="certificado"
+                        className="mt-10 push"
+                      ></Image>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
             className={`w-full ${
               windowWidth < 850 ? 'block' : 'flex justify-center items-center'
             }`}
           >
-            <div className={`${windowWidth < 950 ? 'mt-10' : 'p-10'} w-full`}>
+            <div className={`${windowWidth < 950 ? '' : 'p-10'} w-full`}>
               <Image
                 src={'/principal/mapa.png'}
                 width={1000}
@@ -289,8 +327,8 @@ const About = () => {
               windowWidth < 980
                 ? 'grid-cols-1'
                 : windowWidth < 1300
-                ? 'grid-cols-2'
-                : 'grid-cols-3'
+                  ? 'grid-cols-2'
+                  : 'grid-cols-3'
             } gap-5 p-10`}
           >
             {nosotros?.map((item, index) => (
