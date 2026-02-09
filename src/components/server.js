@@ -53,7 +53,7 @@ export const articulos = [
     acabados: '31 colores brillantes.',
     acabados2: 'Mate solo blanco',
     dirigido: 'Particulares, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-7000- Acritek 360_OK_15102025.pdf'],
+    ficha: ['/fichas/vinilicas/7000_ACRITEK360_N.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-ACRITEK-7000-2025.pdf'],
     fichas_colores: ['/fichas_colores/acritek.pdf'],
   },
@@ -85,7 +85,7 @@ export const articulos = [
     acabados: '31 colores brillantes.',
     acabados2: 'Mate solo blanco',
     dirigido: 'Particulares, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-700-Vintek.pdf'],
+    ficha: ['/fichas/vinilicas/700_Vintek.pdf'],
     fichas_colores: ['/fichas_colores/vintek.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-VINTEK-700-2025.pdf'],
     videos: [
@@ -130,7 +130,7 @@ export const articulos = [
     promedio: 11,
     acabados: 'Acabado mate',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-400-Realtek.pdf'],
+    ficha: ['/fichas/vinilicas/400_Realtek.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-REALTEK-400-2025.pdf'],
     fichas_colores: ['/fichas_colores/realtek.pdf'],
   },
@@ -160,7 +160,7 @@ export const articulos = [
     gama: '16 colores de línea y 3,464 colores en sistema Infinite Color.',
     acabados: 'Acabado satinado',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-500-VinipesaSatin.pdf'],
+    ficha: ['/fichas/vinilicas/500_VinipesaSatin.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-VINIPESA SATIN-500-2025.pdf'],
     videos: [
       {
@@ -205,7 +205,7 @@ export const articulos = [
     gama: '24 colores de línea y 2,484 colores en sistema Infinite Color.',
     acabados: 'Mate mas de 2,484 colores ',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-300-VinipesaMate.pdf'],
+    ficha: ['/fichas/vinilicas/300_VinipesaMate.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-VINIPESA MATE-300-2025.pdf'],
     videos: [
       {
@@ -250,7 +250,7 @@ export const articulos = [
     acabados: 'Acabado mate',
     gama: 'VINI+ ofrece 12 colores de línea y 2,064 colores en sistema Infinite Color.',
     dirigido: 'Particular, oficios y profesional.',
-    ficha: ['/fichas/vinilicas/TDS-1300-Vini.pdf'],
+    ficha: ['/fichas/vinilicas/1300_Vini_mas.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-VINI+-1300-2025.pdf'],
     videos: [
       {
@@ -294,7 +294,7 @@ export const articulos = [
     acabados: 'Acabado mate.',
     gama: 'COLORBEL® ofrece 17 colores de línea y 1,686 colores en sistema Infinite Color',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/TDS-1400-Colorbel.pdf'],
+    ficha: ['/fichas/vinilicas/1400_Colorbel.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-COLORBEL-1400-2025.pdf'],
     fichas_colores: ['/fichas_colores/colorbel.pdf'],
   },
@@ -378,7 +378,7 @@ export const articulos = [
     acabados: 'Acabados mate y brillante',
     gama: '18 colores de línea.',
     dirigido: 'Oficio, particular y profesional',
-    ficha: ['/fichas/esmaltes/200-TropimarSur.pdf'],
+    ficha: ['/fichas/esmaltes/200_TropimarSur.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-200-2025.pdf'],
     videos: [
       {
@@ -422,8 +422,8 @@ export const articulos = [
     acabados: 'Acabado brillante.',
     gama: ' 23 colores de línea.',
     dirigido: 'Oficio, particular y profesional',
-    ficha: ['/fichas/esmaltes/1000-Tropimar.pdf'],
-    ficha3: ['/fichas/esmaltes/1040-1041-1042-Tropimar-Metálicos.pdf'],
+    ficha: ['/fichas/esmaltes/1000_Tropimar.pdf'],
+    ficha3: ['/fichas/esmaltes/1040_1041_1042_TropimarMetalicos.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-1000-2025.pdf'],
     seguridad3: [
       '/seguridad/decorativa/HDS-1040-1041-1042-TROPIMAR-METALICO.pdf',
@@ -468,7 +468,7 @@ export const articulos = [
     ],
     rendimiento: '10 - 12 m2 / L',
     promedio: 9,
-    ficha: ['/fichas/esmaltes/Tropimar_Aqua.pdf'],
+    ficha: ['/fichas/esmaltes/2026_TROPIMAR_AQUA.pdf'],
     fichas_colores: ['/fichas_colores/Tropimar_Aqua_Ficha_de_color_NW.pdf'],
   },
   {
@@ -495,7 +495,7 @@ export const articulos = [
     acabados: 'Acabados mate y brillante',
     gama: ' 21 colores de línea.',
     dirigido: 'Particular y oficio',
-    ficha: ['/fichas/esmaltes/1700-Brigadier_2025.pdf'],
+    ficha: ['/fichas/esmaltes/1700_Brigadier.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-1700-2025.pdf'],
     fichas_colores: ['/fichas_colores/brigadier.pdf'],
   },
