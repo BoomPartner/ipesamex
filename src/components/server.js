@@ -250,7 +250,7 @@ export const articulos = [
     acabados: 'Acabado mate',
     gama: 'VINI+ ofrece 12 colores de línea y 2,064 colores en sistema Infinite Color.',
     dirigido: 'Particular, oficios y profesional.',
-    ficha: ['/fichas/vinilicas/1300_Vini_mas.pdf'],
+    ficha: ['/fichas/vinilicas/1300_Vini+_.pdf'],
     seguridad: ['/seguridad/decorativa/HDS-VINI+-1300-2025.pdf'],
     videos: [
       {
