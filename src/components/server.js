@@ -964,7 +964,7 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9040-9041-ImperCril-7anios.pdf'],
+    ficha: ['/fichas/impermeabilizantes/9040_9041_ImperCril_7anios.pdf'],
     seguridad: ['/seguridad/decorativa/9040-9041-2025.pdf'],
   },
   {
@@ -984,7 +984,7 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9050-9051-ImperLux-5anios.pdf'],
+    ficha: ['/fichas/impermeabilizantes/9050_9051_ImperLux_5anios.pdf'],
     seguridad: ['/seguridad/decorativa/9050-9051-2025.pdf'],
   },
   {
@@ -1005,7 +1005,7 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9052-9053-ImperLuxFibratado.pdf'],
+    ficha: ['/fichas/impermeabilizantes/9052_9053_ImperLuxFibratado.pdf'],
     seguridad: ['/seguridad/decorativa/9052-9053.pdf'],
   },
   {
@@ -1025,7 +1025,7 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9060-9061-ImperRuf-3anios.pdf'],
+    ficha: ['/fichas/impermeabilizantes/9060_9061_ImperRuf_3anios.pdf'],
     seguridad: ['/seguridad/decorativa/9060-9061-2025.pdf'],
   },
   {
