@@ -310,7 +310,7 @@ export const articulos = [
     microcategorie: 'selladores',
     presentation: ['1 L', '4 L', '19 L'],
     color: '',
-    imagen: '/articulos/vinilicas/SELLATEK_5X1.png',
+    imagen: '/articulos/vinilicas/SELLATEK_5X1_nvo.png',
     description: [
       'Promueve la adherencia y sella el poro.',
       'Tiempo de secado de 60 minutos.',
