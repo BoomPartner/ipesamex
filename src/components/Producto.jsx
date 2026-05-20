@@ -678,8 +678,7 @@ const ProductoSelected = ({ valor }) => {
                           <FontAwesomeIcon
                             icon={iconMap[fichaItem.icono] || faFilePdf}
                             size="3x"
-                            className="cursor-pointer"
-                            className="mr-4"
+                            className="cursor-pointer mr-4"
                           />
 
                           {fichaItem.nombre || 'Documento'}
