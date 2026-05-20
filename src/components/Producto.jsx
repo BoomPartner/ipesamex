@@ -58,6 +58,11 @@ const ProductoSelected = ({ valor }) => {
     }
   };
 
+  const iconMap = {
+    pdf: faFilePdf,
+    seguridad: faFileShield,
+  };
+
   useEffect(() => {
     handleBrowser();
   }, []);
@@ -72,7 +77,7 @@ const ProductoSelected = ({ valor }) => {
   const handleModalColores = () => {
     const nameColor = articulo.color;
     const coloresFiltrados = colores.filter(
-      (item) => item.product === nameColor
+      (item) => item.product === nameColor,
     );
     setColor(coloresFiltrados);
     setOpen(!open);
@@ -142,7 +147,7 @@ const ProductoSelected = ({ valor }) => {
           // delay: 0.5,
           ease: 'back.out(2.7)',
           duration: 1,
-        }
+        },
       );
     }
   }, [articulo]);
@@ -330,6 +335,61 @@ const ProductoSelected = ({ valor }) => {
                         style={{ fontSize: '15px' }}
                       >
                         ● {element}
+                      </Typography>
+                    ))}
+
+                    {/* PARAMETRO PERSONOLIZBALE */}
+                    {articulo.leyenda2_titulo
+                      ? articulo.leyenda2_titulo?.map((element, index) => (
+                          <Typography
+                            as={'h6'}
+                            variant="h6"
+                            key={index}
+                            className="mt-5 mb-2"
+                            style={{ fontSize: '15px' }}
+                          >
+                            {element}
+                          </Typography>
+                        ))
+                      : null}
+
+                    {articulo.leyenda2?.map((element, index) => (
+                      <Typography
+                        as={'p'}
+                        key={index}
+                        className="mb-2"
+                        variant="small"
+                        // color="gray"
+                        style={{ fontSize: '15px' }}
+                      >
+                        {element}
+                      </Typography>
+                    ))}
+
+                    {articulo.leyenda3_titulo
+                      ? articulo.leyenda3_titulo?.map((element, index) => (
+                          <Typography
+                            as={'h6'}
+                            variant="h6"
+                            key={index}
+                            className="mt-5 mb-2"
+                            style={{ fontSize: '15px' }}
+                          >
+                            {element}
+                          </Typography>
+                        ))
+                      : null}
+
+                    {articulo.leyenda3?.map((element, index) => (
+                      <Typography
+                        as={'p'}
+                        key={index}
+                        className="mb-2"
+                        variant="small"
+                        // color="gray"
+                        style={{ fontSize: '15px' }}
+                      >
+                        {element}
                       </Typography>
                     ))}
                   </div>
@@ -570,8 +630,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Ficha Técnica'
                           : windowWidth < 800
-                          ? 'Ficha Técnica'
-                          : 'Ficha Técnica'}
+                            ? 'Ficha Técnica'
+                            : 'Ficha Técnica'}
                       </a>
                     </div>
                   ) : (
@@ -594,6 +654,60 @@ const ProductoSelected = ({ valor }) => {
                       </div>
                     </div>
                   ))}
+
+                {/* FICHA PERZONALIZABLE */}
+
+                {articulo.ficha_personalizable &&
+                  articulo.ficha_personalizable.length > 0 &&
+                  articulo.ficha_personalizable.map((fichaItem, index) =>
+                    windowWidth < 800 || browser == 'Mac' ? (
+                      <div
+                        key={index}
+                        className="w-full -ml-2 rounded-lg text-gray-600 flex items-center uppercase zoom-producto"
+                        style={{
+                          fontSize: '14px',
+                          fontWeight: 'normal',
+                          padding: '9px',
+                        }}
+                      >
+                        <a
+                          href={fichaItem.ruta}
+                          download
+                          className="font-bold flex items-center"
+                        >
+                          <FontAwesomeIcon
+                            icon={iconMap[fichaItem.icono] || faFilePdf}
+                            size="3x"
+                            className="cursor-pointer"
+                            className="mr-4"
+                          />
+
+                          {fichaItem.nombre || 'Documento'}
+                        </a>
+                      </div>
+                    ) : (
+                      <div
+                        key={index}
+                        className="w-full flex items-center cursor-pointer zoom-producto mb-3"
+                        onClick={() => handleModalFicha(fichaItem.ruta)}
+                      >
+                        <div>
+                          <FontAwesomeIcon
+                            icon={iconMap[fichaItem.icono] || faFilePdf}
+                            size="3x"
+                            className="cursor-pointer"
+                            color="gray"
+                          />
+                        </div>
+
+                        <div className="ml-4">
+                          <Typography as={'h5'} variant="h5" color="gray">
+                            {fichaItem.nombre || 'Documento'}
+                          </Typography>
+                        </div>
+                      </div>
+                    ),
+                  )}
 
                 {articulo.fichas_colores &&
                   (windowWidth < 800 || browser == 'Mac' ? (
@@ -618,8 +732,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Ficha Colores'
                           : windowWidth < 800
-                          ? 'Ficha Colores'
-                          : 'Ficha Colores'}
+                            ? 'Ficha Colores'
+                            : 'Ficha Colores'}
                       </a>
                     </div>
                   ) : (
@@ -662,8 +776,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Ficha Técnica 100% Acrílico'
                           : windowWidth < 800
-                          ? 'Ficha Técnica 100% Acrílico'
-                          : 'Ficha Técnica 100% Acrílico'}
+                            ? 'Ficha Técnica 100% Acrílico'
+                            : 'Ficha Técnica 100% Acrílico'}
                       </a>
                     </div>
                   ) : (
@@ -705,8 +819,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Ficha Técnica Tropimar Metalicos'
                           : windowWidth < 800
-                          ? 'Ficha Técnica Tropimar Metalicos'
-                          : 'Ficha Técnica Tropimar Metalicos'}
+                            ? 'Ficha Técnica Tropimar Metalicos'
+                            : 'Ficha Técnica Tropimar Metalicos'}
                       </a>
                     </div>
                   ) : (
@@ -752,8 +866,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Hoja de seguridad'
                           : windowWidth < 800
-                          ? 'Hoja de seguridad'
-                          : 'Hoja de seguridad'}
+                            ? 'Hoja de seguridad'
+                            : 'Hoja de seguridad'}
                       </a>
                     </div>
                   ) : (
@@ -803,8 +917,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Hoja de seguridad 100% Acrilica'
                           : windowWidth < 800
-                          ? 'Hoja de seguridad 100% Acrilica'
-                          : 'Hoja de seguridad 100% Acrilica'}
+                            ? 'Hoja de seguridad 100% Acrilica'
+                            : 'Hoja de seguridad 100% Acrilica'}
                       </a>
                     </div>
                   ) : (
@@ -854,8 +968,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Hoja de seguridad Tropimar Metalicos'
                           : windowWidth < 800
-                          ? 'Hoja de seguridad Tropimar Metalicos'
-                          : 'Hoja de seguridad Tropimar Metalicos'}
+                            ? 'Hoja de seguridad Tropimar Metalicos'
+                            : 'Hoja de seguridad Tropimar Metalicos'}
                       </a>
                     </div>
                   ) : (
@@ -930,8 +1044,8 @@ const ProductoSelected = ({ valor }) => {
                         {browser == 'Mac'
                           ? 'Colores'
                           : windowWidth < 800
-                          ? 'Colores'
-                          : 'Colores'}
+                            ? 'Colores'
+                            : 'Colores'}
                       </a>
                     </div>
                   ) : (
