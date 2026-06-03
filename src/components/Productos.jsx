@@ -63,19 +63,29 @@ const Productos = () => {
       checked: false,
       label: 'Impermeabilizantes',
     },
-    {
-      id: 'industriales',
-      micro: '',
-      microStatus: false,
-      checked: false,
-      label: 'Industrial',
-    },
+    // {
+    //   id: 'industriales',
+    //   micro: '',
+    //   microStatus: false,
+    //   checked: false,
+    //   label: 'Industrial',
+    // },
     {
       id: 'adhesivos',
       micro: '',
       microStatus: false,
       checked: false,
       label: 'Adhesivos',
+    },
+  ]);
+
+  const [subIndustrial, setSubIndustrial] = useState([
+    {
+      id: 'industriales',
+      micro: '',
+      microStatus: false,
+      checked: false,
+      label: 'Industrial',
     },
   ]);
 
@@ -280,19 +290,25 @@ const Productos = () => {
     localStorage.setItem('microcategoria', val);
     setCurrentPage(1);
     setSubDecorativa(
-      subDecorativa.map((decorativa) => ({ ...decorativa, checked: false }))
+      subDecorativa.map((decorativa) => ({ ...decorativa, checked: false })),
     );
     setSubMaderas(
-      subMaderas.map((subMaderas) => ({ ...subMaderas, checked: false }))
+      subMaderas.map((subMaderas) => ({ ...subMaderas, checked: false })),
     );
     setSubAutomotriz(
-      subAutomotriz.map((automotriz) => ({ ...automotriz, checked: false }))
+      subAutomotriz.map((automotriz) => ({ ...automotriz, checked: false })),
     );
     setSubFerretera(
-      subFerretera.map((ferretera) => ({ ...ferretera, checked: false }))
+      subFerretera.map((ferretera) => ({ ...ferretera, checked: false })),
+    );
+    setSubIndustrial(
+      subIndustrial.map((industrial) => ({
+        ...industrial,
+        checked: false,
+      })),
     );
     const filteredData = articulos.filter(
-      (articulo) => articulo.microcategorie === val
+      (articulo) => articulo.microcategorie === val,
     );
     const totalPaginas = Math.ceil(filteredData.length / itemsPerPage);
     setTotalPages(totalPaginas);
@@ -320,12 +336,14 @@ const Productos = () => {
       value == 1
         ? 'decorativa'
         : value == 2
-        ? 'automotriz'
-        : value == 3
-        ? 'ferretera'
-        : value == 4
-        ? 'maderas'
-        : null
+          ? 'automotriz'
+          : value == 3
+            ? 'ferretera'
+            : value == 4
+              ? 'maderas'
+              : value == 5
+                ? 'industrial'
+                : null,
     );
 
     setCurrentPage(1);
@@ -333,36 +351,46 @@ const Productos = () => {
       value == 1
         ? 'decorativa'
         : value == 2
-        ? 'automotriz'
-        : value == 3
-        ? 'ferretera'
-        : value == 4
-        ? 'maderas'
-        : null
+          ? 'automotriz'
+          : value == 3
+            ? 'ferretera'
+            : value == 4
+              ? 'maderas'
+              : value == 5
+                ? 'industrial'
+                : null,
     );
     setFondos(
       value == 1
         ? 'decorativa'
         : value == 2
-        ? 'automotriz'
-        : value == 3
-        ? 'ferretera'
-        : value == 4
-        ? 'maderas'
-        : null
+          ? 'automotriz'
+          : value == 3
+            ? 'ferretera'
+            : value == 4
+              ? 'maderas'
+              : value == 5
+                ? 'industrial'
+                : null,
     );
     setOpenMain(openMain === value ? 0 : value);
     setSubDecorativa(
-      subDecorativa.map((decorativa) => ({ ...decorativa, checked: false }))
+      subDecorativa.map((decorativa) => ({ ...decorativa, checked: false })),
     );
     setSubMaderas(
-      subMaderas.map((subMaderas) => ({ ...subMaderas, checked: false }))
+      subMaderas.map((subMaderas) => ({ ...subMaderas, checked: false })),
     );
     setSubAutomotriz(
-      subAutomotriz.map((automotriz) => ({ ...automotriz, checked: false }))
+      subAutomotriz.map((automotriz) => ({ ...automotriz, checked: false })),
     );
     setSubFerretera(
-      subFerretera.map((ferretera) => ({ ...ferretera, checked: false }))
+      subFerretera.map((ferretera) => ({ ...ferretera, checked: false })),
+    );
+    setSubIndustrial(
+      subIndustrial.map((industrial) => ({
+        ...industrial,
+        checked: false,
+      })),
     );
     setMicroCategorie(null);
   };
@@ -411,8 +439,8 @@ const Productos = () => {
         prevCheckboxes.map((checkbox) =>
           checkbox.id === categorie
             ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false }
-        )
+            : { ...checkbox, checked: false },
+        ),
       );
     }
 
@@ -452,8 +480,8 @@ const Productos = () => {
         prevCheckboxes.map((checkbox) =>
           checkbox.id === categorie
             ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false }
-        )
+            : { ...checkbox, checked: false },
+        ),
       );
     }
 
@@ -522,8 +550,8 @@ const Productos = () => {
         prevCheckboxes.map((checkbox) =>
           checkbox.id === categorie
             ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false }
-        )
+            : { ...checkbox, checked: false },
+        ),
       );
     }
 
@@ -558,14 +586,38 @@ const Productos = () => {
         prevCheckboxes.map((checkbox) =>
           checkbox.id === categorie
             ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false, microStatus: true }
-        )
+            : { ...checkbox, checked: false, microStatus: true },
+        ),
       );
     }
+    if (
+      categorie == 'epoxicos' ||
+      categorie == 'poliuretanos_ind' ||
+      categorie == 'primarios_ind' ||
+      categorie == 'altas_temperaturas' ||
+      categorie == 'trafico'
+    ) {
+      setFondos(categorie);
 
+      localStorage.setItem('microcategoria', categorie);
+
+      setSubIndustrial((prevCheckboxes) =>
+        prevCheckboxes.map((checkbox) =>
+          checkbox.id === categorie
+            ? {
+                ...checkbox,
+                checked: !checkbox.checked,
+              }
+            : {
+                ...checkbox,
+                checked: false,
+              },
+        ),
+      );
+    }
     setCurrentPage(1);
     const filteredData = articulos.filter(
-      (articulo) => articulo.microcategorie === categorie
+      (articulo) => articulo.microcategorie === categorie,
     );
     const totalPaginas = Math.ceil(filteredData.length / itemsPerPage);
     setTotalPages(totalPaginas);
@@ -585,14 +637,14 @@ const Productos = () => {
           localmicrocategoria == 'selladores'
             ? 'vinilicas'
             : localmicrocategoria == 'primarios'
-            ? 'esmaltes'
-            : localmicrocategoria == 'primarios_ferre'
-            ? 'esmaltes_ferre'
-            : localmicrocategoria
+              ? 'esmaltes'
+              : localmicrocategoria == 'primarios_ferre'
+                ? 'esmaltes_ferre'
+                : localmicrocategoria,
         );
         if (articulos) {
           const filter = articulos.filter(
-            (item) => item.microcategorie == localmicrocategoria
+            (item) => item.microcategorie == localmicrocategoria,
           );
           const totalPaginas = Math.ceil(filter.length / itemsPerPage);
           setTotalPages(totalPaginas);
@@ -605,7 +657,7 @@ const Productos = () => {
         setFondos(localcategoria);
         if (articulos) {
           const filter = articulos.filter(
-            (item) => item.categorie == localcategoria
+            (item) => item.categorie == localcategoria,
           );
           const totalPaginas = Math.ceil(filter.length / itemsPerPage);
           setTotalPages(totalPaginas);
@@ -628,7 +680,7 @@ const Productos = () => {
                   };
                 }
                 return checkbox;
-              })
+              }),
             );
           }
           if (localmicrocategoria == 'primarios') {
@@ -642,7 +694,7 @@ const Productos = () => {
                   };
                 }
                 return checkbox;
-              })
+              }),
             );
           }
           setOpenMain(1);
@@ -655,10 +707,29 @@ const Productos = () => {
               prevCheckboxes.map((checkbox) =>
                 checkbox.id === localmicrocategoria
                   ? { ...checkbox, checked: true }
-                  : { ...checkbox, checked: false }
-              )
+                  : { ...checkbox, checked: false },
+              ),
             );
           }
+          break;
+
+        case 'industrial':
+          setOpenMain(5);
+
+          setSubIndustrial((prevCheckboxes) =>
+            prevCheckboxes.map((checkbox) =>
+              checkbox.id === localmicrocategoria
+                ? {
+                    ...checkbox,
+                    checked: true,
+                  }
+                : {
+                    ...checkbox,
+                    checked: false,
+                  },
+            ),
+          );
+
           break;
 
         case 'automotriz':
@@ -667,8 +738,8 @@ const Productos = () => {
             prevCheckboxes.map((checkbox) =>
               checkbox.id === localmicrocategoria
                 ? { ...checkbox, checked: true }
-                : { ...checkbox, checked: false }
-            )
+                : { ...checkbox, checked: false },
+            ),
           );
 
           break;
@@ -685,7 +756,7 @@ const Productos = () => {
                   };
                 }
                 return checkbox;
-              })
+              }),
             );
           }
 
@@ -694,8 +765,8 @@ const Productos = () => {
               prevCheckboxes.map((checkbox) =>
                 checkbox.id === localmicrocategoria
                   ? { ...checkbox, checked: true }
-                  : { ...checkbox, checked: false }
-              )
+                  : { ...checkbox, checked: false },
+              ),
             );
           }
 
@@ -717,7 +788,9 @@ const Productos = () => {
           setOpenMain(3);
 
           break;
-
+        case 'industrial':
+          setOpenMain(5);
+          break;
         default:
           break;
       }
@@ -858,6 +931,55 @@ const Productos = () => {
                           <Typography
                             as={'p'}
                             key={`labcats-${item.id}`}
+                            color="blue-gray"
+                            className="font-medium"
+                          >
+                            {item.label}
+                          </Typography>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </AccordionBody>
+                </Accordion>
+
+                {/* Industrial */}
+                <Accordion
+                  open={openMain === 5}
+                  icon={<Icon id={5} open={openMain} />}
+                >
+                  <AccordionHeader
+                    onClick={() => handleOpenMain(5)}
+                    className="uppercase"
+                    style={{
+                      fontSize: '17px',
+                      fontWeight: 'bold',
+                    }}
+                  >
+                    Industrial
+                  </AccordionHeader>
+
+                  <AccordionBody>
+                    <List>
+                      {subIndustrial?.map((item) => (
+                        <ListItem
+                          key={item.id}
+                          className="p-2"
+                          onClick={() => handleClickCategoria(item.id)}
+                        >
+                          <ListItemPrefix className="mr-3">
+                            <Checkbox
+                              id={item.id}
+                              checked={item.checked}
+                              ripple={false}
+                              className="hover:before:opacity-0"
+                              containerProps={{
+                                className: 'p-0',
+                              }}
+                            />
+                          </ListItemPrefix>
+
+                          <Typography
+                            as={'p'}
                             color="blue-gray"
                             className="font-medium"
                           >
@@ -1022,10 +1144,10 @@ const Productos = () => {
                   windowWidth < 700
                     ? 'grid-cols-1'
                     : windowWidth < 1235
-                    ? 'grid-cols-2'
-                    : windowWidth < 2000
-                    ? 'grid-cols-3'
-                    : 'grid-cols-4'
+                      ? 'grid-cols-2'
+                      : windowWidth < 2000
+                        ? 'grid-cols-3'
+                        : 'grid-cols-4'
                 } gap-10 p-14`}
               >
                 <Suspense fallback={<Isotipo></Isotipo>}>
