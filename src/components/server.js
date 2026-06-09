@@ -2466,8 +2466,10 @@ export const articulos = [
     description: [
       'Recubrimiento epóxico de alta calidad y rendimiento formulado para proteger superficies metálicas y de concreto. Ofrece excelente nivelación, acabado uniforme y gran adherencia, además de buena resistencia a la corrosión y a la intemperie. Está diseñado para sistemas industriales de mantenimiento ligero y puede combinarse con acabados epóxicos o poliuretanos.',
     ],
-    leyenda2_titulo: ['Incluye:'],
-    leyenda2: ['VULCAN® Reductor para Epóxico AS 70 de 1 Litro.'],
+    leyenda2_titulo: [''],
+    leyenda2: [
+      'Usa VULCAN® Reductor para Epóxico AS 70 para la dilución de este producto.',
+    ],
     atributos: [
       'Excelente adherencia',
       'Buena resistencia a la corrosión',
@@ -2481,18 +2483,13 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® PRIMARIO EPÓXICO AS 70',
-        ruta: '/fichas/industriales/TDS_PRIMARIO_EPOXICO_AS_70.pdf',
+        ruta: '/fichas/industriales/TDS 5012-5013 PRIMARIO EPOXICO AS.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN® PRIMARIO EPÓXICO AS 70',
         ruta: '/seguridad/industriales/HDS 5012-5013 PRIMER EPOXICO.pdf',
         icono: 'seguridad',
-      },
-      {
-        nombre: 'Ficha Técnica VULCAN® Reductor para Epóxico AS 70 ',
-        ruta: '/fichas/industriales/TDS_REDUCTOR_PARA_EPOXICO_AS_70.pdf',
-        icono: 'pdf',
       },
     ],
   },
@@ -2527,8 +2524,10 @@ export const articulos = [
       'Vida útil de mezcla de 6 a 8 horas.',
       'Compatible con aplicación por aspersión, airless, brocha y rodillo.',
     ],
-    leyenda2_titulo: ['Incluye:'],
-    leyenda2: ['VULCAN® Reductor para Epóxico AS 70 de 1 Litro.'],
+    leyenda2_titulo: [''],
+    leyenda2: [
+      'Usa VULCAN® Reductor para Epóxico AS 70 para la dilución de este producto.',
+    ],
     leyenda3_titulo: ['Colores:'],
     leyenda3: [
       'Blanco, Negro, Amarillo Cromo, Amarillo Caterpillar, Verde, Azul y Rojo Seguridad.',
@@ -2539,18 +2538,13 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® Acabado Epóxico AS 70',
-        ruta: '/fichas/industriales/TDS ACABADO EPOXICO AS 70.pdf',
+        ruta: '/fichas/industriales/TDS 5014-5019 ACABADO EPOXICO.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN®  Acabado Epóxico AS 70',
         ruta: '/seguridad/industriales/HDS LINEA ACABADO EPOXICO.pdf',
         icono: 'seguridad',
-      },
-      {
-        nombre: 'Ficha Técnica VULCAN® Reductor para Epóxico AS 70 ',
-        ruta: '/fichas/industriales/TDS_REDUCTOR_PARA_EPOXICO_AS_70.pdf',
-        icono: 'pdf',
       },
     ],
   },
@@ -2587,8 +2581,10 @@ export const articulos = [
       'Acabado brillante de alto brillo.',
       'Fácil de aplicar.',
     ],
-    leyenda2_titulo: ['Incluye:'],
-    leyenda2: ['VULCAN® REDUCTOR PARA POLIURETANO AB 70 de 1 Litro.'],
+    leyenda2_titulo: [''],
+    leyenda2: [
+      'Usa VULCAN® REDUCTOR PARA POLIURETANO AB 70 para la dilución de este producto.',
+    ],
     leyenda3_titulo: ['Colores:'],
     leyenda3: [
       'Blanco, Negro, Amarillo Cromo, Amarillo Caterpilla, Verde, Azul, Aluminio, Transparente, Rojo Seguridad.',
@@ -2596,7 +2592,7 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® ACABADO POLIURETANO AB 70',
-        ruta: '/fichas/industriales/TDS ACABADO POLIURETANO AB 70.pdf',
+        ruta: '/fichas/industriales/TDS 5021-5028 ACABADO POLIURETANO.pdf',
         icono: 'pdf',
       },
       {
@@ -2604,14 +2600,107 @@ export const articulos = [
         ruta: '/seguridad/industriales/HDS LINEA ACABADO POLIURETANO.pdf',
         icono: 'seguridad',
       },
+    ],
+  },
+
+  //NVO
+  {
+    id: 'vulcan-reductor-poliuretano',
+    id_number: 138,
+    registro: '®',
+    name: 'VULCAN',
+    name2: ' REDUCTOR PARA POLIURETANO AB 70',
+    categorie: 'industrial',
+    subcategorie: 'industrial',
+    microcategorie: 'industriales',
+    presentation: ['1 L'],
+    tiempo: '',
+    color: '',
+    imagen: '/articulos/industriales/vulcan_reducito_poliuretano.png',
+    imagen_prd: '/articulos/industriales/vulcan_reducito_poliuretano_prod.png',
+    description: [
+      'Diluyente reductor formulado para ajustar la viscosidad de recubrimientos poliuretano de dos componentes y altos sólidos, ofreciendo excelente solvencia y acabado.',
+    ],
+    // rendimiento: '17 m²/L a 1 mil de espesor seco',
+    promedio: 26,
+    atributos: [
+      'Compatibilidad óptima con poliuretanos de altos sólidos.',
+      'Buena nivelación.',
+      'Excelente acabado.',
+      'Excelente poder de solvencia.',
+      'Apariencia: líquido transparente.',
+    ],
+    // leyenda2_titulo: [''],
+    // leyenda2: [
+    //   'Usa VULCAN® REDUCTOR PARA POLIURETANO AB 70 para la dilución de este producto.',
+    // ],
+    // leyenda3_titulo: ['Colores:'],
+    // leyenda3: [
+    //   'Blanco, Negro, Amarillo Cromo, Amarillo Caterpilla, Verde, Azul, Aluminio, Transparente, Rojo Seguridad.',
+    // ],
+    ficha_personalizable: [
       {
-        nombre: 'Ficha Técnica VULCAN® REDUCTOR PARA POLIURETANO AB 70 ',
+        nombre: 'Ficha Técnica VULCAN® REDUCTOR PARA POLIURETANO AB 70',
         ruta: '/fichas/industriales/TDS REDUCTOR PARA POLIURETANO AB 70.pdf',
         icono: 'pdf',
+      },
+      {
+        nombre: 'Hoja de Seguridad VULCAN® REDUCTOR PARA POLIURETANO AB 70',
+        ruta: '/seguridad/industriales/HDS LINEA ACABADO POLIURETANO.pdf',
+        icono: 'seguridad',
       },
     ],
   },
 
+  //NVO
+  {
+    id: 'vulcan-reductor-epoxico',
+    id_number: 139,
+    registro: '®',
+    name: 'VULCAN',
+    name2: '  REDUCTOR PARA EPÓXICO AS 70',
+    categorie: 'industrial',
+    subcategorie: 'industrial',
+    microcategorie: 'industriales',
+    presentation: ['1 L'],
+    tiempo: '',
+    color: '',
+    imagen: '/articulos/industriales/vulcan_reducito_epoxico.png',
+    imagen_prd: '/articulos/industriales/vulcan_reducito_epoxico_prod.png',
+    description: [
+      'Formulado a partir de una mezcla de solventes de alto desempeño, este reductor está diseñado para primarios y acabados epóxicos. Proporciona excelente poder de solvencia y una evaporación controlada que mejora la humectación del sustrato, la nivelación y la formación uniforme de película, sin afectar la reacción de curado del sistema',
+    ],
+    // rendimiento: '17 m²/L a 1 mil de espesor seco',
+    promedio: 26,
+    atributos: [
+      'Compatibilidad con sistemas epóxicos',
+      'Buena nivelación.',
+      'Excelente acabado.',
+      'Excelente poder de solvencia.',
+      'Evaporación controlada',
+      'Apariencia: líquido transparente.',
+    ],
+    // leyenda2_titulo: [''],
+    // leyenda2: [
+    //   'Usa VULCAN® REDUCTOR PARA POLIURETANO AB 70 para la dilución de este producto.',
+    // ],
+    // leyenda3_titulo: ['Colores:'],
+    // leyenda3: [
+    //   'Blanco, Negro, Amarillo Cromo, Amarillo Caterpilla, Verde, Azul, Aluminio, Transparente, Rojo Seguridad.',
+    // ],
+    ficha_personalizable: [
+      {
+        nombre: 'Ficha Técnica VULCAN® REDUCTOR PARA EPOXICO AS 70',
+        ruta: '/fichas/industriales/TDS REDUCTOR PARA EPOXICO AS 70.pdf',
+        icono: 'pdf',
+      },
+      {
+        nombre: 'Hoja de Seguridad VULCAN® REDUCTOR PARA EPOXICO AS 70',
+        ruta: '/seguridad/industriales/HDS LINEA ACABADO EPOXICO.pdf',
+        icono: 'seguridad',
+      },
+    ],
+  },
   {
     id: 'fosfatizante',
     id_number: 83,
