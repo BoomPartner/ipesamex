@@ -3169,6 +3169,23 @@ export const articulos = [
     dirigido: 'Particular, oficios y profesional',
     ficha: ['/fichas/selladores/7020-Sellatek-Prime.pdf'],
   },
+  {
+    id: 'color-konstructor',
+    id_number: 140,
+    name: 'COLOR KONSTRUCTOR FERRE ADVANCE PRO',
+    categorie: 'ferretera',
+    subcategorie: 'ferretera',
+    microcategorie: 'pinturas_ferre',
+    presentation: ['500 ml', '1 L', '4 L', '19 L'],
+    tiempo: '',
+    color: '',
+    imagen: '/articulos/ferreadvance/COLOR_KONSTRUCTOR.png',
+    imagen_prd: '/articulos/ferreadvance/COLOR_KONSTRUCTOR.png',
+    description: [''],
+    rendimiento: '',
+    promedio: 11,
+    ficha: [''],
+  },
 ];
 
 export const colores = [
