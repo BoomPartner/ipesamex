@@ -3188,6 +3188,41 @@ export const articulos = [
     promedio: 11,
     ficha: [''],
   },
+  {
+    id: 'rellenador-celerate-filler',
+    id_number: 141,
+    name: 'RELLENADOR A CELERATE FILLER',
+    categorie: 'automotriz',
+    subcategorie: 'automotriz',
+    microcategorie: 'rellenadores',
+    presentation: ['4 L'],
+    atributos: [
+      'Fácil aplicación en reparaciones de cualquier tamaño.',
+      'Reduce la porosidad.',
+      'Lijado suave para un mejor acabado.',
+      'Secado rápido (15 a 20 minutos).',
+      'Buena adherencia sobre superficies previamente preparadas.',
+      'Consistencia estable para una aplicación uniforme.',
+      'Tiempo de vida útil de la mezcla de 7 a 10 minutos.',
+      'Excelente relación desempeño-costo.',
+      'Incluye catalizador.',
+    ],
+    tiempo: '',
+    color: '',
+    imagen: '/articulos/automotriz/rellenador-celerate-filler.png',
+    imagen_prd: '/articulos/automotriz/rellenador-celerate-filler_prod.png',
+    description: [
+      'Rellenador automotriz de alto desempeño diseñado para reparar imperfecciones, nivelar superficies y optimizar los tiempos de reparación en talleres de repintado. Su fórmula ofrece excelente trabajabilidad durante la aplicación, adherencia confiable y un secado rápido que permite lijar en menos tiempo, ayudando a mantener un flujo de trabajo eficiente sin comprometer la calidad del acabado. Ideal para obtener superficies lisas y uniformes antes del acabado final, con un lijado suave y un desempeño consistente sobre diversos sustratos.',
+    ],
+    rendimiento: '',
+    promedio: 11,
+    ficha: [
+      '/fichas/automotriz/TDS_8034_RELLENADOR_AUTOMOTIVO_CELERATE_FILLER_Rev.pdf',
+    ],
+    seguridad: [
+      '/seguridad/automotriz/HDS_COLORCRIL_8034_ACELERATE_FILLER.pdf',
+    ],
+  },
 ];
 
 export const colores = [
