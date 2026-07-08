@@ -3179,8 +3179,8 @@ export const articulos = [
     presentation: ['4 L', '19 L'],
     tiempo: '',
     color: '',
-    imagen: '/articulos/ferreadvance/COLOR_KONSTRUCTOR.png',
-    imagen_prd: '/articulos/ferreadvance/COLOR_KONSTRUCTOR.png',
+    imagen: '/articulos/ferreadvance/COLOR_KONSTRUCTOR_.png',
+    imagen_prd: '/articulos/ferreadvance/COLOR_KONSTRUCTOR_.png',
     description: [
       'Es una pintura vinil acrílica de acabado mate, desarrollada para el embellecimiento de superficies nuevas o para la renovación de espacios en interiores. Su buen poder cubriente proporciona acabados uniformes y de agradable apariencia sobre yeso, concreto, panel de yeso y mampostería. Es la opción ideal para quienes buscan optimizar recursos sin sacrificar el desempeño, ofreciendo resultados confiables para el mantenimiento continuo, protección y embellecimiento de sus proyectos.',
     ],
