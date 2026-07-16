@@ -3182,7 +3182,7 @@ export const articulos = [
     imagen: '/articulos/ferreadvance/EDIFIKA_COLOR.png',
     imagen_prd: '/articulos/ferreadvance/EDIFIKA_COLOR.png',
     description: [
-      'EDiFiKa COLOR FERRE ADVANCE PRO®. Es una pintura vinil acrílica de acabado mate, desarrollada para el mantenimiento y renovación de espacios interiores. Su buen poder cubriente proporciona acabados uniformes y de agradable apariencia sobre superficies de yeso, concreto, tablaroca y mampostería. Es la opción ideal para quienes buscan optimizar recursos sin sacrificar el desempeño, ofreciendo resultados confiables para el mantenimiento continuo, protección y embellecimiento de sus proyectos.',
+      'EDiFiKa COLOR FERRE ADVANCE PRO®. Es una pintura vinil acrílica de acabado mate, desarrollada para el mantenimiento y renovación de espacios interiores. Su buen poder cubriente proporciona acabados uniformes y de agradable apariencia sobre superficies de yeso, concreto, panel de yeso y mampostería. Es la opción ideal para quienes buscan optimizar recursos sin sacrificar el desempeño, ofreciendo resultados confiables para el mantenimiento continuo, protección y embellecimiento de sus proyectos.',
     ],
     rendimiento: '',
     promedio: 11,
