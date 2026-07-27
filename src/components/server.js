@@ -468,8 +468,9 @@ export const articulos = [
     ],
     rendimiento: '10 - 12 m2 / L',
     promedio: 9,
-    ficha: ['/fichas/esmaltes/2026_TROPIMAR_AQUA.pdf'],
+    ficha: ['/fichas/esmaltes/Ficha_tecnica_TROPIMAR_AQUA.pdf'],
     fichas_colores: ['/fichas_colores/Tropimar_Aqua_Ficha_de_color_NW.pdf'],
+    seguridad: ['/seguridad/decorativa/Hoja_Seguridad_4000.pdf'],
   },
   {
     id: 'brigadier',
