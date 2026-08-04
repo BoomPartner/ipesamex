@@ -1,17 +1,12 @@
-import React, { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import {
     Menu,
     MenuHandler,
     MenuList,
-    MenuItem,
-    Button,
-    Card,
-    Typography,
     Collapse,
-    List,
 } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import globalContext from "@/app/context/globalContext";
 const menuItems = [
@@ -29,39 +24,18 @@ const menuItems = [
     }
 ];
 
-const NavListMenu4 = ({ openMenu, setOpenMenu }) => {
-    const { handleQuestions, openQuestions, handleNosotros } = useContext(globalContext)
-
-    const [windowWidth, setWindowWidth] = useState(0);
+const NavListMenu4 = ({ openMenu, setOpenMenu, isMobile }) => {
+    const { handleQuestions } = useContext(globalContext)
 
     const renderItems = menuItems.map(({ title, enlace }, index) => (
         <div key={index} className="text-left w-full flex md:px-2 sinbordenifocus">
             <Link className={`w-full mt-2 mb-1 uppercase hover:text-[#c50411] `}
-                href={enlace} key={title} style={{ fontSize: "12px" }} onClick={enlace == "" ? handleQuestions : null}>
+                href={enlace} key={title} style={{ fontSize: "12px" }} onClick={enlace === "" ? handleQuestions : null}>
                 {title}
             </Link>
         </div>
 
     ))
-
-    const handleResize = () => {
-        const newWindowWidth = window.innerWidth;
-        setWindowWidth(newWindowWidth);
-        if (newWindowWidth > 959) {
-            setOpenMenu(false)
-        }
-    };
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            setWindowWidth(window.innerWidth)
-            window.addEventListener('resize', handleResize);
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-        }
-
-    }, []);
 
     return (
 
@@ -82,7 +56,7 @@ const NavListMenu4 = ({ openMenu, setOpenMenu }) => {
                 </div>
             </MenuHandler>
             {
-                windowWidth <= 870 ?
+                isMobile ?
                     <Collapse open={openMenu}>
                         <div className="no-underline border-none">
                             {renderItems}

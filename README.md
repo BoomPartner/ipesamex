@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IPESA México
 
-## Getting Started
+Sitio público de IPESA construido con Next.js 14, React 18 y App Router. Incluye catálogo de productos, fichas técnicas y de seguridad, sucursales, contenidos comerciales, formularios externos y asistente virtual.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 18 o superior.
+- npm y el `package-lock.json` incluido en el repositorio.
+
+## Desarrollo
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+El sitio queda disponible en `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Variables de entorno
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Copia `.env.example` a un archivo local de entorno y configura las credenciales del asistente virtual:
 
-## Learn More
+```text
+CODEGPT_API_KEY=
+CODEGPT_AGENT_ID=
+```
 
-To learn more about Next.js, take a look at the following resources:
+Estas variables son privadas y solo deben existir en el servidor o en la configuración del proveedor de despliegue. No uses el prefijo `NEXT_PUBLIC_` para credenciales.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Validación
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+npm run lint
+npm run build
+npm run verify:external-assets
+npm run start
+```
 
-## Deploy on Vercel
+Actualmente no existe una suite de pruebas automatizadas. Consulta `AGENTS.md` antes de modificar código; contiene los contratos del catálogo, reglas de integridad y validaciones requeridas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Estructura principal
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- `src/app`: rutas, layout, contexto global y endpoints del servidor.
+- `src/components`: navegación, catálogo y componentes de contenido.
+- `src/components/server.js`: catálogo y contenido estático actual.
+- `src/components/dataMapas.js`: datos de sucursales, cargados bajo demanda.
+- `public`: recursos visuales locales y las hojas aún conservadas en `HOJAS_SEGURIDAD`.
+- `docs/PERFORMANCE.md`: diagnóstico, mejoras aplicadas y métricas comparables.
+- `docs/EXTERNAL-ASSETS.md`: contrato y verificación de fichas, hojas de seguridad y fondos alojados en Tecknum.
+
+## Rendimiento
+
+La aplicación restaura el caché administrado por Next.js, difiere componentes no críticos y evita cargar/renderizar todas las sucursales al entrar a la ruta. Los resultados y las siguientes fases están documentados en [docs/PERFORMANCE.md](docs/PERFORMANCE.md).
+
+Las familias `fichas`, `fichas_colores`, `FICHAS_TECNICAS`, `fondo-producto` y `seguridad` se sirven directamente desde `https://tecknum.com/ipesa_public/`; no deben duplicarse dentro de `public`. Los recursos que permanecen locales sí forman parte del contrato del catálogo y no deben eliminarse o renombrarse sin auditar sus referencias.

@@ -1,11 +1,10 @@
-import { Inter } from 'next/font/google'
 import { Provider } from './Provider'
 import './globals.css'
 import { Analytics } from "@vercel/analytics/react"
 import MetricolScript from '@/components/Metricol'
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google'
-const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
+  metadataBase: new URL('https://www.ipesamex.com'),
 
   title: {
     default: "Ipesa Pinturas - Vinilicas, Esmaltes, Impermeabilizantes...",
@@ -28,21 +27,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <Provider>
-          <MetricolScript/>
-          {children}
-          <Analytics />
-
-        </Provider>
+    <html lang="es">
+      <body>
+        <Provider>{children}</Provider>
+        <Analytics />
+        <MetricolScript />
+        <GoogleTagManager gtmId="AW-11377757851" />
+        <GoogleTagManager gtmId="GTM-K6RWN36J" />
+        <GoogleAnalytics gaId="G-8JXVZPPZ83" />
       </body>
-
-      <GoogleTagManager gtmId='AW-11377757851'></GoogleTagManager>
-      <GoogleTagManager gtmId='GTM-K6RWN36J' ></GoogleTagManager>
-      <GoogleAnalytics gaId='G-8JXVZPPZ83' ></GoogleAnalytics>
-
-
     </html>
   )
 }

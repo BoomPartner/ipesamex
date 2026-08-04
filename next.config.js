@@ -1,19 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    async headers() {
-        return [
-          {
-            // Aplica a todos los archivos
-            source: '/:path*',
-            headers: [
-              {
-                key: 'Cache-Control',
-                value: 'no-store, max-age=0',
-              },
-            ],
-          },
-        ]
-      },
+  compress: true,
+  poweredByHeader: false,
+  experimental: {
+    optimizePackageImports: [
+      '@fortawesome/free-brands-svg-icons',
+      '@fortawesome/free-regular-svg-icons',
+      '@fortawesome/free-solid-svg-icons',
+      '@material-tailwind/react',
+    ],
+  },
 }
 
 module.exports = nextConfig

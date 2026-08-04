@@ -1,157 +1,222 @@
-"use client";
-import React, { useState, useEffect } from 'react'
-import { locations } from './dataMapas';
-import Image from 'next/image'
-import { Card, CardBody, Input, Typography, } from '@material-tailwind/react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+'use client';
+
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 
+let locationsPromise;
 
-var postalCode=''; //SGGC PINCHE LUIS PENDEJIN
+const loadLocations = () => {
+  if (!locationsPromise) {
+    locationsPromise = import('./dataMapas').then((module) => module.locations);
+  }
+
+  return locationsPromise;
+};
+
+const normalizeText = (value) =>
+  value
+    .trim()
+    .toUpperCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
 const Sucursales = () => {
-    
-    const [windowWidth, setWindowWidth] = useState(0);
-    const [positions, setPositions] = useState(locations)
-    const [mensaje, setMensaje] = useState(false)
-    const handleResize = () => {
-        const newWindowWidth = window.innerWidth;
-        setWindowWidth(newWindowWidth);
-    };
+  const [query, setQuery] = useState('');
+  const [positions, setPositions] = useState([]);
+  const [hasSearched, setHasSearched] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const [searchError, setSearchError] = useState(false);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            setWindowWidth(window.innerWidth)
-            window.addEventListener('resize', handleResize);
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-        }
+  const handleQueryChange = (event) => {
+    const nextQuery = event.target.value;
+    setQuery(nextQuery);
 
-    }, []);
+    if (!nextQuery.trim()) {
+      setPositions([]);
+      setHasSearched(false);
+      setSearchError(false);
+    }
+  };
 
-    // var postalCode='';
-    const handleCode = (value) => {
-        if (value) {
-           postalCode = value;
-        } else {
-            setPositions(locations)
-            setMensaje(false)
+  const handleFilterLocations = async (event) => {
+    event.preventDefault();
 
-        }
+    const normalizedQuery = normalizeText(query);
+    if (!normalizedQuery) {
+      setPositions([]);
+      setHasSearched(false);
+      setSearchError(false);
+      return;
     }
 
-    const handleKeyDown = (e) => {
-        if (e.key === 'Enter') {
-            handleFilterLocations();
+    setIsSearching(true);
+    setSearchError(false);
+
+    try {
+      const locations = await loadLocations();
+      const isPostalCode = /^\d+$/.test(normalizedQuery);
+      const filteredLocations = locations.filter((item) => {
+        if (isPostalCode) {
+          return item.codigo_postal === Number(normalizedQuery);
         }
-    };
 
-    const handleFilterLocations = () => {
-        if (postalCode !== "") {
-            if (!isNaN(Number(postalCode))) {
-                const codigoNumerico = Number(postalCode);
-                const filteredLocations = locations.filter((item) => item.codigo_postal === codigoNumerico);
-                setPositions(filteredLocations.length > 0 ? filteredLocations : []);
-                setMensaje(filteredLocations.length === 0);
-            } else {
-                const estadoNormalizado = postalCode.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                const filteredLocations = locations.filter((item) => {
-                    const estadoItem = item.estado.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-                    return estadoItem === estadoNormalizado;
-                });
-                setPositions(filteredLocations.length > 0 ? filteredLocations : []);
-                setMensaje(filteredLocations.length === 0);
-            }
-        } else {
-            setPositions(locations);
-            setMensaje(false);
-        }
-    };
+        return normalizeText(item.estado) === normalizedQuery;
+      });
 
+      setPositions(filteredLocations);
+      setHasSearched(true);
+    } catch {
+      setPositions([]);
+      setHasSearched(true);
+      setSearchError(true);
+    } finally {
+      setIsSearching(false);
+    }
+  };
 
+  return (
+    <main className="sinfocus">
+      <section className="color-sucursales w-full p-6 md:p-10">
+        <div className="mx-auto flex w-full max-w-[1600px] flex-col items-center lg:flex-row">
+          <div className="order-2 w-full p-6 arriba lg:order-1 lg:w-4/5 lg:p-20">
+            <h1 className="mb-5 text-4xl font-semibold text-black md:text-5xl">
+              Ubícanos
+            </h1>
+            <p className="w-full text-xl text-black">
+              Localiza tu sucursal más cercana y disfruta de los servicios y
+              productos que ofrecemos. Contamos con más de{' '}
+              <span className="text-2xl font-bold uppercase">
+                1000 sucursales
+              </span>{' '}
+              en todo el territorio nacional para estar siempre a tu alcance.
+            </p>
+            <p className="mt-10 w-full text-xl text-black">
+              Visítanos en cualquiera de nuestras ubicaciones en la República
+              Mexicana y vive la experiencia de un servicio de calidad y
+              atención personalizada.
+            </p>
+          </div>
 
-
-    return (
-        <div className='sinfocus'>
-            <div className={`${windowWidth < 990 ? "" : "flex justify-center"} w-full color-sucursales p-10 sinfocus`}>
-
-                <div className={`w-full sinfocus ${windowWidth < 990 ? "" : "flex "}`}>
-
-                    {
-                        windowWidth < 990 ? <div className="w-full">
-                            <Image src={"/sucursales/sucursales.webp"} className='push w-full' width={1500} height={1500}></Image>
-                        </div> : null
-                    }
-
-                    <div className={`${windowWidth < 990 ? "w-full p-10" : "w-[80%] p-20"} arriba`}>
-                        <Typography as={'h1'} variant="h1" className='mb-5 text-black'>
-                            Ubícanos
-                        </Typography>
-                        <Typography as={"p"} variant='paragraph' className='w-full text-black' style={{ fontSize: "20px" }}>
-                            Localiza tu sucursal más cercana y disfruta de los servicios y productos que ofrecemos.
-                            Contamos con más de <span className='font-bold uppercase' style={{fontSize: "24px"}}>1000 sucursales</span> en todo el territorio nacional para
-                            estar siempre a tu alcance.</Typography>
-
-                        <Typography as={"p"} variant='paragraph' className='w-full text-black' style={{ fontSize: "20px" }}>
-                            <Typography as={"p"} variant='paragraph' className='w-full text-black mt-10' style={{ fontSize: "20px" }}>
-                            Visítanos en cualquiera de nuestras ubicaciones en la República Mexicana y vive la experiencia de 
-                            un servicio de calidad y atención personalizada.</Typography></Typography>
-
-                    </div>
-
-                    {
-                        windowWidth < 990 ? null : <div className="w-full flex justify-center">
-                            <Image src={"/sucursales/sucursales.webp"} 
-                            className='push w-[75%]' width={1500} height={1500}></Image>
-                        </div>
-                    }
-                </div>
-            </div>
-
-            <div className={`w-full ${windowWidth < 980 ? "block" : "flex justify-center"}`}>
-
-                <div className={`${windowWidth < 980 ? "w-full p-24" : "w-[50%] p-5"} `}>
-                    <div className="flex items-center">
-                        <div className="w-full">
-                            <Input label='Ingresa código postal o estado'
-                                onChange={e => handleCode(e.target.value)}
-                                onKeyDown={handleKeyDown}></Input>
-                        </div>
-                        <div className=""><FontAwesomeIcon icon={faMagnifyingGlass} width={100} height={100}
-                            size='xl' className='cursor-pointer' onClick={handleFilterLocations}></FontAwesomeIcon></div>
-                    </div>
-
-
-                    <div className="mt-4 w-full h-[75vh] overflow-y-auto">
-                        {
-                            mensaje ? <div className=""><Typography as={"h5"} variant='h5' className='w-full text-[#c50411] mt-10 text-center'>No se encontraron sucursales, por favor ingresa otro código postal</Typography></div> : positions.map((item, index) => (
-                                <Card className="mt-6" key={index}>
-                                    <CardBody>
-                                        <Typography as={"h5"} variant="h5" color="blue-gray" className="mb-2">
-                                            <Image src={item.imagen} width={100} height={100} alt='logo'></Image>
-                                        </Typography>
-                                        <Typography as={"p"}>
-                                            <strong className='font-bold text-xl'>Estado: </strong> {item.estado}
-                                        </Typography>
-                                        <Typography as={"p"}>
-                                            <strong className='font-bold text-xl'>Código Postal: </strong>{item.codigo_postal}
-                                        </Typography>
-                                        <Typography as={"p"}>
-                                            <strong className='font-bold text-xl'>Ciudad: </strong>{item.ciudad}
-                                        </Typography>
-                                       
-                                        <Typography as={"p"} className='font-bold text-xl'><Link href={item.enlace} className='hover:border-b border-gray-500' target='_blank'>Ver en Maps</Link></Typography>
-                                    </CardBody>
-                                </Card>
-                            ))
-                        }
-                    </div>
-
-                </div>
-            </div>
+          <div className="order-1 flex w-full justify-center lg:order-2">
+            <Image
+              src="/sucursales/sucursales.webp"
+              className="push h-auto w-full lg:w-3/4"
+              width={1500}
+              height={1500}
+              sizes="(min-width: 1024px) 38vw, 100vw"
+              alt="Mapa ilustrativo de sucursales IPESA"
+            />
+          </div>
         </div>
-    )
-}
+      </section>
 
-export default Sucursales
+      <section className="flex w-full justify-center px-6 py-10">
+        <div className="w-full max-w-3xl">
+          <form
+            className="flex items-center gap-3"
+            onSubmit={handleFilterLocations}
+          >
+            <label className="sr-only" htmlFor="branch-search">
+              Código postal o estado
+            </label>
+            <input
+              id="branch-search"
+              className="w-full rounded-md border border-gray-400 px-4 py-3 text-base outline-none transition focus:border-[#c50411] focus:ring-2 focus:ring-[#c50411]/20"
+              placeholder="Ingresa código postal o estado"
+              value={query}
+              onChange={handleQueryChange}
+              autoComplete="postal-code"
+            />
+            <button
+              type="submit"
+              className="rounded-md p-3 text-[#c50411] transition hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-[#c50411]"
+              aria-label="Buscar sucursales"
+              disabled={isSearching}
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
+            </button>
+          </form>
+
+          <div
+            className="mt-6 max-h-[75vh] w-full overflow-y-auto pr-2"
+            aria-live="polite"
+            aria-busy={isSearching}
+          >
+            {isSearching && (
+              <p className="py-8 text-center text-gray-700">
+                Buscando sucursales…
+              </p>
+            )}
+
+            {!isSearching && !hasSearched && (
+              <p className="py-8 text-center text-gray-700">
+                Escribe un código postal o el nombre de un estado para mostrar
+                las sucursales cercanas.
+              </p>
+            )}
+
+            {!isSearching && searchError && (
+              <p className="py-8 text-center text-[#c50411]">
+                No fue posible cargar las sucursales. Intenta nuevamente.
+              </p>
+            )}
+
+            {!isSearching &&
+              hasSearched &&
+              !searchError &&
+              positions.length === 0 && (
+                <p className="py-8 text-center text-[#c50411]">
+                  No se encontraron sucursales. Ingresa otro código postal o
+                  estado.
+                </p>
+              )}
+
+            {!isSearching &&
+              positions.map((item, index) => (
+                <article
+                  className="mt-6 rounded-xl bg-white p-6 shadow-md"
+                  key={`${item.estado}-${item.codigo_postal}-${item.ciudad}-${index}`}
+                >
+                  <Image
+                    src={item.imagen}
+                    width={100}
+                    height={100}
+                    alt={`Logo de sucursal en ${item.ciudad}`}
+                  />
+                  <p className="mt-4">
+                    <strong className="text-xl font-bold">Estado: </strong>
+                    {item.estado}
+                  </p>
+                  <p>
+                    <strong className="text-xl font-bold">
+                      Código Postal:{' '}
+                    </strong>
+                    {item.codigo_postal}
+                  </p>
+                  <p>
+                    <strong className="text-xl font-bold">Ciudad: </strong>
+                    {item.ciudad}
+                  </p>
+                  <p className="mt-3 text-xl font-bold">
+                    <Link
+                      href={item.enlace}
+                      className="hover:border-b hover:border-gray-500"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ver en Maps
+                    </Link>
+                  </p>
+                </article>
+              ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Sucursales;

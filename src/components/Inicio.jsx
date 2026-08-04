@@ -12,10 +12,14 @@ import {
 } from '@material-tailwind/react';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import CarruselSecundario from './Carrusel2';
 import globalContext from '@/app/context/globalContext';
+
+const CarruselSecundario = dynamic(() => import('./Carrusel2'), {
+  ssr: false,
+});
 
 const Inicio = () => {
   const { handleContacto } = useContext(globalContext);
@@ -218,13 +222,14 @@ const Inicio = () => {
 
   useEffect(() => {
     if (articulos) {
-      const articulo = articulos.filter((item) => item.id == 'vintek');
+      const articulo = articulos.filter((item) => item.id === 'vintek');
       setArticulo(articulo);
     }
   }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+    const animationContext = gsap.context(() => {
 
     gsap.fromTo(
       '.burbuja-grande',
@@ -534,8 +539,10 @@ const Inicio = () => {
         },
       }
     );
+    });
+
     return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
+      animationContext.revert();
     };
   }, []);
 
@@ -823,10 +830,14 @@ const Inicio = () => {
       </section>
 
       <section id="carruselSecundario">
-        <CarruselSecundario
-          width={windowWidth}
-          element={isElementVisible4}
-        ></CarruselSecundario>
+        {isElementVisible4 ? (
+          <CarruselSecundario
+            width={windowWidth}
+            element={isElementVisible4}
+          />
+        ) : (
+          <div className="min-h-[360px]" aria-hidden="true" />
+        )}
       </section>
       <section id="colorvida">
         <div className="w-full">
@@ -1147,7 +1158,7 @@ const Inicio = () => {
           </Button>
           <Link
             href={'/productos'}
-            onClick={handleCategoriaInicio('decorativa')}
+            onClick={() => handleCategoriaInicio('decorativa')}
             className={`zoom-producto ml-4 bg-[#c50411] text-center p-2 rounded-lg text-white`}
           >
             Probar con más productos

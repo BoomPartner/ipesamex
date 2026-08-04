@@ -53,9 +53,9 @@ export const articulos = [
     acabados: '31 colores brillantes.',
     acabados2: 'Mate solo blanco',
     dirigido: 'Particulares, oficios y profesional',
-    ficha: ['/fichas/vinilicas/7000_ACRITEK360_N.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-ACRITEK-7000-2025.pdf'],
-    fichas_colores: ['/fichas_colores/acritek.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/7000_ACRITEK360_N.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-ACRITEK-7000-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/acritek.pdf'],
   },
   {
     id: 'vintek',
@@ -85,9 +85,9 @@ export const articulos = [
     acabados: '31 colores brillantes.',
     acabados2: 'Mate solo blanco',
     dirigido: 'Particulares, oficios y profesional',
-    ficha: ['/fichas/vinilicas/700_Vintek.pdf'],
-    fichas_colores: ['/fichas_colores/vintek.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-VINTEK-700-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/700_Vintek.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/vintek.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-VINTEK-700-2025.pdf'],
     videos: [
       {
         name: 'Atributos',
@@ -130,9 +130,9 @@ export const articulos = [
     promedio: 11,
     acabados: 'Acabado mate',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/400_Realtek.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-REALTEK-400-2025.pdf'],
-    fichas_colores: ['/fichas_colores/realtek.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/400_Realtek.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-REALTEK-400-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/realtek.pdf'],
   },
   {
     id: 'vinipesa-satin',
@@ -160,8 +160,8 @@ export const articulos = [
     gama: '16 colores de línea y 3,464 colores en sistema Infinite Color.',
     acabados: 'Acabado satinado',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/500_VinipesaSatin.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-VINIPESA SATIN-500-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/500_VinipesaSatin.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-VINIPESA SATIN-500-2025.pdf'],
     videos: [
       {
         name: 'Atributos',
@@ -176,7 +176,7 @@ export const articulos = [
         url: 'https://youtube.com/watch?v=y7lY_QGr-GU',
       },
     ],
-    fichas_colores: ['/fichas_colores/vinipesa-satin.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/vinipesa-satin.pdf'],
   },
   {
     id: 'vinipesa',
@@ -205,8 +205,8 @@ export const articulos = [
     gama: '24 colores de línea y 2,484 colores en sistema Infinite Color.',
     acabados: 'Mate mas de 2,484 colores ',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/300_VinipesaMate.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-VINIPESA MATE-300-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/300_VinipesaMate.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-VINIPESA MATE-300-2025.pdf'],
     videos: [
       {
         name: 'Atributos',
@@ -221,7 +221,7 @@ export const articulos = [
         url: 'https://youtube.com/watch?v=y7lY_QGr-GU',
       },
     ],
-    fichas_colores: ['/fichas_colores/vinipesa.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/vinipesa.pdf'],
   },
   {
     id: 'vinimas',
@@ -250,8 +250,8 @@ export const articulos = [
     acabados: 'Acabado mate',
     gama: 'VINI+ ofrece 12 colores de línea y 2,064 colores en sistema Infinite Color.',
     dirigido: 'Particular, oficios y profesional.',
-    ficha: ['/fichas/vinilicas/1300_Vini+_.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-VINI+-1300-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/1300_Vini+_.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-VINI+-1300-2025.pdf'],
     videos: [
       {
         name: 'Atributos',
@@ -266,7 +266,7 @@ export const articulos = [
         url: 'https://www.youtube.com/watch?v=gaLpcGcPQiM',
       },
     ],
-    fichas_colores: ['/fichas_colores/vinimas.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/vinimas.pdf'],
   },
   {
     id: 'colorbel',
@@ -294,9 +294,9 @@ export const articulos = [
     acabados: 'Acabado mate.',
     gama: 'COLORBEL® ofrece 17 colores de línea y 1,686 colores en sistema Infinite Color',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/vinilicas/1400_Colorbel.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-COLORBEL-1400-2025.pdf'],
-    fichas_colores: ['/fichas_colores/colorbel.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/vinilicas/1400_Colorbel_nw.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-COLORBEL-1400-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/colorbel.pdf'],
   },
   {
     id: 'sellatek-5x1',
@@ -320,10 +320,10 @@ export const articulos = [
     promedio: 40,
     acabados: 'Incoloro-transparente',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/selladores/5010-Sellatek-5-1.pdf'],
-    ficha2: ['/fichas/selladores/SELLATEK_5x1_acr.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5010-2025.pdf'],
-    seguridad2: ['/seguridad/decorativa/SELLATEK_5X1.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/selladores/5010-Sellatek-5-1.pdf'],
+    ficha2: ['https://tecknum.com/ipesa_public/fichas/selladores/SELLATEK_5x1_acr.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5010-2025.pdf'],
+    seguridad2: ['https://tecknum.com/ipesa_public/seguridad/decorativa/SELLATEK_5X1.pdf'],
   },
   {
     id: 'sellatek-entintable',
@@ -347,8 +347,8 @@ export const articulos = [
     promedio: 40,
     acabados: 'Blanco',
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/selladores/5020-Sellatek_2en1.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5020-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/selladores/5020-Sellatek_2en1.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5020-2025.pdf'],
   },
   {
     id: 'tropimar-sur',
@@ -362,7 +362,7 @@ export const articulos = [
     microcategorie: 'esmaltes',
     presentation: ['1 L', '4 L', '19 L'],
     color: 'tropimarsur',
-    ficha_color: ['/fichas/esmaltes/MUESTRARIO-TROPIMAR-SUR.pdf'],
+    ficha_color: ['https://tecknum.com/ipesa_public/fichas/esmaltes/MUESTRARIO-TROPIMAR-SUR.pdf'],
     imagen: '/articulos/esmaltes/tropimar_sur.png',
     subtitle: 'Esmalte de secado ultra rápido',
     description: [
@@ -378,8 +378,8 @@ export const articulos = [
     acabados: 'Acabados mate y brillante',
     gama: '18 colores de línea.',
     dirigido: 'Oficio, particular y profesional',
-    ficha: ['/fichas/esmaltes/200_TropimarSur.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-200-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/200_TropimarSur.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-200-2025.pdf'],
     videos: [
       {
         name: 'Atributos',
@@ -394,7 +394,7 @@ export const articulos = [
         url: 'https://www.youtube.com/watch?v=SzduR8EB3ms',
       },
     ],
-    fichas_colores: ['/fichas_colores/tropimar-sur.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/tropimar-sur.pdf'],
   },
   {
     id: 'tropimar',
@@ -422,11 +422,11 @@ export const articulos = [
     acabados: 'Acabado brillante.',
     gama: ' 23 colores de línea.',
     dirigido: 'Oficio, particular y profesional',
-    ficha: ['/fichas/esmaltes/1000_Tropimar.pdf'],
-    ficha3: ['/fichas/esmaltes/1040_1041_1042_TropimarMetalicos.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1000-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/1000_Tropimar.pdf'],
+    ficha3: ['https://tecknum.com/ipesa_public/fichas/esmaltes/1040_1041_1042_TropimarMetalicos.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1000-2025.pdf'],
     seguridad3: [
-      '/seguridad/decorativa/HDS-1040-1041-1042-TROPIMAR-METALICO.pdf',
+      'https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1040-1041-1042-TROPIMAR-METALICO.pdf',
     ],
     videos: [
       {
@@ -442,7 +442,7 @@ export const articulos = [
         url: 'https://www.youtube.com/watch?v=JMXvAICmU-E',
       },
     ],
-    fichas_colores: ['/fichas_colores/tropimar.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/tropimar.pdf'],
   },
   {
     id: 'tropimar-aqua',
@@ -468,9 +468,9 @@ export const articulos = [
     ],
     rendimiento: '10 - 12 m2 / L',
     promedio: 9,
-    ficha: ['/fichas/esmaltes/Ficha_tecnica_TROPIMAR_AQUA.pdf'],
-    fichas_colores: ['/fichas_colores/Tropimar_Aqua_Ficha_de_color_NW.pdf'],
-    seguridad: ['/seguridad/decorativa/Hoja_Seguridad_4000.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/Ficha_tecnica_TROPIMAR_AQUA.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/Tropimar_Aqua_Ficha_de_color_NW.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/Hoja_Seguridad_4000.pdf'],
   },
   {
     id: 'brigadier',
@@ -496,9 +496,9 @@ export const articulos = [
     acabados: 'Acabados mate y brillante',
     gama: ' 21 colores de línea.',
     dirigido: 'Particular y oficio',
-    ficha: ['/fichas/esmaltes/1700_Brigadier.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1700-2025.pdf'],
-    fichas_colores: ['/fichas_colores/brigadier.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/1700_Brigadier.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1700-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/brigadier.pdf'],
   },
   {
     id: 'canada',
@@ -526,9 +526,9 @@ export const articulos = [
     acabados: 'Acabado brillante',
     gama: ' 2 colores de línea.',
     dirigido: 'Particular y oficio',
-    ficha: ['/fichas/esmaltes/Canada.pdf'],
-    seguridad: ['/seguridad/decorativa/CANADA.pdf'],
-    fichas_colores: ['/fichas_colores/canada.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/Canada.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/CANADA.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/canada.pdf'],
   },
   {
     id: '15',
@@ -549,9 +549,9 @@ export const articulos = [
     rendimiento: ' 10 a 12 m2 / L',
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
-    ficha: ['/fichas/esmaltes/5004-Primario-Minio.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5004-2025.pdf'],
-    fichas_colores: ['/fichas_colores/15.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/5004-Primario-Minio.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5004-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/15.pdf'],
   },
   {
     id: '16',
@@ -572,9 +572,9 @@ export const articulos = [
     rendimiento: ' 8 a 10 m2 / L',
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
-    ficha: ['/fichas/esmaltes/5005-PrimarioMinio-ECO.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5005-2025.pdf'],
-    fichas_colores: ['/fichas_colores/16.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/5005-PrimarioMinio-ECO.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5005-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/16.pdf'],
   },
   {
     id: '17',
@@ -595,9 +595,9 @@ export const articulos = [
     rendimiento: ' 8 a 10 m2 / L',
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
-    ficha: ['/fichas/esmaltes/5006-Primario-CromatoZinc_2025.pdf'],
-    seguridad: ['/seguridad/decorativa/5006_HDS_2025.pdf'],
-    fichas_colores: ['/fichas_colores/17.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/5006-Primario-CromatoZinc_2025.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/5006_HDS_2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/17.pdf'],
   },
   {
     id: '18',
@@ -618,9 +618,9 @@ export const articulos = [
     rendimiento: ' 10 a 12 m2 / L',
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
-    ficha: ['/fichas/esmaltes/TDS-5007-Primario-Universal.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5007-2025.pdf'],
-    fichas_colores: ['/fichas_colores/18.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/TDS-5007-Primario-Universal.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5007-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/18.pdf'],
   },
   {
     id: '19',
@@ -641,9 +641,9 @@ export const articulos = [
     rendimiento: ' 10 a 12 m2 / L',
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
-    ficha: ['/fichas/esmaltes/5040-5041-5042-Primario-Secado-Express.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5040-5041-5042-2025.pdf'],
-    fichas_colores: ['/fichas_colores/19.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/5040-5041-5042-Primario-Secado-Express.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5040-5041-5042-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/19.pdf'],
   },
   {
     id: '20',
@@ -664,9 +664,9 @@ export const articulos = [
     rendimiento: ' 10 a 12 m2 / L',
     promedio: 11,
     dirigido: 'Particular, porfesional y oficio',
-    ficha: ['/fichas/esmaltes/5050-5051-Primario Herreros.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5050-2025.pdf'],
-    fichas_colores: ['/fichas_colores/20.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/esmaltes/5050-5051-Primario Herreros.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5050-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/20.pdf'],
   },
   {
     id: 'aerosol-color-cril',
@@ -687,12 +687,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '14 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf',
     ],
-    fichas_colores: ['/fichas_colores/aerosol-color-cril.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/aerosol-color-cril.pdf'],
   },
   {
     id: '22',
@@ -711,12 +711,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '2 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf',
     ],
-    fichas_colores: ['/fichas_colores/22.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/22.pdf'],
   },
   {
     id: '23',
@@ -738,12 +738,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '5 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol metalico.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol metalico.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL-METALICO.pdf',
     ],
-    fichas_colores: ['/fichas_colores/23.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/23.pdf'],
   },
   {
     id: '24',
@@ -762,12 +762,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '3 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol mate y satinado.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol mate y satinado.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL MATE Y SATINADO.pdf',
     ],
-    fichas_colores: ['/fichas_colores/24.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/24.pdf'],
   },
   {
     id: '25',
@@ -789,12 +789,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '2 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol anticorrosivo.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol anticorrosivo.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL- ANTICORROSIVOS.pdf',
     ],
-    fichas_colores: ['/fichas_colores/25.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/25.pdf'],
   },
   {
     id: '26',
@@ -815,12 +815,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '2 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol alta temperatura.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol alta temperatura.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL-ALTA TEMPERATURA.pdf',
     ],
-    fichas_colores: ['/fichas_colores/26.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/26.pdf'],
   },
   {
     id: '107',
@@ -839,12 +839,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '1 color',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol mate y satinado.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol mate y satinado.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL MATE Y SATINADO.pdf',
     ],
-    fichas_colores: ['/fichas_colores/107.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/107.pdf'],
   },
   {
     id: '27',
@@ -863,12 +863,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '5 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol niquelado.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol niquelado.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL-NIQUELADOS.pdf',
     ],
-    fichas_colores: ['/fichas_colores/27.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/27.pdf'],
   },
   {
     id: '28',
@@ -889,12 +889,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '4 colores',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol fluorescente.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol fluorescente.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL FLUORESCENTE.pdf',
     ],
-    fichas_colores: ['/fichas_colores/28.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/28.pdf'],
   },
   {
     id: '29',
@@ -913,12 +913,12 @@ export const articulos = [
     promedio: 1.5,
     gama: '4 colores.',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/AEROSOLES COLOR CRIL/TDS Aerosol Brillante.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/AEROSOLES_COLOR_CRIL/HDS AEROSOL BRILLANTE.pdf',
     ],
-    fichas_colores: ['/fichas_colores/29.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/29.pdf'],
   },
   {
     id: 'vulcan-5011',
@@ -943,9 +943,9 @@ export const articulos = [
     promedio: 11,
     dirigido: 'Particular, profesional y oficio',
     ficha: [
-      '/fichas/esmaltes/VULCAN_5011_FICHA_TECNICA_PRIMER_ALTA_ADHERENCIA.pdf',
+      'https://tecknum.com/ipesa_public/fichas/esmaltes/VULCAN_5011_FICHA_TECNICA_PRIMER_ALTA_ADHERENCIA.pdf',
     ],
-    seguridad: ['/seguridad/decorativa/VULCAN_5011_HOJA_DE_SEGURIDAD.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/VULCAN_5011_HOJA_DE_SEGURIDAD.pdf'],
   },
   {
     id: 'imper-cril',
@@ -965,8 +965,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9040_9041_ImperCril_7anios.pdf'],
-    seguridad: ['/seguridad/decorativa/9040-9041-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9040_9041_ImperCril_7anios.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9040-9041-2025.pdf'],
   },
   {
     id: 'imper-lux',
@@ -985,8 +985,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9050_9051_ImperLux_5anios.pdf'],
-    seguridad: ['/seguridad/decorativa/9050-9051-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9050_9051_ImperLux_5anios.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9050-9051-2025.pdf'],
   },
   {
     id: 'imper-lux-fibratado',
@@ -1006,8 +1006,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9052_9053_ImperLuxFibratado.pdf'],
-    seguridad: ['/seguridad/decorativa/9052-9053.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9052_9053_ImperLuxFibratado.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9052-9053.pdf'],
   },
   {
     id: 'imper-ruf',
@@ -1026,8 +1026,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9060_9061_ImperRuf_3anios.pdf'],
-    seguridad: ['/seguridad/decorativa/9060-9061-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9060_9061_ImperRuf_3anios.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9060-9061-2025.pdf'],
   },
   {
     id: 'imper-rok',
@@ -1047,8 +1047,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9000-ImperRock-BS.pdf'],
-    seguridad: ['/seguridad/decorativa/9000-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9000-ImperRock-BS.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9000-2025.pdf'],
   },
   {
     id: 'wall-cover-eco',
@@ -1068,8 +1068,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9063-WallCover-3anios.pdf'],
-    seguridad: ['/seguridad/decorativa/9063-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9063-WallCover-3anios.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9063-2025.pdf'],
   },
   {
     id: 'wal-cover-plus',
@@ -1090,8 +1090,8 @@ export const articulos = [
     ],
     rendimiento: 'De 1 a 1.5 m2 / L',
     promedio: 1.25,
-    ficha: ['/fichas/impermeabilizantes/9054-WallCover-5anios.pdf'],
-    seguridad: ['/seguridad/decorativa/9054-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/9054-WallCover-5anios.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/9054-2025.pdf'],
   },
   {
     id: 'imper-flex',
@@ -1127,8 +1127,8 @@ export const articulos = [
       'Pigmento de alta calidad diseñado especialmente para entintar el concreto a utilizar en fachadas, pisos y tabique, así como para la coloración en la fabricación de mosaicos, mortero, loseta, entre otros. ',
     ],
     rendimiento: 'De 10 a 12 m2 / L',
-    ficha: ['/fichas/impermeabilizantes/Color_Cemento.pdf'],
-    seguridad: ['/seguridad/decorativa/COLOR_CEMENTO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/impermeabilizantes/Color_Cemento.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/COLOR_CEMENTO.pdf'],
   },
   {
     id: 'sellador-directo-de-nitro',
@@ -1146,7 +1146,7 @@ export const articulos = [
     ],
     rendimiento: 'Rendimiento de 8.2 m2 / L',
     promedio: 8.2,
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3001 SELLADOR DIRECTO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3001 SELLADOR DIRECTO.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3001-3002_2025.pdf'],
   },
   {
@@ -1166,7 +1166,7 @@ export const articulos = [
     ],
     rendimiento: 'Rendimiento de 11 m2 por / L',
     promedio: 11,
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3002 SELLADOR ALTOS SOLIDOS.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3002 SELLADOR ALTOS SOLIDOS.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3001-3002_2025.pdf'],
   },
   {
@@ -1188,7 +1188,7 @@ export const articulos = [
     rendimiento: ' 8.3 m2 / L',
     promedio: 8.3,
     acabados: ['Brillante ,', 'semimate ', 'y mate.'],
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3004 LACA BRILLANTE.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3004 LACA BRILLANTE.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3004,3005,3006,3007_2025.pdf'],
   },
   {
@@ -1210,7 +1210,7 @@ export const articulos = [
     rendimiento: ' 7.5 m2 / L ',
     promedio: 7.5,
     ficha: [
-      '/FICHAS_TECNICAS/MADERAS/3007_Laca Directa de Nitro Brillante.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3007_Laca Directa de Nitro Brillante.pdf',
     ],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3004,3005,3006,3007_2025.pdf'],
   },
@@ -1232,11 +1232,11 @@ export const articulos = [
     rendimiento: ' 8 a 9.7 m2 / L',
     promedio: 8.85,
     gama: ' 11 colores de línea.',
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3080-3090_Laca Industrial de Nitro.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3080-3090_Laca Industrial de Nitro.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/MADERAS/HDS-3080-3090_LACA INDUSTRIAL DE NITRO-2025.pdf',
     ],
-    fichas_colores: ['/fichas_colores/laca-industrial-de-nitro.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/laca-industrial-de-nitro.pdf'],
   },
   {
     id: 'primer-de-nitrocelulosa',
@@ -1258,9 +1258,9 @@ export const articulos = [
     rendimiento: ' 10 a 12 m2 / L',
     promedio: 11,
     gama: '4 colores de línea',
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3070,3071,3072,3073_Primer.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3070,3071,3072,3073_Primer.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3070,3071,3072,3073-2025.pdf'],
-    fichas_colores: ['/fichas_colores/primer-de-nitrocelulosa.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/primer-de-nitrocelulosa.pdf'],
   },
   {
     id: 'tinta-al-alcohol',
@@ -1278,11 +1278,11 @@ export const articulos = [
       'Diseñado especialmente para entintar trabajos de madera, donde se requiere una alta transparencia y color uniforme, resaltando las veta de la madera.',
     ],
     gama: ' 11 colores de línea.',
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3010 al 3020 ALCOHOL.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3010 al 3020 ALCOHOL.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/MADERAS/HDS-3010 al 3020-2025-TINTA ALCOHOL.pdf',
     ],
-    fichas_colores: ['/fichas_colores/tinta-al-alcohol.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/tinta-al-alcohol.pdf'],
   },
   {
     id: 'tinta-al-aceite',
@@ -1300,9 +1300,9 @@ export const articulos = [
       'Diseñado para entintar muebles de madera que se encuentran en el interior, proporciona transparencia, color uniforme y buena penetración, realzando la veta de la madera. ',
     ],
     gama: '11 colores de línea.',
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3030 al 3040 TINTA AL ACEITE.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3030 al 3040 TINTA AL ACEITE.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3030 al 3040-2025.pdf'],
-    fichas_colores: ['/fichas_colores/tinta-al-aceite.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/tinta-al-aceite.pdf'],
   },
   {
     id: 'barniz-transparente',
@@ -1321,7 +1321,7 @@ export const articulos = [
     ],
     rendimiento: ' 13.9 m2 / L',
     promedio: 13.9,
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3202_Barniz transparente.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3202_Barniz transparente.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/MADERAS/HDS-3202_BARNIZ TRANSPARENTE-2025.pdf',
     ],
@@ -1343,7 +1343,7 @@ export const articulos = [
     ],
     rendimiento: 'De 10 a 12 m2 / L',
     promedio: 11,
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3203_Barniz Marino.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3203_Barniz Marino.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3203-BARNIZ MARINO-2025.pdf'],
   },
   {
@@ -1363,11 +1363,11 @@ export const articulos = [
     ],
     rendimiento: ' 11.8 m2 / L',
     promedio: 11.8,
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3206-3213_Barniz Entintado.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3206-3213_Barniz Entintado.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/MADERAS/HDS-3206-3213-BARNIZ ENTINTADO-2025.pdf',
     ],
-    fichas_colores: ['/fichas_colores/barniz-entintado.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/barniz-entintado.pdf'],
   },
   {
     id: 'barniz-de-poliuretano',
@@ -1394,7 +1394,7 @@ export const articulos = [
     ],
     dirigido: ' 11.9 m2 / L',
     ficha: [
-      '/FICHAS_TECNICAS/MADERAS/3060-3063_Barniz de PU brillante-Catalizador.CENTURY.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3060-3063_Barniz de PU brillante-Catalizador.CENTURY.pdf',
     ],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3060-3061-3062-2025.pdf'],
   },
@@ -1413,7 +1413,7 @@ export const articulos = [
       'Solvente diseñado para diluir los sistemas de poliuretano.',
       'Presenta excelente poder de disolución, ayudando a optimizar la aplicación de los barnices de poliuretano, sin perder brillo.',
     ],
-    ficha: ['/FICHAS_TECNICAS/MADERAS/3069 SOLVENTE PARA POLIURETANO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/MADERAS/3069 SOLVENTE PARA POLIURETANO.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/MADERAS/HDS-3069 -SOLVENTE PU-2025.pdf'],
   },
   {
@@ -1432,7 +1432,7 @@ export const articulos = [
     ],
     rendimiento: ' 11.1 m2 / L',
     promedio: 11.1,
-    ficha: ['/fichas/maderas/FONDO_POLIURETANO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/maderas/FONDO_POLIURETANO.pdf'],
   },
   {
     id: 'laca-acrilica',
@@ -1450,8 +1450,8 @@ export const articulos = [
     ],
     rendimiento: ' 7 a 8 m2 / L',
     gama: '31 colores sólidos, 9 aluminios y 1 transparente (vehículo de ajuste)',
-    ficha: ['/fichas/automotriz/TDS_LINEA_2300_LACA_ACRILICA.pdf'],
-    seguridad: ['/seguridad/automotriz/HDS_LINEA_2300_LACA_ACRILICA.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/TDS_LINEA_2300_LACA_ACRILICA.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_LINEA_2300_LACA_ACRILICA.pdf'],
   },
   {
     id: 'base-color',
@@ -1463,15 +1463,15 @@ export const articulos = [
     presentation: ['1 L', '4 L'],
     tiempo: '',
     color: '',
-    ficha_color: ['/fichas/automotriz/base_color_rgb.pdf'],
+    ficha_color: ['https://tecknum.com/ipesa_public/fichas/automotriz/base_color_rgb.pdf'],
     imagen: '/articulos/automotriz/base_color.png',
     description: [
       'Base Color de COLOR CRIL® es un producto desarrollado para el repintado total o parcial de vehículos automotrices; su variedad de colores y limpieza de tintes permiten la igualación de infinidad de colores. ',
     ],
     rendimiento: ' 7 a 8 m2 / L',
     gama: '33 colores sólidos, 10 aluminios, 2 paliocrom y 1 transparente (vehículo de ajuste)',
-    ficha: ['/fichas/automotriz/TDS_LINEA_2400_BASE_COLOR.pdf'],
-    seguridad: ['/seguridad/automotriz/HDS_LINEA_2400__BASE_COLOR.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/TDS_LINEA_2400_BASE_COLOR.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_LINEA_2400__BASE_COLOR.pdf'],
   },
   {
     id: 'esmalte-acrilico',
@@ -1491,8 +1491,8 @@ export const articulos = [
     ],
     rendimiento: ' 10 a 17 m2 / L',
     gama: '32 colores sólidos, 9 aluminios y 1 transparente (vehículo de ajuste).',
-    ficha: ['/fichas/automotriz/TDS_LINEA_2100_ESMALTE_ACRILICO.pdf'],
-    seguridad: ['/seguridad/automotriz/HDS_LINEA_2100_ESMALTE_ACRILICO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/TDS_LINEA_2100_ESMALTE_ACRILICO.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_LINEA_2100_ESMALTE_ACRILICO.pdf'],
   },
   {
     id: 'esmalte-de-poliuretano',
@@ -1512,9 +1512,9 @@ export const articulos = [
     ],
     rendimiento: ' 13 a 16 m2 / L',
     gama: '14 colores de línea',
-    ficha: ['/fichas/automotriz/TDS_LINEA_2600_ESMALTE_POLIURETANO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/TDS_LINEA_2600_ESMALTE_POLIURETANO.pdf'],
     seguridad: [
-      '/seguridad/automotriz/HDS_LINEA_2600ESMALTE_POLIURETANO_PARA_USO_AUTOMOTRIZ.pdf',
+      'https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_LINEA_2600ESMALTE_POLIURETANO_PARA_USO_AUTOMOTRIZ.pdf',
     ],
   },
   {
@@ -1532,8 +1532,8 @@ export const articulos = [
       'Esmalte de secado rápido de extraordinaria calidad, diseñado para ser utilizado en el chasis de los autos, parachoques, muelles, etc.',
     ],
     rendimiento: 'De 8 a 9 m2 / L',
-    ficha: ['/fichas/automotriz/TDS_NEGRO_CHASIS_9020_Y_2181(AEROSOL).pdf'],
-    seguridad: ['/seguridad/automotriz/HDS_9020_NEGRO_CHASIS_(AEROSOL).pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/TDS_NEGRO_CHASIS_9020_Y_2181(AEROSOL).pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_9020_NEGRO_CHASIS_(AEROSOL).pdf'],
   },
   {
     id: 'negro-chasis-aerosol',
@@ -1552,8 +1552,8 @@ export const articulos = [
       'Esmalte de secado rápido de extraordinaria calidad, diseñado para ser utilizado en el chasis de los autos, parachoques, muelles, etc.',
     ],
     rendimiento: 'De 1 a 2 m2 por bote.',
-    ficha: ['/fichas/automotriz/TDS_NEGRO_CHASIS_9020_Y_2181(AEROSOL).pdf'],
-    seguridad: ['/seguridad/automotriz/HDS_9020_NEGRO_CHASIS_(AEROSOL).pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/TDS_NEGRO_CHASIS_9020_Y_2181(AEROSOL).pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_9020_NEGRO_CHASIS_(AEROSOL).pdf'],
   },
   {
     id: 'cryl-baryprimer',
@@ -1571,7 +1571,7 @@ export const articulos = [
       'Sus propiedades permiten utilizarlo como primario de anclaje al metal desnudo en repintado automotriz así como en la industria metal mecánica.',
     ],
     rendimiento: 'De 5.1 a 5.5 m2 / L',
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2218.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2218.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2218_CRIL_BARYPRIMER.pdf',
     ],
@@ -1592,7 +1592,7 @@ export const articulos = [
       'Activador Crilbaryprimer está diseñado para uso exclusivo de Crilbaryprimer, para garantizar el debido funcionamiento, no debe ser sustituido por ningún otro diluyente.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2214 Activador CRILBARYPRIMER.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2214 Activador CRILBARYPRIMER.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2214  ACTIVADOR PARA CRILBARYPRIMER.pdf',
@@ -1614,7 +1614,7 @@ export const articulos = [
       ' Recomendado para trabajos rápidos, en especial resanes pequeños y fondeos.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS PRIMER AUTOMOTIVO (2220,2222,2282).pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS PRIMER AUTOMOTIVO (2220,2222,2282).pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_PRIMER_AUTOMOTIVO_(2220,2222,2282).pdf',
@@ -1636,7 +1636,7 @@ export const articulos = [
       ' Posee propiedades anticorrosivas y no sangra.',
       'Ideal para el repintado parcial o total de vehículos automotrices.',
     ],
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2240 ECONO PRIMER.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2240 ECONO PRIMER.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2240_ECONO_PRIMER.pdf',
     ],
@@ -1657,7 +1657,7 @@ export const articulos = [
       ' Presenta buena resistencia al impacto y flexibilidad, así como buena adherencia sobre diversos sustratos como lámina desnuda, lámina galvanizada, aluminio y fibra de vidrio. Proporciona poder de relleno, posee propiedades anticorrosivas, no sangra.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS PRIMER UNIVERSAL (2223,2224,2225,2281).pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS PRIMER UNIVERSAL (2223,2224,2225,2281).pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2223,2224,2225,2281_PRIMER_UNIV.pdf',
@@ -1679,7 +1679,7 @@ export const articulos = [
     ],
     rendimiento: '18.5 m2 / L',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2235 PRIMER EPOXICO.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2235 PRIMER EPOXICO.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2235_PRIMER_EPOXICO.pdf',
@@ -1707,7 +1707,7 @@ export const articulos = [
       'Tiempo de secado (20 a 30 min)',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2279 HYPER LIGTH.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2279 HYPER LIGTH.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/RELLENADORES/HDS 2279 HYPER LIGHT.pdf',
@@ -1726,7 +1726,7 @@ export const articulos = [
       'Pasta masilla color crema de alta calidad, diseñada para ser empleada en golpes o reparaciones mayores, en donde se requiera aplicar un mayor espesor de pasta debido a la profundidad de la superficie a reparar.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2203 ULTRA LIGERO.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2203 ULTRA LIGERO.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/RELLENADORES/HDS 2203_BODY FILLER RELLENADOR_2025.pdf',
@@ -1746,7 +1746,7 @@ export const articulos = [
       'Por su formulación especial presenta un secado rápido, buena facilidad de aplicación, extraordinario poder de relleno, excelente adherencia sobre lámina de fierro.',
       'Es ligero y de fácil lijado, no sangra ni amarillea.',
     ],
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2202 LIGERO.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/RELLENADORES/TDS 2202 LIGERO.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/AUTOMOTRIZ/RELLENADORES/HDS 2202 LIGERO.pdf'],
   },
   {
@@ -1763,7 +1763,7 @@ export const articulos = [
       'Presentan secado rápido, buena facilidad de aplicación y de lijado (buen polveo) y excelente adherencia sobre nuestros primers.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/PLASTES 2204,2207,2211,2280/TDS PLASTE AUTOMOTIVO.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PLASTES 2204,2207,2211,2280/TDS PLASTE AUTOMOTIVO.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PLASTES_2204,2207.2211,2280/HDS PLASTE AUTOMOTIVO.pdf',
@@ -1782,7 +1782,7 @@ export const articulos = [
       'Primario rellenador 1 K, es un producto de la más alta calidad, especialmente diseñado para repintado automotriz.',
       'Presenta características que proporciona un gran poder de relleno, fácil de lijar, tiempo de secado rápido, excelente adherencia sobre lámina negra, fibra de vidrio, aluminio y lámina galvanizada. Puede ser recubierto con nuestros productos de la línea COLOR CRIL®',
     ],
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2221 1K.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2221 1K.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2221_PRIMER_1K.pdf'],
   },
   {
@@ -1800,7 +1800,7 @@ export const articulos = [
       'Su gran facilidad de lijado, flexibilidad y excelente resistencia a solventes hacen de este primario una excelente opción para el repintado automotriz.',
     ],
     rendimiento: 'De 13 a 14 m2 / L',
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2270 2K GP.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2270 2K GP.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2270_PRIMER_2K_GP.pdf',
     ],
@@ -1818,7 +1818,7 @@ export const articulos = [
       'Primario de poliuretano diseñado para sistemas de repintado automotriz donde se requiera una alta retención de brillo, máxima durabilidad, excelente poder de relleno y tiempos de secado cortos.',
     ],
     rendimiento: 'De 13 a 14 m2 / L',
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2219  2K.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/PRIMARIOS/TDS 2219  2K.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/AUTOMOTRIZ/PRIMARIOS/HDS_2219_PRIMER_2K.pdf'],
   },
   {
@@ -1836,7 +1836,7 @@ export const articulos = [
       'Diseñadas para utilizarse en sistemas de repintado automotriz COLOR CRIL® Esmalte Acrílico, Laca Acrllica, Poliuretano y Base Color',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/COMPLEMENTOS DE IGUALACION/TDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/COMPLEMENTOS DE IGUALACION/TDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/COMPLEMENTOS_DE_IGUALACION/HDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf',
@@ -1857,7 +1857,7 @@ export const articulos = [
       'Diseñadas para utilizarse en sistemas de repintado automotriz COLOR CRIL® Esmalte Acrílico, Laca Acrílica, Poliuretano y Base Color',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/COMPLEMENTOS DE IGUALACION/TDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/COMPLEMENTOS DE IGUALACION/TDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/COMPLEMENTOS_DE_IGUALACION/HDS PERLAS LIQUIDAS UNIV. TRADICIONALES Y XIRALICAS.pdf',
@@ -1878,7 +1878,7 @@ export const articulos = [
       'Es un transparente de poliuretano de alta dilución y excelente rendimiento, recomendado para aplicarse sobre esmaltes catalizados, laca acrílica y base color, proporciona buena nivelación, brillo y distinción de imagen. Diseñado para todo tipo de reparaciones automotrices. Posee un gran rendimiento',
     ],
     rendimiento: 'De 11 a 15 m2 / L',
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2276 HD.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2276 HD.pdf'],
     seguridad: ['/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2276 HD.pdf'],
   },
   {
@@ -1896,7 +1896,7 @@ export const articulos = [
     ],
     rendimiento: 'De 11 a 15 m2 / L',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2274 GLASS FINISH.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2274 GLASS FINISH.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2274 GLASS FINISH.pdf',
@@ -1920,7 +1920,7 @@ export const articulos = [
       'El transparente de 4 L contiene un endurecedor de 800 ml.',
     ],
     rendimiento: 'De 14.9 a 16.9 m2 / L',
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2157 TOP GLOSS.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2157 TOP GLOSS.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2457 TOP GLOSS.pdf',
     ],
@@ -1944,7 +1944,7 @@ export const articulos = [
     ],
     rendimiento: 'De 10 a 11 m2 / L',
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2272 HYPER FINISH.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2272 HYPER FINISH.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS 2272 HYPER FINISH.pdf',
@@ -1969,7 +1969,7 @@ export const articulos = [
       'El transparente de 4 L contiene un endurecedor de 800 ml.',
     ],
     rendimiento: 'De 10.2 a 11.2 m2 / L',
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2156 LPA.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/TRANPARENTES/TDS 2156 LPA.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/TRANSPARENTES/HDS  2156 LPA AP.pdf',
     ],
@@ -1988,7 +1988,7 @@ export const articulos = [
       'Mejora la igualación de colores metálicos, controlando el efecto flop (eliminando el destello de aluminio visto de lado), obteniéndose así una óptima igualación de color al adicionarlo a los colores metálicos de los sistemas de repintado automotriz COLOR CRIL®.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2227 FLOTADOR ALUM. NF.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2227 FLOTADOR ALUM. NF.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2227 FLOTADOR DE ALUMINIO.pdf',
@@ -2008,7 +2008,7 @@ export const articulos = [
       'Promueve la adherencia entre sustratos o partes plásticas automotrices, sin necesidad de utilizar previamente ningún otro producto.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2228 Y 2233 PROM. ADHERENCIA.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2228 Y 2233 PROM. ADHERENCIA.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2228 Y 2233 PROM. ADHERENCIA.pdf',
@@ -2028,7 +2028,7 @@ export const articulos = [
       'No contiene plomo ni metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2232 MATIZANTE UNIVERSAL.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2232 MATIZANTE UNIVERSAL.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2232 MATIZANTE UNIVERSAL.pdf',
@@ -2049,7 +2049,7 @@ export const articulos = [
       'Incrementa la adherencia de los sistemas de COLOR CRIL® sobre superficies plásticas automotrices rígidas o flexibles, su presentación en aerosol facilita el trabajo de repintado en áreas pequeñas o de difícil acceso.',
     ],
     rendimiento: 'De 1 a 2 m2 / L',
-    ficha: ['/fichas/automotriz/COLORCRIL_Aerosol_Promotor_Adherencia.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/COLORCRIL_Aerosol_Promotor_Adherencia.pdf'],
   },
   {
     id: 'thinner-acrilico',
@@ -2065,7 +2065,7 @@ export const articulos = [
       'Su gran poder de dilución, su evaporación rápida y controlada facilita la aplicación y permiten una adecuada formación de película con alto brillo y muy buena nivelación. Producto libre de metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2205 THINNER ACRILICO.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2205 THINNER ACRILICO.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2205 THINER ACRILICO.pdf',
@@ -2084,7 +2084,7 @@ export const articulos = [
       'Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una mezcla de solventes aromáticos y oxigenados, libres de metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2206 Reductor alta temperatura.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2206 Reductor alta temperatura.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2206   REDUCTOR ACRILICO PARA ALTA TEMPERATURA.pdf',
@@ -2103,7 +2103,7 @@ export const articulos = [
       'Es una mezcla de solventes de excelente calidad, diseñados para la dilución de esmalte acrílico proporcionando alto brillo y nivelación. Es una mezcla de solventes aromáticos y oxigenados, libres de metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2212 REDUCTOR ACRILICO ALTO BRILLO.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2212 REDUCTOR ACRILICO ALTO BRILLO.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2212  REDUCTOR ACRILICO ALTO BRILLO.pdf',
@@ -2124,7 +2124,7 @@ export const articulos = [
       ' El uso de este reductor asegura una funcionalidad óptima del primer. El ácido que contiene ayuda a sensibilizar substratos de fierro para un mejor anclaje. Es una mezcla de solventes aromáticos y oxigenados no contiene metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2229 REDUCTOR ACRILICO PRIMARIO.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2229 REDUCTOR ACRILICO PRIMARIO.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2229  REDUCTOR PARA PRIMARIO ACRILICO.pdf',
@@ -2144,7 +2144,7 @@ export const articulos = [
       'El uso de este reductor asegura una funcionalidad óptima de la base color. Es una mezcla de solventes aromáticos y oxigenados no contiene metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2230 REDUCTOR BASE COLOR.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2230 REDUCTOR BASE COLOR.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2230  REDUCTOR ACRILICO PARA BASE COLOR.pdf',
@@ -2163,7 +2163,7 @@ export const articulos = [
       'Es una mezcla balanceada de solventes orgánicos diseñada para la dilución de acabados de poliuretano, su formulación permite obtener acabados con excelente nivelación y muy buena distinción de imagen. No contiene metanol.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2231 REDUCTOR TRANSPARENTES P.U.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/REDUCTORES/TDS 2231 REDUCTOR TRANSPARENTES P.U.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/REDUCTORES/HDS 2231  REDUCTOR PARA  CLEAR COAT.pdf',
@@ -2181,7 +2181,7 @@ export const articulos = [
     description: [
       'Producto concebido para esfumar o difuminar la brisa y los bordes de acabados transparentes durante la aplicación, lo que permite obtener un acabado uniforme, terso y brillante.',
     ],
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2234 BLENDER.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2234 BLENDER.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2234 BLENDER PARA ESFUMADO.pdf',
     ],
@@ -2203,8 +2203,8 @@ export const articulos = [
     ],
     rendimiento: 'De 7 a 9 m2 / L',
     promedio: 8,
-    ficha: ['/fichas/ferreteras/ELITE.pdf'],
-    fichas_colores: ['/fichas_colores/91.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/ferreteras/ELITE.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/91.pdf'],
   },
   {
     id: '92',
@@ -2224,8 +2224,8 @@ export const articulos = [
     ],
     rendimiento: 'De 5 a 7 m2 / L',
     promedio: '6',
-    ficha: ['/fichas/ferreteras/IMPERIAL.pdf'],
-    fichas_colores: ['/fichas_colores/92.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/ferreteras/IMPERIAL.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/92.pdf'],
   },
   {
     id: '93',
@@ -2243,8 +2243,8 @@ export const articulos = [
     ],
     rendimiento: 'De 9 a 12 m2 / L',
     promedio: 10.5,
-    ficha: ['/fichas/ferreteras/ESMALTE_ESTIRENADO_SECADO_RAPIDO.pdf'],
-    fichas_colores: ['/fichas_colores/93.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/ferreteras/ESMALTE_ESTIRENADO_SECADO_RAPIDO.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/93.pdf'],
   },
   {
     id: '94',
@@ -2262,9 +2262,9 @@ export const articulos = [
     ],
     rendimiento: 'De 10 a 12 m2 / L',
     promedio: 11,
-    ficha: ['/fichas/ferreteras/5030-5031-PrimarioHerreros.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-5030-2025.pdf'],
-    fichas_colores: ['/fichas_colores/94.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/ferreteras/5030-5031-PrimarioHerreros.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-5030-2025.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/94.pdf'],
   },
   {
     id: '95',
@@ -2282,8 +2282,8 @@ export const articulos = [
     ],
     rendimiento: 'De 10 a 12 m2 / L',
     promedio: 11,
-    ficha: ['/fichas/ferreteras/PRIMARIO_RTU_HERREROS.pdf'],
-    fichas_colores: ['/fichas_colores/95.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/ferreteras/PRIMARIO_RTU_HERREROS.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/95.pdf'],
   },
   {
     id: '96',
@@ -2316,7 +2316,7 @@ export const articulos = [
       'Es un barniz de nitrocelulosa con color, listo para su uso en superficies de madera que se encuentren en interiores. Ideal para cuando se requiere entintar y dar brillo al mismo tiempo, ahorrando tiempo en la aplicación.',
     ],
     ficha: [''],
-    fichas_colores: ['/fichas_colores/97.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/97.pdf'],
   },
   {
     id: '98',
@@ -2334,7 +2334,7 @@ export const articulos = [
       ' Ideal para aplicar sobre muebles interiores a los que se quiera dar color cerrado y brillo al mismo tiempo. ',
     ],
     ficha: [''],
-    fichas_colores: ['/fichas_colores/98.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/98.pdf'],
   },
   {
     id: '99',
@@ -2351,7 +2351,7 @@ export const articulos = [
       'Es un producto con gran capacidad de disolución, ideal para sellar el poro de la madera y prepararla para recibir acabados de nitrocelulosa, por su alta calidad proporcionará una excelente adherencia y un lijado fácil para una apariencia fina y tersa. ',
     ],
     ficha: [''],
-    fichas_colores: ['/fichas_colores/99.pdf'],
+    fichas_colores: ['https://tecknum.com/ipesa_public/fichas_colores/99.pdf'],
   },
   {
     id: '100',
@@ -2388,8 +2388,8 @@ export const articulos = [
     rendimiento:
       '32.8 m2 / L,  línea de 10 cm de ancho y 6 milésimas de espesor.',
     promedio: 32.8,
-    ficha: ['/fichas/industriales/6001-6002-IndexTrafico.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-6001-6002-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/6001-6002-IndexTrafico.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-6001-6002-2025.pdf'],
   },
   {
     id: 'index-agua',
@@ -2411,7 +2411,7 @@ export const articulos = [
     rendimiento:
       '26 metro lineales / L (Línea de 10 cm de ancho y 6 milésimas de Espesor Húmedo)',
     promedio: 26,
-    ficha: ['/fichas/industriales/Index_Trafico_Base_Agua_NW_2.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/Index_Trafico_Base_Agua_NW_2.pdf'],
   },
   //NVO
   {
@@ -2442,8 +2442,8 @@ export const articulos = [
     ],
     rendimiento: '7 a 9 m²/L a 1 milésima de pulgada',
     promedio: 26,
-    ficha: ['/fichas/industriales/TDS DRY FALL.pdf'],
-    seguridad: ['/seguridad/industriales/HDS dry fall.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/TDS DRY FALL.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/industriales/HDS dry fall.pdf'],
   },
   //NVO
   {
@@ -2484,12 +2484,12 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® PRIMARIO EPÓXICO AS 70',
-        ruta: '/fichas/industriales/TDS 5012-5013 PRIMARIO EPOXICO AS.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/fichas/industriales/TDS 5012-5013 PRIMARIO EPOXICO AS.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN® PRIMARIO EPÓXICO AS 70',
-        ruta: '/seguridad/industriales/HDS 5012-5013 PRIMER EPOXICO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/seguridad/industriales/HDS 5012-5013 PRIMER EPOXICO.pdf',
         icono: 'seguridad',
       },
     ],
@@ -2539,12 +2539,12 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® Acabado Epóxico AS 70',
-        ruta: '/fichas/industriales/TDS 5014-5019 ACABADO EPOXICO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/fichas/industriales/TDS 5014-5019 ACABADO EPOXICO.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN®  Acabado Epóxico AS 70',
-        ruta: '/seguridad/industriales/HDS LINEA ACABADO EPOXICO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/seguridad/industriales/HDS LINEA ACABADO EPOXICO.pdf',
         icono: 'seguridad',
       },
     ],
@@ -2593,12 +2593,12 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® ACABADO POLIURETANO AB 70',
-        ruta: '/fichas/industriales/TDS 5021-5028 ACABADO POLIURETANO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/fichas/industriales/TDS 5021-5028 ACABADO POLIURETANO.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN® ACABADO POLIURETANO AB 70',
-        ruta: '/seguridad/industriales/HDS LINEA ACABADO POLIURETANO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/seguridad/industriales/HDS LINEA ACABADO POLIURETANO.pdf',
         icono: 'seguridad',
       },
     ],
@@ -2642,12 +2642,12 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® REDUCTOR PARA POLIURETANO AB 70',
-        ruta: '/fichas/industriales/TDS REDUCTOR PARA POLIURETANO AB 70.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/fichas/industriales/TDS REDUCTOR PARA POLIURETANO AB 70.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN® REDUCTOR PARA POLIURETANO AB 70',
-        ruta: '/seguridad/industriales/HDS LINEA ACABADO POLIURETANO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/seguridad/industriales/HDS LINEA ACABADO POLIURETANO.pdf',
         icono: 'seguridad',
       },
     ],
@@ -2692,12 +2692,12 @@ export const articulos = [
     ficha_personalizable: [
       {
         nombre: 'Ficha Técnica VULCAN® REDUCTOR PARA EPOXICO AS 70',
-        ruta: '/fichas/industriales/TDS REDUCTOR PARA EPOXICO AS 70.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/fichas/industriales/TDS REDUCTOR PARA EPOXICO AS 70.pdf',
         icono: 'pdf',
       },
       {
         nombre: 'Hoja de Seguridad VULCAN® REDUCTOR PARA EPOXICO AS 70',
-        ruta: '/seguridad/industriales/HDS LINEA ACABADO EPOXICO.pdf',
+        ruta: 'https://tecknum.com/ipesa_public/seguridad/industriales/HDS LINEA ACABADO EPOXICO.pdf',
         icono: 'seguridad',
       },
     ],
@@ -2707,7 +2707,7 @@ export const articulos = [
     id_number: 83,
     tipo: 'aerosol',
     name: 'Fosfatizante',
-    categorie: 'Automotriz',
+    categorie: 'automotriz',
     subcategorie: 'industrial',
     microcategorie: 'industriales',
     presentation: ['1 L', '4 L'],
@@ -2717,7 +2717,7 @@ export const articulos = [
       'Previene la corrosión inmediata de las áreas en preparación. Promueve también la adherencia del recubrimiento sobre el metal.',
     ],
     ficha: [
-      '/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2216 FOSF ACOND METALES.pdf',
+      'https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2216 FOSF ACOND METALES.pdf',
     ],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2216 FOSFATIZANTE ACONDICIONADOR DE METALES.pdf',
@@ -2728,7 +2728,7 @@ export const articulos = [
     id: 'desengrasante',
     id_number: 82,
     name: 'Desengrasante',
-    categorie: 'Automotriz',
+    categorie: 'automotriz',
     subcategorie: 'industrial',
     microcategorie: 'industriales',
     presentation: ['4 L'],
@@ -2736,7 +2736,7 @@ export const articulos = [
     description: [
       'Creado para la limpieza de superficies, elimina contaminantes como silicones, ceras y grasas que pueden ocasionar defectos en el acabado y fallas de adherencia durante el proceso de repintado.',
     ],
-    ficha: ['/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2210 Desengrasante.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/FICHAS_TECNICAS/AUTOMOTRIZ/ADITIVOS/TDS 2210 Desengrasante.pdf'],
     seguridad: [
       '/HOJAS_SEGURIDAD/AUTOMOTRIZ/ADITIVOS/HDS 2210  DESENGRASANTE PREPARADOR DE SUPERFICIES.pdf',
     ],
@@ -2762,8 +2762,8 @@ export const articulos = [
     presentation2: ['4 L', '19 L'],
     leyenda: 'Este producto se vende por separado.',
     rendimiento: '1 a 2 m2 a una milesima.',
-    ficha: ['/fichas/industriales/1900-AquaAlberka.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1900-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/1900-AquaAlberka.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1900-2025.pdf'],
   },
   {
     id: 'pegaso-tirol',
@@ -2784,8 +2784,8 @@ export const articulos = [
     ],
     rendimiento: '12 a 14 m2 / L',
     promedio: '13',
-    ficha: ['/fichas/industriales/1600-PegaTirol.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1600-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/1600-PegaTirol.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1600-2025.pdf'],
   },
   {
     id: 'pegaso-yeso',
@@ -2806,8 +2806,8 @@ export const articulos = [
     ],
     rendimiento: '12 a 14 m2 / L',
     promedio: '13',
-    ficha: ['/fichas/industriales/1602-PegaYeso.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1602-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/1602-PegaYeso.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1602-2025.pdf'],
   },
   {
     id: 'pegaso-acribond',
@@ -2828,8 +2828,8 @@ export const articulos = [
     ],
     rendimiento: '12 a 14 m2 / L',
     promedio: '13',
-    ficha: ['/fichas/industriales/1603-Acribond.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1603-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/1603-Acribond.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1603-2025.pdf'],
   },
   {
     id: 'pegaso-bond',
@@ -2850,8 +2850,8 @@ export const articulos = [
     ],
     rendimiento: '12 a 14 m2 / L',
     promedio: '13',
-    ficha: ['/fichas/industriales/1604-PegaBond.pdf'],
-    seguridad: ['/seguridad/decorativa/HDS-1604-2025.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/industriales/1604-PegaBond.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/decorativa/HDS-1604-2025.pdf'],
   },
   {
     id: 'heavy-cut-compound',
@@ -2866,7 +2866,7 @@ export const articulos = [
     description: [
       'Suave pero muy efectivo contra arañazos y marcas de uso severas. Este compuesto esta optimizado para ser utilizado con borla de lana.',
     ],
-    ficha: ['/fichas/automotriz/1 HCC _ 300,400, One Step Polish Gelcoat.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/1 HCC _ 300,400, One Step Polish Gelcoat.pdf'],
     seguridad: '',
   },
   {
@@ -2882,7 +2882,7 @@ export const articulos = [
     description: [
       'Medio corte de Brillo Profundo, potencializa los colores y reflejo.',
     ],
-    ficha: ['/fichas/automotriz/MEDIUM_CUT_POLISH_2000.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/MEDIUM_CUT_POLISH_2000.pdf'],
     seguridad: '',
   },
   {
@@ -2914,7 +2914,7 @@ export const articulos = [
     description: [
       'Eliminador de marcas de pulido, micro-rayas y hologramas, asegurando un brillo más profundo tipo "Showroom".',
     ],
-    ficha: ['/fichas/automotriz/SUPER_FINISH_PLUS_3800.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/SUPER_FINISH_PLUS_3800.pdf'],
     seguridad: '',
   },
   {
@@ -2946,7 +2946,7 @@ export const articulos = [
     description: [
       'Elimina rayas de grano P3000, borra rayones, remolinos y hologramas, aparte de ofrecer larga duración en el brillo. Ideal para el principiante por su fácil uso y optimo resultado.',
     ],
-    ficha: ['/fichas/automotriz/One_Step_Polish_3in1.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/One_Step_Polish_3in1.pdf'],
     seguridad: '',
   },
   {
@@ -2978,7 +2978,7 @@ export const articulos = [
     description: [
       'Producto muy vérsatil que permite cortar lija de hasta P1200 en tiempo record y a la vez completa el acabado gracias a la última tecnología de grano divisible.',
     ],
-    ficha: ['/fichas/automotriz/HEAVY CUT COMPOUND .pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/automotriz/HEAVY CUT COMPOUND .pdf'],
     seguridad: '',
   },
   {
@@ -3168,7 +3168,7 @@ export const articulos = [
     rendimiento: ' 18 m2 / L',
     promedio: 18,
     dirigido: 'Particular, oficios y profesional',
-    ficha: ['/fichas/selladores/7020-Sellatek-Prime.pdf'],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/selladores/7020-Sellatek-Prime.pdf'],
   },
   {
     id: 'color-konstructor',
@@ -3187,7 +3187,8 @@ export const articulos = [
     ],
     rendimiento: '',
     promedio: 11,
-    ficha: [''],
+    ficha: ['https://tecknum.com/ipesa_public/fichas/ferreteras/8000_EDiFiKa.pdf'],
+    seguridad: ['https://tecknum.com/ipesa_public/seguridad/industriales/HDS-8000-2026.pdf'],
   },
   {
     id: 'rellenador-celerate-filler',
@@ -3218,10 +3219,10 @@ export const articulos = [
     rendimiento: '',
     promedio: 11,
     ficha: [
-      '/fichas/automotriz/TDS_8034_RELLENADOR_AUTOMOTIVO_CELERATE_FILLER_Rev.pdf',
+      'https://tecknum.com/ipesa_public/fichas/automotriz/TDS_8034_RELLENADOR_AUTOMOTIVO_CELERATE_FILLER_Rev.pdf',
     ],
     seguridad: [
-      '/seguridad/automotriz/HDS_COLORCRIL_8034_ACELERATE_FILLER.pdf',
+      'https://tecknum.com/ipesa_public/seguridad/automotriz/HDS_COLORCRIL_8034_ACELERATE_FILLER.pdf',
     ],
   },
 ];

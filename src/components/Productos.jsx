@@ -20,18 +20,33 @@ import {
 } from '@material-tailwind/react';
 import Link from 'next/link';
 import globalContext from '@/app/context/globalContext';
+
+const DEFAULT_CATEGORY = 'decorativa';
+const ITEMS_PER_PAGE = 18;
+const CRITICAL_PRODUCT_IMAGES = 3;
+const defaultProducts = articulos.filter(
+  (articulo) => articulo.categorie === DEFAULT_CATEGORY,
+);
+
 const Productos = () => {
-  const valorCategoria = localStorage.getItem('categoria');
-  const [categorie, setCategorie] = useState(valorCategoria);
-  const [fondos, setFondos] = useState();
+  const [categorie, setCategorie] = useState(DEFAULT_CATEGORY);
+  const [fondos, setFondos] = useState(DEFAULT_CATEGORY);
   const [microcategorie, setMicroCategorie] = useState(null);
-  const [displayData, setDisplayData] = useState([]);
-  const itemsPerPage = 18;
+  const [displayData, setDisplayData] = useState(() =>
+    defaultProducts.slice(0, ITEMS_PER_PAGE),
+  );
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(0);
-  const [openMain, setOpenMain] = useState(0);
+  const [totalPages, setTotalPages] = useState(() =>
+    Math.ceil(defaultProducts.length / ITEMS_PER_PAGE),
+  );
+  const [openMain, setOpenMain] = useState(1);
   const [windowWidth, setWindowWidth] = useState(0);
-  const [paginadovista, setPaginadoVista] = useState(null);
+  const [paginadovista, setPaginadoVista] = useState(true);
+  const [isCatalogReady, setIsCatalogReady] = useState(false);
+  const [isBackgroundReady, setIsBackgroundReady] = useState(false);
+  const [loadedProductImages, setLoadedProductImages] = useState(
+    () => new Set(),
+  );
   const { handleIdProducto, idProducto } = useContext(globalContext);
 
   const [subDecorativa, setSubDecorativa] = useState([
@@ -310,10 +325,10 @@ const Productos = () => {
     const filteredData = articulos.filter(
       (articulo) => articulo.microcategorie === val,
     );
-    const totalPaginas = Math.ceil(filteredData.length / itemsPerPage);
+    const totalPaginas = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
     setTotalPages(totalPaginas);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
     const newData = filteredData.slice(startIndex, endIndex);
     setDisplayData(newData);
   };
@@ -619,17 +634,24 @@ const Productos = () => {
     const filteredData = articulos.filter(
       (articulo) => articulo.microcategorie === categorie,
     );
-    const totalPaginas = Math.ceil(filteredData.length / itemsPerPage);
+    const totalPaginas = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
     setTotalPages(totalPaginas);
-    const startIndex = (currentPage - 1) * itemsPerPage;
-    const endIndex = startIndex + itemsPerPage;
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
     const newData = filteredData.slice(startIndex, endIndex);
     setDisplayData(newData);
   };
 
   useEffect(() => {
-    const localcategoria = localStorage.getItem('categoria');
+    const storedCategory = localStorage.getItem('categoria');
+    const localcategoria = storedCategory || DEFAULT_CATEGORY;
     const localmicrocategoria = localStorage.getItem('microcategoria');
+
+    if (!storedCategory) {
+      localStorage.setItem('categoria', DEFAULT_CATEGORY);
+    }
+
+    setCategorie(localcategoria);
 
     if (localcategoria) {
       if (localmicrocategoria) {
@@ -646,10 +668,10 @@ const Productos = () => {
           const filter = articulos.filter(
             (item) => item.microcategorie == localmicrocategoria,
           );
-          const totalPaginas = Math.ceil(filter.length / itemsPerPage);
+          const totalPaginas = Math.ceil(filter.length / ITEMS_PER_PAGE);
           setTotalPages(totalPaginas);
-          const startIndex = (currentPage - 1) * itemsPerPage;
-          const endIndex = startIndex + itemsPerPage;
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
           const newData = filter.slice(startIndex, endIndex);
           setDisplayData(newData);
         }
@@ -659,10 +681,10 @@ const Productos = () => {
           const filter = articulos.filter(
             (item) => item.categorie == localcategoria,
           );
-          const totalPaginas = Math.ceil(filter.length / itemsPerPage);
+          const totalPaginas = Math.ceil(filter.length / ITEMS_PER_PAGE);
           setTotalPages(totalPaginas);
-          const startIndex = (currentPage - 1) * itemsPerPage;
-          const endIndex = startIndex + itemsPerPage;
+          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+          const endIndex = startIndex + ITEMS_PER_PAGE;
           const newData = filter.slice(startIndex, endIndex);
           setDisplayData(newData);
         }
@@ -795,7 +817,93 @@ const Productos = () => {
           break;
       }
     }
-  }, [categorie, currentPage, articulos, itemsPerPage]);
+  }, [categorie, currentPage]);
+
+  useEffect(() => {
+    let isActive = true;
+    setIsBackgroundReady(false);
+
+    const markBackgroundAsReady = () => {
+      if (isActive) {
+        setIsBackgroundReady(true);
+      }
+    };
+
+    const backgroundImage = new window.Image();
+    backgroundImage.onload = () => {
+      if (typeof backgroundImage.decode === 'function') {
+        backgroundImage
+          .decode()
+          .then(markBackgroundAsReady, markBackgroundAsReady);
+        return;
+      }
+
+      markBackgroundAsReady();
+    };
+    backgroundImage.onerror = markBackgroundAsReady;
+    backgroundImage.src = `/fondos_categorias/${fondos}.webp`;
+
+    return () => {
+      isActive = false;
+      backgroundImage.onload = null;
+      backgroundImage.onerror = null;
+    };
+  }, [fondos]);
+
+  useEffect(() => {
+    if (isCatalogReady || !isBackgroundReady) {
+      return;
+    }
+
+    const criticalProductIds = displayData
+      .slice(0, CRITICAL_PRODUCT_IMAGES)
+      .map((item) => item.id);
+    const areCriticalProductsReady = criticalProductIds.every((id) =>
+      loadedProductImages.has(id),
+    );
+
+    if (!areCriticalProductsReady) {
+      return;
+    }
+
+    let firstFrame;
+    let secondFrame;
+    const revealTimer = window.setTimeout(() => {
+      firstFrame = window.requestAnimationFrame(() => {
+        secondFrame = window.requestAnimationFrame(() => {
+          setIsCatalogReady(true);
+        });
+      });
+    }, 600);
+
+    return () => {
+      window.clearTimeout(revealTimer);
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+    };
+  }, [displayData, isBackgroundReady, isCatalogReady, loadedProductImages]);
+
+  useEffect(() => {
+    const failSafeTimer = window.setTimeout(() => {
+      setIsCatalogReady(true);
+    }, 8000);
+
+    return () => {
+      window.clearTimeout(failSafeTimer);
+    };
+  }, []);
+
+  const handleProductImageLoad = (productId) => {
+    setLoadedProductImages((currentImages) => {
+      if (currentImages.has(productId)) {
+        return currentImages;
+      }
+
+      const nextImages = new Set(currentImages);
+      nextImages.add(productId);
+      return nextImages;
+    });
+  };
 
   const backgroundStyle = {
     width: '100%',
@@ -807,8 +915,19 @@ const Productos = () => {
 
   return (
     <>
+      {!isCatalogReady && (
+        <div
+          className="fixed inset-0 z-[20000] bg-white"
+          role="status"
+          aria-label="Cargando catálogo de productos"
+        >
+          <Isotipo />
+          <span className="sr-only">Cargando catálogo de productos</span>
+        </div>
+      )}
       {categorie && (
         <section
+          aria-busy={!isCatalogReady}
           className={`w-full h-full bg-opacity-10 bg-[url('/principal/waves.jpg')] bg-cover bg-center bg-no-repeat`}
         >
           <div className={`w-full ${windowWidth < 940 ? 'block' : 'flex'}`}>
@@ -833,9 +952,8 @@ const Productos = () => {
                   </AccordionHeader>
                   <AccordionBody>
                     {subDecorativa?.map((vinil) => (
-                      <>
+                      <React.Fragment key={vinil.id}>
                         <ListItem
-                          key={vinil.id}
                           className="p-2"
                           onClick={() => handleClickCategoria(vinil.id)}
                         >
@@ -846,6 +964,8 @@ const Productos = () => {
                             <Checkbox
                               id={vinil.id}
                               checked={vinil.checked}
+                              onClick={(event) => event.stopPropagation()}
+                              onChange={() => handleClickCategoria(vinil.id)}
                               ripple={false}
                               className="hover:before:opacity-0"
                               containerProps={{
@@ -889,7 +1009,7 @@ const Productos = () => {
                             <Typography as={'p'}>{vinil.micro}</Typography>
                           </div>
                         </Collapse>
-                      </>
+                      </React.Fragment>
                     ))}
                   </AccordionBody>
                 </Accordion>
@@ -921,6 +1041,8 @@ const Productos = () => {
                             <Checkbox
                               id={item.id}
                               checked={item.checked}
+                              onClick={(event) => event.stopPropagation()}
+                              onChange={() => handleClickCategoria(item.id)}
                               ripple={false}
                               className="hover:before:opacity-0"
                               containerProps={{
@@ -970,6 +1092,8 @@ const Productos = () => {
                             <Checkbox
                               id={item.id}
                               checked={item.checked}
+                              onClick={(event) => event.stopPropagation()}
+                              onChange={() => handleClickCategoria(item.id)}
                               ripple={false}
                               className="hover:before:opacity-0"
                               containerProps={{
@@ -1005,9 +1129,8 @@ const Productos = () => {
                   </AccordionHeader>
                   <AccordionBody>
                     {subFerretera?.map((ferre) => (
-                      <>
+                      <React.Fragment key={ferre.id}>
                         <ListItem
-                          key={ferre.id}
                           className="p-2"
                           onClick={() => handleClickCategoria(ferre.id)}
                         >
@@ -1018,6 +1141,8 @@ const Productos = () => {
                             <Checkbox
                               id={ferre.id}
                               checked={ferre.checked}
+                              onClick={(event) => event.stopPropagation()}
+                              onChange={() => handleClickCategoria(ferre.id)}
                               ripple={false}
                               className="hover:before:opacity-0"
                               containerProps={{
@@ -1065,7 +1190,7 @@ const Productos = () => {
                             ) : null}
                           </div>
                         </Collapse>
-                      </>
+                      </React.Fragment>
                     ))}
                   </AccordionBody>
                 </Accordion>
@@ -1097,6 +1222,8 @@ const Productos = () => {
                             <Checkbox
                               id={item.id}
                               checked={item.checked}
+                              onClick={(event) => event.stopPropagation()}
+                              onChange={() => handleClickCategoria(item.id)}
                               ripple={false}
                               className="hover:before:opacity-0"
                               containerProps={{
@@ -1153,13 +1280,12 @@ const Productos = () => {
                 <Suspense fallback={<Isotipo></Isotipo>}>
                   {displayData?.map((item, index) => (
                     <Link
-                      key={index}
+                      key={item.id}
                       href={`/producto/${item.id}`}
                       onClick={() => handleIdProducto(item.id_number)}
                       className="zoom-producto"
                     >
                       <Card
-                        key={index}
                         className="w-full h-full lg:w-72 md:w-72 mx-auto sinradius"
                       >
                         <div className="w-[50%] md:w-[50%] mx-auto mt-5 flex justify-center">
@@ -1169,6 +1295,12 @@ const Productos = () => {
                               width={100}
                               height={100}
                               alt="imagen"
+                              loading={
+                                index < CRITICAL_PRODUCT_IMAGES
+                                  ? 'eager'
+                                  : 'lazy'
+                              }
+                              onLoad={() => handleProductImageLoad(item.id)}
                             />
                           ) : (
                             <Image
@@ -1176,6 +1308,12 @@ const Productos = () => {
                               width={500}
                               height={500}
                               alt="imagen"
+                              loading={
+                                index < CRITICAL_PRODUCT_IMAGES
+                                  ? 'eager'
+                                  : 'lazy'
+                              }
+                              onLoad={() => handleProductImageLoad(item.id)}
                             />
                           )}
                         </div>

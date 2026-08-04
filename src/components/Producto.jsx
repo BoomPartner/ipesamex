@@ -1,6 +1,7 @@
 'use client';
 import React, { useContext, useEffect, useState } from 'react';
 import { articulos, colores } from '@/components/server';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {
   Typography,
@@ -11,7 +12,6 @@ import {
   Input,
   Button,
 } from '@material-tailwind/react';
-import 'swiper/css';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
@@ -19,7 +19,6 @@ import { faCalculator } from '@fortawesome/free-solid-svg-icons';
 import { faFileShield } from '@fortawesome/free-solid-svg-icons';
 import globalContext from '@/app/context/globalContext';
 import { faPhotoFilm } from '@fortawesome/free-solid-svg-icons';
-import ReactPlayer from 'react-player';
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons';
 import { faSwatchbook } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,7 +29,13 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import gsap from 'gsap';
 
+const ReactPlayer = dynamic(() => import('react-player/lazy'), {
+  ssr: false,
+  loading: () => <p className="p-6 text-center">Cargando video…</p>,
+});
+
 const ProductoSelected = ({ valor }) => {
+  const productId = valor.params.id;
   const [articulo, setArticulo] = useState(null);
   const [relacionados, setRelacionados] = useState(null);
   const [color, setColor] = useState([]);
@@ -123,15 +128,12 @@ const ProductoSelected = ({ valor }) => {
   }, []);
 
   useEffect(() => {
-    const id = valor.params.id;
-    // console.log(id);
-    if (id) {
-      const producto = articulos.find((item) => id == item.id);
-      // console.log(producto);
+    if (productId) {
+      const producto = articulos.find((item) => productId === item.id);
       // const relacionados = articulos.filter(item => producto.categorie == item.categorie)
       setArticulo(producto);
     }
-  }, []);
+  }, [productId]);
 
   useEffect(() => {
     if (articulo) {
@@ -155,7 +157,9 @@ const ProductoSelected = ({ valor }) => {
   const backgroundStyle = {
     width: '100%',
     // paddingBottom: '44.25%', // 56.25 Esto crea una relación de aspecto de 16:9
-    backgroundImage: `url('/fondo-producto/${articulo?.categorie}.jpg')`,
+    backgroundImage: articulo?.categorie
+      ? `url('https://tecknum.com/ipesa_public/fondo-producto/${articulo.categorie}.jpg')`
+      : 'none',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     // backgroundRepeat: 'no-repeat',
@@ -1213,7 +1217,8 @@ const ProductoSelected = ({ valor }) => {
             modules={[Navigation, Pagination]}
             className="swiperDecorador"
           >
-            {articulo &&
+            {open3 &&
+              articulo &&
               articulo.videos?.map((item, index) => (
                 <SwiperSlide
                   className="flex items-center justify-center"
@@ -1272,7 +1277,12 @@ const ProductoSelected = ({ valor }) => {
         </div>
 
         <div className="mb-10 flex justify-left">
-          <Image src={'/sitio/casa.webp'} width={500} height={500}></Image>
+          <Image
+            src={'/sitio/casa.webp'}
+            width={500}
+            height={500}
+            alt="Ilustración para calcular litros de pintura"
+          />
         </div>
 
         <div className="mb-10 flex justify-left">

@@ -44,17 +44,13 @@ const ChatBot = () => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${process.env.NEXT_PUBLIC_API_KEY_CODE}`,
             },
             body: JSON.stringify({
-                stream: false,
-                format: "json",
-                agentId: process.env.NEXT_PUBLIC_AGENT_ID,
-                messages: [{ role: 'user', content: userMessage }],
+                message: userMessage,
             }),
         };
 
-        fetch('https://api.codegpt.co/api/v1/chat/completions', requestOptions)
+        fetch('/api/chat', requestOptions)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No hubo respuesta del server');
@@ -62,15 +58,13 @@ const ChatBot = () => {
                 return response.json();
             })
             .then(data => {
-                if (data.choices && data.choices.length > 0) {
-                    const respuestaChat = data.choices[0].message.content;
-                    simulateTyping(respuestaChat);
-                } else {
-                    console.log('No hay respuesta del asistente virtual o choices está vacío');
-                }
+                simulateTyping(data.answer);
             })
-            .catch(error => {
-                console.error('Error:', error);
+            .catch(() => {
+                setUserMessages(prevMessages => [
+                    ...prevMessages,
+                    { type: 'bot', text: 'No pude responder en este momento. Intenta nuevamente.' },
+                ]);
             })
             .finally(() => {
                 setIsLoading(false);

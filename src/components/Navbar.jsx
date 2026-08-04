@@ -31,7 +31,7 @@ import {
 export function NavbarResponsive({ handleNosotros }) {
   const [openNav, setOpenNav] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
-  const [windowWidth, setWindowWidth] = useState(0);
+  const [isMobileMenu, setIsMobileMenu] = useState(false);
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openCollapse2, setOpenCollapse2] = useState(false);
   const [openCollapse3, setOpenCollapse3] = useState(false);
@@ -49,8 +49,7 @@ export function NavbarResponsive({ handleNosotros }) {
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   const itemNavbar = (elementId) => {
-    console.log(elementId);
-    if (elementId == 'contacto') {
+    if (elementId === 'contacto') {
       handleContacto('contacto');
     }
     setActiveLink(elementId);
@@ -68,25 +67,22 @@ export function NavbarResponsive({ handleNosotros }) {
     localStorage.setItem('microcategoria', event2);
   };
 
-  // Función para capturar el ancho de la ventana al redimensionar
-  const handleResize = () => {
-    const newWindowWidth = window.innerWidth;
-    setWindowWidth(newWindowWidth);
-    if (newWindowWidth > 959) {
-      setOpenNav(false);
-      setOpenCollapse(false);
-    }
-    // console.log('Ancho de la ventana:', newWindowWidth);
-  };
-
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth);
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }
+    const mobileQuery = window.matchMedia('(max-width: 959px)');
+    const updateNavigationMode = (event) => {
+      setIsMobileMenu(event.matches);
+      if (!event.matches) {
+        setOpenNav(false);
+        setOpenCollapse(false);
+      }
+    };
+
+    updateNavigationMode(mobileQuery);
+    mobileQuery.addEventListener('change', updateNavigationMode);
+
+    return () => {
+      mobileQuery.removeEventListener('change', updateNavigationMode);
+    };
   }, []);
 
   useEffect(() => {
@@ -100,9 +96,7 @@ export function NavbarResponsive({ handleNosotros }) {
       <div className="w-full navbarResponsive">
         <div className={`w-full flex items-center justify-center`}>
           <ul
-            className={`${
-              windowWidth < 1260 ? 'w-full px-5' : 'w-[30%] ml-10'
-            } p-4  flex-col md:flex-row flex md:mt-0 md:text-sm md:font-medium`}
+            className="flex w-full flex-col p-4 px-5 md:mt-0 md:flex-row md:text-sm md:font-medium xl:ml-10 xl:w-[30%]"
           >
             <li>
               <Link
@@ -116,8 +110,9 @@ export function NavbarResponsive({ handleNosotros }) {
                 <Image
                   src={'/logos/logo.svg'}
                   width={250}
-                  height={200}
+                  height={108}
                   alt="Ipesa Pinturas"
+                  className="h-auto max-w-full"
                 ></Image>
               </Link>
             </li>
@@ -186,6 +181,7 @@ export function NavbarResponsive({ handleNosotros }) {
               <NavListMenu3
                 openMenu={openMenu3}
                 setOpenMenu={setOpenMenu3}
+                isMobile={isMobileMenu}
                 collapse={openCollapse3}
               />
             </li>
@@ -210,6 +206,7 @@ export function NavbarResponsive({ handleNosotros }) {
               <NavListMenu4
                 openMenu={openMenu4}
                 setOpenMenu={setOpenMenu4}
+                isMobile={isMobileMenu}
                 collapse={openCollapse4}
               />
             </li>
@@ -232,6 +229,7 @@ export function NavbarResponsive({ handleNosotros }) {
               <NavListMenu
                 openMenu={openMenu}
                 setOpenMenu={setOpenMenu}
+                isMobile={isMobileMenu}
                 collapse={openCollapse}
               ></NavListMenu>
             </li>
@@ -239,15 +237,14 @@ export function NavbarResponsive({ handleNosotros }) {
               <NavListMenu2
                 openMenu={openMenu2}
                 setOpenMenu={setOpenMenu2}
+                isMobile={isMobileMenu}
                 collapse={openCollapse2}
               ></NavListMenu2>
             </li>
           </ul>
 
           <div
-            className={`${
-              windowWidth < 1260 ? 'w-full px-5' : 'w-[30%]'
-            } flex items-center justify-start gap-5`}
+            className="flex w-full items-center justify-start gap-5 px-5 xl:w-[30%] xl:px-0"
           >
             <div className="rounded-full cursor-pointer">
               <Tooltip
@@ -432,9 +429,7 @@ export function NavbarResponsive({ handleNosotros }) {
           </div>
 
           <div
-            className={`${
-              windowWidth <= 1640 ? '' : 'hidden'
-            } cursor-pointer flex justify-end p-5`}
+            className="flex cursor-pointer justify-end p-5 2xl:hidden"
           >
             <FontAwesomeIcon
               icon={faBars}

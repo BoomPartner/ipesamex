@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useContext } from 'react';
+'use client';
+
+import React, { useContext } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Typography } from '@material-tailwind/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -12,12 +15,7 @@ import {
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import globalContext from '@/app/context/globalContext';
 const Footer = () => {
-  const [windowWidth, setWindowWidth] = useState(0);
   const { handleQuestions } = useContext(globalContext);
-  const handleResize = () => {
-    const newWindowWidth = window.innerWidth;
-    setWindowWidth(newWindowWidth);
-  };
   const handleCategoria = (event) => {
     const localcategoria = localStorage.getItem('categoria');
     const localmicrocategoria = localStorage.getItem('microcategoria');
@@ -27,24 +25,11 @@ const Footer = () => {
     }
     localStorage.setItem('categoria', event);
   };
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth);
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }
-  }, []);
   return (
     <div className={`w-full bg-[#e51e25] p-5 porarriba`}>
       <footer className="w-full p-5 text-center dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
-        <div
-          className={`w-full ${
-            windowWidth < 720 ? 'block' : 'flex justify-center'
-          }`}
-        >
-          <div className={`w-full ${windowWidth < 720 ? 'mt-16' : ''}`}>
+        <div className="flex w-full flex-col md:flex-row md:justify-center">
+          <div className="mt-16 w-full md:mt-0">
             <Typography
               as={'h5'}
               variant="h5"
@@ -135,7 +120,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className={`w-full ${windowWidth < 720 ? 'mt-16' : ''}`}>
+          <div className="mt-16 w-full md:mt-0">
             <Typography
               as={'h5'}
               variant="h5"
@@ -246,23 +231,21 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className={`w-full ${windowWidth < 720 ? 'mt-16' : ''}`}>
+          <div className="mt-16 w-full md:mt-0">
             {/* 🔹 Bloque Hecho en México */}
             <div className="flex flex-col items-center justify-center mb-4">
-              <img
+              <Image
                 src="/logos/MADE_MEX_NGO.png"
                 alt="Hecho en México"
+                width={80}
+                height={80}
                 className="w-20 h-auto"
               />
               {/* <span className="text-sm text-white mt-1">Hecho en México</span> */}
             </div>
 
             {/* 🔹 Bloque principal del footer */}
-            <div
-              className={`w-full bg-neutral-200 p-2 text-center text-white ${
-                windowWidth < 720 ? 'text-center' : ''
-              }`}
-            >
+            <div className="w-full bg-neutral-200 p-2 text-center text-white">
               <div>
                 <span>© 2025 Copyright: </span>
               </div>

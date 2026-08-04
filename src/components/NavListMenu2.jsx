@@ -1,17 +1,11 @@
-import React, { useState, useEffect, useContext } from "react";
 import {
     Menu,
     MenuHandler,
     MenuList,
-    MenuItem,
-    Button,
-    Card,
-    Typography,
     Collapse,
-    List,
 } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 const menuItems = [
@@ -26,9 +20,7 @@ const menuItems = [
 ];
 
 
-const NavListMenu3 = ({openMenu, setOpenMenu}) => {
-   
-    const [windowWidth, setWindowWidth] = useState(0);
+const NavListMenu3 = ({openMenu, setOpenMenu, isMobile}) => {
 
     const renderItems = menuItems.map(({ title, enlace },index) => (
         <div key={index} className="text-left w-full flex md:px-2 sinbordenifocus">
@@ -39,25 +31,6 @@ const NavListMenu3 = ({openMenu, setOpenMenu}) => {
         </div>
 
     ))
-
-    const handleResize = () => {
-        const newWindowWidth = window.innerWidth;
-        setWindowWidth(newWindowWidth);
-        if (newWindowWidth > 959) {
-            setOpenMenu(false)
-        }
-    };
-
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            setWindowWidth(window.innerWidth)
-            window.addEventListener('resize', handleResize);
-            return () => {
-                window.removeEventListener('resize', handleResize);
-            };
-        }
-
-    }, []);
 
     return (
 
@@ -78,7 +51,7 @@ const NavListMenu3 = ({openMenu, setOpenMenu}) => {
                 </div>
             </MenuHandler>
             {
-                windowWidth <= 870 ?
+                isMobile ?
                     <Collapse open={openMenu}>
                         <div className="no-underline border-none">
                             {renderItems}
