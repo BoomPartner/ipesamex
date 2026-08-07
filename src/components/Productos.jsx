@@ -1,1381 +1,254 @@
 'use client';
-import React, { useState, useEffect, useContext, Suspense } from 'react';
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTurnUp } from '@fortawesome/free-solid-svg-icons';
-import Isotipo from './Isotipo';
-import 'swiper/css';
-import { articulos } from '@/components/server';
-import {
-  Card,
-  Typography,
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
-  List,
-  ListItem,
-  ListItemPrefix,
-  Checkbox,
-  Collapse,
-} from '@material-tailwind/react';
+
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import globalContext from '@/app/context/globalContext';
+import { categoriasCatalogo, productos } from '@/data/productos';
+import {
+  buildProductCatalogIndex,
+  filterCatalogProducts,
+  normalizeProductText,
+} from '@/lib/products/catalog.mjs';
+import ProductCard from './products/ProductCard';
+import ProductFilters from './products/ProductFilters';
+import ProductPagination from './products/ProductPagination';
+import ProductSearch from './products/ProductSearch';
 
 const DEFAULT_CATEGORY = 'decorativa';
-const ITEMS_PER_PAGE = 18;
-const CRITICAL_PRODUCT_IMAGES = 3;
-const defaultProducts = articulos.filter(
-  (articulo) => articulo.categorie === DEFAULT_CATEGORY,
-);
+const ITEMS_PER_PAGE = 12;
+const indexedProducts = buildProductCatalogIndex(productos, categoriasCatalogo);
 
 const Productos = () => {
-  const [categorie, setCategorie] = useState(DEFAULT_CATEGORY);
-  const [fondos, setFondos] = useState(DEFAULT_CATEGORY);
-  const [microcategorie, setMicroCategorie] = useState(null);
-  const [displayData, setDisplayData] = useState(() =>
-    defaultProducts.slice(0, ITEMS_PER_PAGE),
-  );
+  const [categoryId, setCategoryId] = useState(DEFAULT_CATEGORY);
+  const [subcategoryId, setSubcategoryId] = useState(null);
+  const [searchInput, setSearchInput] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(() =>
-    Math.ceil(defaultProducts.length / ITEMS_PER_PAGE),
+  const catalogRef = useRef(null);
+
+  const activeCategory = useMemo(
+    () => categoriasCatalogo.find((category) => category.id === categoryId)
+      ?? categoriasCatalogo[0],
+    [categoryId],
   );
-  const [openMain, setOpenMain] = useState(1);
-  const [windowWidth, setWindowWidth] = useState(0);
-  const [paginadovista, setPaginadoVista] = useState(true);
-  const [isCatalogReady, setIsCatalogReady] = useState(false);
-  const [isBackgroundReady, setIsBackgroundReady] = useState(false);
-  const [loadedProductImages, setLoadedProductImages] = useState(
-    () => new Set(),
+  const activeSubcategory = activeCategory.subcategories.find(
+    (subcategory) => subcategory.id === subcategoryId,
   );
-  const { handleIdProducto, idProducto } = useContext(globalContext);
 
-  const [subDecorativa, setSubDecorativa] = useState([
-    {
-      id: 'vinilicas',
-      micro: 'Selladores',
-      microStatus: true,
-      checked: false,
-      label: 'Acrílicas / Vinílicas',
-    },
-    {
-      id: 'esmaltes',
-      micro: 'Primarios',
-      microStatus: true,
-      checked: false,
-      label: 'Esmaltes',
-    },
-    {
-      id: 'aerosoles',
-      micro: '',
-      microStatus: false,
-      checked: false,
-      label: 'Aerosoles',
-    },
-    {
-      id: 'impermeabilizantes',
-      micro: '',
-      microStatus: false,
-      checked: false,
-      label: 'Impermeabilizantes',
-    },
-    // {
-    //   id: 'industriales',
-    //   micro: '',
-    //   microStatus: false,
-    //   checked: false,
-    //   label: 'Industrial',
-    // },
-    {
-      id: 'adhesivos',
-      micro: '',
-      microStatus: false,
-      checked: false,
-      label: 'Adhesivos',
-    },
-  ]);
+  const filteredProducts = useMemo(
+    () => filterCatalogProducts(indexedProducts, {
+      categoryId,
+      subcategoryId,
+      query: searchQuery,
+    }),
+    [categoryId, searchQuery, subcategoryId],
+  );
+  const totalPages = Math.max(1, Math.ceil(filteredProducts.length / ITEMS_PER_PAGE));
+  const firstProductIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const visibleProducts = filteredProducts.slice(
+    firstProductIndex,
+    firstProductIndex + ITEMS_PER_PAGE,
+  );
 
-  const [subIndustrial, setSubIndustrial] = useState([
-    {
-      id: 'industriales',
-      micro: '',
-      microStatus: false,
-      checked: false,
-      label: 'Industrial',
-    },
-  ]);
-
-  const [subMaderas, setSubMaderas] = useState([
-    {
-      id: 'selladores_maderas',
-      micro: null,
-      checked: false,
-      label: 'Selladores',
-    },
-    {
-      id: 'lacas',
-      micro: null,
-      checked: false,
-      label: 'Lacas',
-    },
-    {
-      id: 'tintas',
-      micro: null,
-      checked: false,
-      label: 'Tintas',
-    },
-    {
-      id: 'barnices',
-      micro: null,
-      checked: false,
-      label: 'Barnices',
-    },
-    {
-      id: 'poliuretano',
-      micro: null,
-      checked: false,
-      label: 'Poliuretanos',
-    },
-  ]);
-
-  const [subAutomotriz, setSubAutomotriz] = useState([
-    {
-      id: 'esmaltes_auto',
-      micro: null,
-      checked: false,
-      label: 'Esmaltes',
-    },
-    {
-      id: 'laca_acrilica',
-      micro: null,
-      checked: false,
-      label: 'Laca Acrilica',
-    },
-    {
-      id: 'basecolor',
-      micro: null,
-      checked: false,
-      label: 'Base Color',
-    },
-    {
-      id: 'primers',
-      micro: null,
-      checked: false,
-      label: 'Primers',
-    },
-    {
-      id: 'rellenadores',
-      micro: null,
-      checked: false,
-      label: 'Rellenadores',
-    },
-    {
-      id: 'perlas',
-      micro: null,
-      checked: false,
-      label: 'Perlas',
-    },
-    {
-      id: 'transparentes',
-      micro: null,
-      checked: false,
-      label: 'Transparentes',
-    },
-    {
-      id: 'hd',
-      micro: null,
-      checked: false,
-      label: 'Endurecedores y Aditivos',
-    },
-    {
-      id: 'reductores',
-      micro: null,
-      checked: false,
-      label: 'Reductores',
-    },
-    {
-      id: 'pulimentos',
-      micro: null,
-      checked: false,
-      label: 'Pulimentos/Abrillantadores',
-    },
-  ]);
-
-  const [subFerretera, setSubFerretera] = useState([
-    {
-      id: 'pinturas_ferre',
-      microStatus: false,
-      checked: false,
-      label: 'Vínilicas',
-    },
-    {
-      id: 'esmaltes_ferre',
-      micro: 'primarios_ferre',
-      microLabel: 'Primarios',
-      microStatus: true,
-      checked: false,
-      label: 'Esmaltes',
-    },
-
-    {
-      id: 'madera_ferre',
-      microStatus: false,
-      checked: false,
-      label: 'Maderas',
-    },
-  ]);
-
-  // Función para capturar el ancho de la ventana al redimensionar
-  const handleResize = () => {
-    const newWindowWidth = window.innerWidth;
-    setWindowWidth(newWindowWidth);
-    // console.log('Ancho de la ventana:', newWindowWidth);
-  };
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setWindowWidth(window.innerWidth);
-      window.addEventListener('resize', handleResize);
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
-    }
+  const scrollToCatalog = useCallback(() => {
+    window.requestAnimationFrame(() => {
+      catalogRef.current?.scrollIntoView({
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+        block: 'start',
+      });
+    });
   }, []);
 
-  const toggleOpen = (value) => {
-    if (value === 'primarios_ferre') {
-      // Crear una copia del estado actual para modificar
-      const updatedFerretera = subFerretera.map((item) => {
-        // Verificar si el valor coincide con el atributo 'micro'
-        if (item.micro === value && item.micro !== '') {
-          // Invertir el valor de 'microStatus'
-          return { ...item, microStatus: !item.microStatus };
-        }
-        // Devolver el elemento sin cambios si no hay coincidencia
-        return item;
-      });
+  useEffect(() => {
+    const storedCategoryId = localStorage.getItem('categoria');
+    const storedSubcategoryId = localStorage.getItem('microcategoria');
+    const storedCategory = categoriasCatalogo.find(
+      (category) => category.id === storedCategoryId,
+    );
+    const nextCategory = storedCategory ?? categoriasCatalogo[0];
+    const hasValidSubcategory = nextCategory.subcategories.some(
+      (subcategory) => subcategory.id === storedSubcategoryId,
+    );
 
-      // Establecer el nuevo estado con la copia modificada
-      setSubFerretera(updatedFerretera);
-    } else {
-      // Crear una copia del estado actual para modificar
-      const updatedSubDecorativa = subDecorativa.map((item) => {
-        // Verificar si el valor coincide con el atributo 'micro'
-        if (item.micro === value && item.micro !== '') {
-          // Invertir el valor de 'microStatus'
-          return { ...item, microStatus: !item.microStatus };
-        }
-        // Devolver el elemento sin cambios si no hay coincidencia
-        return item;
-      });
+    setCategoryId(nextCategory.id);
+    setSubcategoryId(hasValidSubcategory ? storedSubcategoryId : null);
+    localStorage.setItem('categoria', nextCategory.id);
+    if (!hasValidSubcategory) localStorage.removeItem('microcategoria');
+  }, []);
 
-      // Establecer el nuevo estado con la copia modificada
-      setSubDecorativa(updatedSubDecorativa);
-    }
+  useEffect(() => {
+    if (currentPage > totalPages) setCurrentPage(totalPages);
+  }, [currentPage, totalPages]);
+
+  const handleCategoryChange = (nextCategoryId) => {
+    setCategoryId(nextCategoryId);
+    setSubcategoryId(null);
+    setSearchQuery('');
+    setSearchInput('');
+    setCurrentPage(1);
+    localStorage.setItem('categoria', nextCategoryId);
+    localStorage.removeItem('microcategoria');
+  };
+
+  const handleSubcategoryChange = (nextSubcategoryId) => {
+    setSubcategoryId(nextSubcategoryId);
+    setSearchQuery('');
+    setSearchInput('');
+    setCurrentPage(1);
+    localStorage.setItem('categoria', categoryId);
+    if (nextSubcategoryId) localStorage.setItem('microcategoria', nextSubcategoryId);
+    else localStorage.removeItem('microcategoria');
+  };
+
+  const commitSearch = (query) => {
+    const normalizedQuery = normalizeProductText(query);
+    setSearchQuery(normalizedQuery ? query.trim() : '');
+    setCurrentPage(1);
+    scrollToCatalog();
+  };
+
+  const handleSuggestionSelect = (product) => {
+    setSearchInput(product.name);
+    setSearchQuery(product.name);
+    setCurrentPage(1);
+    scrollToCatalog();
+  };
+
+  const clearSearch = () => {
+    setSearchInput('');
+    setSearchQuery('');
+    setCurrentPage(1);
   };
 
   const goToPage = (page) => {
-    if (page >= 1 && page <= totalPages) {
-      setCurrentPage(page);
-    }
+    if (page < 1 || page > totalPages || page === currentPage) return;
+    setCurrentPage(page);
+    scrollToCatalog();
   };
 
-  function Icon({ id, open }) {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        strokeWidth={2}
-        stroke="currentColor"
-        className={`${
-          id === open ? 'rotate-180' : ''
-        } h-5 w-5 transition-transform`}
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-        />
-      </svg>
-    );
-  }
-
-  const handleSelladores = (value) => {
-    const val = value.toLowerCase();
-    localStorage.setItem('microcategoria', val);
-    setCurrentPage(1);
-    setSubDecorativa(
-      subDecorativa.map((decorativa) => ({ ...decorativa, checked: false })),
-    );
-    setSubMaderas(
-      subMaderas.map((subMaderas) => ({ ...subMaderas, checked: false })),
-    );
-    setSubAutomotriz(
-      subAutomotriz.map((automotriz) => ({ ...automotriz, checked: false })),
-    );
-    setSubFerretera(
-      subFerretera.map((ferretera) => ({ ...ferretera, checked: false })),
-    );
-    setSubIndustrial(
-      subIndustrial.map((industrial) => ({
-        ...industrial,
-        checked: false,
-      })),
-    );
-    const filteredData = articulos.filter(
-      (articulo) => articulo.microcategorie === val,
-    );
-    const totalPaginas = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-    setTotalPages(totalPaginas);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const newData = filteredData.slice(startIndex, endIndex);
-    setDisplayData(newData);
-  };
-
-  const handleOpenMain = (value) => {
-    const localcategoria = localStorage.getItem('categoria');
-    const localmicrocategoria = localStorage.getItem('microcategoria');
-    if (value == 3) {
-      setPaginadoVista(false);
-    } else {
-      setPaginadoVista(true);
-    }
-
-    if (localcategoria && localmicrocategoria) {
-      localStorage.removeItem('categoria');
-      localStorage.removeItem('microcategoria');
-    }
-    localStorage.setItem(
-      'categoria',
-      value == 1
-        ? 'decorativa'
-        : value == 2
-          ? 'automotriz'
-          : value == 3
-            ? 'ferretera'
-            : value == 4
-              ? 'maderas'
-              : value == 5
-                ? 'industrial'
-                : null,
-    );
-
-    setCurrentPage(1);
-    setCategorie(
-      value == 1
-        ? 'decorativa'
-        : value == 2
-          ? 'automotriz'
-          : value == 3
-            ? 'ferretera'
-            : value == 4
-              ? 'maderas'
-              : value == 5
-                ? 'industrial'
-                : null,
-    );
-    setFondos(
-      value == 1
-        ? 'decorativa'
-        : value == 2
-          ? 'automotriz'
-          : value == 3
-            ? 'ferretera'
-            : value == 4
-              ? 'maderas'
-              : value == 5
-                ? 'industrial'
-                : null,
-    );
-    setOpenMain(openMain === value ? 0 : value);
-    setSubDecorativa(
-      subDecorativa.map((decorativa) => ({ ...decorativa, checked: false })),
-    );
-    setSubMaderas(
-      subMaderas.map((subMaderas) => ({ ...subMaderas, checked: false })),
-    );
-    setSubAutomotriz(
-      subAutomotriz.map((automotriz) => ({ ...automotriz, checked: false })),
-    );
-    setSubFerretera(
-      subFerretera.map((ferretera) => ({ ...ferretera, checked: false })),
-    );
-    setSubIndustrial(
-      subIndustrial.map((industrial) => ({
-        ...industrial,
-        checked: false,
-      })),
-    );
-    setMicroCategorie(null);
-  };
-
-  const handleClickCategoria = (categorie) => {
-    setPaginadoVista(false);
-    if (
-      categorie == 'vinilicas' ||
-      categorie == 'esmaltes' ||
-      categorie == 'aerosoles' ||
-      categorie == 'impermeabilizantes' ||
-      categorie == 'industriales' ||
-      categorie == 'adhesivos'
-    ) {
-      switch (categorie) {
-        case 'vinilicas':
-          setFondos('vinilicas');
-          localStorage.setItem('microcategoria', 'vinilicas');
-          break;
-        case 'esmaltes':
-          setFondos('esmaltes');
-          localStorage.setItem('microcategoria', 'esmaltes');
-          break;
-        case 'aerosoles':
-          setFondos('aerosoles');
-          localStorage.setItem('microcategoria', 'aerosoles');
-          break;
-        case 'impermeabilizantes':
-          setFondos('impermeabilizantes');
-          localStorage.setItem('microcategoria', 'impermeabilizantes');
-          break;
-        case 'industriales':
-          setFondos('industriales');
-          localStorage.setItem('microcategoria', 'industriales');
-          break;
-        case 'adhesivos':
-          setFondos('adhesivos');
-          localStorage.setItem('microcategoria', 'adhesivos');
-          break;
-        default:
-          break;
-      }
-
-      setMicroCategorie(categorie);
-      setSubDecorativa((prevCheckboxes) =>
-        prevCheckboxes.map((checkbox) =>
-          checkbox.id === categorie
-            ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false },
-        ),
-      );
-    }
-
-    if (
-      categorie == 'selladores_maderas' ||
-      categorie == 'lacas' ||
-      categorie == 'tintas' ||
-      categorie == 'barnices' ||
-      categorie == 'poliuretano'
-    ) {
-      switch (categorie) {
-        case 'tintas':
-          setFondos('tintas');
-          localStorage.setItem('microcategoria', 'tintas');
-          break;
-        case 'selladores_maderas':
-          setFondos('selladores_maderas');
-          localStorage.setItem('microcategoria', 'selladores_maderas');
-          break;
-        case 'lacas':
-          setFondos('lacas');
-          localStorage.setItem('microcategoria', 'lacas');
-          break;
-        case 'barnices':
-          setFondos('barnices');
-          localStorage.setItem('microcategoria', 'barnices');
-          break;
-        case 'poliuretano':
-          setFondos('poliuretano');
-          localStorage.setItem('microcategoria', 'poliuretano');
-          break;
-
-        default:
-          break;
-      }
-      setSubMaderas((prevCheckboxes) =>
-        prevCheckboxes.map((checkbox) =>
-          checkbox.id === categorie
-            ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false },
-        ),
-      );
-    }
-
-    if (
-      categorie == 'primers' ||
-      categorie == 'rellenadores' ||
-      categorie == 'perlas' ||
-      categorie == 'transparentes' ||
-      categorie == 'hd' ||
-      categorie == 'reductores' ||
-      categorie == 'esmaltes_auto' ||
-      categorie == 'basecolor' ||
-      categorie == 'laca_acrilica' ||
-      categorie == 'pulimentos'
-    ) {
-      switch (categorie) {
-        case 'esmaltes_auto':
-          setFondos('esmaltes_auto');
-          localStorage.setItem('microcategoria', 'esmaltes_auto');
-          break;
-        case 'primers':
-          setFondos('primers');
-          localStorage.setItem('microcategoria', 'primers');
-          break;
-        case 'rellenadores':
-          setFondos('rellenadores');
-          localStorage.setItem('microcategoria', 'rellenadores');
-          break;
-        case 'perlas':
-          setFondos('perlas');
-          localStorage.setItem('microcategoria', 'perlas');
-          break;
-        case 'transparentes':
-          setFondos('transparentes');
-          localStorage.setItem('microcategoria', 'transparentes');
-          break;
-        case 'hd':
-          setFondos('hd');
-          localStorage.setItem('microcategoria', 'hd');
-          break;
-        case 'reductores':
-          setFondos('reductores');
-          localStorage.setItem('microcategoria', 'reductores');
-          break;
-
-        case 'basecolor':
-          setFondos('basecolor');
-          localStorage.setItem('microcategoria', 'basecolor');
-          break;
-
-        case 'laca_acrilica':
-          setFondos('laca_acrilica');
-          localStorage.setItem('microcategoria', 'laca_acrilica');
-          break;
-
-        case 'pulimentos':
-          setFondos('pulidores');
-          localStorage.setItem('microcategoria', 'pulimentos');
-          break;
-
-        default:
-          break;
-      }
-
-      setSubAutomotriz((prevCheckboxes) =>
-        prevCheckboxes.map((checkbox) =>
-          checkbox.id === categorie
-            ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false },
-        ),
-      );
-    }
-
-    if (
-      categorie == 'pinturas_ferre' ||
-      categorie == 'esmaltes_ferre' ||
-      categorie == 'primarios_ferre' ||
-      categorie == 'madera_ferre'
-    ) {
-      switch (categorie) {
-        case 'pinturas_ferre':
-          setFondos('pinturas_ferre');
-          localStorage.setItem('microcategoria', 'pinturas_ferre');
-          break;
-        case 'esmaltes_ferre':
-          setFondos('esmaltes_ferre');
-          localStorage.setItem('microcategoria', 'esmaltes_ferre');
-          break;
-        case 'primarios_ferre':
-          setFondos('primario_ferre');
-          localStorage.setItem('microcategoria', 'primarios_ferre');
-          break;
-        case 'madera_ferre':
-          setFondos('madera_ferre');
-          localStorage.setItem('microcategoria', 'madera_ferre');
-          break;
-
-        default:
-          break;
-      }
-      setSubFerretera((prevCheckboxes) =>
-        prevCheckboxes.map((checkbox) =>
-          checkbox.id === categorie
-            ? { ...checkbox, checked: !checkbox.checked }
-            : { ...checkbox, checked: false, microStatus: true },
-        ),
-      );
-    }
-    if (
-      categorie == 'epoxicos' ||
-      categorie == 'poliuretanos_ind' ||
-      categorie == 'primarios_ind' ||
-      categorie == 'altas_temperaturas' ||
-      categorie == 'trafico'
-    ) {
-      setFondos(categorie);
-
-      localStorage.setItem('microcategoria', categorie);
-
-      setSubIndustrial((prevCheckboxes) =>
-        prevCheckboxes.map((checkbox) =>
-          checkbox.id === categorie
-            ? {
-                ...checkbox,
-                checked: !checkbox.checked,
-              }
-            : {
-                ...checkbox,
-                checked: false,
-              },
-        ),
-      );
-    }
-    setCurrentPage(1);
-    const filteredData = articulos.filter(
-      (articulo) => articulo.microcategorie === categorie,
-    );
-    const totalPaginas = Math.ceil(filteredData.length / ITEMS_PER_PAGE);
-    setTotalPages(totalPaginas);
-    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    const newData = filteredData.slice(startIndex, endIndex);
-    setDisplayData(newData);
-  };
-
-  useEffect(() => {
-    const storedCategory = localStorage.getItem('categoria');
-    const localcategoria = storedCategory || DEFAULT_CATEGORY;
-    const localmicrocategoria = localStorage.getItem('microcategoria');
-
-    if (!storedCategory) {
-      localStorage.setItem('categoria', DEFAULT_CATEGORY);
-    }
-
-    setCategorie(localcategoria);
-
-    if (localcategoria) {
-      if (localmicrocategoria) {
-        setFondos(
-          localmicrocategoria == 'selladores'
-            ? 'vinilicas'
-            : localmicrocategoria == 'primarios'
-              ? 'esmaltes'
-              : localmicrocategoria == 'primarios_ferre'
-                ? 'esmaltes_ferre'
-                : localmicrocategoria,
-        );
-        if (articulos) {
-          const filter = articulos.filter(
-            (item) => item.microcategorie == localmicrocategoria,
-          );
-          const totalPaginas = Math.ceil(filter.length / ITEMS_PER_PAGE);
-          setTotalPages(totalPaginas);
-          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-          const endIndex = startIndex + ITEMS_PER_PAGE;
-          const newData = filter.slice(startIndex, endIndex);
-          setDisplayData(newData);
-        }
-      } else {
-        setFondos(localcategoria);
-        if (articulos) {
-          const filter = articulos.filter(
-            (item) => item.categorie == localcategoria,
-          );
-          const totalPaginas = Math.ceil(filter.length / ITEMS_PER_PAGE);
-          setTotalPages(totalPaginas);
-          const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-          const endIndex = startIndex + ITEMS_PER_PAGE;
-          const newData = filter.slice(startIndex, endIndex);
-          setDisplayData(newData);
-        }
-      }
-      switch (localcategoria) {
-        case 'decorativa':
-          if (localmicrocategoria == 'selladores') {
-            setSubDecorativa((prevCheckboxes) =>
-              prevCheckboxes.map((checkbox) => {
-                if (checkbox.id === 'vinilicas') {
-                  return {
-                    ...checkbox,
-                    checked: true,
-                    microStatus: true,
-                  };
-                }
-                return checkbox;
-              }),
-            );
-          }
-          if (localmicrocategoria == 'primarios') {
-            setSubDecorativa((prevCheckboxes) =>
-              prevCheckboxes.map((checkbox) => {
-                if (checkbox.id == 'esmaltes') {
-                  return {
-                    ...checkbox,
-                    checked: true,
-                    microStatus: true,
-                  };
-                }
-                return checkbox;
-              }),
-            );
-          }
-          setOpenMain(1);
-
-          if (
-            localmicrocategoria !== 'primarios' ||
-            localmicrocategoria !== 'selladores'
-          ) {
-            setSubDecorativa((prevCheckboxes) =>
-              prevCheckboxes.map((checkbox) =>
-                checkbox.id === localmicrocategoria
-                  ? { ...checkbox, checked: true }
-                  : { ...checkbox, checked: false },
-              ),
-            );
-          }
-          break;
-
-        case 'industrial':
-          setOpenMain(5);
-
-          setSubIndustrial((prevCheckboxes) =>
-            prevCheckboxes.map((checkbox) =>
-              checkbox.id === localmicrocategoria
-                ? {
-                    ...checkbox,
-                    checked: true,
-                  }
-                : {
-                    ...checkbox,
-                    checked: false,
-                  },
-            ),
-          );
-
-          break;
-
-        case 'automotriz':
-          setOpenMain(2);
-          setSubAutomotriz((prevCheckboxes) =>
-            prevCheckboxes.map((checkbox) =>
-              checkbox.id === localmicrocategoria
-                ? { ...checkbox, checked: true }
-                : { ...checkbox, checked: false },
-            ),
-          );
-
-          break;
-        case 'ferretera':
-          setOpenMain(3);
-          if (localmicrocategoria == 'primarios_ferre') {
-            setSubFerretera((prevCheckboxes) =>
-              prevCheckboxes.map((checkbox) => {
-                if (checkbox.id === 'esmaltes_ferre') {
-                  return {
-                    ...checkbox,
-                    checked: true,
-                    microStatus: true,
-                  };
-                }
-                return checkbox;
-              }),
-            );
-          }
-
-          if (localmicrocategoria !== 'primarios_ferre') {
-            setSubFerretera((prevCheckboxes) =>
-              prevCheckboxes.map((checkbox) =>
-                checkbox.id === localmicrocategoria
-                  ? { ...checkbox, checked: true }
-                  : { ...checkbox, checked: false },
-              ),
-            );
-          }
-
-          break;
-
-        default:
-          break;
-      }
-    } else {
-      switch (categorie) {
-        case 'decorativa':
-          setOpenMain(1);
-
-          break;
-        case 'automotriz':
-          setOpenMain(2);
-          break;
-        case 'ferretera':
-          setOpenMain(3);
-
-          break;
-        case 'industrial':
-          setOpenMain(5);
-          break;
-        default:
-          break;
-      }
-    }
-  }, [categorie, currentPage]);
-
-  useEffect(() => {
-    let isActive = true;
-    setIsBackgroundReady(false);
-
-    const markBackgroundAsReady = () => {
-      if (isActive) {
-        setIsBackgroundReady(true);
-      }
-    };
-
-    const backgroundImage = new window.Image();
-    backgroundImage.onload = () => {
-      if (typeof backgroundImage.decode === 'function') {
-        backgroundImage
-          .decode()
-          .then(markBackgroundAsReady, markBackgroundAsReady);
-        return;
-      }
-
-      markBackgroundAsReady();
-    };
-    backgroundImage.onerror = markBackgroundAsReady;
-    backgroundImage.src = `/fondos_categorias/${fondos}.webp`;
-
-    return () => {
-      isActive = false;
-      backgroundImage.onload = null;
-      backgroundImage.onerror = null;
-    };
-  }, [fondos]);
-
-  useEffect(() => {
-    if (isCatalogReady || !isBackgroundReady) {
-      return;
-    }
-
-    const criticalProductIds = displayData
-      .slice(0, CRITICAL_PRODUCT_IMAGES)
-      .map((item) => item.id);
-    const areCriticalProductsReady = criticalProductIds.every((id) =>
-      loadedProductImages.has(id),
-    );
-
-    if (!areCriticalProductsReady) {
-      return;
-    }
-
-    let firstFrame;
-    let secondFrame;
-    const revealTimer = window.setTimeout(() => {
-      firstFrame = window.requestAnimationFrame(() => {
-        secondFrame = window.requestAnimationFrame(() => {
-          setIsCatalogReady(true);
-        });
-      });
-    }, 600);
-
-    return () => {
-      window.clearTimeout(revealTimer);
-      window.cancelAnimationFrame(firstFrame);
-      window.cancelAnimationFrame(secondFrame);
-    };
-  }, [displayData, isBackgroundReady, isCatalogReady, loadedProductImages]);
-
-  useEffect(() => {
-    const failSafeTimer = window.setTimeout(() => {
-      setIsCatalogReady(true);
-    }, 8000);
-
-    return () => {
-      window.clearTimeout(failSafeTimer);
-    };
-  }, []);
-
-  const handleProductImageLoad = (productId) => {
-    setLoadedProductImages((currentImages) => {
-      if (currentImages.has(productId)) {
-        return currentImages;
-      }
-
-      const nextImages = new Set(currentImages);
-      nextImages.add(productId);
-      return nextImages;
-    });
-  };
-
-  const backgroundStyle = {
-    width: '100%',
-    paddingBottom: '44.25%',
-    backgroundImage: `url('/fondos_categorias/${fondos}.webp')`,
-    backgroundSize: '100% 100%',
-    backgroundRepeat: 'no-repeat',
-  };
+  const resultsStart = filteredProducts.length ? firstProductIndex + 1 : 0;
+  const resultsEnd = Math.min(firstProductIndex + ITEMS_PER_PAGE, filteredProducts.length);
+  const resultHeading = searchQuery
+    ? `Resultados para “${searchQuery}”`
+    : activeSubcategory?.label ?? activeCategory.label;
+  const backgroundCategory = activeCategory?.id ?? DEFAULT_CATEGORY;
+  const faqHref = searchQuery
+    ? `/preguntas-frecuentes?q=${encodeURIComponent(searchQuery)}`
+    : `/preguntas-frecuentes?linea=${encodeURIComponent(categoryId)}`;
 
   return (
-    <>
-      {!isCatalogReady && (
-        <div
-          className="fixed inset-0 z-[20000] bg-white"
-          role="status"
-          aria-label="Cargando catálogo de productos"
-        >
-          <Isotipo />
-          <span className="sr-only">Cargando catálogo de productos</span>
-        </div>
-      )}
-      {categorie && (
-        <section
-          aria-busy={!isCatalogReady}
-          className={`w-full h-full bg-opacity-10 bg-[url('/principal/waves.jpg')] bg-cover bg-center bg-no-repeat`}
-        >
-          <div className={`w-full ${windowWidth < 940 ? 'block' : 'flex'}`}>
-            <div
-              className={`${
-                windowWidth < 940 ? 'w-full h-full' : 'w-[30%] sticky top-0'
-              } p-10`}
+    <main className="min-h-screen bg-[#f5f5f5] bg-[url('/principal/waves.jpg')] bg-cover bg-center bg-no-repeat pb-16">
+      <div className="mx-auto w-full max-w-[1800px] px-4 pt-6 sm:px-6 lg:px-8">
+        <ProductSearch
+          products={indexedProducts}
+          value={searchInput}
+          onChange={setSearchInput}
+          onSearch={commitSearch}
+          onSelect={handleSuggestionSelect}
+          onClear={clearSearch}
+        />
+
+        <div className="mt-6 grid gap-6 lg:grid-cols-[270px_minmax(0,1fr)]">
+          <ProductFilters
+            categories={categoriasCatalogo}
+            products={indexedProducts}
+            selectedCategory={categoryId}
+            selectedSubcategory={subcategoryId}
+            onCategoryChange={handleCategoryChange}
+            onSubcategoryChange={handleSubcategoryChange}
+          />
+
+          <div className="min-w-0">
+            <section
+              aria-labelledby="catalog-title"
+              className="relative flex min-h-44 items-end overflow-hidden rounded-3xl bg-gray-800 shadow-lg sm:min-h-52 lg:min-h-56"
+              style={{
+                backgroundImage: `linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.12)), url('/fondos_categorias/${backgroundCategory}.webp')`,
+                backgroundPosition: 'center',
+                backgroundSize: 'cover',
+              }}
             >
-              <div
-                className={`mt-32 ${windowWidth < 940 ? 'w-[80%]' : 'w-full'}`}
-              >
-                <Accordion
-                  open={openMain === 1}
-                  icon={<Icon id={1} open={openMain} />}
-                >
-                  <AccordionHeader
-                    onClick={() => handleOpenMain(1)}
-                    className="uppercase"
-                    style={{ fontSize: '17px', fontWeight: 'bold' }}
-                  >
-                    Decorativa
-                  </AccordionHeader>
-                  <AccordionBody>
-                    {subDecorativa?.map((vinil) => (
-                      <React.Fragment key={vinil.id}>
-                        <ListItem
-                          className="p-2"
-                          onClick={() => handleClickCategoria(vinil.id)}
-                        >
-                          <ListItemPrefix
-                            key={`vinilcheck-${vinil.id}`}
-                            className="mr-3"
-                          >
-                            <Checkbox
-                              id={vinil.id}
-                              checked={vinil.checked}
-                              onClick={(event) => event.stopPropagation()}
-                              onChange={() => handleClickCategoria(vinil.id)}
-                              ripple={false}
-                              className="hover:before:opacity-0"
-                              containerProps={{
-                                className: 'p-0',
-                              }}
-                            />
-                          </ListItemPrefix>
-                          <div className="w-full">
-                            <div className="w-full">
-                              <Typography
-                                as={'h3'}
-                                key={`vinillab-${vinil.id}`}
-                                color="blue-gray"
-                                className="font-medium"
-                              >
-                                {vinil.label}
-                              </Typography>
-                            </div>
-                          </div>
-                        </ListItem>
-
-                        <Collapse
-                          open={vinil.microStatus}
-                          className="arriba px-5"
-                        >
-                          <div
-                            className="mx-auto p-1 ml-4 w-full flex rounded-xl cursor-pointer hover:bg-blue-gray-100"
-                            onClick={() => handleSelladores(vinil.micro)}
-                          >
-                            {vinil.micro == '' ? null : (
-                              <div
-                                className="p-2 flex items-center justify-start"
-                                onClick={() => toggleOpen(vinil.micro)}
-                              >
-                                <FontAwesomeIcon
-                                  icon={faTurnUp}
-                                  rotation={90}
-                                ></FontAwesomeIcon>
-                              </div>
-                            )}
-                            <Typography as={'p'}>{vinil.micro}</Typography>
-                          </div>
-                        </Collapse>
-                      </React.Fragment>
-                    ))}
-                  </AccordionBody>
-                </Accordion>
-
-                {/* Automotriz */}
-                <Accordion
-                  open={openMain === 2}
-                  icon={<Icon id={2} open={openMain} />}
-                >
-                  <AccordionHeader
-                    onClick={() => handleOpenMain(2)}
-                    className="uppercase"
-                    style={{ fontSize: '17px', fontWeight: 'bold' }}
-                  >
-                    Automotriz
-                  </AccordionHeader>
-                  <AccordionBody>
-                    <List>
-                      {subAutomotriz?.map((item) => (
-                        <ListItem
-                          key={item.id}
-                          className="p-2"
-                          onClick={() => handleClickCategoria(item.id)}
-                        >
-                          <ListItemPrefix
-                            key={`cats-${item.id}`}
-                            className="mr-3"
-                          >
-                            <Checkbox
-                              id={item.id}
-                              checked={item.checked}
-                              onClick={(event) => event.stopPropagation()}
-                              onChange={() => handleClickCategoria(item.id)}
-                              ripple={false}
-                              className="hover:before:opacity-0"
-                              containerProps={{
-                                className: 'p-0',
-                              }}
-                            />
-                          </ListItemPrefix>
-                          <Typography
-                            as={'p'}
-                            key={`labcats-${item.id}`}
-                            color="blue-gray"
-                            className="font-medium"
-                          >
-                            {item.label}
-                          </Typography>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </AccordionBody>
-                </Accordion>
-
-                {/* Industrial */}
-                <Accordion
-                  open={openMain === 5}
-                  icon={<Icon id={5} open={openMain} />}
-                >
-                  <AccordionHeader
-                    onClick={() => handleOpenMain(5)}
-                    className="uppercase"
-                    style={{
-                      fontSize: '17px',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    Industrial
-                  </AccordionHeader>
-
-                  <AccordionBody>
-                    <List>
-                      {subIndustrial?.map((item) => (
-                        <ListItem
-                          key={item.id}
-                          className="p-2"
-                          onClick={() => handleClickCategoria(item.id)}
-                        >
-                          <ListItemPrefix className="mr-3">
-                            <Checkbox
-                              id={item.id}
-                              checked={item.checked}
-                              onClick={(event) => event.stopPropagation()}
-                              onChange={() => handleClickCategoria(item.id)}
-                              ripple={false}
-                              className="hover:before:opacity-0"
-                              containerProps={{
-                                className: 'p-0',
-                              }}
-                            />
-                          </ListItemPrefix>
-
-                          <Typography
-                            as={'p'}
-                            color="blue-gray"
-                            className="font-medium"
-                          >
-                            {item.label}
-                          </Typography>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </AccordionBody>
-                </Accordion>
-
-                {/* Ferretera  */}
-                <Accordion
-                  open={openMain === 3}
-                  icon={<Icon id={3} open={openMain} />}
-                >
-                  <AccordionHeader
-                    onClick={() => handleOpenMain(3)}
-                    className="uppercase"
-                    style={{ fontSize: '17px', fontWeight: 'bold' }}
-                  >
-                    Ferretera
-                  </AccordionHeader>
-                  <AccordionBody>
-                    {subFerretera?.map((ferre) => (
-                      <React.Fragment key={ferre.id}>
-                        <ListItem
-                          className="p-2"
-                          onClick={() => handleClickCategoria(ferre.id)}
-                        >
-                          <ListItemPrefix
-                            key={`cats-${ferre.id}`}
-                            className="mr-3"
-                          >
-                            <Checkbox
-                              id={ferre.id}
-                              checked={ferre.checked}
-                              onClick={(event) => event.stopPropagation()}
-                              onChange={() => handleClickCategoria(ferre.id)}
-                              ripple={false}
-                              className="hover:before:opacity-0"
-                              containerProps={{
-                                className: 'p-0',
-                              }}
-                            />
-                          </ListItemPrefix>
-                          <div className="w-full">
-                            <div className="w-full">
-                              <Typography
-                                as={'p'}
-                                key={`ferre-${ferre.id}`}
-                                color="blue-gray"
-                                className="font-medium"
-                              >
-                                {ferre.label}
-                              </Typography>
-                            </div>
-                          </div>
-                        </ListItem>
-
-                        <Collapse
-                          open={ferre.microStatus}
-                          className="arriba px-5"
-                        >
-                          <div
-                            className="mx-auto p-1 ml-4 w-full flex rounded-xl cursor-pointer hover:bg-blue-gray-100"
-                            onClick={() => handleSelladores(ferre.micro)}
-                          >
-                            {ferre.micro ? (
-                              <div
-                                className="p-2 flex items-center justify-end"
-                                onClick={() => toggleOpen(ferre.micro)}
-                              >
-                                <FontAwesomeIcon
-                                  icon={faTurnUp}
-                                  rotation={90}
-                                ></FontAwesomeIcon>
-                              </div>
-                            ) : null}
-                            {ferre.microLabel ? (
-                              <Typography as={'p'}>
-                                {ferre.microLabel}
-                              </Typography>
-                            ) : null}
-                          </div>
-                        </Collapse>
-                      </React.Fragment>
-                    ))}
-                  </AccordionBody>
-                </Accordion>
-
-                {/* Maderas  */}
-                <Accordion
-                  open={openMain === 4}
-                  icon={<Icon id={4} open={openMain} />}
-                >
-                  <AccordionHeader
-                    onClick={() => handleOpenMain(4)}
-                    className="uppercase"
-                    style={{ fontSize: '17px', fontWeight: 'bold' }}
-                  >
-                    Maderas
-                  </AccordionHeader>
-                  <AccordionBody>
-                    <List>
-                      {subMaderas?.map((item) => (
-                        <ListItem
-                          key={item.id}
-                          className="p-2"
-                          onClick={() => handleClickCategoria(item.id)}
-                        >
-                          <ListItemPrefix
-                            key={`cats-${item.id}`}
-                            className="mr-3"
-                          >
-                            <Checkbox
-                              id={item.id}
-                              checked={item.checked}
-                              onClick={(event) => event.stopPropagation()}
-                              onChange={() => handleClickCategoria(item.id)}
-                              ripple={false}
-                              className="hover:before:opacity-0"
-                              containerProps={{
-                                className: 'p-0',
-                              }}
-                            />
-                          </ListItemPrefix>
-                          <Typography
-                            as={'p'}
-                            key={`labcats-${item.id}`}
-                            color="blue-gray"
-                            className="font-medium"
-                          >
-                            {item.label}
-                          </Typography>
-                        </ListItem>
-                      ))}
-                    </List>
-                  </AccordionBody>
-                </Accordion>
+              <div className="relative max-w-2xl p-6 text-white sm:p-8">
+                <p className="text-xs font-bold uppercase tracking-[0.18em] text-red-100">
+                  Catálogo IPESA
+                </p>
+                <h1 id="catalog-title" className="mt-2 text-3xl font-black sm:text-4xl">
+                  {resultHeading}
+                </h1>
+                <p className="mt-2 text-sm leading-6 text-gray-100 sm:text-base">
+                  {filteredProducts.length} {filteredProducts.length === 1 ? 'producto encontrado' : 'productos encontrados'}
+                </p>
               </div>
-            </div>
+            </section>
 
-            <div className="w-full bg-[#f6f6f6]">
-              <div style={backgroundStyle} className=""></div>
-              {paginadovista ? (
-                <div className="mt-10 mb-10 flex justify-center">
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <div
-                      key={index}
-                      onClick={() => goToPage(index + 1)}
-                      className={`mx-2 text-xl cursor-pointer ${
-                        currentPage === index + 1
-                          ? 'bg-[#dc2a25] hover:bg-[#dc2a25] hover:text-white px-3 py-1 text-white'
-                          : 'bg-gray-200 hover:bg-[#dc2a25] hover:text-white px-3 py-1'
-                      }`}
-                    >
-                      {index + 1}{' '}
-                    </div>
+            <div ref={catalogRef} className="scroll-mt-28 pt-7">
+              <div className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-sm" aria-live="polite">
+                <div>
+                  <p className="font-black text-gray-900">{resultHeading}</p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    Mostrando {resultsStart}–{resultsEnd} de {filteredProducts.length}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Link
+                    href={faqHref}
+                    className="inline-flex min-h-10 items-center rounded-full border border-gray-300 bg-white px-4 text-sm font-bold text-gray-700 transition-colors hover:border-red-200 hover:bg-red-50 hover:text-[#9d0711] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c50411]"
+                  >
+                    {searchQuery ? 'Consultar esta búsqueda en FAQ' : `Preguntas de ${activeCategory.label}`}
+                  </Link>
+                  {searchQuery ? (
+                    <button type="button" onClick={clearSearch} className="inline-flex min-h-10 items-center rounded-full bg-red-50 px-4 text-sm font-bold text-[#9d0711] hover:bg-red-100">
+                      Limpiar búsqueda ×
+                    </button>
+                  ) : (
+                    <>
+                      <span className="inline-flex min-h-10 items-center rounded-full bg-red-50 px-4 text-sm font-bold text-[#9d0711]">
+                        {activeCategory.label}
+                      </span>
+                      {activeSubcategory ? (
+                        <span className="inline-flex min-h-10 items-center rounded-full bg-gray-100 px-4 text-sm font-bold text-gray-700">
+                          {activeSubcategory.label}
+                        </span>
+                      ) : null}
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {visibleProducts.length ? (
+                <div
+                  key={`${categoryId}-${subcategoryId ?? 'all'}-${searchQuery}-${currentPage}`}
+                  className="mt-6 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
+                >
+                  {visibleProducts.map((product, index) => (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                      index={index}
+                    />
                   ))}
                 </div>
-              ) : null}
-              <div
-                className={`w-full grid ${
-                  windowWidth < 700
-                    ? 'grid-cols-1'
-                    : windowWidth < 1235
-                      ? 'grid-cols-2'
-                      : windowWidth < 2000
-                        ? 'grid-cols-3'
-                        : 'grid-cols-4'
-                } gap-10 p-14`}
-              >
-                <Suspense fallback={<Isotipo></Isotipo>}>
-                  {displayData?.map((item, index) => (
-                    <Link
-                      key={item.id}
-                      href={`/producto/${item.id}`}
-                      onClick={() => handleIdProducto(item.id_number)}
-                      className="zoom-producto"
-                    >
-                      <Card
-                        className="w-full h-full lg:w-72 md:w-72 mx-auto sinradius"
-                      >
-                        <div className="w-[50%] md:w-[50%] mx-auto mt-5 flex justify-center">
-                          {item.tipo ? (
-                            <Image
-                              src={item.imagen}
-                              width={100}
-                              height={100}
-                              alt="imagen"
-                              loading={
-                                index < CRITICAL_PRODUCT_IMAGES
-                                  ? 'eager'
-                                  : 'lazy'
-                              }
-                              onLoad={() => handleProductImageLoad(item.id)}
-                            />
-                          ) : (
-                            <Image
-                              src={item.imagen}
-                              width={500}
-                              height={500}
-                              alt="imagen"
-                              loading={
-                                index < CRITICAL_PRODUCT_IMAGES
-                                  ? 'eager'
-                                  : 'lazy'
-                              }
-                              onLoad={() => handleProductImageLoad(item.id)}
-                            />
-                          )}
-                        </div>
-                        <div className="w-full h-full flex items-end p-5">
-                          <div className="w-full text-center">
-                            <Typography
-                              as={'h1'}
-                              color="blue-gray"
-                              className="uppercase mb-2 text-center text-lg md:text-2xl lg:text-2xl relative"
-                            >
-                              {item.name}{' '}
-                              {item.registro ? (
-                                <span
-                                  style={{ fontSize: '14px' }}
-                                  className="absolute -top-2"
-                                >
-                                  {item.registro}
-                                </span>
-                              ) : null}
-                              {item.name2 ? <p>{item.name2}</p> : null}
-                            </Typography>
-                            <Typography
-                              as={'h5'}
-                              color="blue-gray"
-                              className="mb-2 text-xl md:text-xl"
-                            >
-                              Capacidades
-                            </Typography>
-                            <ul className="w-full">
-                              {item.presentation.map((element, index) => (
-                                <li key={index}>{element}</li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-                    </Link>
-                  ))}
-                </Suspense>
-              </div>
-              {paginadovista ? (
-                <div className="mt-10 flex justify-center">
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <div
-                      key={index}
-                      onClick={() => goToPage(index + 1)}
-                      className={`mx-2 text-xl cursor-pointer mb-10 ${
-                        currentPage === index + 1
-                          ? 'bg-[#dc2a25] hover:bg-[#dc2a25] hover:text-white px-3 py-1 text-white'
-                          : 'bg-gray-200 hover:bg-[#dc2a25] hover:text-white px-3 py-1'
-                      }`}
-                    >
-                      {index + 1}{' '}
-                    </div>
-                  ))}
+              ) : (
+                <div className="mt-6 rounded-3xl border border-dashed border-gray-300 bg-white px-6 py-16 text-center">
+                  <p className="text-2xl font-black text-gray-900">No encontramos productos</p>
+                  <p className="mx-auto mt-3 max-w-xl leading-7 text-gray-600">
+                    Revisa la escritura o prueba con una categoría, aplicación o término más general.
+                  </p>
+                  <button type="button" onClick={clearSearch} className="mt-6 min-h-11 rounded-full bg-[#c50411] px-6 font-bold text-white hover:bg-[#9d0711]">
+                    Ver catálogo
+                  </button>
                 </div>
-              ) : null}
+              )}
+
+              <ProductPagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={goToPage}
+              />
             </div>
           </div>
-        </section>
-      )}
-    </>
+        </div>
+      </div>
+    </main>
   );
 };
 

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "verify:external-assets": "node scripts/verify-external-assets.mjs"
+    "verify:external-assets": "node scripts/verify-external-assets.mjs",
+    "verify:faq-data": "node scripts/verify-faq-data.mjs",
+    "verify:product-data": "node scripts/verify-product-data.mjs"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",

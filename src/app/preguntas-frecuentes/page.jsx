@@ -1,181 +1,48 @@
-'use client';
-import React from 'react';
-import {
-  Typography,
-  Accordion,
-  AccordionBody,
-  AccordionHeader,
-} from '@material-tailwind/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import {
-  preguntascontacto,
-  preguntasdistribuidor,
-  pregunatsproductos,
-} from '@/components/server';
-import Link from 'next/link';
+import { Suspense } from 'react';
+import FaqExplorer from '@/components/faq/FaqExplorer';
+import { getPublicFaqPayload } from '@/lib/faq/repository';
+
+export const metadata = {
+  title: 'Preguntas Frecuentes',
+  description: 'Consulta respuestas sobre productos IPESA, aplicaciones, rendimiento, preparación de superficies, secado, seguridad y recomendaciones técnicas.',
+  alternates: {
+    canonical: '/preguntas-frecuentes',
+  },
+  openGraph: {
+    title: 'Preguntas Frecuentes | IPESA Pinturas',
+    description: 'Encuentra información técnica y comercial sobre productos, aplicaciones, seguridad, compra y distribución de IPESA Pinturas.',
+    url: '/preguntas-frecuentes',
+    type: 'website',
+  },
+};
+
+const FaqLoading = () => (
+  <div className="rounded-2xl bg-white p-8 text-center text-gray-600 shadow-lg" role="status">
+    Preparando el centro de preguntas frecuentes…
+  </div>
+);
 
 const PagePreguntas = () => {
-  const [open, setOpen] = React.useState(1);
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
-
-  const handleCategoria = (event, event2) => {
-    const localcategoria = localStorage.getItem('categoria');
-    const localmicrocategoria = localStorage.getItem('microcategoria');
-    if (localcategoria || localmicrocategoria) {
-      localStorage.removeItem('categoria');
-      localStorage.removeItem('microcategoria');
-    }
-    localStorage.setItem('categoria', event);
-    localStorage.setItem('microcategoria', event2);
-  };
+  const faqPayload = getPublicFaqPayload();
 
   return (
-    <div className="w-full p-20">
-      <Typography variant="h1" className="mb-10">
-        Preguntas Frecuentes
-      </Typography>
+    <main className="min-h-screen bg-gray-50">
+      <header className="bg-gradient-to-br from-[#97010b] to-[#d71f2b] px-5 py-12 text-white sm:py-16">
+        <div className="mx-auto max-w-6xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.2em] text-red-100">Base de conocimiento IPESA</p>
+          <h1 className="mt-3 text-3xl font-black uppercase sm:text-5xl">Preguntas frecuentes</h1>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-red-50 sm:text-lg">
+            Encuentra respuestas sobre productos, aplicaciones, rendimiento, preparación, seguridad, compra y distribución.
+          </p>
+        </div>
+      </header>
 
-      <Typography variant="h3" className="mb-10">
-        Prodcutos
-      </Typography>
-      {pregunatsproductos?.map((item) => (
-        <Accordion key={item.id} open={open === item.id}>
-          <AccordionHeader onClick={() => handleOpen(item.id)}>
-            {item.question}
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography variant="paragraph">{item.answer}</Typography>
-
-            {item.labels?.map((target, index) => (
-              <ul key={index}>
-                <li className="mt-5">
-                  <strong>{target.name}</strong>{' '}
-                  <span>{target.description}</span>
-                </li>
-              </ul>
-            ))}
-            {item.enlace ? (
-              <div className="flex items-center">
-                <Link
-                  href={item.enlace}
-                  className="hover:border-b border-[#c50411]"
-                  onClick={() => handleCategoria(item.categorie, '')}
-                >
-                  {item.labelEnlace}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    size="lg"
-                    className="ml-2"
-                  ></FontAwesomeIcon>
-                </Link>
-              </div>
-            ) : null}
-          </AccordionBody>
-        </Accordion>
-      ))}
-
-      <Typography variant="h3" className="mt-10 mb-10">
-        Contacto
-      </Typography>
-      {preguntascontacto?.map((item) => (
-        <Accordion key={item.id} open={open === item.id}>
-          <AccordionHeader onClick={() => handleOpen(item.id)}>
-            {item.question}
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography variant="paragraph">{item.answer}</Typography>
-            {item.redes?.map((target, index) => (
-              <ul key={index}>
-                <li className="mt-2">
-                  <a
-                    href={target.name}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:border-b border-[#c50411]"
-                  >
-                    {target.name}
-                  </a>
-                </li>
-              </ul>
-            ))}
-            {item.labels?.map((target, index) => (
-              <ul key={index}>
-                <li className="mt-5">
-                  <strong>{target}</strong>
-                </li>
-              </ul>
-            ))}
-            {item.enlace ? (
-              <div className="flex items-center">
-                <Link
-                  href={item.enlace}
-                  className="hover:border-b border-[#c50411]"
-                >
-                  {item.labelEnlace}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    size="lg"
-                    className="ml-2"
-                  ></FontAwesomeIcon>
-                </Link>
-              </div>
-            ) : null}
-          </AccordionBody>
-        </Accordion>
-      ))}
-
-      <Typography variant="h3" className="mt-10 mb-10">
-        Distribuidor
-      </Typography>
-
-      {preguntasdistribuidor?.map((item) => (
-        <Accordion key={item.id} open={open === item.id}>
-          <AccordionHeader onClick={() => handleOpen(item.id)}>
-            {item.question}
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography variant="paragraph">{item.answer}</Typography>
-            {item.redes?.map((target, index) => (
-              <ul key={index}>
-                <li className="mt-2">
-                  <a
-                    href={target.name}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:border-b border-[#c50411]"
-                  >
-                    {target.name}
-                  </a>
-                </li>
-              </ul>
-            ))}
-            {item.labels?.map((target, index) => (
-              <ul key={index}>
-                <li className="mt-5">
-                  <strong>{target}</strong>
-                </li>
-              </ul>
-            ))}
-            {item.enlace ? (
-              <div className="flex items-center">
-                <Link
-                  href={item.enlace}
-                  className="hover:border-b border-[#c50411]"
-                >
-                  {item.labelEnlace}
-                  <FontAwesomeIcon
-                    icon={faArrowRight}
-                    size="lg"
-                    className="ml-2"
-                  ></FontAwesomeIcon>
-                </Link>
-              </div>
-            ) : null}
-          </AccordionBody>
-        </Accordion>
-      ))}
-    </div>
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <Suspense fallback={<FaqLoading />}>
+          <FaqExplorer {...faqPayload} />
+        </Suspense>
+      </div>
+    </main>
   );
 };
 

@@ -1,6 +1,6 @@
 'use client';
 import React, { useContext, useEffect, useState } from 'react';
-import { articulos, colores } from '@/components/server';
+import { colores } from '@/components/server';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import {
@@ -34,9 +34,8 @@ const ReactPlayer = dynamic(() => import('react-player/lazy'), {
   loading: () => <p className="p-6 text-center">Cargando video…</p>,
 });
 
-const ProductoSelected = ({ valor }) => {
-  const productId = valor.params.id;
-  const [articulo, setArticulo] = useState(null);
+const ProductoSelected = ({ producto }) => {
+  const [articulo] = useState(producto);
   const [relacionados, setRelacionados] = useState(null);
   const [color, setColor] = useState([]);
   const [windowWidth, setWindowWidth] = useState(0);
@@ -126,14 +125,6 @@ const ProductoSelected = ({ valor }) => {
       };
     }
   }, []);
-
-  useEffect(() => {
-    if (productId) {
-      const producto = articulos.find((item) => productId === item.id);
-      // const relacionados = articulos.filter(item => producto.categorie == item.categorie)
-      setArticulo(producto);
-    }
-  }, [productId]);
 
   useEffect(() => {
     if (articulo) {
@@ -563,6 +554,26 @@ const ProductoSelected = ({ valor }) => {
                 </div>
 
                 <div className="w-full mt-4 block md:flex">
+                  {articulo.disponible_en?.length ? (
+                    <div className="w-full">
+                      <Typography
+                        as={'h6'}
+                        variant="h6"
+                        className="uppercase"
+                        color="gray"
+                      >
+                        Disponible en
+                      </Typography>
+                      <ul className="mt-1 space-y-1 text-gray-600">
+                        {articulo.disponible_en.map((presentacion) => (
+                          <li key={presentacion} className="text-[15px]">
+                            {presentacion}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+
                   {articulo.acabados ? (
                     <div className="w-full md:w-[30%]">
                       <Typography

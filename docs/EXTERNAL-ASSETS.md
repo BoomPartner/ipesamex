@@ -28,13 +28,13 @@ La migración conserva literalmente cada subruta y nombre de archivo:
 
 ## Implementación
 
-- `src/components/server.js` contiene URLs absolutas para fichas, cartas de color y hojas de seguridad, incluidas las entradas anidadas de `ficha_personalizable`.
+- `src/data/productos.js` contiene las URLs absolutas para fichas, cartas de color y hojas de seguridad, incluidas las entradas anidadas de `ficha_personalizable`.
 - `src/components/Producto.jsx` construye el fondo como URL absoluta usando la categoría del artículo.
 - Mientras la ficha todavía no ha resuelto el artículo, el fondo queda en `none`; así el HTML inicial no solicita `fondo-producto/undefined.jpg`. La URL válida se aplica en cuanto existe la categoría.
 - Se normalizaron dos valores `categorie: 'Automotriz'` a `automotriz`. El servidor remoto y los despliegues Linux distinguen mayúsculas; el único archivo válido es `fondo-producto/automotriz.jpg`. La corrección también alinea esos artículos con la categoría ya utilizada por el catálogo.
 - No se agregó `remotePatterns` a Next Image porque estos recursos se consumen como enlaces, iframes PDF o `background-image`, no mediante `next/image`.
 
-El inventario en código es de 216 referencias: 67 `fichas`, 41 `fichas_colores`, 55 `FICHAS_TECNICAS`, 52 `seguridad` y un constructor de `fondo-producto`. Al descontar documentos repetidos y expandir los cinco fondos de categorías usados, la comprobación cubre 212 URLs únicas.
+El inventario en código es de 215 referencias: 67 `fichas`, 40 `fichas_colores`, 55 `FICHAS_TECNICAS`, 52 `seguridad` y un constructor de `fondo-producto`. Al descontar documentos repetidos y expandir los cinco fondos de categorías usados, la comprobación cubre 211 URLs únicas. La diferencia respecto al inventario anterior corresponde al retiro solicitado de `fichas_colores/acritek.pdf`; no se movió ni eliminó el archivo remoto.
 
 ## Verificación
 
@@ -49,9 +49,9 @@ El script `scripts/verify-external-assets.mjs` extrae las URLs del catálogo, ge
 Resultado de la migración:
 
 ```text
-Activos externos verificados: 212
-Estados HTTP: 200=212
-Tipos MIME: application/pdf=207, image/jpeg=5
+Activos externos verificados: 211
+Estados HTTP: 200=211
+Tipos MIME: application/pdf=206, image/jpeg=5
 ```
 
 También se auditaron los fuentes para confirmar que no permanecieran referencias locales a las cinco carpetas eliminadas.
@@ -60,7 +60,7 @@ También se auditaron los fuentes para confirmar que no permanecieran referencia
 
 1. Usa siempre la URL absoluta y conserva el caso, espacios, signos y nombre exacto del archivo remoto.
 2. No vuelvas a copiar estas cinco familias a `public`; eso reintroduciría el peso que se retiró del despliegue.
-3. Ejecuta la verificación después de modificar `server.js`, una categoría de producto o el inventario remoto.
+3. Ejecuta la verificación después de modificar `src/data/productos.js`, una categoría de producto o el inventario remoto.
 4. Sube primero el archivo al origen remoto y comprueba HTTP 2xx antes de publicar una referencia nueva.
 5. Si cambia el dominio o una carpeta, actualiza código, script, `AGENTS.md` y este documento en el mismo cambio.
 

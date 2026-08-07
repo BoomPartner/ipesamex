@@ -15,6 +15,8 @@ Estas instrucciones aplican a todo el repositorio. Este proyecto es el sitio pú
 - Compilación de producción: `npm run build`.
 - Producción local, después de compilar: `npm run start`.
 - Integridad de documentos externos: `npm run verify:external-assets` (requiere acceso de red y comprueba las URLs con solicitudes `HEAD`).
+- Integridad de FAQ y búsqueda: `npm run verify:faq-data`.
+- Integridad del catálogo y búsqueda de productos: `npm run verify:product-data`.
 - No hay suite de pruebas automatizadas configurada. Si una tarea agrega lógica no trivial, considera añadir pruebas enfocadas sin introducir un framework nuevo salvo que la tarea lo justifique.
 
 ## Mapa del proyecto
@@ -24,17 +26,26 @@ Estas instrucciones aplican a todo el repositorio. Este proyecto es el sitio pú
 - `src/app/**/page.jsx`: rutas del App Router. Mantén las páginas como Server Components cuando no necesiten APIs del navegador, estado o efectos.
 - `src/components/`: componentes visuales y de dominio. Muchos son Client Components y algunos son grandes; evita ampliar componentes monolíticos.
 - `src/app/context/`: estado global compartido por navegación, producto, preguntas, calculadora y contacto.
-- `src/components/server.js`: catálogo y contenido estático principal. A pesar del nombre, no es código exclusivo del servidor y actualmente se importa desde componentes cliente.
+- `src/components/server.js`: contenido estático no relacionado con el catálogo, como colores, novedades, consumidores y contenido editorial legado. A pesar del nombre, no es código exclusivo del servidor.
+- `src/data/productos.js`: fuente canónica del catálogo, taxonomía y tarjetas de línea de Home. Su contrato y mantenimiento están en `docs/PRODUCT-CATALOG.md`.
+- `src/lib/products/catalog.mjs`: normalización, índice de búsqueda, filtros y paginación del catálogo.
+- `src/components/products/`: buscador, filtros, tarjetas con lazy loading y paginador de `/productos`.
 - `src/components/dataMapas.js`: conjunto grande de sucursales/ubicaciones, también enviado al cliente cuando se usa.
 - `src/components/Carrusel.jsx`: carrusel principal nativo de `/`; su inventario y mantenimiento están documentados en `docs/HOME-SLIDER.md`.
+- `src/components/faq/HomeFaqSection.jsx`: promoción FAQ situada inmediatamente después del carrusel de Home; recibe un resumen mínimo desde el servidor.
+- `src/data/faqs.json`: fuente editorial única del centro de preguntas; modelo, migración y mantenimiento en `docs/FAQ-KNOWLEDGE-BASE.md`. `src/lib/faq/product-relations.mjs` prioriza vínculos exactos y aplica el fallback contextual de las fichas de producto.
+- `src/lib/faq/repository.js`: acceso FAQ sólo servidor; resuelve productos desde el catálogo y evita enviarlo completo al cliente.
 - `src/app/globals.css`: estilos globales y animaciones existentes.
 - `public/`: imágenes, SVG, videos y las hojas que todavía permanecen bajo `HOJAS_SEGURIDAD`. Las familias `fichas`, `fichas_colores`, `FICHAS_TECNICAS`, `fondo-producto` y `seguridad` se sirven desde `https://tecknum.com/ipesa_public/` y no deben volver a agregarse al despliegue local.
 
 ## Contratos de integridad
 
-- Trata los identificadores de productos y categorías como contratos públicos. `articulos[].id` alimenta `/producto/[id]`; `categorie`, `subcategorie` y `microcategorie` controlan filtros y navegación.
+- Trata los identificadores de productos y categorías como contratos públicos. `productos[].id` alimenta `/producto/[id]`; `categorie`, `subcategorie` y `microcategorie` controlan filtros y navegación. `articulos` es sólo un alias histórico de la misma colección.
+- Trata `faqs[].id`, `slug`, `categoryId`, tags y líneas como contratos editoriales. Toda relación `productIds` debe usar un `productos[].id` real y validarse con `npm run verify:faq-data`.
+- La persistencia editorial del módulo FAQ es exclusivamente `src/data/faqs.json`. No agregues una base de datos, ORM, CMS, almacenamiento en `localStorage` ni endpoints que intenten modificar el archivo en runtime. Los cambios se revisan, validan y despliegan mediante control de versiones.
+- Mantén alineado en `Navbar.jsx` el breakpoint del menú completo y el botón que abre el menú compacto. La navegación completa inicia en 1440 px; por debajo debe permanecer disponible el botón y el panel debe admitir desplazamiento vertical.
 - Conserva la compatibilidad de las claves de `localStorage` `categoria` y `microcategoria`. Si cambias su formato o significado, actualiza de forma coordinada navbar, inicio, productos, novedades, tips y preguntas frecuentes.
-- Al modificar `src/components/server.js`, valida IDs únicos, categorías válidas y existencia exacta de cada archivo referenciado. Respeta mayúsculas y minúsculas: producción puede usar un sistema de archivos sensible al caso.
+- Al modificar `src/data/productos.js`, ejecuta `npm run verify:product-data` para validar IDs públicos únicos, taxonomía y existencia exacta de imágenes. Respeta mayúsculas y minúsculas: producción puede usar un sistema de archivos sensible al caso.
 - Conserva como contrato el origen `https://tecknum.com/ipesa_public/` para `fichas`, `fichas_colores`, `FICHAS_TECNICAS`, `fondo-producto` y `seguridad`. Mantén el nombre y la subruta exactos; ejecuta `npm run verify:external-assets` cuando agregues, retires o cambies una de estas referencias.
 - `HOJAS_SEGURIDAD` no forma parte de esa migración y continúa bajo `public/HOJAS_SEGURIDAD`. No la conviertas a URL externa sin una solicitud y una verificación específicas.
 - No renombres, muevas, reemplaces ni elimines archivos de `public/` sin buscar todas sus referencias. No comprimas PDF técnicos o de seguridad si eso pudiera alterar legibilidad, metadatos o validez documental.
@@ -60,7 +71,7 @@ Estas instrucciones aplican a todo el repositorio. Este proyecto es el sitio pú
 - Mide antes y después. Para cambios relevantes registra al menos salida de `npm run build`, tamaño de la ruta afectada y, cuando aplique, Lighthouse/Core Web Vitals en móvil.
 - La línea base actual tiene First Load JS aproximado de 358 kB en `/` y `/producto/[id]`, 309 kB en `/sucursales`, 311 kB en `/decorador` y `/sistema-tintometrico`, y 298 kB en `/productos`. Evita aumentos injustificados.
 - Tras externalizar los documentos indicados e integrar los 10 banners del carrusel principal, `public/` contiene alrededor de 447 archivos y 297.2 MB. No dupliques activos remotos dentro del repositorio; antes de agregar un recurso local, confirma que no pertenezca a una de las cinco familias alojadas en Tecknum.
-- `server.js` (~6,500 líneas), `dataMapas.js` (~11,500 líneas), `Producto.jsx`, `Productos.jsx` e `Inicio.jsx` son puntos calientes. No importes datasets completos en más Client Components. Prefiere dividir datos por dominio, cargar bajo demanda y usar imports dinámicos cuando reduzcan JavaScript real sin degradar UX o SEO.
+- `productos.js` (~3,300 líneas), `server.js` (~3,100 líneas), `dataMapas.js` (~11,500 líneas), `Producto.jsx` e `Inicio.jsx` son puntos calientes. No importes datasets completos en más Client Components. Resuelve en Server Components y entrega resúmenes o registros individuales cuando no se necesite búsqueda global.
 - Reduce renders, estados duplicados y múltiples listeners de `resize`/`scroll`. Prefiere CSS responsivo, `matchMedia`, IntersectionObserver o una abstracción compartida cuando la medición confirme el beneficio.
 - Lazy-load mapas, reproductores, chat, carruseles y widgets de terceros si están fuera del viewport. Reserva espacio para evitar CLS y comprueba que la interacción siga disponible.
 - `next.config.js` aplica actualmente `Cache-Control: no-store` a todas las rutas. Es un objetivo potencial de mejora, pero no cambies la política global sin clasificar HTML, assets inmutables y documentos, y sin validar revalidación/despliegue.
@@ -98,10 +109,10 @@ Antes de terminar una modificación:
 
 - Al crear este archivo, `npm run lint` terminaba con 12 advertencias. Después de la fase estructural y de la corrección de `/productos` documentadas en `docs/PERFORMANCE.md`, quedan 2 advertencias de dependencias de Hooks en `Colores`.
 - `npm run build` termina correctamente. `metadataBase` ya está definido; permanece el aviso de `caniuse-lite` desactualizado.
-- La línea base posterior a la integración local del carrusel principal es 322 kB en `/`, 351 kB en `/producto/[id]`, 124 kB en `/sucursales`, 298 kB en `/productos` y 103 kB en `/tips`. Usa `docs/PERFORMANCE.md` para la comparación completa.
+- La línea base posterior a la reestructuración del catálogo es 299 kB en `/`, 327 kB en `/producto/[id]`, 124 kB en `/sucursales`, 128 kB en `/productos`, 104 kB en `/preguntas-frecuentes` y 103 kB en `/tips`. Usa `docs/PERFORMANCE.md` para la comparación completa.
 - En desarrollo, los mensajes de depuración de Vercel Analytics y Fast Refresh son informativos. Un `ERR_BLOCKED_BY_CLIENT` de DoubleClick suele provenir de un bloqueador del navegador; sepáralo de errores propios de React, Next.js o de la aplicación antes de corregir código.
 - No conviertas estas advertencias conocidas en errores ajenos a una tarea, pero no agregues nuevas. Si tocas uno de los archivos implicados, corrige de forma segura las advertencias dentro del alcance o explica por qué permanecen.
 - No existe una suite automatizada ni un comando `test` en `package.json`.
-- La migración de activos técnicos deja 216 referencias externas en código y 212 URLs únicas verificables; el procedimiento y el mapa exacto están en `docs/EXTERNAL-ASSETS.md`.
+- Después de retirar la carta de color de Acritek, la migración de activos técnicos deja 215 referencias externas en código y 211 URLs únicas verificables; el procedimiento y el mapa exacto están en `docs/EXTERNAL-ASSETS.md`.
 
 Actualiza este documento cuando cambien de forma material la arquitectura, los comandos, la estrategia de pruebas o los contratos de datos.

@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises';
 
 const externalBaseUrl = 'https://tecknum.com/ipesa_public';
-const dataSource = await readFile('src/components/server.js', 'utf8');
+const dataSource = await readFile('src/data/productos.js', 'utf8');
 const documentUrlPattern =
   /https:\/\/tecknum\.com\/ipesa_public\/(?:fichas_colores|FICHAS_TECNICAS|fichas|seguridad)\/[^'"\r\n]+/g;
 const categoryPattern = /\bcategorie:\s*'([^']+)'/g;

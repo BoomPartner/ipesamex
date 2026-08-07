@@ -57,6 +57,39 @@ Los principales problemas estructurales encontrados fueron:
 - El inventario y el procedimiento de mantenimiento están en `docs/HOME-SLIDER.md`.
 - `npm run build` deja `/` en 7.12 kB de código propio y 322 kB de First Load JS: 10 kB menos que la línea base anterior de 332 kB. Los diez JPG agregan aproximadamente 5.05 MiB al contenido estático y elevan el inventario actual de `public/` a 447 archivos y 297.2 MiB.
 
+### Centro de preguntas frecuentes
+
+- Las 43 FAQ legadas y las dos preguntas exclusivas del drawer se migraron a `src/data/faqs.json`; los tres arrays anteriores se retiraron de `server.js`.
+- `/preguntas-frecuentes` conserva la carga de datos y relaciones en servidor. El cliente recibe un índice específico y sólo los datos de los 24 enlaces de producto utilizados: ID, nombre, ruta, miniatura y clasificación.
+- La ruta dejó de cargar Material Tailwind, Font Awesome y el catálogo completo para renderizar los acordeones. Después de integrar tarjetas con `next/image`, First Load JS queda en 104 kB frente a los 287 kB originales (-183 kB, 63.8%). Su código propio es 3.73 kB por la búsqueda, filtros y navegación compartible.
+- Retirar los arrays FAQ de `server.js` también reduce aproximadamente 3–4 kB en las rutas que importan ese módulo; la compilación medida deja `/` en 319 kB, `/producto/[id]` en 348 kB y `/productos` en 294 kB.
+- La arquitectura, contenido, ranking, SEO, persistencia JSON y flujo editorial se documentan en `docs/FAQ-KNOWLEDGE-BASE.md`.
+
+### Integración FAQ y productos
+
+- `/producto/[id]` renderiza en servidor hasta cinco respuestas. Las relaciones `productIds` exactas tienen prioridad y el fallback usa únicamente tags, subcategoría, línea y acciones ya aprobadas en el JSON.
+- La selección se aisló en un módulo puro, por lo que `verify:faq-data` prueba prioridad, límite y cobertura contextual de los 137 productos.
+- El índice FAQ incorpora únicamente los nombres contextuales necesarios para que la búsqueda reconozca los 137 productos; el campo auxiliar se descarta antes de serializar y no convierte los fallback en relaciones editoriales explícitas.
+- El bloque usa `<details>/<summary>` nativos y no agrega una frontera cliente. `/producto/[id]` conserva 327 kB de First Load JS.
+- `/productos` agrega un enlace contextual hacia el FAQ sin cambiar sus 128 kB. El centro FAQ enlaza de regreso mediante tarjetas relacionadas con imagen y taxonomía.
+
+### Menú responsive y promoción FAQ en Home
+
+- Se corrigió el intervalo de 1536–1640 px en el que podían ocultarse simultáneamente el menú completo y el botón hamburguesa. El cambio de modo ahora usa un único límite: menú compacto hasta 1439 px y navegación completa desde 1440 px.
+- Los accesos sociales del encabezado aparecen desde 1800 px y permanecen disponibles en el footer en anchos menores. Esto evita que compitan con los enlaces principales.
+- El panel compacto se limita al alto visible, admite scroll y expone estado accesible. FAQ tiene un acceso directo en escritorio y móvil.
+- Home muestra después del carrusel el total publicado y tres preguntas destacadas. `getHomeFaqSummary()` entrega sólo `total`, `id` y `question`; no se añade el JSON completo al cliente.
+- La compilación conserva `/` en 319 kB de First Load JS. Las pruebas de navegador en 390, 1439, 1440 y 1800 px no detectaron desbordamiento horizontal ni enlaces del menú fuera del viewport.
+
+### Reestructuración del catálogo de productos
+
+- Los 137 productos y su taxonomía salieron de `server.js` hacia `src/data/productos.js`; la colección ya no contamina consumidores de contenido editorial no relacionado.
+- `/productos` reemplazó Material Tailwind, Font Awesome, Swiper, estados duplicados de filtros y el preloader de pantalla completa por componentes nativos enfocados. El buscador indexa nombre, clasificación y descripción y presenta sugerencias enriquecidas antes de confirmar con Enter o Buscar.
+- La ficha dinámica resuelve el registro solicitado en el servidor. Home recibe sólo cuatro categorías y `vintek`; FAQ mantiene la resolución de relaciones en servidor.
+- El grid entrega 12 productos por página y cuatro columnas desde `xl`. Todas las imágenes de tarjeta usan lazy loading, skeleton, dimensiones reservadas y animación compatible con movimiento reducido.
+- First Load JS baja de 294 kB a 128 kB en `/productos` (-166 kB, 56.5 %), de 319 kB a 299 kB en `/` y de 348 kB a 327 kB en `/producto/[id]`. El compartido permanece en 88.3 kB.
+- La arquitectura, correcciones de clasificación, referencias afectadas y mantenimiento están en `docs/PRODUCT-CATALOG.md`.
+
 ### Integridad, seguridad y SEO
 
 - El navegador ahora llama a `/api/chat`; la credencial y el identificador del agente se usan en el servidor.
@@ -69,7 +102,7 @@ Los principales problemas estructurales encontrados fueron:
 
 - Las referencias a `fichas`, `fichas_colores`, `FICHAS_TECNICAS`, `fondo-producto` y `seguridad` ahora apuntan directamente a `https://tecknum.com/ipesa_public/`, conservando cada subruta y nombre de archivo.
 - Se retiraron esas cinco carpetas de `public`; `HOJAS_SEGURIDAD` permanece local porque no formó parte de la migración solicitada.
-- Se añadió `npm run verify:external-assets` para comprobar todo el inventario remoto sin descargar los cuerpos de los PDF. La validación obtuvo HTTP 200 para las 212 URLs únicas, con 207 respuestas `application/pdf`, cinco `image/jpeg` y sin políticas que bloqueen su incrustación.
+- Se añadió `npm run verify:external-assets` para comprobar todo el inventario remoto sin descargar los cuerpos de los PDF. Tras retirar la carta de color de Acritek, la validación obtiene HTTP 200 para las 211 URLs únicas, con 206 respuestas `application/pdf`, cinco `image/jpeg` y sin políticas que bloqueen su incrustación.
 - Dos artículos usaban `Automotriz` con una mayúscula incompatible con el nombre real `automotriz.jpg`; se normalizó la categoría para conservar el fondo y la clasificación del catálogo en entornos sensibles al caso.
 - La ficha de producto ya no genera temporalmente `fondo-producto/undefined.jpg` durante el render inicial; espera a disponer de una categoría antes de asignar el fondo externo.
 - El contrato, mapa y procedimiento de mantenimiento están en `docs/EXTERNAL-ASSETS.md`.
@@ -103,11 +136,11 @@ La ruta ahora usa `decorativa` como valor predeterminado estable tanto en servid
 
 La corrección se comprobó con una sesión limpia, sin datos previos de `localStorage`: se mostraron el menú de categorías, el fondo decorativo, las tarjetas y la paginación. No se modificaron imágenes, fichas, PDFs ni los datos comerciales del catálogo.
 
-### Preloader y limpieza de consola
+### Carga inmediata, lazy loading y limpieza de consola
 
-`/productos` conserva el catálogo prerenderizado detrás de un preloader de pantalla completa. El preloader permanece visible mientras React aplica la categoría persistida y el navegador carga y decodifica el fondo correspondiente y las primeras tres imágenes visibles del catálogo; después espera 600 ms y dos cuadros de renderizado antes de mostrar el contenido. Las demás imágenes mantienen carga diferida. Existe una salida de seguridad de 8 segundos ante un recurso ausente o una conexión interrumpida. No se reintrodujo el temporizador global que retrasaba todas las rutas.
+La actualización actual retiró el preloader de pantalla completa, la espera artificial de 600 ms y la salida de seguridad de 8 segundos. La estructura, filtros y texto del catálogo aparecen inmediatamente; cada tarjeta reserva una proporción cuadrada, muestra un skeleton local y deja a `next/image` diferir la descarga hasta aproximarse al viewport.
 
-La medición posterior con `npm run build` mantiene el JS compartido en 88.3 kB y deja `/productos` en 298 kB de First Load JS. El preloader específico aumentó aproximadamente 1 kB frente a la medición inmediatamente anterior de 297 kB, pero la ruta sigue igual que la línea base original y las demás páginas no cambian.
+La medición vigente mantiene el JS compartido en 88.3 kB y deja `/productos` en 128 kB de First Load JS. El código propio sube de 6.49 kB a 27.6 kB por búsqueda, sugerencias, taxonomía, cards y paginación, pero el total cae al retirar las dependencias pesadas de esta ruta.
 
 También se corrigieron los avisos locales observados en consola: el logo declara una proporción coherente con su SVG, los fragmentos repetidos tienen claves estables, las tarjetas usan el ID público del producto y los filtros controlados cuentan con `onChange` sin ejecutar dos veces el clic del contenedor. Los registros de depuración de Vercel Analytics y Fast Refresh son informativos; `ERR_BLOCKED_BY_CLIENT` al solicitar DoubleClick depende normalmente de extensiones o políticas del navegador y no representa un fallo del catálogo.
 
@@ -130,12 +163,10 @@ La reducción no modifica los bundles JavaScript, pero sí elimina estos archivo
 ## Siguientes fases recomendadas
 
 1. Mantener el origen Tecknum con caché, versionado o redirects estables, y ejecutar `npm run verify:external-assets` antes de cada cambio de inventario.
-2. Dividir `server.js` por dominio y resolver la ficha individual en el servidor para que `/producto/[id]` no envíe el catálogo completo.
-3. Reemplazar gradualmente Material Tailwind en navbar y componentes globales por elementos accesibles y estilos locales; es la siguiente oportunidad importante para rutas que aún rondan 230–351 kB.
-4. Consolidar listeners de scroll/resize restantes con CSS, `matchMedia` e IntersectionObserver, empezando por `Inicio`, `Nosotros`, `Tintometrico` y menús.
-5. Ampliar las pruebas de integridad para IDs únicos, categorías válidas y existencia/caso exacto de los recursos que todavía permanecen en `public`.
-6. Incorporar Lighthouse móvil y Web Vitals reales en producción. Las cifras de Next miden JavaScript, no latencia de iframes, terceros, red o peso visual.
-7. Ejecutar la fase de optimización de imágenes cuando estén disponibles los originales y los criterios de calidad.
+2. Reemplazar gradualmente Material Tailwind en navbar y componentes globales por elementos accesibles y estilos locales; es la siguiente oportunidad importante para rutas que aún rondan 230–327 kB.
+3. Consolidar listeners de scroll/resize restantes con CSS, `matchMedia` e IntersectionObserver, empezando por `Inicio`, `Nosotros`, `Tintometrico` y menús.
+4. Incorporar Lighthouse móvil y Web Vitals reales en producción. Las cifras de Next miden JavaScript, no latencia de terceros, red o peso visual.
+5. Ejecutar la fase de optimización de imágenes cuando estén disponibles los originales y los criterios de calidad.
 
 ## Validación operativa
 

@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
 import { useEffect, useState, useContext } from 'react';
-import { consumidores, categorias, articulos } from '@/components/server';
+import { consumidores } from '@/components/server';
 import Carrusel from './Carrusel';
+import HomeFaqSection from './faq/HomeFaqSection';
 import {
   Typography,
   Input,
@@ -21,10 +22,10 @@ const CarruselSecundario = dynamic(() => import('./Carrusel2'), {
   ssr: false,
 });
 
-const Inicio = () => {
+const Inicio = ({ faqSummary, homeCategories, calculatorProduct }) => {
   const { handleContacto } = useContext(globalContext);
   const [isOpen, setIsOpen] = useState(false);
-  const [articulo, setArticulo] = useState(null);
+  const [articulo] = useState(() => calculatorProduct ? [calculatorProduct] : null);
   const [isElementVisible, setElementVisible] = useState(false);
   const [isElementVisible2, setElementVisible2] = useState(false);
   const [isElementVisible3, setElementVisible3] = useState(false);
@@ -219,13 +220,6 @@ const Inicio = () => {
       setViewCards(3);
     }
   }, [windowWidth]);
-
-  useEffect(() => {
-    if (articulos) {
-      const articulo = articulos.filter((item) => item.id === 'vintek');
-      setArticulo(articulo);
-    }
-  }, []);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -554,6 +548,8 @@ const Inicio = () => {
         <Carrusel />
       </section>
 
+      <HomeFaqSection faqSummary={faqSummary} />
+
       <section id="categorias" className="overflow-hidden">
         <div className="w-full p-10">
           <div className="w-full text-center">
@@ -568,7 +564,7 @@ const Inicio = () => {
           </div>
 
           <div className="mt-16 gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-            {categorias?.map((item, index) => (
+            {homeCategories?.map((item, index) => (
               <>
                 <Link
                   key={index}

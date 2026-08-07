@@ -4,9 +4,6 @@ import {
   Typography,
   Drawer,
   IconButton,
-  Accordion,
-  AccordionHeader,
-  AccordionBody,
   Tooltip,
 } from '@material-tailwind/react';
 import { Collapse } from '@material-tailwind/react';
@@ -14,7 +11,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import NavListMenu from './NavListMenu';
 import NavListMenu2 from './NavListMenu2';
 import NavListMenu3 from './NavListMenu3';
@@ -28,7 +24,7 @@ import {
   faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
 
-export function NavbarResponsive({ handleNosotros }) {
+export function NavbarResponsive({ handleNosotros, featuredFaqs = [] }) {
   const [openNav, setOpenNav] = useState(false);
   const [activeLink, setActiveLink] = useState(null);
   const [isMobileMenu, setIsMobileMenu] = useState(false);
@@ -44,10 +40,6 @@ export function NavbarResponsive({ handleNosotros }) {
 
   const { handleQuestions, openQuestions, handleContacto } =
     useContext(globalContext);
-  const [open, setOpen] = useState(1);
-
-  const handleOpen = (value) => setOpen(open === value ? 0 : value);
-
   const itemNavbar = (elementId) => {
     if (elementId === 'contacto') {
       handleContacto('contacto');
@@ -67,8 +59,18 @@ export function NavbarResponsive({ handleNosotros }) {
     localStorage.setItem('microcategoria', event2);
   };
 
+  const handleFeaturedFaqAction = (action) => {
+    if (action.catalogueCategoryId) {
+      handleCategoria(
+        action.catalogueCategoryId,
+        action.catalogueMicrocategoryId ?? '',
+      );
+    }
+    handleQuestions();
+  };
+
   useEffect(() => {
-    const mobileQuery = window.matchMedia('(max-width: 959px)');
+    const mobileQuery = window.matchMedia('(max-width: 1439px)');
     const updateNavigationMode = (event) => {
       setIsMobileMenu(event.matches);
       if (!event.matches) {
@@ -94,14 +96,13 @@ export function NavbarResponsive({ handleNosotros }) {
   return (
     <>
       <div className="w-full navbarResponsive">
-        <div className={`w-full flex items-center justify-center`}>
-          <ul
-            className="flex w-full flex-col p-4 px-5 md:mt-0 md:flex-row md:text-sm md:font-medium xl:ml-10 xl:w-[30%]"
-          >
+        <div className="navbar-main-row mx-auto flex w-full max-w-[1920px] items-center gap-3 px-4 py-2 sm:px-6">
+          <ul className="shrink-0">
             <li>
               <Link
-                href={'https://ipesamex.com/'}
-                className={`hover:text-[#c50411]
+                href={'/'}
+                aria-label="Ir al inicio de IPESA"
+                className={`block hover:text-[#c50411]
                             ${activeLink === 'inicio' ? 'text-[#c50411]' : ''}`}
                 onClick={() => {
                   itemNavbar('inicio');
@@ -112,13 +113,13 @@ export function NavbarResponsive({ handleNosotros }) {
                   width={250}
                   height={108}
                   alt="Ipesa Pinturas"
-                  className="h-auto max-w-full"
+                  className="navbar-logo h-auto w-[150px] sm:w-[190px]"
                 ></Image>
               </Link>
             </li>
           </ul>
 
-          <ul className={`w-full flex gap-7 mt-4 md:mt-0 md:text-xs ocultar`}>
+          <ul className="navbar-desktop-menu hidden min-w-0 flex-1 items-center justify-center gap-x-3 whitespace-nowrap text-[11px] font-semibold">
             <li className="">
               <Link
                 href={'/'}
@@ -225,6 +226,23 @@ export function NavbarResponsive({ handleNosotros }) {
               </Link>
             </li>
 
+            <li>
+              <Link
+                href={'/preguntas-frecuentes'}
+                className={`rounded-full border border-[#c50411] px-3 py-2 uppercase transition-colors hover:bg-[#c50411] hover:text-white
+                            ${
+                              activeLink === 'preguntas-frecuentes'
+                                ? 'bg-[#c50411] text-white'
+                                : 'text-[#9d0711]'
+                            }`}
+                onClick={() => {
+                  itemNavbar('preguntas-frecuentes');
+                }}
+              >
+                FAQ
+              </Link>
+            </li>
+
             <li className="p-0">
               <NavListMenu
                 openMenu={openMenu}
@@ -243,9 +261,7 @@ export function NavbarResponsive({ handleNosotros }) {
             </li>
           </ul>
 
-          <div
-            className="flex w-full items-center justify-start gap-5 px-5 xl:w-[30%] xl:px-0"
-          >
+          <div className="navbar-social-links hidden shrink-0 items-center justify-end gap-3">
             <div className="rounded-full cursor-pointer">
               <Tooltip
                 placement={'bottom'}
@@ -428,21 +444,27 @@ export function NavbarResponsive({ handleNosotros }) {
             </div>
           </div>
 
-          <div
-            className="flex cursor-pointer justify-end p-5 2xl:hidden"
-          >
-            <FontAwesomeIcon
-              icon={faBars}
-              size="xl"
+          <div className="navbar-mobile-trigger ml-auto flex shrink-0 items-center justify-end">
+            <button
+              type="button"
+              aria-label={openNav ? 'Cerrar menú principal' : 'Abrir menú principal'}
+              aria-expanded={openNav}
+              aria-controls="menu-principal-movil"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c50411]"
               onClick={() => {
                 setOpenNav(!openNav);
               }}
-            ></FontAwesomeIcon>
+            >
+              <FontAwesomeIcon icon={faBars} size="xl" />
+            </button>
           </div>
         </div>
 
-        <Collapse open={openNav}>
-          <div className="text-center p-5">
+        <Collapse open={openNav} className="navbar-mobile-panel">
+          <div
+            id="menu-principal-movil"
+            className="max-h-[calc(100vh-76px)] overflow-y-auto p-5 text-center"
+          >
             <div className="">
               <Link
                 href={'/'}
@@ -624,6 +646,23 @@ export function NavbarResponsive({ handleNosotros }) {
 
             <div className="mt-5">
               <Link
+                href={'/preguntas-frecuentes'}
+                onClick={() => {
+                  itemNavbar('preguntas-frecuentes');
+                  setOpenNav(false);
+                }}
+                className={`inline-flex min-h-11 items-center rounded-full border border-[#c50411] px-5 font-semibold uppercase hover:bg-[#c50411] hover:text-white ${
+                  activeLink === 'preguntas-frecuentes'
+                    ? 'bg-[#c50411] text-white'
+                    : 'text-[#9d0711]'
+                }`}
+              >
+                Preguntas frecuentes
+              </Link>
+            </div>
+
+            <div className="mt-5">
+              <Link
                 href={'https://clientes.ipesamex.com'}
                 onClick={() => {
                   itemNavbar('clientes');
@@ -689,7 +728,7 @@ export function NavbarResponsive({ handleNosotros }) {
         size={450}
         open={openQuestions}
         onClose={handleQuestions}
-        className="p-4 sombra-arriba porarriba overflow-auto"
+        className="max-w-full overflow-auto p-4 sombra-arriba porarriba"
       >
         <div className="mb-10 flex items-center justify-between">
           <Typography as={'h3'} variant="h3" color="blue-gray">
@@ -718,117 +757,28 @@ export function NavbarResponsive({ handleNosotros }) {
           </IconButton>
         </div>
 
-        <Accordion open={open === 1}>
-          <AccordionHeader onClick={() => handleOpen(1)}>
-            ¿Cómo puedo convertirme en distribuidor?
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography as={'p'} variant="paragraph">
-              {' '}
-              Puedes registrar tus datos en el formulario de la web o
-              contáctanos directamente por correo electrónico donde uno de
-              nuestros agentes te atenderá.
-            </Typography>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion open={open === 3} className="">
-          <AccordionHeader onClick={() => handleOpen(3)}>
-            ¿Dónde puedo comprar productos?
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography as={'p'} variant="paragraph">
-              {' '}
-              Puedes comprar productos de{' '}
-              <strong className="font-bold">IPESA</strong> en nuestras
-              sucursales. Visita nuestra sección de sucursales para conocer
-              todas las ubicaciones.
-            </Typography>
-            <div className="flex items-center mt-4">
-              <Link
-                href={'/sucursales'}
-                className="hover:border-b border-[#c50411]"
-                onClick={handleQuestions}
-              >
-                Ver sucursales
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  size="lg"
-                  className="ml-2"
-                ></FontAwesomeIcon>
-              </Link>
-            </div>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion open={open === 5}>
-          <AccordionHeader onClick={() => handleOpen(5)}>
-            ¿Tienen productos para automóviles?
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography as={'p'} variant="paragraph">
-              Sí, ofrecemos productos para el repintado de vehículos
-              automotrices.
-            </Typography>
-            <div className="flex items-center mt-4">
-              <Link
-                href={'/productos'}
-                className="hover:border-b border-[#c50411]"
-                onClick={() => (
-                  handleCategoria('automotriz', ''), handleQuestions()
-                )}
-              >
-                Ver productos
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  size="lg"
-                  className="ml-2"
-                ></FontAwesomeIcon>
-              </Link>
-            </div>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion open={open === 6}>
-          <AccordionHeader onClick={() => handleOpen(6)}>
-            ¿Cuál es la durabildiad de sus productos?
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography as={'p'} variant="paragraph">
-              La durabilidad de nuestras pinturas vinílicas va de los 3 hasta
-              los 18 años.
-            </Typography>
-          </AccordionBody>
-        </Accordion>
-
-        <Accordion open={open === 7}>
-          <AccordionHeader onClick={() => handleOpen(7)}>
-            ¿Qué tipo de esmaltes ofrecen?
-          </AccordionHeader>
-          <AccordionBody>
-            <Typography as={'p'} variant="paragraph" className="mb-2">
-              En nuestro portafolio contamos con esmaltes alquidálicos de secado
-              normal y secado rápido.
-            </Typography>
-
-            <div className="flex items-center mt-4">
-              <Link
-                href={'/productos'}
-                className="hover:border-b border-[#c50411]"
-                onClick={() => (
-                  handleCategoria('decorativa', 'esmaltes'), handleQuestions()
-                )}
-              >
-                Ver productos
-                <FontAwesomeIcon
-                  icon={faArrowRight}
-                  size="lg"
-                  className="ml-2"
-                ></FontAwesomeIcon>
-              </Link>
-            </div>
-          </AccordionBody>
-        </Accordion>
+        <div className="space-y-3">
+          {featuredFaqs.map((faq) => (
+            <details key={faq.id} className="group rounded-lg border border-gray-200 bg-white">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 font-semibold text-gray-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#c50411]">
+                <span>{faq.question}</span>
+                <span aria-hidden="true" className="text-xl text-[#c50411] group-open:rotate-45">+</span>
+              </summary>
+              <div className="border-t border-gray-100 px-4 py-4 text-sm leading-6 text-gray-700">
+                <p>{faq.answer}</p>
+                {faq.action ? (
+                  <Link
+                    href={faq.action.href}
+                    className="mt-3 inline-flex min-h-11 items-center font-semibold text-[#9d0711] hover:underline"
+                    onClick={() => handleFeaturedFaqAction(faq.action)}
+                  >
+                    {faq.action.label} <span aria-hidden="true" className="ml-2">→</span>
+                  </Link>
+                ) : null}
+              </div>
+            </details>
+          ))}
+        </div>
 
         <div className="mt-5 flex items-center">
           <Link
@@ -836,12 +786,7 @@ export function NavbarResponsive({ handleNosotros }) {
             className="hover:border-b border-[#c50411]"
             onClick={handleQuestions}
           >
-            Ver más preguntas
-            <FontAwesomeIcon
-              icon={faArrowRight}
-              size="lg"
-              className="ml-2"
-            ></FontAwesomeIcon>
+            Ver más preguntas <span aria-hidden="true" className="ml-2">→</span>
           </Link>
         </div>
       </Drawer>
