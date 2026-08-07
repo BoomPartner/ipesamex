@@ -26,6 +26,7 @@ Estas instrucciones aplican a todo el repositorio. Este proyecto es el sitio pú
 - `src/app/context/`: estado global compartido por navegación, producto, preguntas, calculadora y contacto.
 - `src/components/server.js`: catálogo y contenido estático principal. A pesar del nombre, no es código exclusivo del servidor y actualmente se importa desde componentes cliente.
 - `src/components/dataMapas.js`: conjunto grande de sucursales/ubicaciones, también enviado al cliente cuando se usa.
+- `src/components/Carrusel.jsx`: carrusel principal nativo de `/`; su inventario y mantenimiento están documentados en `docs/HOME-SLIDER.md`.
 - `src/app/globals.css`: estilos globales y animaciones existentes.
 - `public/`: imágenes, SVG, videos y las hojas que todavía permanecen bajo `HOJAS_SEGURIDAD`. Las familias `fichas`, `fichas_colores`, `FICHAS_TECNICAS`, `fondo-producto` y `seguridad` se sirven desde `https://tecknum.com/ipesa_public/` y no deben volver a agregarse al despliegue local.
 
@@ -58,7 +59,7 @@ Estas instrucciones aplican a todo el repositorio. Este proyecto es el sitio pú
 
 - Mide antes y después. Para cambios relevantes registra al menos salida de `npm run build`, tamaño de la ruta afectada y, cuando aplique, Lighthouse/Core Web Vitals en móvil.
 - La línea base actual tiene First Load JS aproximado de 358 kB en `/` y `/producto/[id]`, 309 kB en `/sucursales`, 311 kB en `/decorador` y `/sistema-tintometrico`, y 298 kB en `/productos`. Evita aumentos injustificados.
-- Tras externalizar los documentos indicados, `public/` contiene alrededor de 437 archivos y 292.2 MB. No dupliques activos remotos dentro del repositorio; antes de agregar un recurso local, confirma que no pertenezca a una de las cinco familias alojadas en Tecknum.
+- Tras externalizar los documentos indicados e integrar los 10 banners del carrusel principal, `public/` contiene alrededor de 447 archivos y 297.2 MB. No dupliques activos remotos dentro del repositorio; antes de agregar un recurso local, confirma que no pertenezca a una de las cinco familias alojadas en Tecknum.
 - `server.js` (~6,500 líneas), `dataMapas.js` (~11,500 líneas), `Producto.jsx`, `Productos.jsx` e `Inicio.jsx` son puntos calientes. No importes datasets completos en más Client Components. Prefiere dividir datos por dominio, cargar bajo demanda y usar imports dinámicos cuando reduzcan JavaScript real sin degradar UX o SEO.
 - Reduce renders, estados duplicados y múltiples listeners de `resize`/`scroll`. Prefiere CSS responsivo, `matchMedia`, IntersectionObserver o una abstracción compartida cuando la medición confirme el beneficio.
 - Lazy-load mapas, reproductores, chat, carruseles y widgets de terceros si están fuera del viewport. Reserva espacio para evitar CLS y comprueba que la interacción siga disponible.
@@ -97,7 +98,7 @@ Antes de terminar una modificación:
 
 - Al crear este archivo, `npm run lint` terminaba con 12 advertencias. Después de la fase estructural y de la corrección de `/productos` documentadas en `docs/PERFORMANCE.md`, quedan 2 advertencias de dependencias de Hooks en `Colores`.
 - `npm run build` termina correctamente. `metadataBase` ya está definido; permanece el aviso de `caniuse-lite` desactualizado.
-- La línea base posterior a la optimización, la restauración visual de iframes, el preloader del catálogo y la externalización de activos es 332 kB en `/`, 351 kB en `/producto/[id]`, 124 kB en `/sucursales`, 298 kB en `/productos` y 104 kB en `/tips`. Usa `docs/PERFORMANCE.md` para la comparación completa.
+- La línea base posterior a la integración local del carrusel principal es 322 kB en `/`, 351 kB en `/producto/[id]`, 124 kB en `/sucursales`, 298 kB en `/productos` y 103 kB en `/tips`. Usa `docs/PERFORMANCE.md` para la comparación completa.
 - En desarrollo, los mensajes de depuración de Vercel Analytics y Fast Refresh son informativos. Un `ERR_BLOCKED_BY_CLIENT` de DoubleClick suele provenir de un bloqueador del navegador; sepáralo de errores propios de React, Next.js o de la aplicación antes de corregir código.
 - No conviertas estas advertencias conocidas en errores ajenos a una tarea, pero no agregues nuevas. Si tocas uno de los archivos implicados, corrige de forma segura las advertencias dentro del alcance o explica por qué permanecen.
 - No existe una suite automatizada ni un comando `test` en `package.json`.

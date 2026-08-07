@@ -551,7 +551,7 @@ const Inicio = () => {
       className={`bg-[url('/principal/waves.jpg')] bg-fixed bg-cover bg-center`}
     >
       <section id="carrusel" className="overflow-hidden">
-        <Carrusel width={windowWidth}></Carrusel>
+        <Carrusel />
       </section>
 
       <section id="categorias" className="overflow-hidden">

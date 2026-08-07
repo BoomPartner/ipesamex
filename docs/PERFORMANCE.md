@@ -48,6 +48,15 @@ Los principales problemas estructurales encontrados fueron:
 - Se corrigieron accesos a `localStorage` durante renderizado y un handler que se ejecutaba al construir la portada. `/` y `/productos` vuelven a prerenderizarse de forma estática sin depender del preloader.
 - Los iframes conservan sus contenedores responsivos originales de styled-components. Se restauraron después de comprobar que las alturas de Tailwind y `loading="lazy"` alteraban su presentación. El resto de las simplificaciones permanece.
 
+### Carrusel principal local
+
+- El carrusel principal de `/` dejó de cargar `https://tecknum.com/slider_ipesa/index_01.php` mediante un `iframe`.
+- Las diez imágenes utilizadas por ese documento se integraron en `public/home/slider-principal/`; no se copiaron los recursos sin referencia del proyecto fuente.
+- La implementación nativa usa React y `next/image`, conserva el ciclo de 4 segundos sin cargar una biblioteca de carrusel en la ruta inicial y elimina para este flujo el documento PHP, Bootstrap, jQuery y sus solicitudes a CDN.
+- El carrusel reserva su proporción para evitar CLS, conserva completa cada pieza con `object-fit: contain`, ofrece controles accesibles y desactiva la reproducción automática con `prefers-reduced-motion`.
+- El inventario y el procedimiento de mantenimiento están en `docs/HOME-SLIDER.md`.
+- `npm run build` deja `/` en 7.12 kB de código propio y 322 kB de First Load JS: 10 kB menos que la línea base anterior de 332 kB. Los diez JPG agregan aproximadamente 5.05 MiB al contenido estático y elevan el inventario actual de `public/` a 447 archivos y 297.2 MiB.
+
 ### Integridad, seguridad y SEO
 
 - El navegador ahora llama a `/api/chat`; la credencial y el identificador del agente se usan en el servidor.
